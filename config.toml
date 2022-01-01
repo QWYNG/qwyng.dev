@@ -4,12 +4,13 @@ title = "QWYNG.dev"
 theme = "anubis"
 paginate = 6
 googleAnalytics = "UA-110687917-3"
+hasCJKLanguage = true
 [author]
 name = "QWYNG"
 
 [params]
 author = "QWYNG"
-description = ""
+description = "QWYNG(Hiroaki Osawa)という人間のブログです各種SNSのリンクはヘッダー参照"
 dateFormat = "2006-01-02"
 paginationSinglePost = false
 style = "light-without-switcher"
@@ -36,12 +37,12 @@ weight = 1
 name = "記事一覧"
 identifier = "記事一覧"
 url = "/posts/"
-weight = 3
+weight = 2
 [[menu.main]]
 name = "RSS"
 identifier = "rss"
 url = "/index.xml"
-weight = 4
+weight = 3
 
 [markup.goldmark.renderer]
 unsafe = true
