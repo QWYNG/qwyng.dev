@@ -5,21 +5,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
 <title>クリーンアーキテクチャ19章の問に答える - QWYNG.dev</title>
-<meta name=description content=" 設計とかRailsの記事このブログなんもないことに気づいた。
-最近クリーンアーキテクチャを社内で読書会を主催して読み進めてます。
-
-Clean Architecture　達人に学ぶソフトウェアの構造と設計 (アスキードワンゴ)
-  作者:Ｒｏｂｅｒｔ Ｃ．Ｍａｒｔｉｎ,角 征典,高木 正弘   発売日: 2018/08/01  メディア: Kindle版     一人だと挫折したり難しい表現があったりするので色んな人と読書会できて助かっています。
-この本の19章の最後の問がソフトウエアアーキテクチャの原則をまとめるのに良い機会だったのでまとめてみますた。
-問 クリーンアーキテクチャの19章では以下のようなアーキテクチャが示されます。暗号化プログラム作成が目的です。
-19章の最後の「原則がどこで使われているのか、どうして使われているのかを確認してほしい」という問が記事の主題です。 
-返答 SRP（単一責任）、CCP（閉鎖性共通の原則) 変更理由が違うものを別のコンポーネントやモジュールにわける。入力クラスのConsoleReaderの変更理由とロジックの核であるEncryptの変更理由は明確にことなる。なので別モジュールになっているのである。
-OCP(オープンアンドクローズドの原則） 依存が一方向で統一されているためConsoleReaderの変更はEncryptにはなんの影響もなく変更が容易
- DIP(依存関係逆転） 変化しやすいConsoleReaderを参照したり継承はしない。変更されやすいものに依存してしまうとインターフェイスを安定したものにできない。
-SDP(安定依存の原則) 安定度が高いEncryptに依存していること。安定度が低いものに依存すると安定度が低いモジュールやコンポーネントが変更しにくくなってしまう。
-SAP(安定度・抽象度等価） Encryptは抽象的であるべき、なぜなら複数のモジュールから依存されていて安定度が高いから。逆にConsoleReaderは具象であるべき。依存されていないので抽象的にするのが無駄だから。
-まとめ 共通言語と理由を客観的に説明できるか？が設計における壁だと思うのでやっていきである。
- ">
+<meta name=description content="設計とかRailsの記事このブログなんもないことに気づいた。 最近クリーンアーキテクチャを社内で読書会を主催して読み進めてます。 Clean Architecture 達人に学ぶ">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -28,10 +14,10 @@ SAP(安定度・抽象度等価） Encryptは抽象的であるべき、なぜ�
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:description" content="設計とかRailsの記事このブログなんもないことに気づいた。 最近クリーンアーキテクチャを社内で読書会を主催して読み進めてます。 Clean Architecture 達人に学ぶ">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="クリーンアーキテクチャ19章の問に答える - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/2020/06/01/234640/">
 <meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
 <meta property="twitter:card" content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -128,6 +114,14 @@ SAP(安定度・抽象度等価） Encryptは抽象的であるべき、なぜ�
 </div>
 </div>
 </article>
+<div class="pagination post-pagination">
+<div class="left pagination-item">
+<a href=/posts/2020/06/22/230935/>Rustでgit stashを検索できるツールを書いた</a>
+</div>
+<div class="right pagination-item">
+<a href=/posts/2020/05/09/142222/>RubyでPriority Queue</a>
+</div>
+</div>
 </main>
 <footer class=common-footer>
 <div class=common-footer-bottom>

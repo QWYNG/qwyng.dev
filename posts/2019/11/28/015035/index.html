@@ -5,16 +5,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
 <title>「食事する哲学者」で学ぶデッドロック - QWYNG.dev</title>
-<meta name=description content=" 最近 プログラミング言語Rustを読んでるのですが、並行処理のチュートリアルで「食事する哲学者」という問題を知りました。
-昔々、裕福な慈善家が、5人の高名な哲学者が宿泊できるカレッジを寄付しました。それぞれの哲学者には思索活動にふさわしい部屋が与えられました; また共用のダイニングルームもあり、そこには丸いテーブルが置かれ、5人それぞれが専用で使うイス5脚で取り囲まれていました。 彼らはテーブルを反時計回りに座ります。哲学者の左側にはそれぞれ金のフォークが配され、 中央には大きなボウルに入ったスパゲッティが常に補充されていました。哲学者は大半の時間を思慮に費やすのですが; 空腹になった時は、ダイニングルームに出向き、自分専用のイスに座り、左側のフォークを取上げ、スパゲッティに突き刺します。 しかし、絡まり合ったスパゲッティを口元まで運ぶには2本目のフォークが必要でした。なので哲学者は自分の右側にあるフォークも使う必要がありました。 食べ終わったら両側のフォークを元に戻し、席から立ちあがって、思索活動を続けます。 もちろん、1本のフォークは同時に1人の哲学者しか使えません。他の哲学者が食事したければ、 フォークが再び戻されるまで待たねばなりません。
- 並行処理でデッドロックが起こりうる問題です。 丸が哲学者で棒がフォークです！！！！ そのまま各哲学者が同時に右のフォークをとるとこうなります
-丸が哲学者で棒がフォークです！！！！！！！
-この状態になってしまうと1が左のフォークを取りたくても5が持っているので取れない、5も早くパスタをとってフォークをおろしたいけど4がフォークを持っているので取れない。…となり全員がお互いのフォークを下ろすのをおみあいしてしまう、いわゆるデッドロック状態になります。
-プログラミング言語Rustでは5だけ最初に左のフォークを取らせて確実に誰かが両手にフォークを持てる状況を強制させていました。
-この問題は 食事する哲学者の問題 - Wikipediaにも乗ってるけど色々デッドロックを起こさない方法があります。
-セマフォって概念ここで初めて知りました。 dirty/cleanなんかはページングで使われてる気がする。
-Rustにセマフォあったみたいだけど非推奨になっていた。MutexとCondvarでなんとかするのだろうか。
- ">
+<meta name=description content="最近 プログラミング言語Rustを読んでるのですが、並行処理のチュートリアルで「食事する哲学者」という問題を知りました。 昔々、裕福な慈善家が、">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -23,10 +14,10 @@ Rustにセマフォあったみたいだけど非推奨になっていた。Mute
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:description" content="最近 プログラミング言語Rustを読んでるのですが、並行処理のチュートリアルで「食事する哲学者」という問題を知りました。 昔々、裕福な慈善家が、">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="「食事する哲学者」で学ぶデッドロック - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/2019/11/28/015035/">
 <meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
 <meta property="twitter:card" content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -99,6 +90,14 @@ dirty/cleanなんかはページングで使われてる気がする。</p>
 </div>
 </div>
 </article>
+<div class="pagination post-pagination">
+<div class="left pagination-item">
+<a href=/posts/2019/12/24/142239/>「エンジニアの知的生産術」を読んだ</a>
+</div>
+<div class="right pagination-item">
+<a href=/posts/2019/11/12/220609/>Punditにコミットした</a>
+</div>
+</div>
 </main>
 <footer class=common-footer>
 <div class=common-footer-bottom>

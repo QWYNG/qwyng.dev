@@ -5,16 +5,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
 <title>オブジェクト指向設計実践ガイド　四章まで読んで気になったこと - QWYNG.dev</title>
-<meta name=description content=" 序盤の章は具体的に自分のコードにしてみました。
-メソッドの責任の分割 メソッドの責任を分割してみました。 
-自分より変更されないものに依存しなさい  引数の依存を避けるためにキーワード引数を導入してみました。 これで別の場所でインスタンスを作る際にクラスがどの順番で処理しているかを考える必要がなくなります。
-もちろん世の中これがデファクトではなくていくつかの順番に依存する引数と残りをオプションハッシュにしているメソッドが多いですね。
-オブジェクトは相手を信頼して隣人にしか声をかけない Player がHardwareを使ってSoftwareをプレイしようとしてもPlayerはSoftwareに直接メッセージを送るのは避けるべきで、PlayerはHardwareを信用して、遊びたい中身はSoftwareだとしてもPlayerにはplayというパブリックインターフェイスをもたせて詳細な実装は隠すべき こうするとplayするゲームがVRになってplay以外のことをHardwareとSoftwareを使ってするようになっても、player.experience等一般化して対応できるようになる。
-
-player.hardware.software.run #ではなく player.play #とするべき  　オブジェクト指向とは オブジェクト指向ってなんだ（困惑）。
-単一責任とか疎結合とかパブリックインターフェイスとか他のオブジェクトを信頼はしても依存はしないのが良いということはわかりました。人間関係かな。
-StackEditで簡単にシーケンス図がかけるので最高 
- ">
+<meta name=description content="序盤の章は具体的に自分のコードにしてみました。 メソッドの責任の分割 メソッドの責任を分割してみました。 自分より変更されないものに依存しなさい 引">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -23,10 +14,10 @@ StackEditで簡単にシーケンス図がかけるので最高
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:description" content="序盤の章は具体的に自分のコードにしてみました。 メソッドの責任の分割 メソッドの責任を分割してみました。 自分より変更されないものに依存しなさい 引">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="オブジェクト指向設計実践ガイド　四章まで読んで気になったこと - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/2019/03/11/230932/">
 <meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
 <meta property="twitter:card" content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -106,6 +97,14 @@ player.play #とするべき
 </div>
 </div>
 </article>
+<div class="pagination post-pagination">
+<div class="left pagination-item">
+<a href=/posts/2019/03/18/231417/>「失敗から学ぶRDBの正しい歩き方」を読んで</a>
+</div>
+<div class="right pagination-item">
+<a href=/posts/2019/03/07/225608/>はじめてのペアプログラミングをしたので感想とか</a>
+</div>
+</div>
 </main>
 <footer class=common-footer>
 <div class=common-footer-bottom>

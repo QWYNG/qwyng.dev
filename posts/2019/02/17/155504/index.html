@@ -5,17 +5,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
 <title>SQLアンチパターン　第三章を読んで - QWYNG.dev</title>
-<meta name=description content="アンチパターン 行の存在の重複をさけるため、主キーを定めることが多くあります。idというカラムを作って主キーの役割をもたせることも多いです。
-今回のアンチパターンは全てのテーブルはidというカラムを持たせる、というものです。Railsなんかでもデフォルトではidつけますね。
-idカラムの特徴は
- 数字が入ります（正確に言うと32bit or 64bitの整数） 同じ数字が入ることはありません  当たり前だと思っていたidもアンチパターンになることがあります。
-デメリット  冗長なキーができてしまう  ポケモンでテーブルを作成すると
-    id   pokemon_name       1   フシギダネ     2   ゼニガメ     3   ヒトカゲ     この場合nameは必ず一意になりますしUNIQUE制約もつけられるのでidカラムは必要なキーとは言えなくなります。
-また他のテーブルの主キーの組み合わせのを保存する交差テーブルを作っる時にその組み合わせにidをふっても組み合わせの一意にはならないので、組み合わせ2つのカラムにUNIQUEをつける必要がありますがそうなるとidカラムの意味は…ということになります。
- idという名前はかならずしもわかりやすくない idよりpokemon_nameのほうがわかりやすいです。 USINGが使用できない カラムにpokemon_nameを持ってる例えばTrainersテーブルではUSING(pokemon_name)と使えますが全てのテーブルの主キーがidだとTrainersもidがあるのでusingにidが使えません。  使用してもいい場合 ORMフレームワーク（Ruby on Rails等）では設定より規約ということで、idという整数の疑似キーのカラムがある前提で便利な機能がついています。レールから外れるとその分大変です。ですが疑似キーをid以外の名前(pokemon_idとか）にすることもできることは覚えておいたほうが良さそうです。
-Railsも主キーを変更することは公式でサポートされています。
-https://railsguides.jp/active_record_migrations.html
-解決策 状況に応じて適切に調整しようとあります。そりゃそうだという気持ちになったのは私だけでしょうか。">
+<meta name=description content="アンチパターン 行の存在の重複をさけるため、主キーを定めることが多くあります。idというカラムを作って主キーの役割をもたせることも多いです。 今">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -24,10 +14,10 @@ https://railsguides.jp/active_record_migrations.html
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:description" content="アンチパターン 行の存在の重複をさけるため、主キーを定めることが多くあります。idというカラムを作って主キーの役割をもたせることも多いです。 今">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="SQLアンチパターン　第三章を読んで - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/2019/02/17/155504/">
 <meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
 <meta property="twitter:card" content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -148,6 +138,14 @@ idというカラムを主キーにすることが悪というよりはそれ以
 </div>
 </div>
 </article>
+<div class="pagination post-pagination">
+<div class="left pagination-item">
+<a href=/posts/2019/02/18/231855/>SQLアンチパターン　第四章を読んで</a>
+</div>
+<div class="right pagination-item">
+<a href=/posts/2019/02/16/161954/>SQLアンチパターン 2章</a>
+</div>
+</div>
 </main>
 <footer class=common-footer>
 <div class=common-footer-bottom>

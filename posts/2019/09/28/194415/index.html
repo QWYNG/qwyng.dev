@@ -5,10 +5,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
 <title>超絶怒涛のゆるふわコードリーディング GraphQL gem篇 - QWYNG.dev</title>
-<meta name=description content="GraphQL gemをふんわり読んだ ふんわり読んで見ました、とりあえずよく使われてそうなDSLをおったメモ
-versionはv1.9.12 が最新リリースである時期のmasterブランチ読みました。 ゆるふわの極みです
-とりあえず最初に公式のGetting Startedで出てくるやつ module Types class PostType < Types::BaseObject field :id, ID, null: false field :title, String, null: false field :truncated_preview, String, null: false field :comments, [Types::CommentType], null: true, description: &#34;This post's comments, or null if this post has comments disabled.&#34; end end  field is 何？ GraphQL::Schema::ObjectがextendしてるGraphQL::Schema::Member::HasFieldsのメソッド。
-def field(*args, **kwargs, &block) field_defn = field_class.from_options(*args, owner: self, **kwargs, &block) add_field(field_defn) nil end  field_class is 何？ def field_class(new_field_class = nil) if new_field_class @field_class = new_field_class elsif @field_class @field_class elsif self.">
+<meta name=description content="GraphQL gemをふんわり読んだ ふんわり読んで見ました、とりあえずよく使われてそうなDSLをおったメモ versionはv1.9.12 が最新リリースで">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -17,10 +14,10 @@ def field(*args, **kwargs, &block) field_defn = field_class.from_options(*args, 
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:description" content="GraphQL gemをふんわり読んだ ふんわり読んで見ました、とりあえずよく使われてそうなDSLをおったメモ versionはv1.9.12 が最新リリースで">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="超絶怒涛のゆるふわコードリーディング GraphQL gem篇 - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/2019/09/28/194415/">
 <meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
 <meta property="twitter:card" content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -201,6 +198,14 @@ end
 </div>
 </div>
 </article>
+<div class="pagination post-pagination">
+<div class="left pagination-item">
+<a href=/posts/2019/09/28/203720/>Elixirについて社内LTで発表したよ</a>
+</div>
+<div class="right pagination-item">
+<a href=/posts/2019/09/20/024930/>エンジニアとして働いて</a>
+</div>
+</div>
 </main>
 <footer class=common-footer>
 <div class=common-footer-bottom>

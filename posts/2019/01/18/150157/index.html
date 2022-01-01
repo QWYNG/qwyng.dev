@@ -5,13 +5,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
 <title>メタプログラミングRuby 四章 ブロックの読書録 - QWYNG.dev</title>
-<meta name=description content="はじめに  ブロックは強力なツール ブロックは束縛を包んでくれる instance_eval  呼び出し可能オブジェクト Procオブジェクト Methodオブジェクト   四章のクイズ   おわりに  はじめに 前職の出勤が１６日に終わり、しばしニートしております。 最近discordbというボイスチャットアプリのbot作成のラッパーGemが面白くていじっているんですが、このGemを読んでいるとメタプログラミングRubyの４章にこんなのあったなぁという気持ちが強まり、読書録として少し理解を文章に起こしてみました。５章と６章も個人的に何度でも反芻したいので書いていきたい。
-ブロックは強力なツール この章ではブロックがスコープを操る強力なツールだということを解説してくれています。 あと途中で上司が逃げます
-ブロックは束縛を包んでくれる Rubyではdef、class、module （これらはスコープを開く門）でスコープが切り替わってローカル変数なんかは共有できなくなります。
-class Hogeclass class_value = 1 def hoge_method p class_value # => Error! end end  裏を返すとこの門を開かなければ新しいスコープは開かれません。 class やmoduleであればClass.new {}やModule.new {}としたり、 defをdefine_method { }にしてブロックを渡すことで新しいスコープが開かれなくなります。
-class Hogeclass class_value = 1 define_method :hoge_method do p class_value # => 1 end end  このようにブロックは現在の束縛を包み込んでnewやdefine_methodといったメソッドに渡すことができます。
-instance_eval instance_evalはBasicObjectのインスタンスメソッドでブロックを渡すとレシーバーをselfにして評価してくれます。
-class Hogeclass def initialize @foo = &#34;">
+<meta name=description content="はじめに ブロックは強力なツール ブロックは束縛を包んでくれる instance_eval 呼び出し可能オブジェクト Procオブジェクト Methodオブジェクト 四章のクイズ">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -20,10 +14,10 @@ class Hogeclass def initialize @foo = &#34;">
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:description" content="はじめに ブロックは強力なツール ブロックは束縛を包んでくれる instance_eval 呼び出し可能オブジェクト Procオブジェクト Methodオブジェクト 四章のクイズ">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="メタプログラミングRuby 四章 ブロックの読書録 - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/2019/01/18/150157/">
 <meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
 <meta property="twitter:card" content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -271,6 +265,14 @@ load 'events.rb'
 </div>
 </div>
 </article>
+<div class="pagination post-pagination">
+<div class="left pagination-item">
+<a href=/posts/2019/01/26/160835/>メタプログラミングRuby ５章　クラス定義</a>
+</div>
+<div class="right pagination-item">
+<a href=/posts/2018/12/31/235814/>erbからslimへ　html2slimの変換で少し気になったこと</a>
+</div>
+</div>
 </main>
 <footer class=common-footer>
 <div class=common-footer-bottom>

@@ -5,15 +5,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
 <title>「オブジェクト指向設計実践ガイド　～Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方」を読みました - QWYNG.dev</title>
-<meta name=description content="オブジェクト指向設計実践ガイド ~Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方
-  作者: Sandi Metz,?山泰基  出版社/メーカー: 技術評論社   発売日: 2016/09/02  メディア: 大型本 この商品を含むブログ (6件) を見る     を読んだ備忘録です。
-5章　ダックタイピングでコストを削減する ダックタイピングは、たとえオブジェクトのクラスや型が違っても、同じふるまいをするのであれば共通化できるということです。
-特に特定のクラスであれば〇〇を行って、別のクラスだったら✗✗をするのような感じのcase文を見かけたときには、それぞれに共通のインターフェースをもたせて依存を減らすことができます。
-例えばこんな感じのコード
-class Test def make(questions) questions.each { |question| case question when SelectiveQuestion question.make_selective_question when DescriptiveQuestion question.make_descriptive_question end end end end  Student#answerは渡された問題のクラスによって処理を分岐しています。
-これは他のクラスへ依存を増やすことになり、更に問題の種類を増やしたらcase文をまた一段追加しなくてはなりません。
-ここで登場するのがダックタイピング questionsにはmake_questionという振る舞いを期待して、make_questionすればダックじゃなくてもダックなのです。
-class Test def make(questions) questions.each do |question| question.make_question end end end  これで各Questionクラスにmake_questionを実装すれば、いちいちクラスを増やすたびにケース文を追加することもなくなります。振る舞いを抽象化して他のクラスを信頼することが大事。">
+<meta name=description content="オブジェクト指向設計実践ガイド ~Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方 作者: Sandi Metz,?山泰基 出版社/メーカー: 技術">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -22,10 +14,10 @@ class Test def make(questions) questions.each do |question| question.make_questi
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:description" content="オブジェクト指向設計実践ガイド ~Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方 作者: Sandi Metz,?山泰基 出版社/メーカー: 技術">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="「オブジェクト指向設計実践ガイド　～Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方」を読みました - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/2019/04/08/003824/">
 <meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
 <meta property="twitter:card" content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -220,6 +212,14 @@ end
 </div>
 </div>
 </article>
+<div class="pagination post-pagination">
+<div class="left pagination-item">
+<a href=/posts/2019/04/23/001755/>Riot Games API + Rails + React + Ant design でLeague of Legendでチャンピオンごとにガイドを共有できるwebアプリをつくりました</a>
+</div>
+<div class="right pagination-item">
+<a href=/posts/2019/03/18/231417/>「失敗から学ぶRDBの正しい歩き方」を読んで</a>
+</div>
+</div>
 </main>
 <footer class=common-footer>
 <div class=common-footer-bottom>

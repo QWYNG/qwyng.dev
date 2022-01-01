@@ -5,22 +5,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
 <title>rails consoleに簡単にオプションを足せるようになるgemを作った - QWYNG.dev</title>
-<meta name=description content="作ったgemはこれです
-github.com
-使い方 config/application.rbに下のようにオプションをセットします。
-Rails::Applicationの上に書くようにしてください。
-Bundler.require(*Rails.groups) D4C::Console.add_option 'hello' do puts &#34;hello&#34; end module YourRailsApplication class Application < Rails::Application  これでrails consoleに渡せるオプションを追加できました。実際にオプションが呼ばれると渡したブロックがcallされます。
-rails c --hello Running via Spring preloader in process 7922 hoge Loading development environment (Rails 5.2.3) irb(main):001:0>  なんで作ったか rails consoleを叩くときに、「デフォルトで実行されたくないけど実行したいときはさっと実行したい」処理があったからです。
-職場でact_as_tenantというgemを使っています。dbのレコードに制限をかけるgemです。
-act_as_tenantの都合上、rails consoleからdbのレコードを叩くには
-ActsAsTenant.without_tenant do end  として作業しなくてはなりませんでした。
-とはいえRailtieのconsoleメソッドでせっかくかけたセキュリティをデフォルトで外してしまうことはしたくありません。
---sandboxみたいにオプションで選択できると良いと考え、このgemを作りました。 1
-実装の話 そもそもrails console --sandboxをした時の流れ bin/rails console自体の具体的な流れはRailsガイドにとっても詳しく書いてあるので読みましょう。
-railsguides.jp
-では--sandboxはどうやって処理されているのでしょうか。 (注 Railsのコードを載せていますが色々省いています。）
-Rails::Command::ConsoleCommandクラスは下のようになっています。
-class_option :sandbox, aliases: &#34;-s&#34;, type: :boolean, default: false, desc: &#34;">
+<meta name=description content="作ったgemはこれです github.com 使い方 config/application.rbに下のようにオプションをセットします。 Rails::Applicat">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -29,10 +14,10 @@ class_option :sandbox, aliases: &#34;-s&#34;, type: :boolean, default: false, de
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:description" content="作ったgemはこれです github.com 使い方 config/application.rbに下のようにオプションをセットします。 Rails::Applicat">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="rails consoleに簡単にオプションを足せるようになるgemを作った - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/2019/08/20/090000/">
 <meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
 <meta property="twitter:card" content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -177,6 +162,14 @@ end
 </div>
 </div>
 </article>
+<div class="pagination post-pagination">
+<div class="left pagination-item">
+<a href=/posts/2019/08/28/222307/>「試して理解　Linuxのしくみ」を読んだ</a>
+</div>
+<div class="right pagination-item">
+<a href=/posts/2019/07/15/205709/>クラスメソッドをPryのコマンドにできるGemをリリースしました</a>
+</div>
+</div>
 </main>
 <footer class=common-footer>
 <div class=common-footer-bottom>

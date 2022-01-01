@@ -5,21 +5,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
 <title>「試して理解　Linuxのしくみ」を読んだ - QWYNG.dev</title>
-<meta name=description content="[試して理解]Linuxのしくみ ~実験と図解で学ぶOSとハードウェアの基礎知識
-  作者: 武内覚  出版社/メーカー: 技術評論社   発売日: 2018/02/23  メディア: 単行本（ソフトカバー） この商品を含むブログ (1件) を見る     読んだ理由 せっかく自宅の環境をUbuntuにしたので
-sasa5740.hatenablog.com
-Linuxの基本的な知識知りたいなぁと思ったのと、A Tour of Goとかruby/rubyの並行テストとか見て並行処理の意味が全くわからんちんだったので、プロセスを詳しく知るために購入した。
-全体的な感想 試して理解ということでサンプルコードがたくさん載っていた。最初はGitHubに全部上がってるの知らずにポチポチC言語写経しながら読んでいた。
-実際にハードウェアにアクセスするのがカーネルで、普段僕が書いてるアプリケーションはあくまでプロセスとしてシステムコールのラッパー関数を呼び出しているだけ、という事からして初めて知ったので、全編に渡って新しい発見の連続だった。
-あと著者の方の環境がメモリ32Gで人権を感じた。
-要約感想的なもの 　3章  fork()関数もこの本で初めて知った。webサーバーがなんで同時に複数のリクエストをさばけるのか少しわかりかけてきた。  techracho.bpsinc.jp
-（この記事の意味がようやく少しわかった。）
-　4章 プロセススケジューラー  論理CPU一個が同時に二つプロセス動かすことはない。プロセスはコンテキストスイッチでそのプロセス関係なく処理が一旦止まることがありうる。
-  単位時間あたりの処理量と結果的な処理にかかる時間はトレードオフ
-　5章　メモリ管理  メモリアドレスを直接扱うのはプロセスにはまだ早すぎるので仮想アドレスを使う。
- ページテーブルはルーティングテーブルみたいなもの。コンピュータというのはどこも二分探索にするための工夫が多い気がする。
- デマンドページング 仮想メモリ確保 != 物理メモリ確保
- copy on write　fork()時にいきなり新しい物理メモリを確保するのではない。 書き込むときに子プロセス用のメモリを確保して書き込む。">
+<meta name=description content="[試して理解]Linuxのしくみ ~実験と図解で学ぶOSとハードウェアの基礎知識 作者: 武内覚 出版社/メーカー: 技術評論社 発売日: 2018/02/23 メディア: 単">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -28,10 +14,10 @@ Linuxの基本的な知識知りたいなぁと思ったのと、A Tour of Goと
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:description" content="[試して理解]Linuxのしくみ ~実験と図解で学ぶOSとハードウェアの基礎知識 作者: 武内覚 出版社/メーカー: 技術評論社 発売日: 2018/02/23 メディア: 単">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="「試して理解　Linuxのしくみ」を読んだ - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/2019/08/28/222307/">
 <meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
 <meta property="twitter:card" content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -162,6 +148,14 @@ Linuxの基本的な知識知りたいなぁと思ったのと、A Tour of Goと
 </div>
 </div>
 </article>
+<div class="pagination post-pagination">
+<div class="left pagination-item">
+<a href=/posts/2019/09/20/024930/>エンジニアとして働いて</a>
+</div>
+<div class="right pagination-item">
+<a href=/posts/2019/08/20/090000/>rails consoleに簡単にオプションを足せるようになるgemを作った</a>
+</div>
+</div>
 </main>
 <footer class=common-footer>
 <div class=common-footer-bottom>

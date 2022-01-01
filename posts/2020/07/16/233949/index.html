@@ -5,15 +5,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
 <title>GitHub Actionsで#&amp;lt;Errno::ENOTTY - QWYNG.dev</title>
-<meta name=description content="発生した経緯 自作のRubyGemのテストとCIを整えていた時に遭遇。 パスワード入力の所でIO#noechoを使うように修正した所、GitHub Actions内で以下のようなエラーが起きた。
-1) GreenDay::Cli login valid name and password create cookie-store Failure/Error: password = STDIN.noecho { |stdin| stdin.gets(chomp: true) }.tap { puts } Errno::ENOTTY: Inappropriate ioctl for device # ./lib/green_day/cli.rb:19:in `noecho' # ./lib/green_day/cli.rb:19:in `login' # ./spec/cli_spec.rb:83:in `block (3 levels) in <top (required)>' # ./spec/cli_spec.rb:101:in `block (4 levels) in <top (required)>'  ローカルでは通ったのでCI環境での問題っぽい。
-解決まで &#34;GitHub Actions Inappropriate ioctl for device&#34;でググった所以下のissueを発見。
-github.com
-どうやらTTYなるもので無いのが駄目らしい。
-ワークアラウンドらしいけどこのコメントで解決した
-https://github.com/actions/runner/issues/241#issuecomment-577360161
-scriptはデフォルトでtypescriptってファイルにターミナルのsessionをまるごと記録してくれるもの。 仕組みはよくわかってないけど実際にローカルでscriptを叩くとセッションが新しく始まって後述のttyコマンドの結果も変化したのでなにかしらttyに当たるものを作るとうまく行く原理なのだろうか。
-travis ciでは問題が再現しなかったのでGitHub Actions特有の問題っぽい。Dockerコンテナの出力をキャプチャしているのが関係しているのかもしれない。">
+<meta name=description content="発生した経緯 自作のRubyGemのテストとCIを整えていた時に遭遇。 パスワード入力の所でIO#noechoを使うように修正した所、GitHu">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -22,10 +14,10 @@ travis ciでは問題が再現しなかったのでGitHub Actions特有の問題
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:description" content="発生した経緯 自作のRubyGemのテストとCIを整えていた時に遭遇。 パスワード入力の所でIO#noechoを使うように修正した所、GitHu">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="GitHub Actionsで#&amp;lt;Errno::ENOTTY - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/2020/07/16/233949/">
 <meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
 <meta property="twitter:card" content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -141,6 +133,14 @@ lrwx------ 1 qwyng qwyng 64  7月 16 23:00 8 -&gt; /run/user/1000/fish_universal
 </div>
 </div>
 </article>
+<div class="pagination post-pagination">
+<div class="left pagination-item">
+<a href=/posts/2020/07/26/223226/>東大計数工学科講義「AWSによるクラウド入門」の感想</a>
+</div>
+<div class="right pagination-item">
+<a href=/posts/2020/07/06/221937/>GitHubActionsでリリースとHomeBrewのformulaレポジトリ更新を一度に行う</a>
+</div>
+</div>
 </main>
 <footer class=common-footer>
 <div class=common-footer-bottom>

@@ -5,12 +5,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
 <title>Punditにコミットした - QWYNG.dev</title>
-<meta name=description content="github.com
-結果的には破壊的変更をしてしまったのでPR送った経緯を書いておこうと思う。 もちろんこのままリリースされるかはわからないけど。 ちなみにPunditは以下のように明瞭な形でリソースに対しての行動に制約を設定できるようになるGemだ。
-class PostPolicy attr_reader :user, :post def initialize(user, post) @user = user @post = post end def update? user.admin? or not post.published? end end # in controller def update @post = authorize Post.find(params[:id]) if @post.update(post_params) redirect_to @post else render :edit end end  書きやすく読みやすいコードが書けて良いGemだと思う。
-PRを立てた経緯 業務でPunditを利用させてもらっていて、ちょっと面倒なところがあった。
-https://github.com/varvet/pundit#policy-namespacing にもあるがこのようなコードだ。
-module Admin class PostPolicy ~~ end end class AdminController < ApplicationController def authorize(record, query = nil) super([:admin, record], query) end end class Admin::PostController < AdminController def show post = Post.">
+<meta name=description content="github.com 結果的には破壊的変更をしてしまったのでPR送った経緯を書いておこうと思う。 もちろんこのままリリースされるかはわからないけど。 ちなみにPun">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -19,10 +14,10 @@ module Admin class PostPolicy ~~ end end class AdminController < ApplicationCont
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:description" content="github.com 結果的には破壊的変更をしてしまったのでPR送った経緯を書いておこうと思う。 もちろんこのままリリースされるかはわからないけど。 ちなみにPun">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="Punditにコミットした - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/2019/11/12/220609/">
 <meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
 <meta property="twitter:card" content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -158,6 +153,14 @@ Punditという素晴らしいGemをメンテしていただきありがとう�
 </div>
 </div>
 </article>
+<div class="pagination post-pagination">
+<div class="left pagination-item">
+<a href=/posts/2019/11/28/015035/>「食事する哲学者」で学ぶデッドロック</a>
+</div>
+<div class="right pagination-item">
+<a href=/posts/2019/11/02/201231/>「コーディングを支える技術」を読んだ</a>
+</div>
+</div>
 </main>
 <footer class=common-footer>
 <div class=common-footer-bottom>

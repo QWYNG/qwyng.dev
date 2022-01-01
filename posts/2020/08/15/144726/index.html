@@ -5,21 +5,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
 <title>増補改訂版 パーフェクト Ruby on Rails の感想 - QWYNG.dev</title>
-<meta name=description content=" みんな読んでるパーフェクト Ruby on Railsを読みました。
-
-パーフェクト Ruby on Rails 【増補改訂版】 (Perfect series)
-  作者:すがわらまさのり,前島真一,橋立友宏,五十嵐邦明,後藤優一   発売日: 2020/07/25  メディア: 単行本（ソフトカバー）     9章くらいまでは流し読みです。以下個人的に面白かったところを書きます。
-10章 コンテナを利用したRailsアプリケーション Gemfileのimageレイヤのキャッシュのところ参考になりました。この方法なら多少imageのレイヤーは増えるものの、本体コードに変更があってもGemfileに変更がない時にimage build中にbundle installしなくてすみますね。*1
-11章 複雑なドメインを表現する 値オブジェクト Railsでの値オブジェクトの具体的な活用例がのっていました。composed_ofを業務で使ったことはないのですが、ファットモデルでもう限界だってなってから使ったほうが良さそうな手法だと思いました。Rails開発だとできるだけ要件削って値オブジェクトにロジックがそれほどないくらいにシンプルにしたほうが良い気がします。 値オブジェクトってもう型っぽいしJVM言語とかGo使ったほうがいいのでは。
-サービスオブジェクト 何度実行しても結果整合性が取れる形にしたいですね（小並）
-12章 複雑なユースケースを表現する Railsにおける「レール」の正体と「レール」の限界と向き合い方という２つの節がよく言われる「Rails辛い」を言語化してあったのが良かったです。
-Railsにおける「モデル」は「記事の投稿が完了したらメールを送信する」といったユースケースロジックと、「記事には投稿者がいる」といったドメインモデルが全部「モデル」に置けることが「レール」の正体であり、Railsの初期開発においてまずファットモデルが良い方向だとされる*2のもこのためだと思います。
-よくフォームオブジェクトやプレゼンターがRails開発で用いられていますが、改めてユースケースをモデルから分離するための技法の一つだと言語化できるとモデルに書くべきロジックとフォームオブジェクトやプレゼンターに書くべきロジックの区別がつけやすくなるのではないでしょうか。 クリーンアーキテクチャやDDDの本は当然アーキテクチャの基本や考え方が中心になって話が進むのですが、パRailsはあくまでRails中心で話が進むので実務でも活かしやすい章だと思います。
-13章 複雑なデータ操作を実装する Concernがモデルに密接に結びつくのはまずい。最近そんなコードを書きました！！！！　すいませんでした！！！
-自分は値オブジェクトとかサービスオブジェクトに分離する前にConcern化の方を先に考えていたので参考になりました。
-*1:ドキュメントのこの節で詳しい挙動がのっていました Dockerfile のベスト・プラクティス — Docker-docs-ja 19.03 ドキュメント 
-*2:少なくとも僕の周りはそうだけど賛否両論あるかもしれない
-  ">
+<meta name=description content="みんな読んでるパーフェクト Ruby on Railsを読みました。 パーフェクト Ruby on Rails 【増補改訂版】 (Perfect series) 作者:すがわらまさのり,前島真一,橋立友宏,五十嵐">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -28,10 +14,10 @@ Railsにおける「モデル」は「記事の投稿が完了したらメール
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:description" content="みんな読んでるパーフェクト Ruby on Railsを読みました。 パーフェクト Ruby on Rails 【増補改訂版】 (Perfect series) 作者:すがわらまさのり,前島真一,橋立友宏,五十嵐">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="増補改訂版 パーフェクト Ruby on Rails の感想 - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/2020/08/15/144726/">
 <meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
 <meta property="twitter:card" content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -130,6 +116,14 @@ Railsにおける「モデル」は「記事の投稿が完了したらメール
 </div>
 </div>
 </article>
+<div class="pagination post-pagination">
+<div class="left pagination-item">
+<a href=/posts/2020/09/02/001344/>北陸先端科学技術大学院大学の科目履修生になりました</a>
+</div>
+<div class="right pagination-item">
+<a href=/posts/2020/07/26/223226/>東大計数工学科講義「AWSによるクラウド入門」の感想</a>
+</div>
+</div>
 </main>
 <footer class=common-footer>
 <div class=common-footer-bottom>

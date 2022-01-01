@@ -5,10 +5,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
 <title>メタプログラミングRuby ５章　クラス定義 - QWYNG.dev</title>
-<meta name=description content="特異メソッド カレントクラス クラスインスタンス変数 特異メソッド クラスマクロ    特異クラス 大統一理論 Object#extend    メソッドラッパー アラウンドエイリアス Refinements Prependラッパー   ５章のクイズ まとめ  特異メソッド カレントクラス Rubyのプログラムは常にカレントオブジェクトselfを持っているが、同時にカレントクラスも持っています。
-class C def m1 p self def m2; end end end class D < C; end obj = D.new obj.m1 # => <D:0x00007fc1e2865938> p C.instance_methods(false) # =>[:m1, :m2] p D.instance_methods(false) # => []  メタプログラミングRubyのサンプルに少し書き足してみました。 カレントオブジェクトはDクラスのインスタンスですが、カレントクラスはCクラスであることがわかりますね。よってm2はCクラスのインスタンスメソッドになっています。
-Classでクラスを開くことでカレントクラスを変えることができるのですが、この方法はカレントクラスにしたいクラスの名前がわからないと使えません。クラス名がわからない時に使うのが class_evalメソッドです。
-def add_method_to(a_class) a_class.class_eval do def m 'Hello!">
+<meta name=description content="特異メソッド カレントクラス クラスインスタンス変数 特異メソッド クラスマクロ 特異クラス 大統一理論 Object#extend メソッドラッパー アラウンドエイリアス Refinements Prep">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -17,10 +14,10 @@ def add_method_to(a_class) a_class.class_eval do def m 'Hello!">
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:description" content="特異メソッド カレントクラス クラスインスタンス変数 特異メソッド クラスマクロ 特異クラス 大統一理論 Object#extend メソッドラッパー アラウンドエイリアス Refinements Prep">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="メタプログラミングRuby ５章　クラス定義 - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/2019/01/26/160835/">
 <meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
 <meta property="twitter:card" content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -323,6 +320,14 @@ p "go".reverse! # =&gt; "OG"
 </div>
 </div>
 </article>
+<div class="pagination post-pagination">
+<div class="left pagination-item">
+<a href=/posts/2019/02/06/000906/>メタプログラミングRuby 6章コードを記述するコード</a>
+</div>
+<div class="right pagination-item">
+<a href=/posts/2019/01/18/150157/>メタプログラミングRuby 四章 ブロックの読書録</a>
+</div>
+</div>
 </main>
 <footer class=common-footer>
 <div class=common-footer-bottom>

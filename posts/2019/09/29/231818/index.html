@@ -5,28 +5,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
 <title>tokyo.ex#13 elixir本体ソースコードもくもくリード会に参加してEnum.tally書いてみた - QWYNG.dev</title>
-<meta name=description content="「tokyo.ex #13 elixir本体ソースコードもくもくリード会」に参加してきました。
-beam-lang.connpass.com
-Elixirのソースコードを事前にcloneしておいてMakefileなんかを見ながらエリクサーのコンパイルの流れを解説していただきました。
-speakerdeck.com
-speakerdeck.com
-Makefile is 何？から解説してくださっている発表もありElixir以前の段階で勉強になりました。
-
-ですです。
-lib/elixir/src/elixir.app.src に、elixir . app を作る前のテンプレートがあって、ごにょごにょされて
-lib/elixir/ebin/elixir.app に出力されております。
-— ハヤブサ@連勤術士 (@hayabusa333) September 29, 2019   ふんわり理解をつぶやいたら登壇者の@hayabusa333氏に補足してもらえました。ありがとうございます！
-　もくもく会  実際のもくもく会の内容は「Elixirのバージョンを書き換えよう」と「標準モジュールの追加」の2つがありました。
-Elixirのバージョンを書き換えよう ElixirのversionはrootディレクトリのVERSIONというファイルに記載されているのでこれを書き換えてmakeすればok
-
-やった！Elixirのversionハックできたぞ！！
-#tokyoex pic.twitter.com/41VVqUPy9U
-— とるめん (@qwyngg) September 29, 2019   実際にmakeしてみると
-~~~~~~ Recompile: src/elixir_aliases Recompile: src/elixir Generated elixir.app ==> bootstrap (compile) Compiled lib/elixir/lib/kernel.ex Compiled lib/elixir/lib/macro/env.ex ~~~~~~  スライドどおりelixir.appが作成されてbootsrapという関数が実行されているのがわかりますね。
-標準モジュールの追加 標準モジュールの追加ですが、自分はモジュールの追加ではなく組み込みモジュールのEnumに関数を一つ追加しました。Rubyで新しく実装されたtallyです。単にtallyが好きで書きたかっただけ
-
-標準ライブラリのEnumにRubyのtally生やしてみました
-#tokyoex pic.">
+<meta name=description content="「tokyo.ex #13 elixir本体ソースコードもくもくリード会」に参加してきました。 beam-lang.connpass.com Elixirのソースコードを事前にcloneしておい">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -35,10 +14,10 @@ Elixirのバージョンを書き換えよう Elixirのversionはrootディレ�
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:description" content="「tokyo.ex #13 elixir本体ソースコードもくもくリード会」に参加してきました。 beam-lang.connpass.com Elixirのソースコードを事前にcloneしておい">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="tokyo.ex#13 elixir本体ソースコードもくもくリード会に参加してEnum.tally書いてみた - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/2019/09/29/231818/">
 <meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
 <meta property="twitter:card" content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -175,6 +154,14 @@ Elixirがこういうメソッドどう考えてるのかはわかりません�
 </div>
 </div>
 </article>
+<div class="pagination post-pagination">
+<div class="left pagination-item">
+<a href=/posts/2019/10/20/193614/>Elixirにコントリビュートしてみよう！</a>
+</div>
+<div class="right pagination-item">
+<a href=/posts/2019/09/28/203720/>Elixirについて社内LTで発表したよ</a>
+</div>
+</div>
 </main>
 <footer class=common-footer>
 <div class=common-footer-bottom>

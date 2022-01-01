@@ -5,17 +5,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
 <title>Elixirにコントリビュートしてみよう！ - QWYNG.dev</title>
-<meta name=description content="最近ElixirにPRをだしてマージされました。
-github.com
-Elixir 1.10からEnum.frequencies/1とEnum.frequencies_by/2が多分生えます。
-iex> Enum.frequencies(~w{ant buffalo ant ant buffalo dingo}) %{&#34;ant&#34; => 3, &#34;buffalo&#34; => 2, &#34;dingo&#34; => 1} iex> Enum.frequencies_by(~w{aaa aA bbb cc c}, &String.length/1) %{3 => 2, 2 => 2, 1 => 1}  着想はRubyのtallyからです。
-Elixirは書いていてとても楽しい言語で,リンターやテスト等周辺のエコシステムも整っていて便利です。
-みなさんもぜひElixirの魅力にはまってElixirにコントリビュートしてもらいたいということで記事を書きました。 今回はElixirという言語そのものの仕様ではなく、elixir-lang/elixirへの実際にPRした時の流れを書きたいと思います。 後世のElixirを担うそこのあなたに少しでも役にたてば幸いです。
-elixir-lang/elixirの特徴 コントリビュートするという視点で見てelixir-lang/elixirの一番大きな特徴は実装がElixirで書かれているということです。Rubyの実装に貢献するにはC言語の知識が必要ですがElixirではElixirが書ければElixirが書けます！
-elixir-lang/elixirに貢献したい！どうすれば？ 公式のREADMEを読みましょう。 一番最新で正しい情報がのってます。とはいえそれだとこの記事終わってしまうので自分のやったことの流れを書きます。
- forkしてローカルにclone Enjoy Cording!  make compileして変更したexファイルをコンパイル   bin/elixir lib/elixir/test/elixir/変更したファイルのテスト.exsでテストを実行  mix formatでリンターを走らせます commit & push!  1,2,6はどのOSSでも当然ですね。 2の作業中に実際にREPLを叩きたい場合は、変更したファイルをコンパイルしてbin/iexで変更したコードが反映されたiexを起動することができます。
-以下のように変更したファイルだけコンパイルすることもできます。
-bin/elixirc lib/elixir/lib/string.">
+<meta name=description content="最近ElixirにPRをだしてマージされました。 github.com Elixir 1.10からEnum.frequencies/1とEnum.frequencies_by">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -24,10 +14,10 @@ bin/elixirc lib/elixir/lib/string.">
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:description" content="最近ElixirにPRをだしてマージされました。 github.com Elixir 1.10からEnum.frequencies/1とEnum.frequencies_by">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="Elixirにコントリビュートしてみよう！ - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/2019/10/20/193614/">
 <meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
 <meta property="twitter:card" content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -157,6 +147,14 @@ PRを出して提案されたコードは以下</p>
 </div>
 </div>
 </article>
+<div class="pagination post-pagination">
+<div class="left pagination-item">
+<a href=/posts/2019/11/02/201231/>「コーディングを支える技術」を読んだ</a>
+</div>
+<div class="right pagination-item">
+<a href=/posts/2019/09/29/231818/>tokyo.ex#13 elixir本体ソースコードもくもくリード会に参加してEnum.tally書いてみた</a>
+</div>
+</div>
 </main>
 <footer class=common-footer>
 <div class=common-footer-bottom>

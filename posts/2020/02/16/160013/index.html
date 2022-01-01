@@ -5,15 +5,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
 <title>graphql-rubyにコミットした - QWYNG.dev</title>
-<meta name=description content=" 業務でgraphql-rubyを色々いじってたら「おや？」と思う挙動があった。調べてみると同じ内容でissueを立てている人がいた。
-github.com
-graphql-rubyでは_idといった引数を受け取った時にloadsオプションを指定しているとHogeSchema.object_from_idを呼んでレコードを取り出す動作を簡潔に書くことができる。 だけど実はこれはinput_object(いくつかの引数の型をまとめて定義したもの）として定義しないと使えなかった。（Mutaionでも引数につかえるのだけれどMutationの引数は実質input_objectの定義なので同じ。）
-前回graphql-rubyをふんわり読んで色々脳内地図があり、issue内でもオーナーのrmosolgo氏が修正することに前向きそうだったのでPRを出した。
-github.com
- 内容はinput_type内の処理をそのままfiledの引数の処理に持ってきたのと、内部で使っているload_application_objectが呼び出し元の@contextのリーダーメソッドに依存していたので外部から注入できるように変更したというもの。
-rmosolgo氏が色々レビューをしてくれてありがたかった。（最後に氏みずからinput_object内の処理も少し書き換えるコミットを積んでくれた。不要にlodasに対して実行されていたコードが減ったので、PRの主目的以外の恩恵もあると思う）
-GraphQLは仕事で使い始めたばかりだけれどテストコードやらみると色々勉強になって良い。
- ">
+<meta name=description content="業務でgraphql-rubyを色々いじってたら「おや？」と思う挙動があった。調べてみると同じ内容でissueを立てている人がいた。 github.com gra">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -22,10 +14,10 @@ GraphQLは仕事で使い始めたばかりだけれどテストコードやら�
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:description" content="業務でgraphql-rubyを色々いじってたら「おや？」と思う挙動があった。調べてみると同じ内容でissueを立てている人がいた。 github.com gra">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="graphql-rubyにコミットした - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/2020/02/16/160013/">
 <meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
 <meta property="twitter:card" content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -93,6 +85,14 @@ GraphQLは仕事で使い始めたばかりだけれどテストコードやら�
 </div>
 </div>
 </article>
+<div class="pagination post-pagination">
+<div class="left pagination-item">
+<a href=/posts/2020/02/19/185934/>Ginza.rb#80でLTをしてきた</a>
+</div>
+<div class="right pagination-item">
+<a href=/posts/2020/01/22/213140/>みんなのコンピューターサイエンスとプログラマの数学を読んだ</a>
+</div>
+</div>
 </main>
 <footer class=common-footer>
 <div class=common-footer-bottom>

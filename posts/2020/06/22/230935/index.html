@@ -5,16 +5,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
 <title>Rustでgit stashを検索できるツールを書いた - QWYNG.dev</title>
-<meta name=description content="仕事でよくgit stashを使うのですが「あれ？あのstashどれだっけ？」が頻発します。git stash show stash@{n}を複数回行えば見つかるのですが、結構面倒くさいです。ということでstashを検索してくれるCLIツールを書きました。
-Rust the bookを読みながらRustで書いています。今年はRust通して静的型付け言語やっていきたい。 github.com
-https://crates.io/crates/harvest
-crates.ioとHomebrewに公開してるので、Rustつかってない人でもbrewからインストールすることができます。
- cargo
-cargo install harvest  Homebrew
-brew tap QWYNG/harvest
-brew install harvest   使い方 harvest <pattern> で今のブランチとstashの間のdiffからpatternを検索してヒットしたstashを以下の形式で標準出力します。
-harvest fn stash@{0}: WIP on master: beb5221 rm tests module src/bm.rs | 2 ++ 1 file changed, 2 insertions(+) stash@{1}: WIP on master: beb5221 rm tests module src/lib.rs | 1 + 1 file changed, 1 insertion(+)  patternといってますが正規表現とかは渡せません。
-なぜ検索結果の出力なのに検索した文字列が実際に書かれている箇所を抜き出さないかというと、僕がこっちのほうが見やすいと思ったからです。">
+<meta name=description content="仕事でよくgit stashを使うのですが「あれ？あのstashどれだっけ？」が頻発します。git stash show stash@{n}を複数回行えば見つかる">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -23,10 +14,10 @@ harvest fn stash@{0}: WIP on master: beb5221 rm tests module src/bm.rs | 2 ++ 1 
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:description" content="仕事でよくgit stashを使うのですが「あれ？あのstashどれだっけ？」が頻発します。git stash show stash@{n}を複数回行えば見つかる">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="Rustでgit stashを検索できるツールを書いた - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/2020/06/22/230935/">
 <meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
 <meta property="twitter:card" content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -124,6 +115,14 @@ stash@{1}: WIP on master: beb5221 rm tests module
 </div>
 </div>
 </article>
+<div class="pagination post-pagination">
+<div class="left pagination-item">
+<a href=/posts/2020/07/06/221937/>GitHubActionsでリリースとHomeBrewのformulaレポジトリ更新を一度に行う</a>
+</div>
+<div class="right pagination-item">
+<a href=/posts/2020/06/01/234640/>クリーンアーキテクチャ19章の問に答える</a>
+</div>
+</div>
 </main>
 <footer class=common-footer>
 <div class=common-footer-bottom>

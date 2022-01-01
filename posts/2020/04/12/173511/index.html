@@ -5,13 +5,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
 <title>ScalaとRubyで関数合成してみる - QWYNG.dev</title>
-<meta name=description content="N予備校でScala応用編を受講したのでRubyと比較して色々やってみたくなった。
-まえおき  ScalaはRubyと似てる気がする これは思想が似てる(オブジェクト思考と関数型の融合）だからなのかもしれないけどscalaとrubyって似てる気がするんだよな
-DSLかけたりとかシンプルな構文だったりとか
-— とるめん (@qwyngg) March 30, 2020   
-Rubyは関数（というか処理をまとめたProcかMethodのインスタンス）も他のオブジェクトと同等だし、Scalaも同様で関数の返り値や引数を関数にしたりできる。
-関数合成してみる 例えば文字列 &#34;true&#34;と”false&#34;をパースする関数を書くためにtruePaser、falsePaserそれぞれを定義して関数合成したいとする。 Rubyなら
-class ParseResult attr_accessor :value end class Success < ParseResult def initialize(value) @value = value end end class Failure < ParseResult def initialize; end end def true_parser(input) if input == &#34;true&#34; Success.new(true) else Failure.new end end def false_parser(input) if input == &#34;false&#34; Success.new(false) else Failure.new end end def select(left, right) Proc.">
+<meta name=description content="N予備校でScala応用編を受講したのでRubyと比較して色々やってみたくなった。 まえおき ScalaはRubyと似てる気がする これは思想が似">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -20,10 +14,10 @@ class ParseResult attr_accessor :value end class Success < ParseResult def initi
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:description" content="N予備校でScala応用編を受講したのでRubyと比較して色々やってみたくなった。 まえおき ScalaはRubyと似てる気がする これは思想が似">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="ScalaとRubyで関数合成してみる - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/2020/04/12/173511/">
 <meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
 <meta property="twitter:card" content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -190,6 +184,14 @@ puts select(true_parser_method, false_parser_method).call('hogehoge').value # �
 </div>
 </div>
 </article>
+<div class="pagination post-pagination">
+<div class="left pagination-item">
+<a href=/posts/2020/04/27/223737/>Gatsby.jsとTypeScriptでミニブログを作った</a>
+</div>
+<div class="right pagination-item">
+<a href=/posts/2020/03/17/003957/>N予備校が無料だったのでプログラミングコースをちょっとやってみた</a>
+</div>
+</div>
 </main>
 <footer class=common-footer>
 <div class=common-footer-bottom>

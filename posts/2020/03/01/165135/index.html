@@ -5,23 +5,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
 <title>「UNIXという考え方」を読んだ - QWYNG.dev</title>
-<meta name=description content=" 電子書籍がなかったので久々に物理で読んだ
-
-UNIXという考え方―その設計思想と哲学
-  作者:Mike Gancarz   発売日: 2001/02/01  メディア: 単行本      UNIXの定理への感想 小さいものは美しい 小さいとわかりやすく、保守しやすい、組み合わせやすい、計算機のリソースにも優しいということ。僕はプログラム単体でこれを意識していることはないけど、関数単位ではほとんどのプログラマがこの定理は大事だというだろう。
-一つのプログラムには一つのことをうまくやらせる いわく関心の分離。やりたいことの本質のみを行うことが柔軟性につながる。lsコマンドも本来は複数の列に整理して出力すべきではないらしい。 これもプログラマならまず意識していることだと思う。一つの関数、一つのモジュールには一つの機能、わかりやすい変数名と共にコードの基本な気がする（かつ難しい）。
-できるだけ早く試作をつくる これもアジャイル的な言葉で最近のエンジニアは重視している考え方だと思う。ソフトウェアはつくるのではなく育てて行くものだという考え方。 この本ではUNIXの成長過程と共にこの考え方が紹介されていた。ソフトウェアには3つの段階しかなく、若年期、成熟期、老年期しかない。最近だとrailsは老年期にはいってきているのだろうか。
-最近、自分の仕事でも早期の試作の利点を体感することがあった。新機能を開発で議論をする時に、チームメンバーがそれぞれの頭の中の機能で話しすぎてそれぞれの議論が噛み合わないという問題があった。けれど、デザイナーの方がモックを作ってくれるようになった途端議論がスムーズになったという体験だ。具体的な図面はチームで議論する上で強力な標識となることをこのとき認識した。
-この定理でのドキュメントに関する考え方も面白かった。ドキュメントを詳細に書くことが正義だと思っていたが、ドキュメントも育てるものであり、ちょっとしたことでも芽を残すことを意識して「気楽に」ドキュメントを残したほうが結果的に良いのかなとも考えた。
-効率より移植性 ハードウェアは日々移り変わるので移植しにくいソフトウェアは長生きしないというもの。Webで色々やっているとHTTPでソフトウェアを配るのが現実的になってきていると思う。それこそChromeBookが体現していて、HTTPとその解釈ができるブラウザさえあれば他のサービスは全てブラウザを通して使える。サーバー単体のハードウェアではなく通信規格にいかにのっかれるかという時代に突入している気がする。いつかHTTPを超えるなにかが出て人々はそれをつかって情報をやり取りするようになるのだろうか。
-数値データはASCIIフラットファイルに保存する。 「効率より移植性」と同様の感想をもった。
-ソフトウェアを梃子として扱う 車輪の再発明は良くないというもの。そして人類全体でソフトウェアを複利させていこうとい考え方だと思う。なにも開発にOSSを使っていくだけじゃなく日々の作業で人のソフトウェアを使っていこうという気にさせられた。
- シェルスクリプトによって梃子の効果と移植性を高める 「ソフトウェアを梃子として扱う」と同じ
-過度の対話的インターフェイスをさける なるほど言われてみると確かに、という話には感じる。ユーザーを束縛するインターフェイスはソフトウェアを組み合わせにくくし、バックグラウンドで実行させたりもできない。コマンドをつくる側からするとこれも重要な観点の一つなんだろう。RESTがステートレスを基本に作られてなければこれほど世界でWebサービスは流行らなかった気がするし納得。
-全てのプログラムをフィルタとして設計する それはそう。フィルタとしての機能を単独にするべきということにつながる。
-まとめ 特に前半の「小さいものは美しい」、「一つのプログラムには一つのことをうまくやらせる」、「できるだけ早く試作をつくる」、「効率より移植性」は全てのソフトウェア開発で役にたつ考え方だと感じた。
-あとアジャイル開発で「ユーザーの価値を考える」をそのまま「ユーザーにとっての価値を増やす」にすると機能を増やしすぎてユーザーの価値がぼやけるという問題もこれから起きるのかなぁとか思ったりした。
- ">
+<meta name=description content="電子書籍がなかったので久々に物理で読んだ UNIXという考え方―その設計思想と哲学 作者:Mike Gancarz 発売日: 2001/02/01 メディア: 単行本 UNIXの定理への">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -30,10 +14,10 @@ UNIXという考え方―その設計思想と哲学
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:description" content="電子書籍がなかったので久々に物理で読んだ UNIXという考え方―その設計思想と哲学 作者:Mike Gancarz 発売日: 2001/02/01 メディア: 単行本 UNIXの定理への">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="「UNIXという考え方」を読んだ - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/2020/03/01/165135/">
 <meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
 <meta property="twitter:card" content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -137,6 +121,14 @@ UNIXという考え方―その設計思想と哲学
 </div>
 </div>
 </article>
+<div class="pagination post-pagination">
+<div class="left pagination-item">
+<a href=/posts/2020/03/08/133900/>League of legendsでダイヤモンドに昇格した。サポートでsoloQを勝ちぬくには</a>
+</div>
+<div class="right pagination-item">
+<a href=/posts/2020/02/28/213927/>一人暮らしリモートワークで本当に捗るもの、それは沼</a>
+</div>
+</div>
 </main>
 <footer class=common-footer>
 <div class=common-footer-bottom>

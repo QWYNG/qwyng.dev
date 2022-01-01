@@ -5,17 +5,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
 <title>はてなブログからHugo + GitHub Pagesに引っ越した - QWYNG.dev</title>
-<meta name=description content="去年の振り返りで書いた通りはてなブログが嫌になってきたのでGithub pagesに移行した。
-このテーマを書きましょう！みたいなキャンペーンが押し付けがましく感じたり、ログイン導線がめんどかったりが嫌になった原因。エディタがもっさりしていて辛かったのもある。
-ドメイン(qwyng.dev)の理由 # せっかくなのでちゃんとドメインも買った。qwy.ngはナイジェリアに在住する必要があり、qwyn.ggは年間10kもするので仕方なしでqwyng.devにした。 devドメインだとHSTSが効くというメリットも（一応）存在するのでまぁいいでしょう。
-Hugoにした理由 # 静的サイトジェネレーターの選定だが、yarnやnpmはターミナルにあんまり入力したくない1のでJS系統の静的サイトジェネレーターはパス、いつもはRubyがメインだしGithub Pagesにホストしてもらう予定だったのでjekyllが良さそうと考えたがイマイチ好みのテンプレートが見つからなかった。最終的に好みのテンプレートを見つけたのとlive reloadもちゃんとしていたのでHugoにした。
-GitHub Pagesにした理由 # 前提として記事を投稿したら草が生えたほうがモチベがでそうなのでGitHubでソースをホスティングする。スケーリングがネックになることはまぁ無いだろうと思うので利便性重視で選ぶことにした。
-Hugoのデプロイとホスティングに関するドキュメントを読むとGitHub PagesがGitHub ActionとCNAMEの追加だけで良さそうだったのでそれにした。触るドメインは少ないほうが楽。 他は単純にレポジトリ以外のサイトで設定しなきゃいけないしツールチェーンが別に必要だったりしたのでやめた。
-はてなブログからの引っ越し方法 # はてなブログ hugo 移行でググってたらこちらの記事からmosuke5/hatena-blog-parserというはてなブログのエクスポート機能からmarkdownに変換してくれるRubyスクリプトを見つけたので使わせて貰った。昔のスクリプトなので多少警告はでたものの問題なく使用できた。製作者様ありがとうございます。最高です。
-まとめ # というわけで新年の目標である「自分のドメインでブログを解説する」を早速達成したので偉い！
-あとみなさんあけましておめでとうございます。
-  ルートディレクトリに自分が把握できない文字列が大量に書き込まれて不安になるだけなので完全に僕が悪い。&#160;&#8617;&#xfe0e;
-   ">
+<meta name=description content="去年の振り返りで書いた通りはてなブログが嫌になってきたのでGithub pagesに移行した。 このテーマを書きましょう！みたいなキャンペーンが">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -24,10 +14,10 @@ Hugoのデプロイとホスティングに関するドキュメントを読む�
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:description" content="去年の振り返りで書いた通りはてなブログが嫌になってきたのでGithub pagesに移行した。 このテーマを書きましょう！みたいなキャンペーンが">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="はてなブログからHugo + GitHub Pagesに引っ越した - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/2021-1-1/">
 <meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
 <meta property="twitter:card" content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -83,19 +73,19 @@ Hugoのデプロイとホスティングに関するドキュメントを読む�
 devドメインだとHSTSが効くというメリットも（一応）存在するのでまぁいいでしょう。</p>
 <h2 id=hugoにした理由>Hugoにした理由
 <span><a href=#hugo%e3%81%ab%e3%81%97%e3%81%9f%e7%90%86%e7%94%b1>#</a></span>
-</h2><p>静的サイトジェネレーターの選定だが、yarnやnpmはターミナルにあんまり入力したくない<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>のでJS系統の静的サイトジェネレーターはパス、いつもはRubyがメインだしGithub Pagesにホストしてもらう予定だったのでjekyllが良さそうと考えたがイマイチ好みのテンプレートが見つからなかった。最終的に好みのテンプレートを見つけたのとlive reloadもちゃんとしていたのでHugoにした。</p>
+</h2><p>静的サイトジェネレーターの選定だが、yarnやnpmはターミナルにあんまり入力したくない<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>のでJS系統の静的サイトジェネレーターはパス、いつもはRubyがメインだしGithub Pagesにホストしてもらう予定だったのでjekyllが良さそうと考えたがイマイチ好みのテンプレートが見つからなかった。最終的に好みのテンプレートを見つけたのでHugoにした。</p>
 <h2 id=github-pagesにした理由>GitHub Pagesにした理由
 <span><a href=#github-pages%e3%81%ab%e3%81%97%e3%81%9f%e7%90%86%e7%94%b1>#</a></span>
-</h2><p>前提として記事を投稿したら草が生えたほうがモチベがでそうなのでGitHubでソースをホスティングする。スケーリングがネックになることはまぁ無いだろうと思うので利便性重視で選ぶことにした。<br>
+</h2><p>前提として記事を投稿したら草が生えたほうがモチベが上がりそうなのでソースはGitHubでホスティングする。ビルド成果物のホスティング先はスケーリングがネックになることは考えづらいので利便性重視で選んだ。<br>
 <a href=https://gohugo.io/hosting-and-deployment>Hugoのデプロイとホスティングに関するドキュメント</a>を読むとGitHub PagesがGitHub ActionとCNAMEの追加だけで良さそうだったのでそれにした。触るドメインは少ないほうが楽。
-他は単純にレポジトリ以外のサイトで設定しなきゃいけないしツールチェーンが別に必要だったりしたのでやめた。</p>
+他は単純にソースコードホスティングしているサイト以外で何かしら設定しなきゃいけないしツールチェーンが別に必要だったりしたのでやめた。</p>
 <h2 id=はてなブログからの引っ越し方法>はてなブログからの引っ越し方法
 <span><a href=#%e3%81%af%e3%81%a6%e3%81%aa%e3%83%96%e3%83%ad%e3%82%b0%e3%81%8b%e3%82%89%e3%81%ae%e5%bc%95%e3%81%a3%e8%b6%8a%e3%81%97%e6%96%b9%e6%b3%95>#</a></span>
-</h2><p><code>はてなブログ hugo 移行</code>でググってたら<a href=https://yusukebe.com/posts/2020/hatenablog-to-githubpages/>こちらの記事</a>から<a href=https://github.com/mosuke5/hatena-blog-parser>mosuke5/hatena-blog-parser</a>というはてなブログのエクスポート機能からmarkdownに変換してくれるRubyスクリプトを見つけたので使わせて貰った。昔のスクリプトなので多少警告はでたものの問題なく使用できた。製作者様ありがとうございます。最高です。</p>
+</h2><p><code>はてなブログ hugo 移行</code>でググってたら<a href=https://yusukebe.com/posts/2020/hatenablog-to-githubpages/>こちらの記事</a>から<a href=https://github.com/mosuke5/hatena-blog-parser>mosuke5/hatena-blog-parser</a>というはてなブログのエクスポートファイルからmarkdownに変換してくれるRubyスクリプトを見つけたので使わせて貰った。昔のスクリプトなので多少警告はでたものの問題なく使用できた。製作者様ありがとうございます。最高です。</p>
 <h3 id=まとめ>まとめ
 <span><a href=#%e3%81%be%e3%81%a8%e3%82%81>#</a></span>
-</h3><p>というわけで新年の目標である「自分のドメインでブログを解説する」を早速達成したので偉い！<br>
-あとみなさんあけましておめでとうございます。</p>
+</h3><p>というわけで2022年の目標である「自分のドメインでブログを開設する」を早速達成したので偉い！<br>
+あと基本的に今までですます口調だったんだけど、なんか自分で読んでて変に感じるようになってきたのでしばらくは「だ・である」で書いていくことにした。</p>
 <section class=footnotes role=doc-endnotes>
 <hr>
 <ol>
@@ -113,6 +103,13 @@ devドメインだとHSTSが効くというメリットも（一応）存在す�
 </div>
 </div>
 </article>
+<div class="pagination post-pagination">
+<div class="left pagination-item disabled">
+</div>
+<div class="right pagination-item">
+<a href=/posts/2021/12/30/191311/>2021年の振り返り</a>
+</div>
+</div>
 </main>
 <footer class=common-footer>
 <div class=common-footer-bottom>

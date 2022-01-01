@@ -5,16 +5,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
 <title>OSSコードリーディング Batch-loader - QWYNG.dev</title>
-<meta name=description content="Batch-loaderというRubyでバッチローディングをするGemを読んで、そのきれいな実装に感心したのでまとめた。
-github.com
-実装自体はシンプルだけど、特定のGemに依存しているわけではないので使い方に融通が効くし、困った時にトラブルシューティングしやすい。
-この記事は社内で一度発表したものだけど、上司に確認したらブログに載せても問題ないとのことだったので載せる。
-README、Gem作成者のスライドの２つを読むのが一番という説がある。
-Batch-loaderがやりたいこと そもそもこのGem何がしたいの？という人はこの記事を読むといい。
-Rails: N+1クエリを「バッチング」で解決するBatchLoader gem（翻訳）
-DBやHTTPリクエストのN + 1問題をbatch load(一塊りでロードする）で解消するというもの。リクエストされた引数をまとめておき、値とマッピングだけコレクションしておき、実際の値の取得は最後に解決しようとする。
-def load_user(post) BatchLoader.for(post.user_id).batch do |user_ids, loader| User.where(id: user_ids).each { |user| loader.call(user.id, user) } end end posts = Post.where(id: [1, 2, 3]) # SELECT * FROM posts WHERE id IN (1, 2, 3) users = posts.map do |post| load_user(post) end puts users # SELECT * FROM users WHERE id IN (1, 2, 3)  load_userの中身がBatch-loaderの基本的な使い方。
-この記事では大きく分けて">
+<meta name=description content="Batch-loaderというRubyでバッチローディングをするGemを読んで、そのきれいな実装に感心したのでまとめた。 github.com 実装自体はシンプル">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -23,10 +14,10 @@ def load_user(post) BatchLoader.for(post.user_id).batch do |user_ids, loader| Us
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:description" content="Batch-loaderというRubyでバッチローディングをするGemを読んで、そのきれいな実装に感心したのでまとめた。 github.com 実装自体はシンプル">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="OSSコードリーディング Batch-loader - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/2020/04/29/161905/">
 <meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
 <meta property="twitter:card" content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -306,6 +297,14 @@ end
 </div>
 </div>
 </article>
+<div class="pagination post-pagination">
+<div class="left pagination-item">
+<a href=/posts/2020/05/04/000744/>Atcoderで茶色になりました</a>
+</div>
+<div class="right pagination-item">
+<a href=/posts/2020/04/27/223737/>Gatsby.jsとTypeScriptでミニブログを作った</a>
+</div>
+</div>
 </main>
 <footer class=common-footer>
 <div class=common-footer-bottom>

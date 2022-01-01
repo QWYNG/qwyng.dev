@@ -5,23 +5,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
 <title>個人開発用マシンをThinkPad X1 Carbon with Ubuntuにしました - QWYNG.dev</title>
-<meta name=description content="経緯 個人の開発マシンはプログラミング始めた去年の6月にMBP2014の13インチをヤフオクで落札して以来ずっとそれを使っていたのですが、5月末くらいにコーヒーを盛大にこぼしてトラックパッドが使用不能に…。
-最新のMBPの13インチか迷ったけどLinux使ってみたかったのでThinkPad x1 CarbonにUbuntu入れて使うことにしました。
-ThinkPad x1 Carbonにした理由は
-  Linuxを入れている報告が多数あること  ThinkPadかっこいいという勝手なイメージ コーヒーとか多少こぼしても大丈夫な堅牢性
-(この動画最高ThinkPad - 史上最強の証明テスト - YouTube)  です。いろいろいれたら17万くらいになっちゃいました。
-スペック  Coffee Lake Core i7-8550U 16GB RAM 14.0型WQHD液晶 M.2 SSD180 (ぶっちゃけ200もいらないので減らした） 英字キーボード  こうみるとそんなに盛ってないですね
-ふぁーすと・いんぷれっしょん ロゴがかっこいいカーボンの天板の高級感と手触りは◎。キーボードも噂に違わぬ押しやすさです。 そしてなんといっても軽量です。前回のMBP2014が13インチが1.57 kg、職場のMBP2017の15インチが1.83kg。比較してThinkPad X1 Carbon G6は1.13kg。持つとわかりますが本当に軽いです。あと端子がまとも
-スピーカーが背面にあるのだけ悲しい
- Ubuntu入れてみて ThinkPadにLinuxってポピュラーな使い方だし大丈夫だろ〜と思ってたのですが結構苦労しました…
-トラックパッドとトラックポイント（赤ポチ）が反応せず、ググりまくって色々試してもどこか治るとどこか動かなくなる状態で途方にくれていました。
-結局18.04から19.04にアップデートしたら治ったので良くわからない。 18.04でも使いたいって人がいたらこれをいれるのがいいかと思います。 https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1791427/comments/94
-スリープ状態でもバッテリーがガンガン消費される問題もありました。BIOSでLinux用の設定に変えれば解決しますが。
-現在もbluetoothの音質がかなり悪く、なんとかならんかと試行錯誤しています。
- Macとの違い そんなにないです。⌘キーって便利だったんだなぁというくらい。 tweak tool入れてaltをctrにするといい感じ。現状はかなり快適です。
-Dockerいれるのに19.04だと公式通りにやってもうまく行かなくてちょっとハマりましたが、Dockerそのものは明らかにMacより軽いです。キビキビ。 ワークスペースやウインドウの管理なんかも楽ですしスムーズです。
-とりあえず入れて正常に動くことを確認したもの
- rbenv及びruby  chrome rubymine Simplenote copyq Spotify  chrome入れれば環境はほとんど同期したも同然だし、シェルもfish使ってるのでチョチョっとプラグイン入れるだけですみました。 今はlinuxbrewもあるのでこれからも困ることはそんなにないかと思います。 テーマもデフォルトで十分いい感じだと思います">
+<meta name=description content="経緯 個人の開発マシンはプログラミング始めた去年の6月にMBP2014の13インチをヤフオクで落札して以来ずっとそれを使っていたのですが、5月">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -30,10 +14,10 @@ Dockerいれるのに19.04だと公式通りにやってもうまく行かなく
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:description" content="経緯 個人の開発マシンはプログラミング始めた去年の6月にMBP2014の13インチをヤフオクで落札して以来ずっとそれを使っていたのですが、5月">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="個人開発用マシンをThinkPad X1 Carbon with Ubuntuにしました - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/2019/07/08/083000/">
 <meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
 <meta property="twitter:card" content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -149,6 +133,14 @@ Dockerいれるのに19.04だと公式通りにやってもうまく行かなく
 </div>
 </div>
 </article>
+<div class="pagination post-pagination">
+<div class="left pagination-item">
+<a href=/posts/2019/07/15/205709/>クラスメソッドをPryのコマンドにできるGemをリリースしました</a>
+</div>
+<div class="right pagination-item">
+<a href=/posts/2019/06/19/232907/>SQL実践入門を読みました</a>
+</div>
+</div>
 </main>
 <footer class=common-footer>
 <div class=common-footer-bottom>

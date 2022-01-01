@@ -5,17 +5,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
 <title>B+Treeインデックス　（webエンジニアのためのデータベース技術[実践]入門） - QWYNG.dev</title>
-<meta name=description content=" はじめに webエンジニアのためのデータベース技術[実践]入門を読み進めているのですが、なかなか腹に落ちる感じがないので少量ずつ文字にして理解を勧めていきたい
-  B+Treeインデックス ルートブロック、ブランチブロック、リーフブロックという木のような構造をもっているデータベースのインデックス構造の一つ。リーフブロックに実際のデータの格納位置の情報があり、ルート、ブランチにはそれぞれ下のブロックの検索のキーに対して対象のブロックはどこにあるのかという情報のみある。
-ハッシュインデックスの進化版？
-https://commons.wikimedia.org/wiki/File:Btree.svg#/media/File:Btree.svg   出典 B+木 - Wikipedia
-この図はルートとブランチが兼ねているが、d1を検索するにはまずルートブロックの3以下を選びリーフブロックから1をみつけだして(scanして)d1の場所を見つけるという流れになる。
-分岐を多く作れるので枝分かれを2つしか作れない二本木構造より階層を浅くでき、アクセス回数を減らすことができる。
- B+TreeとB-Tree B-Treeというインデックス構造もあり、これは途中のブランチにも値を持つことがあるデータ構造です。リーフまでアクセスしなくても値を見つけることが利点ですが、このB-Treeと比較してB+Treeは範囲検索する時に大きなメリットを持ちます。
-上の図を見ればわかりますがB+Treeでは目的の値がそのリーフだけではすべて見つからない時には隣のリーフへジャンプして値を探しに行っています。リーフにしか値はないので途中でブランチブロックに戻ったりする必要はありません。B-Treeはブランチにも値があるかもしれないのでブランチやリーフを行ったり来たりして値の存在確認をしなくてはならない
- B+Treeインデックスのメリット 二本木（２又にのみ別れていく木の構造）よりも階層を浅くでき、さらにブランチにデータの格納場所を持たないため一度リーフにたどり着けば範囲検索でも隣のリーフのみ探せば良いので高速。
-インデックスの”デファクト”とのこと。デファクトスタンダードってことかな？
-  ">
+<meta name=description content="はじめに webエンジニアのためのデータベース技術[実践]入門を読み進めているのですが、なかなか腹に落ちる感じがないので少量ずつ文字にして理解">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -24,10 +14,10 @@ https://commons.wikimedia.org/wiki/File:Btree.svg#/media/File:Btree.svg   出�
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:description" content="はじめに webエンジニアのためのデータベース技術[実践]入門を読み進めているのですが、なかなか腹に落ちる感じがないので少量ずつ文字にして理解">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="B+Treeインデックス　（webエンジニアのためのデータベース技術[実践]入門） - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/2018/12/20/230622/">
 <meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
 <meta property="twitter:card" content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -108,6 +98,14 @@ https://commons.wikimedia.org/wiki/File:Btree.svg#/media/File:Btree.svg   出�
 </div>
 </div>
 </article>
+<div class="pagination post-pagination">
+<div class="left pagination-item">
+<a href=/posts/2018/12/23/182547/>正規化理論 （第三正規形まで）</a>
+</div>
+<div class="right pagination-item">
+<a href=/posts/2018/12/04/235710/>RESTとはなにか　webを支える技術を読んで</a>
+</div>
+</div>
 </main>
 <footer class=common-footer>
 <div class=common-footer-bottom>
