@@ -1,0 +1,47 @@
+baseURL = "https://qwyng.dev"
+languageCode = "ja"
+title = "QWYNG.dev"
+theme = "anubis"
+paginate = 6
+googleAnalytics = "UA-110687917-3"
+[author]
+name = "QWYNG"
+
+[params]
+author = "QWYNG"
+description = ""
+dateFormat = "2006-01-02"
+paginationSinglePost = false
+style = "light-without-switcher"
+readMore = false
+disableSummary = true
+
+[[params.social]]
+id = "github"
+name = "QWYNG"
+[[params.social]]
+id = "twitter"
+name = "qwyngg"
+[[params.social]]
+id = "email"
+name = "ikusawasi@gmail.com"
+
+[menu]
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 1
+[[menu.main]]
+name = "記事一覧"
+identifier = "記事一覧"
+url = "/posts/"
+weight = 3
+[[menu.main]]
+name = "RSS"
+identifier = "rss"
+url = "/index.xml"
+weight = 4
+
+[markup.goldmark.renderer]
+unsafe = true
