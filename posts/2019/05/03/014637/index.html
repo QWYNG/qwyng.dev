@@ -1,0 +1,164 @@
+<!doctype html><html lang=ja data-theme>
+<head>
+<meta charset=utf-8>
+<meta name=HandheldFriendly content="True">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=referrer content="no-referrer-when-downgrade">
+<title>大規模サービス技術入門を読みました。ついでにRubyでVB Codeを実装してみた - QWYNG.dev</title>
+<meta name=description content=" 
+[Web開発者のための]大規模サービス技術入門 ―データ構造、メモリ、OS、DB、サーバ/インフラ (WEB+DB PRESS plusシリーズ)
+  作者: 伊藤直也,田中慎司  出版社/メーカー: 技術評論社   発売日: 2010/07/07  メディア: 単行本（ソフトカバー）  購入: 80人 クリック: 1,849回 この商品を含むブログ (133件) を見る     大規模技術サービス入門という本を読みました。扱うデータの総量が大規模になってきたときに想定される問題、その問題に対処する具体的な方法がふんだんに書かれています。
+株式会社はてなさんでやっている（いた？）インターンシップの内容がベースになっています。そのため、ある程度複雑な考え方や用語等も説明やイメージを織り交ぜて記載されています。
+重要だと思った点は以下の3つです。
+ メモリ、OS、IOの動作といった低レイヤの知識 DBやアプリケーションのサーバーの構成 計算量を減らすにはアルゴリズムの知識が必要  メモリ、OS、IOの動作といった低レイヤの知識は重要 まず本書の最初には、OS、メモリ、仮想メモリ、Linuxのページキャッシュ、そしてそれらにおける具体的な速度について丁寧な解説がありました。
+「メモリ内で計算できないこと」が、いかにパフォーマンスに影響するかが具体的にイメージできるように解説されていました。
+ディスクI/Oが多くなると重くなる。メモリの消費は少ないのがベターです。
+ちょうど基本情報を受ける前に読んでいたので余計刺さりました。
+DBやアプリケーションのサーバーの構成 スケールが難しいDBサーバーをスケールさせるための構成。その他にもボットのための専用サーバーを用意したり、冗長性のためのDBサーバーのマルチマスタ等具体的な構成が数多く紹介されています。
+また、手法に対してメリットだけでなくデメリットも紹介されていました。例えばDBのパーティショニングを使えばDBの分散やキャッシュの効率は高まりますが、その分運用は複雑になります。メモリを増やすで対応できないかを検討する必要もありますし、運用を別の技術で解決できないかを考える必要もあります。（今はクラウドが主流だとは思うので別の知識も必要そうですが）
+計算量を減らすにはアルゴリズムの知識が必要 二分木探索、n-gramインデックスの具体的な利用方法が紹介されていました。
+また、メモリにキャッシュしやすくするための圧縮や計算量が大きくなりがちな全文検索については詳細に解説されています。 実際にPerlで書かれたサンプルコードとともにVBCodeや転地インデックスといって手法をコードに落としこんでいるところまで書いてあります。 自分も圧縮のときに紹介されていたVBCodeについてRubyで実装してみました。自分のコードで圧縮されたファイルっていいですね。
+github.com IOクラスとかシリアライザとかまだまだ勉強不足ですね。
+まとめ 大規模サービスについて想定される問題についての現実的な解決策が惜しげもなく公開されている良書でした。 一番なるほどと思った部分を引用します。
+結局、原因がわかればその原因に対する対応方法は自明なのです。この自明になった対応方法を実践することが、チューニングにほかなりません。
+ サービスが大きくなってきたときにボトルネックになっているのはなんなのか、メモリにキャシュしきれてないのか、アルゴリズムが悪くディスクI/Oが多発しているせいなのか、はたまた外部のボット等全く違う要素なのか、正確に判断することが重要です。
+そのためにはアプリケーションがどのように動いているか？という基本的かつ全般的なコンピューターやインフラの知識が必要だと感じました。
+低レイヤやインフラだけでなく、ボットやリクエストの多いAPIに対して専用のサーバーを用意するといった、局所性を理解した構成のためには、サービスの理解も重要です。サービスを提供するって大変ですね。
+ ">
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=manifest href=/site.webmanifest>
+<link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5>
+<meta name=msapplication-TileColor content="#da532c">
+<meta name=theme-color content="#ffffff">
+<link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
+<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
+<meta property="twitter:card" content="summary">
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
+</head>
+<body>
+<a class=skip-main href=#main>Skip to main content</a>
+<div class=container>
+<header class=common-header>
+<div class=header-top>
+<h1 class=site-title>
+<a href=/>QWYNG.dev</a>
+</h1>
+<ul class=social-icons>
+<li>
+<a href=https://github.com/QWYNG title=Github rel=me>
+<span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentcolor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6.0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6.0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3.0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1.0-6.2-.3-40.4-.3-61.4.0.0-70 15-84.7-29.8.0.0-11.4-29.1-27.8-36.6.0.0-22.9-15.7 1.6-15.4.0.0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5.0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9.0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4.0 33.7-.3 75.4-.3 83.6.0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6.0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9.0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span>
+</a>
+</li>
+<li>
+<a href=https://twitter.com/qwyngg title=Twitter rel=me>
+<span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645.0 138.72-105.583 298.558-298.558 298.558-59.452.0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055.0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421.0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391.0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04.0-57.828 46.782-104.934 104.934-104.934 30.213.0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+</span>
+</a>
+</li>
+<li>
+<a href=mailto:ikusawasi@gmail.com title=Email rel=me>
+<span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M464 64H48C21.49 64 0 85.49.0 112v288c0 26.51 21.49 48 48 48h416c26.51.0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 4e2V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V4e2H48z"/></svg>
+</span>
+</a>
+</li>
+</ul>
+</div>
+<nav>
+<a href=https://qwyng.dev/about/ title>About</a>
+<a href=https://qwyng.dev/posts/ title>記事一覧</a>
+<a href=https://qwyng.dev/index.xml title>RSS</a>
+</nav>
+</header>
+<main id=main tabindex=-1>
+<article class="post h-entry">
+<div class=post-header>
+<header>
+<h1 class="p-name post-title">大規模サービス技術入門を読みました。ついでにRubyでVB Codeを実装してみた</h1>
+</header>
+</div>
+<div class="content e-content">
+<body>
+<p></p>
+<div class=hatena-asin-detail>
+<a href=http://www.amazon.co.jp/exec/obidos/ASIN/4774143073/hatena-blog-22/><img src=https://images-fe.ssl-images-amazon.com/images/I/51xlTEcCILL._SL160_.jpg class=hatena-asin-detail-image alt="[Web開発者のための]大規模サービス技術入門 ―データ構造、メモリ、OS、DB、サーバ/インフラ (WEB+DB PRESS plusシリーズ)" title="[Web開発者のための]大規模サービス技術入門 ―データ構造、メモリ、OS、DB、サーバ/インフラ (WEB+DB PRESS plusシリーズ)"></a><div class=hatena-asin-detail-info>
+<p class=hatena-asin-detail-title><a href=http://www.amazon.co.jp/exec/obidos/ASIN/4774143073/hatena-blog-22/>[Web開発者のための]大規模サービス技術入門 ―データ構造、メモリ、OS、DB、サーバ/インフラ (WEB+DB PRESS plusシリーズ)</a></p>
+<ul>
+<li>
+<span class=hatena-asin-detail-label>作者:</span> <a class=keyword href=http://d.hatena.ne.jp/keyword/%B0%CB%C6%A3%C4%BE%CC%E9>伊藤直也</a>,田中慎司</li>
+<li>
+<span class=hatena-asin-detail-label>出版社/メーカー:</span> <a class=keyword href=http://d.hatena.ne.jp/keyword/%B5%BB%BD%D1%C9%BE%CF%C0%BC%D2>技術評論社</a>
+</li>
+<li>
+<span class=hatena-asin-detail-label>発売日:</span> 2010/07/07</li>
+<li>
+<span class=hatena-asin-detail-label>メディア:</span> 単行本（ソフトカバー）</li>
+<li>
+<span class=hatena-asin-detail-label>購入</span>: 80人 <span class=hatena-asin-detail-label>クリック</span>: 1,849回</li>
+<li><a href=http://d.hatena.ne.jp/asin/4774143073/hatena-blog-22 target=_blank>この商品を含むブログ (133件) を見る</a></li>
+</ul>
+</div>
+<div class=hatena-asin-detail-foot></div>
+</div>
+<p>大規模技術サービス入門という本を読みました。扱うデータの総量が大規模になってきたときに想定される問題、その問題に対処する具体的な方法がふんだんに書かれています。<br>
+<a class=keyword href=http://d.hatena.ne.jp/keyword/%B3%F4%BC%B0%B2%F1%BC%D2%A4%CF%A4%C6%A4%CA>株式会社はてな</a>さんでやっている（いた？）<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%BF%A1%BC%A5%F3%A5%B7%A5%C3%A5%D7>インターンシップ</a>の内容がベースになっています。そのため、ある程度複雑な考え方や用語等も説明やイメージを織り交ぜて記載されています。</p>
+<p>重要だと思った点は以下の3つです。</p>
+<ul>
+<li>メモリ、OS、IOの動作といった低レイヤの知識</li>
+<li>DBやアプリケーションのサーバーの構成</li>
+<li>計算量を減らすには<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A2%A5%EB%A5%B4%A5%EA%A5%BA%A5%E0>アルゴリズム</a>の知識が必要</li>
+</ul>
+<h1>メモリ、OS、IOの動作といった低レイヤの知識は重要</h1>
+<p>まず本書の最初には、OS、メモリ、<a class=keyword href=http://d.hatena.ne.jp/keyword/%B2%BE%C1%DB%A5%E1%A5%E2%A5%EA>仮想メモリ</a>、<a class=keyword href=http://d.hatena.ne.jp/keyword/Linux>Linux</a>のページキャッシュ、そしてそれらにおける具体的な速度について丁寧な解説がありました。<br>
+「メモリ内で計算できないこと」が、いかにパフォーマンスに影響するかが具体的にイメージできるように解説されていました。<br>
+ディスクI/Oが多くなると重くなる。メモリの消費は少ないのがベターです。<br>
+ちょうど基本情報を受ける前に読んでいたので余計刺さりました。</p>
+<h1>DBやアプリケーションのサーバーの構成</h1>
+<p>スケールが難しいDBサーバーをスケールさせるための構成。その他にもボットのための専用サーバーを用意したり、冗長性のためのDBサーバーのマルチマスタ等具体的な構成が数多く紹介されています。<br>
+また、手法に対してメリットだけでなくデメリットも紹介されていました。例えばDBのパーティショニングを使えばDBの分散やキャッシュの効率は高まりますが、その分運用は複雑になります。メモリを増やすで対応できないかを検討する必要もありますし、運用を別の技術で解決できないかを考える必要もあります。（今は<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%AF%A5%E9%A5%A6%A5%C9>クラウド</a>が主流だとは思うので別の知識も必要そうですが）</p>
+<h1>計算量を減らすには<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A2%A5%EB%A5%B4%A5%EA%A5%BA%A5%E0>アルゴリズム</a>の知識が必要</h1>
+<p>二分木探索、<a class=keyword href=http://d.hatena.ne.jp/keyword/n-gram>n-gram</a>インデックスの具体的な利用方法が紹介されていました。<br>
+また、メモリにキャッシュしやすくするための圧縮や計算量が大きくなりがちな<a class=keyword href=http://d.hatena.ne.jp/keyword/%C1%B4%CA%B8%B8%A1%BA%F7>全文検索</a>については詳細に解説されています。
+実際に<a class=keyword href=http://d.hatena.ne.jp/keyword/Perl>Perl</a>で書かれたサンプルコードとともにVBCodeや転地インデックスといって手法をコードに落としこんでいるところまで書いてあります。 <br>
+自分も圧縮のときに紹介されていたVBCodeについて<a class=keyword href=http://d.hatena.ne.jp/keyword/Ruby>Ruby</a>で実装してみました。自分のコードで圧縮されたファイルっていいですね。</p>
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.com%2FQWYNG%2FVBCode-with-Ruby" title=QWYNG/VBCode-with-Ruby class="embed-card embed-webcard" scrolling=no frameborder=0 style="display:block;width:100%;height:155px;max-width:500px;margin:10px 0"></iframe><cite class=hatena-citation><a href=https://github.com/QWYNG/VBCode-with-Ruby>github.com</a></cite>
+IOクラスとかシ<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%EA%A5%A2%A5%E9>リアラ</a>イザとかまだまだ勉強不足ですね。</p>
+<h1>まとめ</h1>
+<p>大規模サービスについて想定される問題についての現実的な解決策が惜しげもなく公開されている良書でした。
+一番なるほどと思った部分を引用します。</p>
+<blockquote><p>結局、原因がわかればその原因に対する対応方法は自明なのです。この自明になった対応方法を実践することが、チューニングにほかなりません。</p></blockquote>
+<p>サービスが大きくなってきたときに<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%DC%A5%C8%A5%EB%A5%CD%A5%C3%A5%AF>ボトルネック</a>になっているのはなんなのか、メモリにキャシュしきれてないのか、<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A2%A5%EB%A5%B4%A5%EA%A5%BA%A5%E0>アルゴリズム</a>が悪くディスクI/Oが多発しているせいなのか、はたまた外部のボット等全く違う要素なのか、正確に判断することが重要です。<br>
+そのためにはアプリケーションがどのように動いているか？という基本的かつ全般的なコンピューターやインフラの知識が必要だと感じました。<br>
+低レイヤやインフラだけでなく、ボットやリク<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A8%A5%B9>エス</a>トの多い<a class=keyword href=http://d.hatena.ne.jp/keyword/API>API</a>に対して専用のサーバーを用意するといった、局所性を理解した構成のためには、サービスの理解も重要です。サービスを提供するって大変ですね。</p>
+</body>
+</div>
+<div class=post-info>
+<div class="post-date dt-published">2019-05-03</div>
+<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/2019/05/03/014637/>https://qwyng.dev/posts/2019/05/03/014637/</a>
+<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
+<div class=post-taxonomies>
+</div>
+</div>
+</article>
+</main>
+<footer class=common-footer>
+<div class=common-footer-bottom>
+<div class=copyright>
+<p>© QWYNG, 2022<br>
+Powered by <a target=_blank rel="noopener noreferrer" href=https://gohugo.io/>Hugo</a>, theme <a target=_blank rel="noopener noreferrer" href=https://github.com/mitrichius/hugo-theme-anubis>Anubis</a>.<br>
+</p>
+</div>
+</div>
+<p class="h-card vcard">
+<a href=https://qwyng.dev class="p-name u-url url fn" rel=me>QWYNG</a>
+</p>
+</footer>
+</div>
+</body>
+</html>

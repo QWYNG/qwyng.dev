@@ -1,0 +1,289 @@
+<!doctype html><html lang=ja data-theme>
+<head>
+<meta charset=utf-8>
+<meta name=HandheldFriendly content="True">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=referrer content="no-referrer-when-downgrade">
+<title>メタプログラミングRuby 四章 ブロックの読書録 - QWYNG.dev</title>
+<meta name=description content="はじめに  ブロックは強力なツール ブロックは束縛を包んでくれる instance_eval  呼び出し可能オブジェクト Procオブジェクト Methodオブジェクト   四章のクイズ   おわりに  はじめに 前職の出勤が１６日に終わり、しばしニートしております。 最近discordbというボイスチャットアプリのbot作成のラッパーGemが面白くていじっているんですが、このGemを読んでいるとメタプログラミングRubyの４章にこんなのあったなぁという気持ちが強まり、読書録として少し理解を文章に起こしてみました。５章と６章も個人的に何度でも反芻したいので書いていきたい。
+ブロックは強力なツール この章ではブロックがスコープを操る強力なツールだということを解説してくれています。 あと途中で上司が逃げます
+ブロックは束縛を包んでくれる Rubyではdef、class、module （これらはスコープを開く門）でスコープが切り替わってローカル変数なんかは共有できなくなります。
+class Hogeclass class_value = 1 def hoge_method p class_value # => Error! end end  裏を返すとこの門を開かなければ新しいスコープは開かれません。 class やmoduleであればClass.new {}やModule.new {}としたり、 defをdefine_method { }にしてブロックを渡すことで新しいスコープが開かれなくなります。
+class Hogeclass class_value = 1 define_method :hoge_method do p class_value # => 1 end end  このようにブロックは現在の束縛を包み込んでnewやdefine_methodといったメソッドに渡すことができます。
+instance_eval instance_evalはBasicObjectのインスタンスメソッドでブロックを渡すとレシーバーをselfにして評価してくれます。
+class Hogeclass def initialize @foo = &#34;">
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=manifest href=/site.webmanifest>
+<link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5>
+<meta name=msapplication-TileColor content="#da532c">
+<meta name=theme-color content="#ffffff">
+<link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
+<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
+<meta property="twitter:card" content="summary">
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
+</head>
+<body>
+<a class=skip-main href=#main>Skip to main content</a>
+<div class=container>
+<header class=common-header>
+<div class=header-top>
+<h1 class=site-title>
+<a href=/>QWYNG.dev</a>
+</h1>
+<ul class=social-icons>
+<li>
+<a href=https://github.com/QWYNG title=Github rel=me>
+<span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentcolor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6.0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6.0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3.0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1.0-6.2-.3-40.4-.3-61.4.0.0-70 15-84.7-29.8.0.0-11.4-29.1-27.8-36.6.0.0-22.9-15.7 1.6-15.4.0.0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5.0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9.0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4.0 33.7-.3 75.4-.3 83.6.0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6.0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9.0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span>
+</a>
+</li>
+<li>
+<a href=https://twitter.com/qwyngg title=Twitter rel=me>
+<span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645.0 138.72-105.583 298.558-298.558 298.558-59.452.0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055.0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421.0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391.0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04.0-57.828 46.782-104.934 104.934-104.934 30.213.0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+</span>
+</a>
+</li>
+<li>
+<a href=mailto:ikusawasi@gmail.com title=Email rel=me>
+<span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M464 64H48C21.49 64 0 85.49.0 112v288c0 26.51 21.49 48 48 48h416c26.51.0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 4e2V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V4e2H48z"/></svg>
+</span>
+</a>
+</li>
+</ul>
+</div>
+<nav>
+<a href=https://qwyng.dev/about/ title>About</a>
+<a href=https://qwyng.dev/posts/ title>記事一覧</a>
+<a href=https://qwyng.dev/index.xml title>RSS</a>
+</nav>
+</header>
+<main id=main tabindex=-1>
+<article class="post h-entry">
+<div class=post-header>
+<header>
+<h1 class="p-name post-title">メタプログラミングRuby 四章 ブロックの読書録</h1>
+</header>
+</div>
+<div class="content e-content">
+<body>
+<ul class=table-of-contents>
+<li><a href=#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB>はじめに</a></li>
+<li>
+<a href=#%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AF%E5%BC%B7%E5%8A%9B%E3%81%AA%E3%83%84%E3%83%BC%E3%83%AB>ブロックは強力なツール</a><ul>
+<li><a href=#%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AF%E6%9D%9F%E7%B8%9B%E3%82%92%E5%8C%85%E3%82%93%E3%81%A7%E3%81%8F%E3%82%8C%E3%82%8B>ブロックは束縛を包んでくれる</a></li>
+<li><a href=#instance_eval>instance_eval</a></li>
+<li>
+<a href=#%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%97%E5%8F%AF%E8%83%BD%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88>呼び出し可能オブジェクト</a><ul>
+<li><a href=#Proc%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88>Procオブジェクト</a></li>
+<li><a href=#Method%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88>Methodオブジェクト</a></li>
+</ul>
+</li>
+<li><a href=#%E5%9B%9B%E7%AB%A0%E3%81%AE%E3%82%AF%E3%82%A4%E3%82%BA>四章のクイズ</a></li>
+</ul>
+</li>
+<li><a href=#%E3%81%8A%E3%82%8F%E3%82%8A%E3%81%AB>おわりに</a></li>
+</ul>
+<h1 id=はじめに>はじめに</h1>
+<p>前職の出勤が１６日に終わり、しばし<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%CB%A1%BC%A5%C8>ニート</a>しております。
+最近<a href=https://github.com/meew0/discordrb>discordb</a>という<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%DC%A5%A4%A5%B9%A5%C1%A5%E3%A5%C3%A5%C8>ボイスチャット</a>アプリの<a class=keyword href=http://d.hatena.ne.jp/keyword/bot>bot</a>作成のラッパーGemが面白くていじっているんですが、このGemを読んでいると<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%E1%A5%BF%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0>メタプログラミング</a><a class=keyword href=http://d.hatena.ne.jp/keyword/Ruby>Ruby</a>の４章にこんなのあったなぁという気持ちが強まり、読書録として少し理解を文章に起こしてみました。５章と６章も個人的に何度でも反芻したいので書いていきたい。</p>
+<h1 id=ブロックは強力なツール>ブロックは強力なツール</h1>
+<p>この章ではブロックがスコープを操る強力なツールだということを解説してくれています。
+あと途中で上司が逃げます</p>
+<h2 id=ブロックは束縛を包んでくれる>ブロックは束縛を包んでくれる</h2>
+<p><a class=keyword href=http://d.hatena.ne.jp/keyword/Ruby>Ruby</a>ではdef、class、module （これらはスコープを開く門）でスコープが切り替わってローカル変数なんかは共有できなくなります。</p>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> class Hogeclass
+  class_value = 1
+  def hoge_method
+    p class_value # =&gt; Error!
+  end
+end
+ </pre>
+<p>裏を返すとこの門を開かなければ新しいスコープは開かれません。
+class やmoduleであればClass.new {}やModule.new {}としたり、
+defをdefine_method { }にしてブロックを渡すことで新しいスコープが開かれなくなります。</p>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> class Hogeclass
+  class_value = 1
+  define_method :hoge_method do
+    p class_value # =&gt; 1
+  end
+end
+ </pre>
+<p>このようにブロックは現在の束縛を包み込んでnewやdefine_methodといったメソッドに渡すことができます。</p>
+<h2 id=instance_eval>instance_eval</h2>
+<p>instance_evalはBasicObjectの<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>メソッドでブロックを渡すとレシーバーをselfにして評価してくれます。</p>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> class Hogeclass
+  def initialize
+    @foo = "value"
+  end
+
+  private
+  def private_method
+    p "秘密"
+  end
+end
+
+hoge = Hogeclass.new
+
+hoge.instance_eval do
+  @foo # =&gt; "value"
+end
+
+hoge.instance_eval do
+  private_method # =&gt; "秘密"
+end
+ </pre>
+<p>instance_evalを使えば例えばテストを書く際にクラスの<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>変数をいじったり、クリーンなオブジェクト（BasicObjectの<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>等)を作ってブロックを評価することができます。</p>
+<h2 id=呼び出し可能オブジェクト>呼び出し可能オブジェクト</h2>
+<p>ブロックの「コードを保管して、あとから実行する」という方式はなにもブロックだけのものではありません。</p>
+<h3 id=Procオブジェクト>Procオブジェクト</h3>
+<p>ブロックはオブジェクトではないので後で呼び出したりしたい時に不便です。
+ブロックをオブジェクトにするものとして<a class=keyword href=http://d.hatena.ne.jp/keyword/ruby>ruby</a>にはProcクラスがあります。</p>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> double = Proc.new { |x| x * 2 }
+
+double.call(4) # =&gt; 8
+ </pre>
+<p>わかりやすい変数に<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>をいれておけるので呼び出しも楽ですね。</p>
+<p>ブロックをProcに変換するのに便利なメソッドもあります。lambdaとprocです。</p>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> double = lambda { |x| x * 2 }
+# =&gt; &lt;Proc:0x00007f9e5~~~
+triple = proc { |x| x * 3 }
+# =&gt; &lt;Proc:0x00007f9e5~~
+ </pre>
+<p>どちらもProcの<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>がつくられてるのがわかりますね。
+Proc , proc とlamdaの違いとしてreturnの意味合いが違うことと、引数のチェックが違うことが挙げられます。
+returnの意味合いが違うというのは以下のコードで確認できます。
+（<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%E1%A5%BF%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0>メタプログラミング</a><a class=keyword href=http://d.hatena.ne.jp/keyword/Ruby>Ruby</a>ではProc.newとlamdaの違いしかなかったので今回はprocで試してみました）</p>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> def lambda_ten_double
+  lambda_proc = lambda { return 10 }
+  result = lambda_proc.call
+  return result * 2
+end
+
+def proc_ten_double
+  proc_proc = proc { return 10 }
+  result = proc_proc.call #ここでProcが定義されたスコープから戻ってしまう
+  return result * 2 #ここまでたどり着かない
+end
+
+lambda_ten_double # =&gt; 20
+proc_ten_double   # =&gt; 10
+ </pre>
+<p>引数のチェック方法にも違いがあり、</p>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> p = Proc.new { |a,b| [a,b] }
+l = lambda { |a,b| [a,b] }
+p.call(1, 2, 3)　# =&gt; [1, 2]
+l.call(1, 2, 3) #=&gt; ArgumentError (wrong number of arguments~
+ </pre>
+<p>項数にも厳しくreturnの挙動も単なる終了なので特別な理由がなければlambdaを用いたほうが良さそうです。</p>
+<p>&修飾でもブロックをProcに変換することができます。
+また&修飾をつかえばProcオブジェクトをブロックに戻すこともできます。
+どういうことかというと、</p>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> def block_method
+  yield
+end
+
+def do_block_method(&amp;block)　#ここの&amp;でブロックをProcオブジェクトに
+  p block.class # =&gt; Proc ＆つけないとProcのまま！
+  block_method(&amp;block) # ここの&amp;でProcオブジェクトからブロックに変換、 ないとオブジェクト渡してしまうのでArgumentエラー
+end
+
+do_block_method { p "hoge" } # =&gt; "hoge"
+ </pre>
+<p>{ p "<a class=keyword href=http://d.hatena.ne.jp/keyword/hoge>hoge</a>" } が一度Procオブジェクトになり、またブロックにもどって最終的にblock_methodに渡されていることなります。</p>
+<h3 id=Methodオブジェクト>Methodオブジェクト</h3>
+<p>メソッドも呼び出し可能なオブジェクトです。
+具体的には</p>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> class Hogeclass
+  def initialize
+    @x = "hoge"
+  end
+
+  def hogemethod
+    @x
+  end
+end
+
+hogeobject = Hogeclass.new
+method = hogeobject.method :hogemethod
+method.call # =&gt; "hoge"
+ </pre>
+<p>メソッドオブジェクトは呼び出した時にオブジェクトのスコープで評価される。（今回はHogeclassクラス)<br>
+この束縛は解除して別のオブジェクトに束縛したりもできる。（ただし同じクラスかそのサブクラスのオブジェクトに限る）</p>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> class Fugaclass &lt; Hogeclass
+  def initialize
+    @x = "fuga"
+  end
+end
+
+unboundmethod = method.unbind
+fugaobject = Fugaclass.new
+rebindmethod = unboundmethod.bind(fugaobject)
+rebindmethod.call # =&gt; "fuga"
+ </pre>
+<h2 id=四章のクイズ>四章のクイズ</h2>
+<p>自分は４章最後のクイズでは、サンプルを見る前に以下のようなコードを書いていました。</p>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> def setup(&amp;block)
+  @setups &lt;&lt; block
+end
+
+def event(description, &amp;block)
+  @setups.map(&amp;:call)
+  puts "ALERT: #{description}" if block.call
+end
+
+@setups = []
+load 'events.rb'
+ </pre>
+<p>eventごとに実行するならevent内でsetupに渡されたProcよびだしても良いのでは？と思って書きました。少し一つのメソッドでやりすぎかも。<br>
+この処理だけ行いたいならeventメソッドの 引数&blockは削除して、後置ifもif yieldにしても動作すると思いますが、ブロックを渡す必要があるメソッドでそんなことをしたらわかりにくすぎますね。<br>
+改めて見ると逃げた上司のの<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B0%A5%ED%A1%BC%A5%D0%A5%EB%CA%D1%BF%F4>グローバル変数</a>をどうして削除しない？が刺さるコードです。<br>
+<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B0%A5%ED%A1%BC%A5%D0%A5%EB%CA%D1%BF%F4>グローバル変数</a>を削除して、</p>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> lambda {
+  setups = []
+
+  Kernel.send :define_method, :setup do |&amp;block|
+    setups &lt;&lt; block
+  end
+
+  Kernel.send :define_method, :event do |description, &amp;block|
+    setups.map(&amp;:call)
+    puts "ALERT: #{description}" if block.call 
+}.call
+load 'events.rb'
+ </pre>
+<p>という形にしてみました。</p>
+<h1 id=おわりに>おわりに</h1>
+<p>一度読んだ本をいざ文章にまとめてみるといろいろ考えることが多くていいですね。ガシガシ続けて行きたひ。
+色んな人からツッコミもらいたいのでQiitaに書くか迷いましたが、このブログの主目的が「本の理解を文におこして再確認する」と考えていますし、先人の知見をQiitaに乗っけるのは違くない？と思ってブログに起こしました。</p>
+</body>
+</div>
+<div class=post-info>
+<div class="post-date dt-published">2019-01-18</div>
+<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/2019/01/18/150157/>https://qwyng.dev/posts/2019/01/18/150157/</a>
+<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
+<div class=post-taxonomies>
+</div>
+</div>
+</article>
+</main>
+<footer class=common-footer>
+<div class=common-footer-bottom>
+<div class=copyright>
+<p>© QWYNG, 2022<br>
+Powered by <a target=_blank rel="noopener noreferrer" href=https://gohugo.io/>Hugo</a>, theme <a target=_blank rel="noopener noreferrer" href=https://github.com/mitrichius/hugo-theme-anubis>Anubis</a>.<br>
+</p>
+</div>
+</div>
+<p class="h-card vcard">
+<a href=https://qwyng.dev class="p-name u-url url fn" rel=me>QWYNG</a>
+</p>
+</footer>
+</div>
+</body>
+</html>

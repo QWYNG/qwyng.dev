@@ -1,0 +1,341 @@
+<!doctype html><html lang=ja data-theme>
+<head>
+<meta charset=utf-8>
+<meta name=HandheldFriendly content="True">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=referrer content="no-referrer-when-downgrade">
+<title>メタプログラミングRuby ５章　クラス定義 - QWYNG.dev</title>
+<meta name=description content="特異メソッド カレントクラス クラスインスタンス変数 特異メソッド クラスマクロ    特異クラス 大統一理論 Object#extend    メソッドラッパー アラウンドエイリアス Refinements Prependラッパー   ５章のクイズ まとめ  特異メソッド カレントクラス Rubyのプログラムは常にカレントオブジェクトselfを持っているが、同時にカレントクラスも持っています。
+class C def m1 p self def m2; end end end class D < C; end obj = D.new obj.m1 # => <D:0x00007fc1e2865938> p C.instance_methods(false) # =>[:m1, :m2] p D.instance_methods(false) # => []  メタプログラミングRubyのサンプルに少し書き足してみました。 カレントオブジェクトはDクラスのインスタンスですが、カレントクラスはCクラスであることがわかりますね。よってm2はCクラスのインスタンスメソッドになっています。
+Classでクラスを開くことでカレントクラスを変えることができるのですが、この方法はカレントクラスにしたいクラスの名前がわからないと使えません。クラス名がわからない時に使うのが class_evalメソッドです。
+def add_method_to(a_class) a_class.class_eval do def m 'Hello!">
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=manifest href=/site.webmanifest>
+<link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5>
+<meta name=msapplication-TileColor content="#da532c">
+<meta name=theme-color content="#ffffff">
+<link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
+<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです。各種SNSのリンクはヘッダー参照。プログラミングとか日々の生活とか書きます。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png">
+<meta property="twitter:card" content="summary">
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
+</head>
+<body>
+<a class=skip-main href=#main>Skip to main content</a>
+<div class=container>
+<header class=common-header>
+<div class=header-top>
+<h1 class=site-title>
+<a href=/>QWYNG.dev</a>
+</h1>
+<ul class=social-icons>
+<li>
+<a href=https://github.com/QWYNG title=Github rel=me>
+<span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentcolor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6.0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6.0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3.0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1.0-6.2-.3-40.4-.3-61.4.0.0-70 15-84.7-29.8.0.0-11.4-29.1-27.8-36.6.0.0-22.9-15.7 1.6-15.4.0.0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5.0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9.0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4.0 33.7-.3 75.4-.3 83.6.0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6.0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9.0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span>
+</a>
+</li>
+<li>
+<a href=https://twitter.com/qwyngg title=Twitter rel=me>
+<span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645.0 138.72-105.583 298.558-298.558 298.558-59.452.0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055.0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421.0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391.0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04.0-57.828 46.782-104.934 104.934-104.934 30.213.0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+</span>
+</a>
+</li>
+<li>
+<a href=mailto:ikusawasi@gmail.com title=Email rel=me>
+<span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M464 64H48C21.49 64 0 85.49.0 112v288c0 26.51 21.49 48 48 48h416c26.51.0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 4e2V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V4e2H48z"/></svg>
+</span>
+</a>
+</li>
+</ul>
+</div>
+<nav>
+<a href=https://qwyng.dev/about/ title>About</a>
+<a href=https://qwyng.dev/posts/ title>記事一覧</a>
+<a href=https://qwyng.dev/index.xml title>RSS</a>
+</nav>
+</header>
+<main id=main tabindex=-1>
+<article class="post h-entry">
+<div class=post-header>
+<header>
+<h1 class="p-name post-title">メタプログラミングRuby ５章　クラス定義</h1>
+</header>
+</div>
+<div class="content e-content">
+<body>
+<ul class=table-of-contents>
+<li>
+<a href=#%E7%89%B9%E7%95%B0%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89>特異メソッド</a><ul>
+<li><a href=#%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%88%E3%82%AF%E3%83%A9%E3%82%B9>カレントクラス</a></li>
+<li><a href=#%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E5%A4%89%E6%95%B0>クラスインスタンス変数</a></li>
+<li><a href=#%E7%89%B9%E7%95%B0%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89-1>特異メソッド</a></li>
+<li><a href=#%E3%82%AF%E3%83%A9%E3%82%B9%E3%83%9E%E3%82%AF%E3%83%AD>クラスマクロ</a></li>
+</ul>
+</li>
+<li>
+<a href=#%E7%89%B9%E7%95%B0%E3%82%AF%E3%83%A9%E3%82%B9>特異クラス</a><ul>
+<li><a href=#%E5%A4%A7%E7%B5%B1%E4%B8%80%E7%90%86%E8%AB%96>大統一理論</a></li>
+<li><a href=#Objectextend>Object#extend</a></li>
+</ul>
+</li>
+<li>
+<a href=#%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%83%A9%E3%83%83%E3%83%91%E3%83%BC>メソッドラッパー</a><ul>
+<li><a href=#%E3%82%A2%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89%E3%82%A8%E3%82%A4%E3%83%AA%E3%82%A2%E3%82%B9>アラウンドエイリアス</a></li>
+<li><a href=#Refinements>Refinements</a></li>
+<li><a href=#Prepend%E3%83%A9%E3%83%83%E3%83%91%E3%83%BC>Prependラッパー</a></li>
+</ul>
+</li>
+<li><a href=#%EF%BC%95%E7%AB%A0%E3%81%AE%E3%82%AF%E3%82%A4%E3%82%BA>５章のクイズ</a></li>
+<li><a href=#%E3%81%BE%E3%81%A8%E3%82%81>まとめ</a></li>
+</ul>
+<h2 id=特異メソッド>特異メソッド</h2>
+<h3 id=カレントクラス>カレントクラス</h3>
+<p><a class=keyword href=http://d.hatena.ne.jp/keyword/Ruby>Ruby</a>のプログラムは常にカレントオブジェクトselfを持っているが、同時にカレントクラスも持っています。</p>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> class C
+  def m1
+    p self
+    def m2; end
+  end
+end
+
+class D &lt; C; end
+
+obj = D.new
+obj.m1 # =&gt; &lt;D:0x00007fc1e2865938&gt;
+
+p C.instance_methods(false) # =&gt;[:m1, :m2]
+p D.instance_methods(false) # =&gt; []
+ </pre>
+<p><a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%E1%A5%BF%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0>メタプログラミング</a><a class=keyword href=http://d.hatena.ne.jp/keyword/Ruby>Ruby</a>のサンプルに少し書き足してみました。
+カレントオブジェクトはDクラスの<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>ですが、カレントクラスはCクラスであることがわかりますね。よってm2はCクラスの<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>メソッドになっています。</p>
+<p>Classでクラスを開くことでカレントクラスを変えることができるのですが、この方法はカレントクラスにしたいクラスの名前がわからないと使えません。クラス名がわからない時に使うのが class_evalメソッドです。</p>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> def add_method_to(a_class)
+  a_class.class_eval do
+    def m
+      'Hello!'
+    end
+  end
+end
+
+add_method_to(String)
+p "string".m # =&gt; 'Hello!'
+ </pre>
+<p>このadd_method_toメソッドではクラスを引数にとってclass_evalを使うことで引数にとったクラスにカレントクラスを変更してからメソッドを定義しています。
+class_evalは第四章のinstance_evalとは別物です。
+instance_evalはselfを変更してブロック内を評価してくれるものでしたが、class_evalはselfに加えてカレントクラスも変更します。
+スコープゲートを開いているわけではないのでスコープは変わりません。</p>
+<h3 id=クラスインスタンス変数>クラス<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>変数</h3>
+<p>クラスの<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>変数とクラスのオブジェクトの<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>変数は別物です。</p>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> class Myclass
+  @my_var = 1
+
+  def self.read
+    @my_var
+  end
+
+  def write
+    @my_var = 2
+  end
+
+  def read
+    @my_var
+  end
+end
+
+obj = Myclass.new
+p obj.read # =&gt; nil
+obj.write
+p obj.read # =&gt; 2
+p Myclass.read # =&gt; 1
+ </pre>
+<p>ここでは2つの異なるオブジェクトである@my_varを定義しています。
+クラスもオブジェクトの一つであるということを念頭において考えて行くのが大事になってきます。
+最初にでてくる@my_varがクラス<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>変数。2つ目@my_varが今回だとobjオブジェクトの<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>変数ですね。
+（ここ<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%E1%A5%BF%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0>メタプログラミング</a><a class=keyword href=http://d.hatena.ne.jp/keyword/Ruby>Ruby</a>では1つ目の@my_varがobjの<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>変数で2つ目の@my_varがMyclassのクラス<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>変数だ、と書かれているのですが、コードの順番で行くと逆なので少しわかりにくかったです。説明の順番としては仕方ないのかもしれないですが。）
+クラス<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>変数はClassクラスに属しているオブジェクトの<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>変数というのが正しいです。MyclassはClassクラスの<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>なのでその中で定義されたものはクラス<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>変数となります。
+クラス<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>変数はクラスしかアクセスできず、そのクラスの<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>からアクセスすることはできません。</p>
+<h3 id=特異メソッド-1>特異メソッド</h3>
+<p>Stringに属したオブジェクトが全て大文字化かどうかをbooleanで返すメソッドをつくりたいが、特定の文字列にしかこのメソッドをもたせたくない、という場合。Refinementsを使って、特定のコードの前にusingを挿入するという方法もありますが、別の方法もあります。それが特異メソッドです。
+同じクラスのオブジェクトでも、ある特定のオブジェクトにだけメソッドを追加したい、という場合に特異メソッドを使うことができます。</p>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> str = "string"
+
+def str.title?
+  self.upcase == self
+end
+
+p str.title? # =&gt; false
+p str.methods.grep(/title?/) # =&gt; [:title?]
+p str.singleton_methods # =&gt; [:title?]
+ </pre>
+<p>今までクラスに定義していたクラスメソッド</p>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> Class Hoge
+  def self.a_method
+  end
+end
+ </pre>
+<p>これはクラスもオブジェクトであるという点からみれば</p>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> Hoge = Class.new
+def Hoge.a_method
+end
+ </pre>
+<p>という形とやっていることは同じです。つまりクラスメソッドはクラスの特異メソッドであるという事になります。</p>
+<h3 id=クラスマクロ>クラスマクロ</h3>
+<p>attt_*のようなメソッドをクラスマクロと呼ぶ。selfがクラスでも使えるのでクラスメソッドということですね。</p>
+<h2 id=特異クラス>特異クラス</h2>
+<p>特異メソッドがどこに定義されているのか？という問の答えが特異クラスです。</p>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> obj = Object.new
+p obj # =&gt; #&lt;Object:0x00007f9fa893a068&gt;
+p obj.singleton_class # =&gt; #&lt;Class:#&lt;Object0x00007f9fa893a068&gt;&gt;
+
+singleton_class = class &lt;&lt; obj
+  p self # =&gt; #&lt;Class:#&lt;Object:0x00007f9fa893a068&gt;&gt;
+end
+ </pre>
+<p>この例では&lt;Class:#&lt;Object:0x00007f9fa893a068>>がobjオブジェクトの特異クラスです。
+class &lt;&lt; objでも発見することができますが、singleton_classメソッドを使ったほうが楽でしょう。
+オブジェクトのメソッド探索を行う際にはオブジェクトのクラスをみてそして更に親のクラスへとたどって行きますが、実は、オブジェクトのクラスのメソッドを見る前に、そのオブジェクトの特異クラスのメソッドを見にいっているのです。
+クラスにもクラスはあるので、当然特異クラスがつくれます。</p>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> class C
+  class &lt;&lt; self
+    def a_class_method
+      'C.a_class_method()'
+    end
+  end
+end
+ </pre>
+<p>これは要は</p>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> class C
+  def self.a_class_method
+    'C.a_class_method()'
+  end
+end
+ </pre>
+<p>と同じで、クラスメソッドはそもそもそのクラスの特異クラスに定義されています。</p>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> p C.singleton_class.superclass # =&gt; #&lt;Class:Object&gt;
+p C.superclass # =&gt; Object
+ </pre>
+<p>このようにクラスの特異クラスの<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B9%A1%BC%A5%D1%A1%BC%A5%AF%A5%E9%A5%B9>スーパークラス</a>はクラスの<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B9%A1%BC%A5%D1%A1%BC%A5%AF%A5%E9%A5%B9>スーパークラス</a>の特異クラスになります。</p>
+<h3 id=大統一理論><a class=keyword href=http://d.hatena.ne.jp/keyword/%C2%E7%C5%FD%B0%EC%CD%FD%CF%C0>大統一理論</a></h3>
+<p><a class=keyword href=http://d.hatena.ne.jp/keyword/Ruby>Ruby</a>のオブジェクトのルールとして７つのルールが示されています。</p>
+<blockquote>
+<ol>
+<li>オブジェクトは一種類しかない。それが通常のオブジェクトかモジュールになる。</li>
+<li>モジュールは一種類しかない。それが通常のモジュール、クラス、特異クラスのいずれかになる。</li>
+<li><p>メソッドは一種類しかない。メソッドはモジュール（大半はクラス）に住んでいる。
+一種類しかないということは複数から同時に継承しないということです。下記の５にありますが、必ず親から子への一直線以外に継承はしていません。</p></li>
+<li><p>全てのオブジェクトは（クラスも含めて）「本物のクラス」を持っている。それが通常のクラスか特異クラスである。
+<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%E1%A5%BF%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0>メタプログラミング</a><a class=keyword href=http://d.hatena.ne.jp/keyword/Ruby>Ruby</a>でのいわゆる「右へ」の移動で、本物のクラス、つまり特異クラスをもっているということですね。ほとんどのオブジェクトは特異クラスをもっています。true, false, <a class=keyword href=http://d.hatena.ne.jp/keyword/nil>nil</a>は持っていません。（NilClass等はもっていますが。）</p></li>
+<li><p>すべてのクラスは（BasicObjectを除いて）一つの祖先（<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B9%A1%BC%A5%D1%A1%BC%A5%AF%A5%E9%A5%B9>スーパークラス</a>かモジュール）を持っている。つまりあらゆるクラスがBasicObjectに向かって1本の継承チェーンをもっている。
+これと1,2,3のルールのおかげでメソッド探索はわかりやすいものになっていると思います。継承チェーンは二股に別れたりはしていません。</p></li>
+<li><p>オブジェクトの特異クラスの<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B9%A1%BC%A5%D1%A1%BC%A5%AF%A5%E9%A5%B9>スーパークラス</a>は、オブジェクトのクラスである。クラスの特異クラスの<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B9%A1%BC%A5%D1%A1%BC%A5%AF%A5%E9%A5%B9>スーパークラス</a>はクラスの<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B9%A1%BC%A5%D1%A1%BC%A5%AF%A5%E9%A5%B9>スーパークラス</a>の特異クラスである</p></li>
+<li>メソッドを呼び出すときは<a class=keyword href=http://d.hatena.ne.jp/keyword/Ruby>Ruby</a>はレシーバーの本物のクラスに向かって右へ進み、継承チェーンを「上へ」進む。
+この２つからなぜ<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>がクラスメソッドにアクセス出来ないかを説明することができます。
+クラスメソッドはそのクラスの特異クラスに定義されています。
+<a class=keyword href=http://d.hatena.ne.jp/keyword/Ruby>Ruby</a>のメソッド探索では一度だけしか右に行かないので、<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>からメソッド探索をおこなった場合、メソッドの特異クラスへと一度右に行った後はその特異クラスの<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B9%A1%BC%A5%D1%A1%BC%A5%AF%A5%E9%A5%B9>スーパークラス</a>であるobj.classが戻すクラスから上に探索していくので、その<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B9%A1%BC%A5%D1%A1%BC%A5%AF%A5%E9%A5%B9>スーパークラス</a>の特異クラスまでは探索しません。よって<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B9%A1%BC%A5%D1%A1%BC%A5%AF%A5%E9%A5%B9>スーパークラス</a>の特異クラスにあるメソッドは<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>からはアクセスできないということになります。</li>
+</ol>
+</blockquote>
+<h3 id=Objectextend>Object#extend</h3>
+<p>モジュールをincudeするとモジュールの<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>メソッドのみがincludeしたクラスで<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>メソッドとして使えるようになりますが、
+クラスの特異メソッドを開いて、その中でモジュールをincludeするとモジュールの<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9>インスタンス</a>メソッドをクラスメソッドとして定義できます。
+オブジェクトの特異クラスにも同様にでき、よく使われるので、Object#extendとしてメソッドが提供されています。</p>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> module MyModule
+  def my_method; p 'hello'; end
+end
+
+class MyClass
+  extend MyModule
+end
+
+MyClass.my_method # =&gt; 'hello'
+ </pre>
+<h2 id=メソッドラッパー>メソッドラッパー</h2>
+<h3 id=アラウンドエイリアス>アラウンド<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A8%A5%A4%A5%EA%A5%A2%A5%B9>エイリアス</a>
+</h3>
+<ol>
+<li>メソッドに<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A8%A5%A4%A5%EA%A5%A2%A5%B9>エイリアス</a>をつける</li>
+<li>メソッドを再定義する</li>
+<li>新しいメソッドから古いメソッドを呼び出す。
+こうすることで<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A8%A5%A4%A5%EA%A5%A2%A5%B9>エイリアス</a>では元のメソッドの内容が参照されるため、</li>
+</ol>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> class String
+  alias_method :origin_reverse!, :reverse!
+
+  def reverse!
+    upcase!
+    origin_reverse!
+  end
+end
+
+p "ruby".reverse! # =&gt; "YBUR"
+ </pre>
+<p><a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A8%A5%A4%A5%EA%A5%A2%A5%B9>エイリアス</a>を定義することで、メソッドの再定義を行う時に、元のメソッドを<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A8%A5%A4%A5%EA%A5%A2%A5%B9>エイリアス</a>メソッドで呼び出して、ラップすることができます。
+ここでは古い<code>reverse!</code>を新しい<code>reverse!</code>にラップしています。一種のモンキーパッチにも近い方法です。
+新しい<code>reverse!</code>は古い<code>reverse!</code>の周囲（アラウンド）をラップしているのでこのトリックをアラウンド<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A8%A5%A4%A5%EA%A5%A2%A5%B9>エイリアス</a>をと呼びます。</p>
+<h3 id=Refinements>Refinements</h3>
+<p>Refinementsを使ってsuperを呼び出すと元のメソッドを呼び出せます。</p>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> module StringRefinements
+  refine String do
+    def reverse!
+      upcase!
+      super
+    end
+  end
+end
+
+using StringRefinements
+p "python".reverse! # =&gt; "NOHTYP"
+ </pre>
+<h3 id=Prependラッパー>Prependラッパー</h3>
+<pre class="code lang-ruby" data-lang=ruby data-unlink> module ExpilcitString
+  def reverse!
+    upcase!
+    super
+  end
+end
+
+String.class_eval do
+  prepend ExpilcitString
+end
+
+p "go".reverse! # =&gt; "OG"
+ </pre>
+<p>Prependは継承チェーンの下にモジュールが挿入されるのでメソッド探索の際にはprependされたモジュールにあるメソッドが先に使われる。</p>
+<h2 id=５章のクイズ>５章のクイズ</h2>
+<p>最初はsuperで解決しようとしたんですが、古い+に依存しているのでなかなか書けませんでした…
+<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%E1%A5%BF%A5%D7%A5%ED%A5%B0%A5%E9%A5%DF%A5%F3%A5%B0>メタプログラミング</a><a class=keyword href=http://d.hatena.ne.jp/keyword/Ruby>Ruby</a>のようにアラウンド<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%A8%A5%A4%A5%EA%A5%A2%A5%B9>エイリアス</a>で解決するのが良さそうです。</p>
+<h2 id=まとめ>まとめ</h2>
+<p>クラスメソッドがどこに定義されているのか？という問いに答えてくれる章でしたね。
+<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%BD%A1%BC%A5%B9%A5%B3%A1%BC%A5%C9>ソースコード</a>を読んでextendってなんだ？となることが多かったので、extendで特異クラスにメソッドを定義できるのは知っておきたいところ。
+また特異クラスには特異クラスがあるので特異クラスの特異クラスの特異クラスとずっとつなげて行けるのでは…</p>
+</body>
+</div>
+<div class=post-info>
+<div class="post-date dt-published">2019-01-26</div>
+<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/2019/01/26/160835/>https://qwyng.dev/posts/2019/01/26/160835/</a>
+<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
+<div class=post-taxonomies>
+</div>
+</div>
+</article>
+</main>
+<footer class=common-footer>
+<div class=common-footer-bottom>
+<div class=copyright>
+<p>© QWYNG, 2022<br>
+Powered by <a target=_blank rel="noopener noreferrer" href=https://gohugo.io/>Hugo</a>, theme <a target=_blank rel="noopener noreferrer" href=https://github.com/mitrichius/hugo-theme-anubis>Anubis</a>.<br>
+</p>
+</div>
+</div>
+<p class="h-card vcard">
+<a href=https://qwyng.dev class="p-name u-url url fn" rel=me>QWYNG</a>
+</p>
+</footer>
+</div>
+</body>
+</html>
