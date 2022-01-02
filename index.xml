@@ -1,20 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 02 Jan 2022 00:22:50 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>はてなブログからHugo + GitHub Pagesに引っ越した</title><link>https://qwyng.dev/posts/2021-1-1/</link><pubDate>Sun, 02 Jan 2022 00:22:50 +0900</pubDate><guid>https://qwyng.dev/posts/2021-1-1/</guid><description>&lt;p>&lt;a href="https://qwyng.dev/posts/2021/12/30/191311">去年の振り返りで書いた通り&lt;/a>はてなブログが嫌になってきたのでGithub pagesに移行した。&lt;br>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 02 Jan 2022 00:22:50 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>はてなブログからHugo + GitHub Pagesに引っ越した</title><link>https://qwyng.dev/posts/2021-1-1/</link><pubDate>Sun, 02 Jan 2022 00:22:50 +0900</pubDate><guid>https://qwyng.dev/posts/2021-1-1/</guid><description>&lt;p>&lt;a href="https://qwyng.dev/posts/2021/12/30/191311">去年の振り返りで書いた通り&lt;/a>はてなブログが嫌になってきたのでGitHub Pagesに移行した。&lt;br>
 このテーマを書きましょう！みたいなキャンペーンが押し付けがましく感じたり、ログイン導線がめんどかったりが嫌になった原因。エディタがもっさりしていて辛かったのもある。&lt;/p>
 &lt;h2 id="ドメインqwyngdevの理由">ドメイン(qwyng.dev)の理由
 &lt;span>&lt;a href="#%e3%83%89%e3%83%a1%e3%82%a4%e3%83%b3qwyngdev%e3%81%ae%e7%90%86%e7%94%b1">#&lt;/a>&lt;/span>
 &lt;/h2>&lt;p>せっかくなのでちゃんとドメインも買った。&lt;code>qwy.ng&lt;/code>はナイジェリアに在住する必要があり、&lt;code>qwyn.gg&lt;/code>は年間10kもするので仕方なしで&lt;code>qwyng.dev&lt;/code>にした。
-devドメインだとHSTSが効くというメリットも（一応）存在するのでまぁいいでしょう。&lt;/p>
+devドメインだとHSTSが効くというメリットも（一応）存在するのでまぁいいでしょう。&lt;br>
+ドメインはGoogle Domainsで買った。単純に調べた中で.devドメインが一番安かったのが選定理由。GUIちゃんとしてるし認証も二要素だし。&lt;br>
+ブログ名だが、Tallmanというブログ名も嫌いではなかったが私的にはQWYNGという名前が一番自分の名札としてしっくりくるのでブログ名もドメイン名に合わせた。&lt;/p>
 &lt;h2 id="hugoにした理由">Hugoにした理由
 &lt;span>&lt;a href="#hugo%e3%81%ab%e3%81%97%e3%81%9f%e7%90%86%e7%94%b1">#&lt;/a>&lt;/span>
 &lt;/h2>&lt;p>静的サイトジェネレーターの選定だが、yarnやnpmはターミナルにあんまり入力したくない&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>のでJS系統の静的サイトジェネレーターはパス、いつもはRubyがメインだしGithub Pagesにホストしてもらう予定だったのでjekyllが良さそうと考えたがイマイチ好みのテンプレートが見つからなかった。最終的に好みのテンプレートを見つけたのでHugoにした。&lt;/p>
 &lt;h2 id="github-pagesにした理由">GitHub Pagesにした理由
 &lt;span>&lt;a href="#github-pages%e3%81%ab%e3%81%97%e3%81%9f%e7%90%86%e7%94%b1">#&lt;/a>&lt;/span>
-&lt;/h2>&lt;p>前提として記事を投稿したら草が生えたほうがモチベが上がりそうなのでソースはGitHubでホスティングする。ビルド成果物のホスティング先はスケーリングがネックになることは考えづらいので利便性重視で選んだ。&lt;br>
+&lt;/h2>&lt;p>前提として記事を投稿したら草が生えたほうがモチベが上がりそうなのでソースはGitHubでホスティングする。&lt;br>
+ビルド成果物のホスティング先はスケーリングがネックになることは考えづらいので利便性重視で選んだ。&lt;br>
 &lt;a href="https://gohugo.io/hosting-and-deployment">Hugoのデプロイとホスティングに関するドキュメント&lt;/a>を読むとGitHub PagesがGitHub ActionとCNAMEの追加だけで良さそうだったのでそれにした。触るドメインは少ないほうが楽。
-他は単純にソースコードホスティングしているサイト以外で何かしら設定しなきゃいけないしツールチェーンが別に必要だったりしたのでやめた。&lt;/p>
+他はソースコードホスティングしているサイト以外で何かしら設定しなきゃいけないしツールチェーンが別に必要だったりしたのでやめた。&lt;/p>
 &lt;h2 id="はてなブログからの引っ越し方法">はてなブログからの引っ越し方法
 &lt;span>&lt;a href="#%e3%81%af%e3%81%a6%e3%81%aa%e3%83%96%e3%83%ad%e3%82%b0%e3%81%8b%e3%82%89%e3%81%ae%e5%bc%95%e3%81%a3%e8%b6%8a%e3%81%97%e6%96%b9%e6%b3%95">#&lt;/a>&lt;/span>
-&lt;/h2>&lt;p>&lt;code>はてなブログ hugo 移行&lt;/code>でググってたら&lt;a href="https://yusukebe.com/posts/2020/hatenablog-to-githubpages/">こちらの記事&lt;/a>から&lt;a href="https://github.com/mosuke5/hatena-blog-parser">mosuke5/hatena-blog-parser&lt;/a>というはてなブログのエクスポートファイルからmarkdownに変換してくれるRubyスクリプトを見つけたので使わせて貰った。昔のスクリプトなので多少警告はでたものの問題なく使用できた。製作者様ありがとうございます。最高です。&lt;/p>
+&lt;/h2>&lt;p>&lt;code>はてなブログ hugo 移行&lt;/code>でググってたら&lt;a href="https://yusukebe.com/posts/2020/hatenablog-to-githubpages/">こちらの記事&lt;/a>から&lt;a href="https://github.com/mosuke5/hatena-blog-parser">mosuke5/hatena-blog-parser&lt;/a>というはてなブログのエクスポートファイルからmarkdownに変換してくれるRubyスクリプトを見つけたので使わせて貰った。昔のスクリプトなので多少警告はでたものの問題なく使用できた。製作者様ありがとうございます。最高です。&lt;br>
+はてなブログの方はnoindex貼って検索エンジンから除外した。&lt;/p>
 &lt;h3 id="まとめ">まとめ
 &lt;span>&lt;a href="#%e3%81%be%e3%81%a8%e3%82%81">#&lt;/a>&lt;/span>
 &lt;/h3>&lt;p>というわけで2022年の目標である「自分のドメインでブログを開設する」を早速達成したので偉い！&lt;br>
