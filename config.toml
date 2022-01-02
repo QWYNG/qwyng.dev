@@ -16,6 +16,7 @@ paginationSinglePost = true
 style = "light-without-switcher"
 readMore = false
 disableSummary = true
+image = "android-chrome-384x384.png"
 
 [[params.social]]
 id = "github"
