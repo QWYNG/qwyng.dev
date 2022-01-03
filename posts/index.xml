@@ -1,4 +1,45 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 02 Jan 2022 00:22:50 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>はてなブログからHugo + GitHub Pagesに引っ越した</title><link>https://qwyng.dev/posts/2021-1-1/</link><pubDate>Sun, 02 Jan 2022 00:22:50 +0900</pubDate><guid>https://qwyng.dev/posts/2021-1-1/</guid><description>&lt;p>&lt;a href="https://qwyng.dev/posts/2021/12/30/191311">去年の振り返りで書いた通り&lt;/a>はてなブログが嫌になってきたのでGitHub Pagesに移行した。&lt;br>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 02 Jan 2022 16:07:59 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>LOLおじさんからみるポケモンユナイト</title><link>https://qwyng.dev/posts/2022-1-2/</link><pubDate>Sun, 02 Jan 2022 16:07:59 +0900</pubDate><guid>https://qwyng.dev/posts/2022-1-2/</guid><description>&lt;p>年始に社の人達(+そのパートナーの方)と下の大会にでることになった。&lt;br>
+&lt;a href="https://www.pokemonunite.jp/ja/news/30/">Pokémon UNITE Winter Tournamentを開催！&lt;/a>&lt;br>
+LOL&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>をかれこれ7年近くやっているMOBAおじさんなので喜んで参加させて貰った。ちなみにLOLの最高レートはD2&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>です。&lt;/p>
+&lt;p>12月終わりに参加が決まり、年末はとりあえずマスターになるまでやったのでLOLおじさんがLOLとの比較を書いてく。&lt;/p>
+&lt;h3 id="キルがそんなに重要じゃない">キルがそんなに重要じゃない
+&lt;span>&lt;a href="#%e3%82%ad%e3%83%ab%e3%81%8c%e3%81%9d%e3%82%93%e3%81%aa%e3%81%ab%e9%87%8d%e8%a6%81%e3%81%98%e3%82%83%e3%81%aa%e3%81%84">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>正直LOLで序盤に2デスしたらほぼレーン戦は終わる。がユナイトは死んでも育ってない限り相手にあまり経験値を渡さないしゴールドも貰えない。
+相手をキルしても思ったより差が開かないのである。これはLOLから来た身分だと新鮮で、最初は瀕死の敵を多少無理しても回収したり1v1で勝てる場面は絶対に仕掛けていたが、リスクの割にリターンが釣り合っていない行動だと気づいてからはレートが上がり始めた。&lt;br>
+ユナイトだったら序盤例えばダンベル鍛える為に多少デスしても正直問題ない。中盤でも活躍してない限り復活時間が短いので相手を一人キャッチして倒してもすぐ復活して戻ってきてしまう。なので1対1で勝ってオブジェクトにつなげる動きがやりにくい。集団戦で複数人同時に倒さないとオブジェクトが取りにくいゲームだと思う。&lt;br>
+とはいえ、点数を落とさせることが重要な局面も多いし、育っている敵を倒した時の経験値は大きい。負けているときはキルを狙う価値はある。&lt;/p>
+&lt;h3 id="ユナイト技が強すぎる">ユナイト技が強すぎる
+&lt;span>&lt;a href="#%e3%83%a6%e3%83%8a%e3%82%a4%e3%83%88%e6%8a%80%e3%81%8c%e5%bc%b7%e3%81%99%e3%81%8e%e3%82%8b">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>ユナイト技が本当に強い。LOLでもアルティメットというユナイト技に相当するスキルがあるんだけどアルティメットを1とするとユナイト技は10ぐらいある。1対1で敵をキルするためにユナイトを打つのは正直もったいないのでカメやサンダー戦でだけ打つようにしたほうが安定する。&lt;/p>
+&lt;h3 id="カメゲー">カメゲー
+&lt;span>&lt;a href="#%e3%82%ab%e3%83%a1%e3%82%b2%e3%83%bc">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>カメゲー ≒ 経験値ゲー。&lt;br>
+チームだとゴールマクロ等カメじゃなくてロトムを優先する強い戦術もあるんだけどソロランクは先に下レーンを割ってカメとったらほぼ勝てる。レベル差がLOL以上に重要なゲームなので、カメ2つ取られてると確実にレベル差がついてしまい、相手がサンダー触れないように立ち回ってくるとほぼ勝てない。 1-1-3&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup>も上位では流行ってるらしい。&lt;/p>
+&lt;h3 id="集団戦は難しい">集団戦は難しい
+&lt;span>&lt;a href="#%e9%9b%86%e5%9b%a3%e6%88%a6%e3%81%af%e9%9b%a3%e3%81%97%e3%81%84">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>スキル一つ一つが強力で有効活用できなかった時のリカバリーは難しい。特に集団戦は相手のアタッカーにきれいにフォーカスしたいので相手のCCやユナイト技の有無は把握しておく必要がある。まぁここは正直LOLと同じ。&lt;/p>
+&lt;h3 id="カイリュー">カイリュー
+&lt;span>&lt;a href="#%e3%82%ab%e3%82%a4%e3%83%aa%e3%83%a5%e3%83%bc">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>やってることがおかしい。&lt;/p>
+&lt;h3 id="まとめ">まとめ
+&lt;span>&lt;a href="#%e3%81%be%e3%81%a8%e3%82%81">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>ポケモンは大学生の時やっていたし、そのキャラクターを使ってMOBAできるのは感慨深い。&lt;br>
+ゲーム性がLOLとけっこう違うし試合が10分で終わるのでストレスも少ない。&lt;br>
+不満点はマウスとキーボードで操作したいぐらい。神ゲー。&lt;/p>
+&lt;section class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1" role="doc-endnote">
+&lt;p>ユナイトと同じMOBAというジャンルで世界的に人気なゲーム。&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:2" role="doc-endnote">
+&lt;p>上位0.26%、とはいえ自分より100倍うまい人間がうじゃうじゃいる。&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:3" role="doc-endnote">
+&lt;p>上1人中央1人下3人&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/section></description></item><item><title>はてなブログからHugo + GitHub Pagesに引っ越した</title><link>https://qwyng.dev/posts/2021-1-1/</link><pubDate>Sun, 02 Jan 2022 00:22:50 +0900</pubDate><guid>https://qwyng.dev/posts/2021-1-1/</guid><description>&lt;p>&lt;a href="https://qwyng.dev/posts/2021/12/30/191311">去年の振り返りで書いた通り&lt;/a>はてなブログが嫌になってきたのでGitHub Pagesに移行した。&lt;br>
 このテーマを書きましょう！みたいなキャンペーンが押し付けがましく感じたり、ログイン導線がめんどかったりが嫌になった原因。エディタがもっさりしていて辛かったのもある。&lt;/p>
 &lt;h2 id="ドメインqwyngdevの理由">ドメイン(qwyng.dev)の理由
 &lt;span>&lt;a href="#%e3%83%89%e3%83%a1%e3%82%a4%e3%83%b3qwyngdev%e3%81%ae%e7%90%86%e7%94%b1">#&lt;/a>&lt;/span>
