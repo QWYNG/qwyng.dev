@@ -1,13 +1,11 @@
 <!doctype html><html lang=ja data-theme>
 <head>
-<meta name=generator content="Hugo 0.91.2">
 <meta charset=utf-8>
 <meta name=HandheldFriendly content="True">
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
-<title>QWYNG.dev</title>
-<meta name=description content="QWYNG(Hiroaki Osawa)という人間のブログです各種SNSのリンクはヘッダー参照">
-<link rel=alternate type=application/rss+xml href=https://qwyng.dev/index.xml title=QWYNG.dev>
+<title>『研鑚Rubyプログラミング』β版　を読んだ - QWYNG.dev</title>
+<meta name=description content="タイトルどおりラムダ書籍さんから大好評発売中の『研鑚Rubyプログラミング』β版を読んだ。 翻訳がまだ途中なのでβ版。内容が３部構成なんだけど">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -16,10 +14,10 @@
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです各種SNSのリンクはヘッダー参照">
+<meta property="og:description" content="タイトルどおりラムダ書籍さんから大好評発売中の『研鑚Rubyプログラミング』β版を読んだ。 翻訳がまだ途中なのでβ版。内容が３部構成なんだけど">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="『研鑚Rubyプログラミング』β版　を読んだ - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/20210103kensan-ruby/">
 <meta name=og:image content="https://qwyng.dev/android-chrome-384x384.png">
 <meta name=twitter:card content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -60,100 +58,49 @@
 </nav>
 </header>
 <main id=main tabindex=-1>
-<div class=homepage-content>
-</div>
-<div class="articles h-feed">
-<article class="post-list h-feed">
+<article class="post h-entry">
 <div class=post-header>
 <header>
-<h1 class="p-name post-title"><a class=u-url href=/posts/2020/05/09/142222/>RubyでPriority Queue</a></h1>
+<h1 class="p-name post-title">『研鑚Rubyプログラミング』β版　を読んだ</h1>
 </header>
 </div>
+<div class="content e-content">
+<p>タイトルどおりラムダ書籍さんから大好評発売中の<a href=https://www.lambdanote.com/collections/ruby>『研鑚Rubyプログラミング』β版</a>を読んだ。</p>
+<p>翻訳がまだ途中なのでβ版。内容が３部構成なんだけど最初の一部のみ翻訳が完了していて、他の二部は翻訳作業中とのこと。とはいえその翻訳中の部も正式ではないものの日本語化された文章が存在するので一応内容を全て日本語で把握することは可能。
+ざっと読み終えたので良かったところを書いていく。</p>
+<h3 id=トレードオフを理解しろと書かれている>トレードオフを理解しろと書かれている
+<span><a href=#%e3%83%88%e3%83%ac%e3%83%bc%e3%83%89%e3%82%aa%e3%83%95%e3%82%92%e7%90%86%e8%a7%a3%e3%81%97%e3%82%8d%e3%81%a8%e6%9b%b8%e3%81%8b%e3%82%8c%e3%81%a6%e3%81%84%e3%82%8b>#</a></span>
+</h3><p>この本にはRubyの実践的なテクニックがたくさん書いてあるのだけれど、そのテクニックに対してちゃんとトレードオフが言語化してある。例えばActiveRecordとSequelどちらを使うかといった話なら、ActiveRecordには外部ライブラリが数多く存在して開発が捗るし、Sequelなら実行性能やエラー検知に優れている、という様にメリデメがしっかり書かれていた。
+URL構造をネストにする時フラットにする時のメリデメ比較もウェブサービス作っているなら参考になると思う。より具体なメソッドの数と複雑性やテストの抽象化等、コードに対してプログラマが悩みがちなことについても書かれている。<br>
+技術のトレードオフをちゃんと理解しろという強いメッセージを感じた。</p>
+<h3 id=ライブラリを開発する人向けの助言が多い>ライブラリを開発する人向けの助言が多い
+<span><a href=#%e3%83%a9%e3%82%a4%e3%83%96%e3%83%a9%e3%83%aa%e3%82%92%e9%96%8b%e7%99%ba%e3%81%99%e3%82%8b%e4%ba%ba%e5%90%91%e3%81%91%e3%81%ae%e5%8a%a9%e8%a8%80%e3%81%8c%e5%a4%9a%e3%81%84>#</a></span>
+</h3><p>Module#autoloadの実践例や後方互換性を意識したコード等Rubyでライブラリを書く人向けの助言も多かった。自分でライブラリを書いている人は読むとライブラリ設計に関する道具箱が格段に増えると思う。<br>
+またプラグイン設計や定数探索についても詳しく記載されていて、普段プラグインが導入されているような大きめのライブラリを開発で使っている人なら仕組みを知っておくと業務でのデバックも捗りそうだと感じた。</p>
+<h3 id=vmメモリ実行性能に関する技術>VM、メモリ、実行性能に関する技術
+<span><a href=#vm%e3%83%a1%e3%83%a2%e3%83%aa%e5%ae%9f%e8%a1%8c%e6%80%a7%e8%83%bd%e3%81%ab%e9%96%a2%e3%81%99%e3%82%8b%e6%8a%80%e8%a1%93>#</a></span>
+</h3><p>正直デフォルト引数のオブジェクト生成コストを気にしたことはなかったしSetの中身Hashなこと知らなかったし
+raiseに空配列渡してバックトレースを消して実行性能を向上させようと考えたこともない。<br>
+それらの選択が絶対的に良いものだとは思わないが選択肢の一つであることには違いないので、Rubyを書く時の選択肢をもっと増やしたいと思っている人にはオススメできる。</p>
+<h3 id=まとめ>まとめ
+<span><a href=#%e3%81%be%e3%81%a8%e3%82%81>#</a></span>
+</h3><p>Rubyのコードをもっと良くしたいと思っている人は読むといいんじゃなかろうか。<br>
+ライブラリ開発やウェブ開発以外にも引数や変数の使い分けといった原則にも触れられているので普段の開発におけるRubyのコードにも活かせる点が数多く存在すると思う。<br>
+とりあえず自分も自作Gemを磨き治すぞo(^-^)o</p>
+</div>
 <div class=post-info>
-<div class="post-date dt-published">2020-05-09</div>
-<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/2020/05/09/142222/>https://qwyng.dev/posts/2020/05/09/142222/</a>
+<div class="post-date dt-published">2022-01-04</div>
+<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/20210103kensan-ruby/>https://qwyng.dev/posts/20210103kensan-ruby/</a>
 <a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
 <div class=post-taxonomies>
 </div>
 </div>
 </article>
-<article class="post-list h-feed">
-<div class=post-header>
-<header>
-<h1 class="p-name post-title"><a class=u-url href=/posts/2020/05/04/000744/>Atcoderで茶色になりました</a></h1>
-</header>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2020-05-04</div>
-<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/2020/05/04/000744/>https://qwyng.dev/posts/2020/05/04/000744/</a>
-<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
-<div class=post-taxonomies>
-</div>
-</div>
-</article>
-<article class="post-list h-feed">
-<div class=post-header>
-<header>
-<h1 class="p-name post-title"><a class=u-url href=/posts/2020/04/29/161905/>OSSコードリーディング Batch-loader</a></h1>
-</header>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2020-04-29</div>
-<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/2020/04/29/161905/>https://qwyng.dev/posts/2020/04/29/161905/</a>
-<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
-<div class=post-taxonomies>
-</div>
-</div>
-</article>
-<article class="post-list h-feed">
-<div class=post-header>
-<header>
-<h1 class="p-name post-title"><a class=u-url href=/posts/2020/04/27/223737/>Gatsby.jsとTypeScriptでミニブログを作った</a></h1>
-</header>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2020-04-27</div>
-<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/2020/04/27/223737/>https://qwyng.dev/posts/2020/04/27/223737/</a>
-<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
-<div class=post-taxonomies>
-</div>
-</div>
-</article>
-<article class="post-list h-feed">
-<div class=post-header>
-<header>
-<h1 class="p-name post-title"><a class=u-url href=/posts/2020/04/12/173511/>ScalaとRubyで関数合成してみる</a></h1>
-</header>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2020-04-12</div>
-<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/2020/04/12/173511/>https://qwyng.dev/posts/2020/04/12/173511/</a>
-<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
-<div class=post-taxonomies>
-</div>
-</div>
-</article>
-<article class="post-list h-feed">
-<div class=post-header>
-<header>
-<h1 class="p-name post-title"><a class=u-url href=/posts/2020/03/17/003957/>N予備校が無料だったのでプログラミングコースをちょっとやってみた</a></h1>
-</header>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2020-03-17</div>
-<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/2020/03/17/003957/>https://qwyng.dev/posts/2020/03/17/003957/</a>
-<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
-<div class=post-taxonomies>
-</div>
-</div>
-</article>
-<div class=pagination>
-<div class="left pagination-item">
-<a href=/page/3/>to new posts</a>
+<div class="pagination post-pagination">
+<div class="left pagination-item disabled">
 </div>
 <div class="right pagination-item">
-<a href=/page/5/>to old posts</a>
-</div>
+<a href=/posts/2022-1-2/>LOLおじさんからみるポケモンユナイト</a>
 </div>
 </div>
 </main>

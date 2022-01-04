@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 02 Jan 2022 16:07:59 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>LOLおじさんからみるポケモンユナイト</title><link>https://qwyng.dev/posts/2022-1-2/</link><pubDate>Sun, 02 Jan 2022 16:07:59 +0900</pubDate><guid>https://qwyng.dev/posts/2022-1-2/</guid><description>&lt;p>年始に社の人達(+そのパートナーの方)と下の大会にでることになった。&lt;br>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Tue, 04 Jan 2022 15:50:56 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>『研鑚Rubyプログラミング』β版　を読んだ</title><link>https://qwyng.dev/posts/20210103kensan-ruby/</link><pubDate>Tue, 04 Jan 2022 15:50:56 +0900</pubDate><guid>https://qwyng.dev/posts/20210103kensan-ruby/</guid><description>&lt;p>タイトルどおりラムダ書籍さんから大好評発売中の&lt;a href="https://www.lambdanote.com/collections/ruby">『研鑚Rubyプログラミング』β版&lt;/a>を読んだ。&lt;/p>
+&lt;p>翻訳がまだ途中なのでβ版。内容が３部構成なんだけど最初の一部のみ翻訳が完了していて、他の二部は翻訳作業中とのこと。とはいえその翻訳中の部も正式ではないものの日本語化された文章が存在するので一応内容を全て日本語で把握することは可能。
+ざっと読み終えたので良かったところを書いていく。&lt;/p>
+&lt;h3 id="トレードオフを理解しろと書かれている">トレードオフを理解しろと書かれている
+&lt;span>&lt;a href="#%e3%83%88%e3%83%ac%e3%83%bc%e3%83%89%e3%82%aa%e3%83%95%e3%82%92%e7%90%86%e8%a7%a3%e3%81%97%e3%82%8d%e3%81%a8%e6%9b%b8%e3%81%8b%e3%82%8c%e3%81%a6%e3%81%84%e3%82%8b">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>この本にはRubyの実践的なテクニックがたくさん書いてあるのだけれど、そのテクニックに対してちゃんとトレードオフが言語化してある。例えばActiveRecordとSequelどちらを使うかといった話なら、ActiveRecordには外部ライブラリが数多く存在して開発が捗るし、Sequelなら実行性能やエラー検知に優れている、という様にメリデメがしっかり書かれていた。
+URL構造をネストにする時フラットにする時のメリデメ比較もウェブサービス作っているなら参考になると思う。より具体なメソッドの数と複雑性やテストの抽象化等、コードに対してプログラマが悩みがちなことについても書かれている。&lt;br>
+技術のトレードオフをちゃんと理解しろという強いメッセージを感じた。&lt;/p>
+&lt;h3 id="ライブラリを開発する人向けの助言が多い">ライブラリを開発する人向けの助言が多い
+&lt;span>&lt;a href="#%e3%83%a9%e3%82%a4%e3%83%96%e3%83%a9%e3%83%aa%e3%82%92%e9%96%8b%e7%99%ba%e3%81%99%e3%82%8b%e4%ba%ba%e5%90%91%e3%81%91%e3%81%ae%e5%8a%a9%e8%a8%80%e3%81%8c%e5%a4%9a%e3%81%84">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>Module#autoloadの実践例や後方互換性を意識したコード等Rubyでライブラリを書く人向けの助言も多かった。自分でライブラリを書いている人は読むとライブラリ設計に関する道具箱が格段に増えると思う。&lt;br>
+またプラグイン設計や定数探索についても詳しく記載されていて、普段プラグインが導入されているような大きめのライブラリを開発で使っている人なら仕組みを知っておくと業務でのデバックも捗りそうだと感じた。&lt;/p>
+&lt;h3 id="vmメモリ実行性能に関する技術">VM、メモリ、実行性能に関する技術
+&lt;span>&lt;a href="#vm%e3%83%a1%e3%83%a2%e3%83%aa%e5%ae%9f%e8%a1%8c%e6%80%a7%e8%83%bd%e3%81%ab%e9%96%a2%e3%81%99%e3%82%8b%e6%8a%80%e8%a1%93">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>正直デフォルト引数のオブジェクト生成コストを気にしたことはなかったしSetの中身Hashなこと知らなかったし
+raiseに空配列渡してバックトレースを消して実行性能を向上させようと考えたこともない。&lt;br>
+それらの選択が絶対的に良いものだとは思わないが選択肢の一つであることには違いないので、Rubyを書く時の選択肢をもっと増やしたいと思っている人にはオススメできる。&lt;/p>
+&lt;h3 id="まとめ">まとめ
+&lt;span>&lt;a href="#%e3%81%be%e3%81%a8%e3%82%81">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>Rubyのコードをもっと良くしたいと思っている人は読むといいんじゃなかろうか。&lt;br>
+ライブラリ開発やウェブ開発以外にも引数や変数の使い分けといった原則にも触れられているので普段の開発におけるRubyのコードにも活かせる点が数多く存在すると思う。&lt;br>
+とりあえず自分も自作Gemを磨き治すぞo(^-^)o&lt;/p></description></item><item><title>LOLおじさんからみるポケモンユナイト</title><link>https://qwyng.dev/posts/2022-1-2/</link><pubDate>Sun, 02 Jan 2022 16:07:59 +0900</pubDate><guid>https://qwyng.dev/posts/2022-1-2/</guid><description>&lt;p>年始に社の人達(+そのパートナーの方)と下の大会にでることになった。&lt;br>
 &lt;a href="https://www.pokemonunite.jp/ja/news/30/">Pokémon UNITE Winter Tournamentを開催！&lt;/a>&lt;br>
 LOL&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>をかれこれ7年近くやっているMOBAおじさんなので喜んで参加させて貰った。ちなみにLOLの最高レートはD2&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>です。&lt;/p>
 &lt;p>12月終わりに参加が決まり、年末はとりあえずマスターになるまでやったのでLOLおじさんがLOLとの比較を書いてく。&lt;/p>
