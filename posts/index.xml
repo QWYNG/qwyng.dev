@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Mon, 17 Jan 2022 21:39:08 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>GreenDay 0.4.0をリリースした</title><link>https://qwyng.dev/posts/20210117_greanday_0_4_0/</link><pubDate>Mon, 17 Jan 2022 21:39:08 +0900</pubDate><guid>https://qwyng.dev/posts/20210117_greanday_0_4_0/</guid><description>&lt;p>自作のAtCoderのテスト自動生成Gemのversion0.4.0を公開した。&lt;br>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Wed, 02 Feb 2022 22:33:10 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>四年ぶりのMTG（会議じゃない方）</title><link>https://qwyng.dev/posts/20220202/</link><pubDate>Wed, 02 Feb 2022 22:33:10 +0900</pubDate><guid>https://qwyng.dev/posts/20220202/</guid><description>&lt;p>四年ぶりに友達と統率者戦をやることになりカードを買い始めた。MTGは大学時代に好きだった趣味だけど、今はお金に糸目付けなくて済むので更に楽しい。&lt;br>
+統率者戦はウィノータを組んで池袋でスペースを借りて一日中遊んでいたのだが、楽しすぎて時間があっという間に過ぎた。&lt;br>
+統率者戦でMTGの楽しさを思い出し、昔使っていたレガシーのURデルバーをもう一度使いたいなぁと思っていた所にラバガンの禁止が入ったのでこれ朗報と現代のパーツを色々買ってデッキをアップデートした。&lt;br>
+猿の枠にはネメシス、速槍、チェンライと思い出カードを詰め込んだ。どれも昔自分と一緒に戦ってくれたカードで、スリーブを詰め直すだけでも懐かしかった。後自分のカードのシャカパチ曲がりが酷すぎて笑ってしまった。&lt;/p>
+&lt;p>手始めに晴れる屋横浜店の休日大会と信心亭の平日レガシーに出た。2-1、,2-1(Bye込み）と一応勝ち越せたがデルバーの誘発忘れたり人間指定疫病が場にあるのにデルバー出そうとしたりプレイングは酷いもんだった。
+エモシーンとして除去の的になっている媒介者や執政の横で速槍がパワー5になって殴るという局面があり、サイン付きのお気に入りのカードがまた活躍している様に泣きそうになってしまった。&lt;br>
+対戦相手も良い人ばかりで、MTGコンパニオンに驚愕してる自分に色々現代の大会方式を教えてくれたり雑談に付き合ってくれたりと存分に対面MTGを楽しめた。&lt;/p>
+&lt;p>最近のカードについての感想だが、濁浪の執政の強さにも驚いたが対戦相手の緑のカードがどれも強くて驚いた、ウーロが何故か攻撃するたびに能力が誘発していて頭がどうにかなりそうだったし、忍耐で戦略が吹っ飛んだりした。&lt;br>
+後4マナカーンからマイコシンスだされてテキストを確認したら全てが止まる実績も解除した。&lt;/p>
+&lt;p>商品で貰ったポイントを使ってミシュラのガラクタを買った。ちょっとづつデッキを強化している感じで楽しい。また暇ができたら大会に出よう。&lt;/p></description></item><item><title>GreenDay 0.4.0をリリースした</title><link>https://qwyng.dev/posts/20210117_greanday_0_4_0/</link><pubDate>Mon, 17 Jan 2022 21:39:08 +0900</pubDate><guid>https://qwyng.dev/posts/20210117_greanday_0_4_0/</guid><description>&lt;p>自作のAtCoderのテスト自動生成Gemのversion0.4.0を公開した。&lt;br>
 &lt;a href="https://rubygems.org/gems/green_day">https://rubygems.org/gems/green_day&lt;/a>&lt;/p>
 &lt;p>今回はコンテストの問題数がA to Zの26問以上あっても26問目までしかテストが生成されないことを解決した。
 たまたま勉強に使った&lt;a href="https://atcoder.jp/contests/typical90">競プロ典型 90 問&lt;/a>に問題が大量にあったので判明したバグ。&lt;br>
