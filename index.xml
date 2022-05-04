@@ -1,4 +1,38 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sat, 30 Apr 2022 20:00:10 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>GreenDay 0.5.0をリリースした</title><link>https://qwyng.dev/posts/20220430/</link><pubDate>Sat, 30 Apr 2022 20:00:10 +0900</pubDate><guid>https://qwyng.dev/posts/20220430/</guid><description>&lt;p>先日、ありがたいことにGreenDayにPRを送ってもらった。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Wed, 04 May 2022 15:06:56 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>システム運用アンチパターンを読んだ</title><link>https://qwyng.dev/posts/20220504/</link><pubDate>Wed, 04 May 2022 15:06:56 +0900</pubDate><guid>https://qwyng.dev/posts/20220504/</guid><description>&lt;p>読んだだけで何もしていないので何もしていない。&lt;br>
+せっかくなので読んでいて自分たちで実践できそうと思ったことを社外秘が漏れない程度に書いていく。&lt;/p>
+&lt;h3 id="ポストモーテム作成時にシステムの期待と現実の把握がしたいことを共有する">ポストモーテム作成時にシステムの期待と現実の把握がしたいことを共有する
+&lt;span>&lt;a href="#%e3%83%9d%e3%82%b9%e3%83%88%e3%83%a2%e3%83%bc%e3%83%86%e3%83%a0%e4%bd%9c%e6%88%90%e6%99%82%e3%81%ab%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e3%81%ae%e6%9c%9f%e5%be%85%e3%81%a8%e7%8f%be%e5%ae%9f%e3%81%ae%e6%8a%8a%e6%8f%a1%e3%81%8c%e3%81%97%e3%81%9f%e3%81%84%e3%81%93%e3%81%a8%e3%82%92%e5%85%b1%e6%9c%89%e3%81%99%e3%82%8b">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>「システムの全体像の期待と現実が異なっていたとき障害が発生しやすい」というのはかなり納得できる意見。期待と現実のギャップに気づきたいことを事前に共有した上でインシデントの振り返りを行うと、メンバーから具体的イメージが出てきやそうなのでやっていきたい。&lt;/p>
+&lt;h3 id="ドキュメントにはトレードオフを書く">ドキュメントにはトレードオフを書く
+&lt;span>&lt;a href="#%e3%83%89%e3%82%ad%e3%83%a5%e3%83%a1%e3%83%b3%e3%83%88%e3%81%ab%e3%81%af%e3%83%88%e3%83%ac%e3%83%bc%e3%83%89%e3%82%aa%e3%83%95%e3%82%92%e6%9b%b8%e3%81%8f">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>これは昔同僚氏も話していたことで納得した。具体的な実装の中身より戦略のほうが「過去の情報」と捉えやすいし効果が高そう。また、深く詳細を書きすぎても誰も読まないという点も留意しておきたい。&lt;/p>
+&lt;h3 id="機能フラグを使う">機能フラグを使う
+&lt;span>&lt;a href="#%e6%a9%9f%e8%83%bd%e3%83%95%e3%83%a9%e3%82%b0%e3%82%92%e4%bd%bf%e3%81%86">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>触ってるプロダクトがGraphQLサーバーとそこにクエリを投げるSPAという構成なのだけれど、新機能作るときにフロントエンドも少しづつ作りなおすので顧客に途中の状態を露出できずにわりとビックバンリリースになりがちである。&lt;br>
+GraphQLサーバーだけ先にリリースするのはGraphQLスキーマが破壊的変更されている場合にSPAが対応できないため難しい。&lt;br>
+上記のような困りがあったため機能フラグというのは特に運用していなかったのだけれど、システム運用アンチパターンを読んで改めて考えてみることにした。&lt;br>
+一個浮かんだ案としては、directiveを使って以下のようにサーバ側では同名で型の違うfieldを2つ実装しておき、クライアントにはどちらかしか露出させないというもの。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-graphql" data-lang="graphql">&lt;span style="color:#66d9ef">directive&lt;/span> &lt;span style="color:#a6e22e">@flagged&lt;/span>(
+&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&amp;#34;
+&lt;/span>&lt;span style="color:#e6db74"> Flags to check for this schema member
+&lt;/span>&lt;span style="color:#e6db74"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+by: [&lt;span style="color:#a6e22e">String&lt;/span>!]!
+) &lt;span style="color:#66d9ef">on&lt;/span> &lt;span style="color:#66d9ef">ARGUMENT_DEFINITION&lt;/span> | &lt;span style="color:#66d9ef">ENUM&lt;/span> | &lt;span style="color:#66d9ef">ENUM_VALUE&lt;/span> | &lt;span style="color:#66d9ef">FIELD_DEFINITION&lt;/span> | &lt;span style="color:#66d9ef">INPUT_FIELD_DEFINITION&lt;/span> | &lt;span style="color:#66d9ef">INPUT_OBJECT&lt;/span> | &lt;span style="color:#66d9ef">INTERFACE&lt;/span> | &lt;span style="color:#66d9ef">OBJECT&lt;/span> | &lt;span style="color:#66d9ef">SCALAR&lt;/span> | &lt;span style="color:#66d9ef">UNION&lt;/span>
+&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&amp;#34;
+&lt;/span>&lt;span style="color:#e6db74">Introspection with &amp;#39;ADMIN&amp;#34;
+&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;span style="color:#66d9ef">type&lt;/span> &lt;span style="color:#a6e22e">User&lt;/span> {
+　name: &lt;span style="color:#a6e22e">String&lt;/span>!
+profile: &lt;span style="color:#a6e22e">String&lt;/span>! &lt;span style="color:#a6e22e">@flagged&lt;/span>(by: [&lt;span style="color:#e6db74">&amp;#34;ADMIN&amp;#34;&lt;/span>])
+}
+&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&amp;#34;
+&lt;/span>&lt;span style="color:#e6db74">Introspection with &amp;#39;NOT_ADMIN&amp;#34;
+&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;span style="color:#a6e22e">type&lt;/span> User {
+name: &lt;span style="color:#a6e22e">String&lt;/span>!
+profile: &lt;span style="color:#a6e22e">UserProfile&lt;/span>! &lt;span style="color:#a6e22e">@flagged&lt;/span>(by: [&lt;span style="color:#e6db74">&amp;#34;NOT_ADMIN&amp;#34;&lt;/span>)
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>デプロイへの恐怖心の原因の一つであるコードのリリースと顧客への周知の帳尻を合わせを解消できそうなのでGW明け試してみたい。&lt;/p></description></item><item><title>GreenDay 0.5.0をリリースした</title><link>https://qwyng.dev/posts/20220430/</link><pubDate>Sat, 30 Apr 2022 20:00:10 +0900</pubDate><guid>https://qwyng.dev/posts/20220430/</guid><description>&lt;p>先日、ありがたいことにGreenDayにPRを送ってもらった。
 &lt;a href="https://github.com/QWYNG/green_day/pull/43">https://github.com/QWYNG/green_day/pull/43&lt;/a>&lt;br>
 そのままマージさせて頂いたのだけれど、コメントにもある通りAtcoderはわりと自由に問題のURLを設定しているっぽいので、コンテスト名から問題のURLを推測するのではなくHTMLから問題のURLを抽出する方式に変更した。これでHTMLで表示されていた問題名と異なるファイル名が生成されてしまう問題は解消したと思う。&lt;/p>
 &lt;p>GitHubのリリース機能初めてつかったけどコミット一覧とかリリースノートに簡単に記載できて便利。&lt;br>

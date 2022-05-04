@@ -1,13 +1,11 @@
 <!doctype html><html lang=ja data-theme>
 <head>
-<meta name=generator content="Hugo 0.91.2">
 <meta charset=utf-8>
 <meta name=HandheldFriendly content="True">
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
-<title>QWYNG.dev</title>
-<meta name=description content="QWYNG(Hiroaki Osawa)という人間のブログです各種SNSのリンクはヘッダー参照">
-<link rel=alternate type=application/rss+xml href=https://qwyng.dev/index.xml title=QWYNG.dev>
+<title>システム運用アンチパターンを読んだ - QWYNG.dev</title>
+<meta name=description content="読んだだけで何もしていないので何もしていない。 せっかくなので読んでいて自分たちで実践できそうと思ったことを社外秘が漏れない程度に書いていく。">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -16,10 +14,10 @@
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです各種SNSのリンクはヘッダー参照">
+<meta property="og:description" content="読んだだけで何もしていないので何もしていない。 せっかくなので読んでいて自分たちで実践できそうと思ったことを社外秘が漏れない程度に書いていく。">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="システム運用アンチパターンを読んだ - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/20220504/">
 <meta name=og:image content="https://qwyng.dev/android-chrome-384x384.png">
 <meta name=twitter:card content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -60,14 +58,50 @@
 </nav>
 </header>
 <main id=main tabindex=-1>
-<div class=homepage-content>
-</div>
-<div class="articles h-feed">
-<article class="post-list h-feed">
+<article class="post h-entry">
 <div class=post-header>
 <header>
-<h1 class="p-name post-title"><a class=u-url href=/posts/20220504/>システム運用アンチパターンを読んだ</a></h1>
+<h1 class="p-name post-title">システム運用アンチパターンを読んだ</h1>
 </header>
+</div>
+<div class="content e-content">
+<p>読んだだけで何もしていないので何もしていない。<br>
+せっかくなので読んでいて自分たちで実践できそうと思ったことを社外秘が漏れない程度に書いていく。</p>
+<h3 id=ポストモーテム作成時にシステムの期待と現実の把握がしたいことを共有する>ポストモーテム作成時にシステムの期待と現実の把握がしたいことを共有する
+<span><a href=#%e3%83%9d%e3%82%b9%e3%83%88%e3%83%a2%e3%83%bc%e3%83%86%e3%83%a0%e4%bd%9c%e6%88%90%e6%99%82%e3%81%ab%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e3%81%ae%e6%9c%9f%e5%be%85%e3%81%a8%e7%8f%be%e5%ae%9f%e3%81%ae%e6%8a%8a%e6%8f%a1%e3%81%8c%e3%81%97%e3%81%9f%e3%81%84%e3%81%93%e3%81%a8%e3%82%92%e5%85%b1%e6%9c%89%e3%81%99%e3%82%8b>#</a></span>
+</h3><p>「システムの全体像の期待と現実が異なっていたとき障害が発生しやすい」というのはかなり納得できる意見。期待と現実のギャップに気づきたいことを事前に共有した上でインシデントの振り返りを行うと、メンバーから具体的イメージが出てきやそうなのでやっていきたい。</p>
+<h3 id=ドキュメントにはトレードオフを書く>ドキュメントにはトレードオフを書く
+<span><a href=#%e3%83%89%e3%82%ad%e3%83%a5%e3%83%a1%e3%83%b3%e3%83%88%e3%81%ab%e3%81%af%e3%83%88%e3%83%ac%e3%83%bc%e3%83%89%e3%82%aa%e3%83%95%e3%82%92%e6%9b%b8%e3%81%8f>#</a></span>
+</h3><p>これは昔同僚氏も話していたことで納得した。具体的な実装の中身より戦略のほうが「過去の情報」と捉えやすいし効果が高そう。また、深く詳細を書きすぎても誰も読まないという点も留意しておきたい。</p>
+<h3 id=機能フラグを使う>機能フラグを使う
+<span><a href=#%e6%a9%9f%e8%83%bd%e3%83%95%e3%83%a9%e3%82%b0%e3%82%92%e4%bd%bf%e3%81%86>#</a></span>
+</h3><p>触ってるプロダクトがGraphQLサーバーとそこにクエリを投げるSPAという構成なのだけれど、新機能作るときにフロントエンドも少しづつ作りなおすので顧客に途中の状態を露出できずにわりとビックバンリリースになりがちである。<br>
+GraphQLサーバーだけ先にリリースするのはGraphQLスキーマが破壊的変更されている場合にSPAが対応できないため難しい。<br>
+上記のような困りがあったため機能フラグというのは特に運用していなかったのだけれど、システム運用アンチパターンを読んで改めて考えてみることにした。<br>
+一個浮かんだ案としては、directiveを使って以下のようにサーバ側では同名で型の違うfieldを2つ実装しておき、クライアントにはどちらかしか露出させないというもの。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-graphql data-lang=graphql><span style=color:#66d9ef>directive</span> <span style=color:#a6e22e>@flagged</span>(
+  <span style=color:#e6db74>&#34;&#34;&#34;
+</span><span style=color:#e6db74>  Flags to check for this schema member
+</span><span style=color:#e6db74>  &#34;&#34;&#34;</span>
+  by: [<span style=color:#a6e22e>String</span>!]!
+) <span style=color:#66d9ef>on</span> <span style=color:#66d9ef>ARGUMENT_DEFINITION</span> | <span style=color:#66d9ef>ENUM</span> | <span style=color:#66d9ef>ENUM_VALUE</span> | <span style=color:#66d9ef>FIELD_DEFINITION</span> | <span style=color:#66d9ef>INPUT_FIELD_DEFINITION</span> | <span style=color:#66d9ef>INPUT_OBJECT</span> | <span style=color:#66d9ef>INTERFACE</span> | <span style=color:#66d9ef>OBJECT</span> | <span style=color:#66d9ef>SCALAR</span> | <span style=color:#66d9ef>UNION</span>
+
+<span style=color:#e6db74>&#34;&#34;&#34;
+</span><span style=color:#e6db74>Introspection with &#39;ADMIN&#34;
+</span><span style=color:#e6db74>&#34;&#34;&#34;</span>
+<span style=color:#66d9ef>type</span> <span style=color:#a6e22e>User</span> {
+　name: <span style=color:#a6e22e>String</span>!
+  profile: <span style=color:#a6e22e>String</span>! <span style=color:#a6e22e>@flagged</span>(by: [<span style=color:#e6db74>&#34;ADMIN&#34;</span>])
+}
+
+<span style=color:#e6db74>&#34;&#34;&#34;
+</span><span style=color:#e6db74>Introspection with &#39;NOT_ADMIN&#34;
+</span><span style=color:#e6db74>&#34;&#34;&#34;</span>
+<span style=color:#a6e22e>type</span> User {
+  name: <span style=color:#a6e22e>String</span>!
+  profile: <span style=color:#a6e22e>UserProfile</span>! <span style=color:#a6e22e>@flagged</span>(by: [<span style=color:#e6db74>&#34;NOT_ADMIN&#34;</span>)
+}
+</code></pre></div><p>デプロイへの恐怖心の原因の一つであるコードのリリースと顧客への周知の帳尻を合わせを解消できそうなのでGW明け試してみたい。</p>
 </div>
 <div class=post-info>
 <div class="post-date dt-published">2022-05-04</div>
@@ -77,82 +111,11 @@
 </div>
 </div>
 </article>
-<article class="post-list h-feed">
-<div class=post-header>
-<header>
-<h1 class="p-name post-title"><a class=u-url href=/posts/20220430/>GreenDay 0.5.0をリリースした</a></h1>
-</header>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2022-04-30</div>
-<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/20220430/>https://qwyng.dev/posts/20220430/</a>
-<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
-<div class=post-taxonomies>
-</div>
-</div>
-</article>
-<article class="post-list h-feed">
-<div class=post-header>
-<header>
-<h1 class="p-name post-title"><a class=u-url href=/posts/20220424/>Production Ready GraphQLを読んだ</a></h1>
-</header>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2022-04-24</div>
-<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/20220424/>https://qwyng.dev/posts/20220424/</a>
-<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
-<div class=post-taxonomies>
-</div>
-</div>
-</article>
-<article class="post-list h-feed">
-<div class=post-header>
-<header>
-<h1 class="p-name post-title"><a class=u-url href=/posts/20220202/>四年ぶりのMTG（会議じゃない方）</a></h1>
-</header>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2022-02-02</div>
-<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/20220202/>https://qwyng.dev/posts/20220202/</a>
-<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
-<div class=post-taxonomies>
-</div>
-</div>
-</article>
-<article class="post-list h-feed">
-<div class=post-header>
-<header>
-<h1 class="p-name post-title"><a class=u-url href=/posts/20210117_greanday_0_4_0/>GreenDay 0.4.0をリリースした</a></h1>
-</header>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2022-01-17</div>
-<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/20210117_greanday_0_4_0/>https://qwyng.dev/posts/20210117_greanday_0_4_0/</a>
-<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
-<div class=post-taxonomies>
-</div>
-</div>
-</article>
-<article class="post-list h-feed">
-<div class=post-header>
-<header>
-<h1 class="p-name post-title"><a class=u-url href=/posts/20210103kensan-ruby/>『研鑚Rubyプログラミング』β版　を読んだ</a></h1>
-</header>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2022-01-04</div>
-<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/20210103kensan-ruby/>https://qwyng.dev/posts/20210103kensan-ruby/</a>
-<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
-<div class=post-taxonomies>
-</div>
-</div>
-</article>
-<div class=pagination>
+<div class="pagination post-pagination">
 <div class="left pagination-item disabled">
 </div>
 <div class="right pagination-item">
-<a href=/page/2/>to old posts</a>
-</div>
+<a href=/posts/20220430/>GreenDay 0.5.0をリリースした</a>
 </div>
 </div>
 </main>
