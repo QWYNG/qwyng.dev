@@ -3,8 +3,16 @@
 <meta property="og:title" content="{{ if and (.Title) (not .IsHome) }}{{ .Title }} - {{ end }}{{ .Site.Title }}">
 <meta property="og:url" content="{{ .Permalink }}">
 
-{{- with .Page.Params.ogImage -}}
-<meta name="og:image" content="{{ . | absURL }}"/>
+{{ if .Content -}}
+  {{ $urls := findRE "<img src=\"[^\"|\\\"]*\"" .Content }}
+    {{ range $url := first 1 $urls }}
+      {{ $url := (strings.TrimPrefix "<img src=\"" $url) -}}
+      {{ $url := strings.TrimSuffix "\"" $url -}}
+      <meta name="og:image" content="{{ $url }}"/>
+    {{ else }}
+      <meta name="og:image" content="{{ .Site.Params.image | absURL }}"/>    
+    {{ end }}
 {{else}}
-<meta name="og:image" content="{{ .Site.Params.image | absURL }}"/>
+  <meta name="og:image" content="{{ .Site.Params.image | absURL }}"/>
 {{ end }}
+
