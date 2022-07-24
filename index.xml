@@ -9,7 +9,7 @@ WindowsPCを常時起動しておくのは電気代的に避けたかったの�
 &lt;span>&lt;a href="#%e8%a7%a3%e6%b1%ba%e6%96%b9%e6%b3%95">#&lt;/a>&lt;/span>
 &lt;/h2>&lt;p>同じことに困っていた人がいた。&lt;br>
 &lt;a href="https://qiita.com/tksmatsubara/items/0b2d675cd663fbfc0cad">https://qiita.com/tksmatsubara/items/0b2d675cd663fbfc0cad&lt;/a>
-&lt;a href="https://github.com/microsoft/vscode-remote-release/issues/937">https://github.com/microsoft/vscode-remote-release/issues/937&lt;/a>
+&lt;a href="https://github.com/microsoft/vscode-remote-release/issues/937">https://github.com/microsoft/vscode-remote-release/issues/937&lt;/a>&lt;br>
 &lt;code>C:\Windows\system32\wsl.exe ssh&lt;/code>に処理を投げるっぽいスクリプトを作成して、そのスクリプトへのパスをVSCodeの&lt;code>remote.SSH.path&lt;/code>に設定することで解決した。&lt;br>
 標準入力はWindowsOSのままなのかssh時にknown_hosts違いの入力要求をVSCode上で入力してもWSLのプロセスまでは届かなかった。&lt;br>
 &lt;img src="https://github.com/QWYNG/images/raw/main/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202022-07-24%20201949.png" alt="">
