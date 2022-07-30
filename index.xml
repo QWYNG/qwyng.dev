@@ -1,4 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 24 Jul 2022 20:17:12 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>WSLのSSH設定を使ってWindows内のVSCodeからSSHする</title><link>https://qwyng.dev/posts/20220724/</link><pubDate>Sun, 24 Jul 2022 20:17:12 +0900</pubDate><guid>https://qwyng.dev/posts/20220724/</guid><description>&lt;h2 id="困っていたこと">困っていたこと
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sat, 30 Jul 2022 23:02:49 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>2022/07/30</title><link>https://qwyng.dev/posts/20220730/</link><pubDate>Sat, 30 Jul 2022 23:02:49 +0900</pubDate><guid>https://qwyng.dev/posts/20220730/</guid><description>&lt;p>今日から暫くおやすみなので日記をつけていく&lt;/p>
+&lt;h2 id="四国旅行">四国旅行
+&lt;span>&lt;a href="#%e5%9b%9b%e5%9b%bd%e6%97%85%e8%a1%8c">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>四国に旅行にでかけた。初日は徳島ラーメンと高松市の骨付き肉を食べた。うまかったので131831823点。&lt;/p>
+&lt;h2 id="学び">学び
+&lt;span>&lt;a href="#%e5%ad%a6%e3%81%b3">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>最近プログラミング言語の意味論の研究のために論理学を学びたくなったので&lt;a href="https://www.iwanami.co.jp/book/b496835.html">まったくゼロからの論理学&lt;/a>を読んでいる。&lt;br>
+今日読んでいて面白かったのは全称命題とその反対は同時に成り立つ可能性があるということ、つまり
+&lt;code>全てのエンジニアはゲーマーである&lt;/code>
+と
+&lt;code>全てのエンジニアはゲーマーでない&lt;/code>
+が両方とも真になることがありうるということ。&lt;/p>
+&lt;p>&lt;code>全てのエンジニアはゲーマーである&lt;/code>
+から
+&lt;code>それゆえエンジニアは存在する&lt;/code>
+は正しい演繹ではないので、&lt;code>全てのエンジニアはゲーマーである&lt;/code>というのはエンジニアが空集合であるというのも含まれている。論理学における全称では空集合も含んでいることを学んだ。&lt;/p>
+&lt;p>&lt;code>全てのエンジニアはゲーマーである&lt;/code>
+と
+&lt;code>全てのエンジニアはゲーマーでない&lt;/code>
+が真だとして、エンジニアが存在すると仮定すると矛盾することになるので、エンジニアは存在しないことになる。エンジニアが存在しないならば命題はどちらも真となる。&lt;/p>
+&lt;h2 id="明日">明日
+&lt;span>&lt;a href="#%e6%98%8e%e6%97%a5">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>高知にいって鰹食べるぞo(^-^)o&lt;/p></description></item><item><title>WSLのSSH設定を使ってWindows内のVSCodeからSSHする</title><link>https://qwyng.dev/posts/20220724/</link><pubDate>Sun, 24 Jul 2022 20:17:12 +0900</pubDate><guid>https://qwyng.dev/posts/20220724/</guid><description>&lt;h2 id="困っていたこと">困っていたこと
 &lt;span>&lt;a href="#%e5%9b%b0%e3%81%a3%e3%81%a6%e3%81%84%e3%81%9f%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
 &lt;/h2>&lt;p>今年の４月から大学のオフライン講義が始まった。&lt;br>
 その中でラップトップをキャンパスに持っていきつつ、宿題や予習等はゲーム用にスペックもりもりにしたWindowsPCで行いたいという欲求が発生した。&lt;br>
