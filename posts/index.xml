@@ -1,4 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 31 Jul 2022 22:31:04 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>日記 2022/07/31</title><link>https://qwyng.dev/posts/20220731/</link><pubDate>Sun, 31 Jul 2022 22:31:04 +0900</pubDate><guid>https://qwyng.dev/posts/20220731/</guid><description>&lt;p>日記&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Mon, 01 Aug 2022 20:59:29 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>日記 2022/08/01</title><link>https://qwyng.dev/posts/20220801/</link><pubDate>Mon, 01 Aug 2022 20:59:29 +0900</pubDate><guid>https://qwyng.dev/posts/20220801/</guid><description>&lt;p>日記！&lt;/p>
+&lt;h2 id="四国旅行">四国旅行
+&lt;span>&lt;a href="#%e5%9b%9b%e5%9b%bd%e6%97%85%e8%a1%8c">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>高知市のホテルで目を覚まし、電車でかずら橋へ向かった。&lt;/p>
+&lt;blockquote class="twitter-tweet">&lt;p lang="ja" dir="ltr">マジでグラグラしてて怖かった… &lt;a href="https://t.co/M7L11g00mH">pic.twitter.com/M7L11g00mH&lt;/a>&lt;/p>&amp;mdash; とるめん (@qwyngg) &lt;a href="https://twitter.com/qwyngg/status/1553970868216164352?ref_src=twsrc%5Etfw">August 1, 2022&lt;/a>&lt;/blockquote> &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+&lt;p>歩くたびに揺れるし足場の感覚広いしで本当に怖かった。&lt;br>
+とはいえ景色があまりに夏休みすぎて最高だった。僕たちの夏はこれからだ。&lt;br>
+夕食では寿司を食べた。あまりに美味しすぎて虹がかかった。&lt;/p>
+&lt;blockquote class="twitter-tweet">&lt;p lang="ja" dir="ltr">人生　最高　高み　幸福　桃源郷　喜び　涙　跳躍　一筋の希望　虹 &lt;a href="https://t.co/CeCDe5I7rM">pic.twitter.com/CeCDe5I7rM&lt;/a>&lt;/p>&amp;mdash; とるめん (@qwyngg) &lt;a href="https://twitter.com/qwyngg/status/1554051698078781440?ref_src=twsrc%5Etfw">August 1, 2022&lt;/a>&lt;/blockquote> &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+&lt;h2 id="学び">学び
+&lt;span>&lt;a href="#%e5%ad%a6%e3%81%b3">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>四国在住の方に奇跡のオフ会に誘っていただいたので、お会いする方繋がりでSMTPの書籍読んだりRailsの認証のスライドをみたりしていた。&lt;/p>
+&lt;p>&lt;a href="https://cryptic-command.booth.pm/items/1136808">【電子版】Dark Depths of SMTP&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://speakerdeck.com/sylph01/build-and-learn-rails-authentication">Build and Learn Rails Authentication&lt;/a>&lt;/p>
+&lt;p>特にPepperとSaltの違いが自分の中では勉強になった。DevisePepperとかいうアレはSaltとは違うものだったらしい。 &lt;br>
+そもそもPepperがSaltと違うものだという認識がなく、Saltは秘密にする値だという意識を持っていた。&lt;br>
+bcryptでは出力される文字列にはSaltがそのまま載っている仕様なので、自分がbcryptの仕様をよくわかっていなかったことが判明した。&lt;br>
+PepperはSecretSaltとも呼ばれており、データベース以外の場所（データベースの中身が漏洩した時に同時に流出する可能性が低い場所）に秘密の値を保存しておき、この値をパスワードをハッシュ化する時に用いるのがPepperという手法らしい。&lt;br>
+この手法を用いることで仮にハッシュ化したパスワードが全て漏洩してとしても、辞書攻撃を防くことができる。&lt;br>
+Pepperをハッシュ化されたパスワードの暗号化の秘密鍵として使う手法もあるようだ。&lt;/p>
+&lt;h3 id="参考">参考
+&lt;span>&lt;a href="#%e5%8f%82%e8%80%83">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://en.wikipedia.org/wiki/Pepper_(cryptography)">https://en.wikipedia.org/wiki/Pepper_(cryptography)&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://dropbox.tech/security/how-dropbox-securely-stores-your-passwords">How Dropbox securely stores your passwords&lt;/a>&lt;/p></description></item><item><title>日記 2022/07/31</title><link>https://qwyng.dev/posts/20220731/</link><pubDate>Sun, 31 Jul 2022 22:31:04 +0900</pubDate><guid>https://qwyng.dev/posts/20220731/</guid><description>&lt;p>日記&lt;/p>
 &lt;h2 id="四国旅行">四国旅行
 &lt;span>&lt;a href="#%e5%9b%9b%e5%9b%bd%e6%97%85%e8%a1%8c">#&lt;/a>&lt;/span>
 &lt;/h2>&lt;p>香川県高松市でうどんを食べた。出汁が薄味でOC。&lt;/p>
