@@ -1,4 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Wed, 03 Aug 2022 22:57:03 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>日記 20220803</title><link>https://qwyng.dev/posts/20220803/</link><pubDate>Wed, 03 Aug 2022 22:57:03 +0900</pubDate><guid>https://qwyng.dev/posts/20220803/</guid><description>&lt;h2 id="四国旅行">四国旅行
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Thu, 04 Aug 2022 22:13:06 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>日記 20220804</title><link>https://qwyng.dev/posts/20220804/</link><pubDate>Thu, 04 Aug 2022 22:13:06 +0900</pubDate><guid>https://qwyng.dev/posts/20220804/</guid><description>&lt;h3 id="やったこと">やったこと
+&lt;span>&lt;a href="#%e3%82%84%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;h3 id="大学院の講義の課題">大学院の講義の課題
+&lt;span>&lt;a href="#%e5%a4%a7%e5%ad%a6%e9%99%a2%e3%81%ae%e8%ac%9b%e7%be%a9%e3%81%ae%e8%aa%b2%e9%a1%8c">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>cafeobjでMutexプロトコルの動作のシミュレーターを作った。
+字面だけ聞くと凄そうだが以下の様に全部丁寧な手作り状態遷移という感じ。
+lockedの操作もAtomicなものではない。
+全てのプロセスは共有リソースを使わないRemainder Sectionとロックの値を変更するModifying Sectionと共有リソースを使うCritical Sectionの３つの状態を遷移し、Critical Sectionなプロセスは同時に１つしかありえないという当たり前といば当たり前なプロトコルがMutexである。（ハズ&amp;hellip;)
+cafeobjという代数仕様言語で実際に記述することで、Mutexに対する脳内等式推論が少し体験できた。&lt;/p>
+&lt;pre tabindex="0">&lt;code>eq trans((locked: true,pc1: rs, pc2: L2, pc3: L3, pc4: L4),t1)
+= (locked: true,pc1: rs, pc2: L2, pc3: L3, pc4: L4) .
+eq trans((locked: false,pc1: rs,pc2: L2, pc3: L3, pc4: L4),t1)
+= (locked: false,pc1: ms,pc2: L2, pc3: L3, pc4: L4) .
+eq trans((locked: B,pc1: ms, pc2: L2, pc3: L3, pc4: L4),t1)
+= (locked: true,pc1: cs, pc2: L2, pc3: L3, pc4: L4) .
+eq trans((locked: B,pc1: cs, pc2: L2, pc3: L3, pc4: L4),t1)
+= (locked: false,pc1: rs,pc2: L2, pc3: L3, pc4: L4) .
+&lt;/code>&lt;/pre>&lt;h3 id="学び">学び
+&lt;span>&lt;a href="#%e5%ad%a6%e3%81%b3">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;h3 id="読書">読書
+&lt;span>&lt;a href="#%e8%aa%ad%e6%9b%b8">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>数学的考え方が全然できないので、&lt;a href="https://gihyo.jp/book/2022/978-4-297-12521-9">問題解決のための「アルゴリズム×数学」が基礎からしっかり身につく本&lt;/a>を読んでいる。&lt;/p>
+&lt;p>今日は包除原理を具体的にコードにした。
+&lt;a href="https://atcoder.jp/contests/math-and-algorithm/submissions/33768538">実際の提出コード&lt;/a>&lt;/p>
+&lt;p>要は&lt;/p>
+&lt;pre tabindex="0">&lt;code>|P∪Q| = |P| + |Q| - |P∩Q|
+&lt;/code>&lt;/pre>&lt;p>なので理解が難しい原理というわけではないが、この原理が問題に使えると気づくのはできないんだよな&amp;hellip;
+後Google日本語入力で「わしゅうごう」で変換すると&lt;code>∪&lt;/code>、「せきしゅうごう」で変換すると&lt;code>∩&lt;/code>が出てきて気分が良かった。&lt;/p></description></item><item><title>日記 20220803</title><link>https://qwyng.dev/posts/20220803/</link><pubDate>Wed, 03 Aug 2022 22:57:03 +0900</pubDate><guid>https://qwyng.dev/posts/20220803/</guid><description>&lt;h2 id="四国旅行">四国旅行
 &lt;span>&lt;a href="#%e5%9b%9b%e5%9b%bd%e6%97%85%e8%a1%8c">#&lt;/a>&lt;/span>
 &lt;/h2>&lt;p>東京に帰ってきた！&lt;br>
 本当に色々あったんだけどとりあえず四国は良かった。道後温泉は足湯以外はしょぼめだった。
