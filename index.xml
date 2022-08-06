@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Fri, 05 Aug 2022 23:32:52 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>20220805</title><link>https://qwyng.dev/posts/20220805/</link><pubDate>Fri, 05 Aug 2022 23:32:52 +0900</pubDate><guid>https://qwyng.dev/posts/20220805/</guid><description>&lt;h3 id="やったこと">やったこと
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sat, 06 Aug 2022 23:33:02 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>20220806</title><link>https://qwyng.dev/posts/20220806/</link><pubDate>Sat, 06 Aug 2022 23:33:02 +0900</pubDate><guid>https://qwyng.dev/posts/20220806/</guid><description>&lt;h3 id="今日やったこと">今日やったこと
+&lt;span>&lt;a href="#%e4%bb%8a%e6%97%a5%e3%82%84%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>大学院の宿題をやった。今日はサービスサイエンスという文系より？（正しくいうと社会科学より）の講義のレポートをやっていた。 オンライン化された対面サービスの例ってなに？と友達と相談しながらレポートできたのが良かった。&lt;/p>
+&lt;h3 id="学び">学び
+&lt;span>&lt;a href="#%e5%ad%a6%e3%81%b3">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>LISPではネストしたリストをS式というらしい。という話を友だちとしていた。
+プログラミング言語の構文木と同じような構造というイメージ。
+XMLと似ているといわるのも納得。&lt;/p>
+&lt;p>&lt;a href="https://ja.wikipedia.org/wiki/S%E5%BC%8F">https://ja.wikipedia.org/wiki/S%E5%BC%8F&lt;/a>&lt;/p></description></item><item><title>20220805</title><link>https://qwyng.dev/posts/20220805/</link><pubDate>Fri, 05 Aug 2022 23:32:52 +0900</pubDate><guid>https://qwyng.dev/posts/20220805/</guid><description>&lt;h3 id="やったこと">やったこと
 &lt;span>&lt;a href="#%e3%82%84%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
 &lt;/h3>&lt;p>引き続き大学院の課題をやっていた。機能は無限リストでのMutexシミュレーターの実装だったが今回はMultiSetでのMutexシミュレーターの実装をやった。
 MultiSet、RubyでいうSetなのだが、内部でHashを使ってるRubyしかり意外とMultiSetをそのまま実装されている言語は少ないらしい。&lt;/p>
