@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 07 Aug 2022 21:56:42 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>20220807</title><link>https://qwyng.dev/posts/20220807/</link><pubDate>Sun, 07 Aug 2022 21:56:42 +0900</pubDate><guid>https://qwyng.dev/posts/20220807/</guid><description>&lt;h3 id="やったこと">やったこと
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Mon, 08 Aug 2022 20:18:57 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>20220808</title><link>https://qwyng.dev/posts/20220808/</link><pubDate>Mon, 08 Aug 2022 20:18:57 +0900</pubDate><guid>https://qwyng.dev/posts/20220808/</guid><description>&lt;h3 id="やったこと">やったこと
+&lt;span>&lt;a href="#%e3%82%84%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>腐敗オートミールによって完全にパンドラの箱と化した電子レンジを回収業者様に回収してもらった。三年間本当にありがとう。
+他はお家掃除したりオーブンレンジを使い倒したりしていた。&lt;/p>
+&lt;p>↓は味噌ダレに一晩つけた鶏もも肉をスチーム加熱したもの。
+&lt;img src="https://github.com/QWYNG/images/blob/40702868bead876364ddb845a1ee546a25a78991/FZmfqlFUUAApnoL.jpg?raw=true" alt="">&lt;/p>
+&lt;p>電子レンジなのに焦げ目がついていてすごい。&lt;/p>
+&lt;h3 id="学び">学び
+&lt;span>&lt;a href="#%e5%ad%a6%e3%81%b3">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>昨日に引き続き手を動かして学ぶTypeScriptを読み進めていて、四章まで読み終えた。assert functionのコンパイラと対話してる感すごい。
+&lt;a href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-7.html#assertion-functions">TypeScriptのドキュメント&lt;/a>を読むと、もともとJavaScriptでよく使われていたassertをそのまま型のある世界でも活かせるようにしたいというのがこの機能の目的らしい。&lt;/p>
+&lt;p>後友達にアジャイルサムライという本をおすすめされたので読んでいくぞ。&lt;/p></description></item><item><title>20220807</title><link>https://qwyng.dev/posts/20220807/</link><pubDate>Sun, 07 Aug 2022 21:56:42 +0900</pubDate><guid>https://qwyng.dev/posts/20220807/</guid><description>&lt;h3 id="やったこと">やったこと
 &lt;span>&lt;a href="#%e3%82%84%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
 &lt;/h3>&lt;p>大学院講義の課題の８月前半締め切りのものを終わらせた。気持ちE。
 後電子レンジを買い替えた。&lt;/p>
