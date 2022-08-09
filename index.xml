@@ -1,4 +1,45 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Mon, 08 Aug 2022 20:18:57 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>20220808</title><link>https://qwyng.dev/posts/20220808/</link><pubDate>Mon, 08 Aug 2022 20:18:57 +0900</pubDate><guid>https://qwyng.dev/posts/20220808/</guid><description>&lt;h3 id="やったこと">やったこと
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Tue, 09 Aug 2022 20:09:10 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>20220809</title><link>https://qwyng.dev/posts/20220809/</link><pubDate>Tue, 09 Aug 2022 20:09:10 +0900</pubDate><guid>https://qwyng.dev/posts/20220809/</guid><description>&lt;h3 id="やったこと">やったこと
+&lt;span>&lt;a href="#%e3%82%84%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>カーペットに掃除機かけてトイレとキッチンの排水口を掃除した。偉い。あとたくさん燃えるゴミを出した。偉い。&lt;/p>
+&lt;h3 id="学び">学び
+&lt;span>&lt;a href="#%e5%ad%a6%e3%81%b3">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>手を動かしながら学ぶTypeScriptを読み終えた。
+本当に結構手を動かせたので満足。&lt;/p>
+&lt;p>最後の２つの課題の例は以下のようにした。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-typescript" data-lang="typescript">&lt;span style="color:#75715e">// Buttonコンポーネントにdisabledをつける
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">Button&lt;/span>: &lt;span style="color:#66d9ef">VFC&lt;/span>&amp;lt;&lt;span style="color:#f92672">Props&lt;/span>&amp;gt; &lt;span style="color:#f92672">=&lt;/span> ({
+&lt;span style="color:#a6e22e">title&lt;/span>,
+&lt;span style="color:#a6e22e">onClick&lt;/span>,
+&lt;span style="color:#a6e22e">width&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">80&lt;/span>,
+&lt;span style="color:#66d9ef">type&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;primary&amp;#39;&lt;/span>,
+&lt;span style="color:#a6e22e">disabled&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">false&lt;/span>
+}) &lt;span style="color:#f92672">=&amp;gt;&lt;/span> {
+&lt;span style="color:#66d9ef">return&lt;/span> (
+&amp;lt;&lt;span style="color:#f92672">Wrapper&lt;/span> &lt;span style="color:#a6e22e">onClick&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">onClick&lt;/span>} &lt;span style="color:#a6e22e">width&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">width&lt;/span>} &lt;span style="color:#a6e22e">className&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#66d9ef">type&lt;/span>} &lt;span style="color:#a6e22e">disabled&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">disabled&lt;/span>}&amp;gt;
+{&lt;span style="color:#a6e22e">title&lt;/span>}
+&amp;lt;/&lt;span style="color:#f92672">Wrapper&lt;/span>&amp;gt;
+)
+}
+&lt;span style="color:#75715e">// 使用例
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&amp;lt;&lt;span style="color:#f92672">Button&lt;/span> &lt;span style="color:#a6e22e">onClick&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{() &lt;span style="color:#f92672">=&amp;gt;&lt;/span> &lt;span style="color:#a6e22e">onSubmit&lt;/span>(&lt;span style="color:#a6e22e">value&lt;/span>)} &lt;span style="color:#a6e22e">title&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;実行&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">disabled&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#a6e22e">isError&lt;/span>(&lt;span style="color:#a6e22e">value&lt;/span>.&lt;span style="color:#a6e22e">length&lt;/span>)}/&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-typescript" data-lang="typescript">&lt;span style="color:#75715e">// PasswordFormのonSubmitの型を(password: string) =&amp;gt; Promise&amp;lt;T&amp;gt;にする
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">PasswordForm&lt;/span>: &lt;span style="color:#66d9ef">VFC&lt;/span>&amp;lt;&lt;span style="color:#f92672">Props&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">Response&lt;/span>&amp;gt;&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#f92672">=&lt;/span> ({&lt;span style="color:#a6e22e">onSubmit&lt;/span>}) &lt;span style="color:#f92672">=&amp;gt;&lt;/span> {
+&lt;span style="color:#66d9ef">const&lt;/span> [&lt;span style="color:#a6e22e">value&lt;/span>, &lt;span style="color:#a6e22e">setValue&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">useState&lt;/span>&amp;lt;&lt;span style="color:#f92672">string&lt;/span>&amp;gt;(&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>)
+&lt;span style="color:#f92672">~~~~&lt;/span>
+&amp;lt;&lt;span style="color:#f92672">PasswordForm&lt;/span> &lt;span style="color:#a6e22e">onSubmit&lt;/span>&lt;span style="color:#f92672">=&lt;/span>{(&lt;span style="color:#a6e22e">_password&lt;/span>) &lt;span style="color:#f92672">=&amp;gt;&lt;/span> &lt;span style="color:#a6e22e">fetch&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;https://example.com/&amp;#34;&lt;/span>)}/&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>↑はなんかもっといい感じにPasswordForm呼び出す側で型渡せるようにしたいんだけどうまく思いつかなかった。&lt;/p>
+&lt;p>最後に１つだけ誤植？を見つけた。&lt;/p>
+&lt;p>246pのコラムに掲載されていたコード&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-typescript" data-lang="typescript">&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">tag&lt;/span> &lt;span style="color:#f92672">=&lt;/span> (&lt;span style="color:#a6e22e">strings&lt;/span>: &lt;span style="color:#66d9ef">TemplateStringsArray&lt;/span>, ...&lt;span style="color:#a6e22e">placeholders&lt;/span>: &lt;span style="color:#66d9ef">string&lt;/span>[]) &lt;span style="color:#f92672">=&amp;gt;&lt;/span> {
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#66d9ef">string&lt;/span>) &lt;span style="color:#75715e">// [&amp;#34;\n font-size: &amp;#34;, &amp;#34;;\n font-weight: &amp;#34;, &amp;#34;;\n&amp;#34;]
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">placeholders&lt;/span>) &lt;span style="color:#75715e">// [&amp;#34;16px&amp;#34;, &amp;#34;bold&amp;#34;]
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>}
+&lt;span style="color:#a6e22e">tag&lt;/span>&lt;span style="color:#e6db74">`
+&lt;/span>&lt;span style="color:#e6db74"> font-size: &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#e6db74">&amp;#39;10px&amp;#39;&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">;
+&lt;/span>&lt;span style="color:#e6db74"> font-weight: &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#e6db74">&amp;#39;bold&amp;#39;&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">;
+&lt;/span>&lt;span style="color:#e6db74">`&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>多分10pxか16pxのどちらかが間違っている。そのうち報告するかもしれない。&lt;/p></description></item><item><title>20220808</title><link>https://qwyng.dev/posts/20220808/</link><pubDate>Mon, 08 Aug 2022 20:18:57 +0900</pubDate><guid>https://qwyng.dev/posts/20220808/</guid><description>&lt;h3 id="やったこと">やったこと
 &lt;span>&lt;a href="#%e3%82%84%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
 &lt;/h3>&lt;p>腐敗オートミールによって完全にパンドラの箱と化した電子レンジを回収業者様に回収してもらった。三年間本当にありがとう。
 他はお家掃除したりオーブンレンジを使い倒したりしていた。&lt;/p>
