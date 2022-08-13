@@ -1,4 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Fri, 12 Aug 2022 23:43:07 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>20220812</title><link>https://qwyng.dev/posts/20220812/</link><pubDate>Fri, 12 Aug 2022 23:43:07 +0900</pubDate><guid>https://qwyng.dev/posts/20220812/</guid><description>&lt;h3 id="やったこと">やったこと
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sat, 13 Aug 2022 11:06:59 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>20220813</title><link>https://qwyng.dev/posts/20220813/</link><pubDate>Sat, 13 Aug 2022 11:06:59 +0900</pubDate><guid>https://qwyng.dev/posts/20220813/</guid><description>&lt;h3 id="やったこと">やったこと
+&lt;span>&lt;a href="#%e3%82%84%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>
+&lt;p>アジャイルサムライを読み終えた&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>夏休みの課題を確認した。簡単な言語のパーサーやコンパイラを作るといった課題の中に「人間は自然数を理解しているかどうか自分の意見を書け」という課題が出ててひっくり返った。僕は自然数理解していないので理解していません。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>駅前でパンケーキ食べた
+&lt;img src="https://github.com/QWYNG/images/blob/main/PXL_20220813_052429250.jpg?raw=true" alt="">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="学び">学び
+&lt;span>&lt;a href="#%e5%ad%a6%e3%81%b3">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>アジャイルサムライではこの一節が良かった。&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code>うまくいかないときの根本原因は、感情に起因していること が多いものだ。 おそらくは、 お前が実現したいと思っている 方向とは正反対の向きに引っ張る力が作用しておるのだ。 お前が 立ち回る 相手 は、お前のやり方への抵抗それ自体ではない。 その背後にある精神構造だ。
+ＪｏｎａｔｈａｎＲａｓｍｕｓｓｏｎ; 西村直人; 角谷信太郎. アジャイルサムライ――達人開発者への道 (p.329). オーム社. Kindle 版.
+&lt;/code>&lt;/pre>&lt;p>仕事において感情って邪魔だと思うことが多々あるのだけれど多分ここで言ってる精神構造のことだと思う。感情だなんて曖昧な言い方しないで構造を考えるのが大事ですね。
+本のまとめとしては常に考え続けていろんなことを試して良いプロダクトを顧客に届けろということだった。テスト書いたりスコープしぼったり変化を見極めたりしてけ。&lt;/p></description></item><item><title>20220812</title><link>https://qwyng.dev/posts/20220812/</link><pubDate>Fri, 12 Aug 2022 23:43:07 +0900</pubDate><guid>https://qwyng.dev/posts/20220812/</guid><description>&lt;h3 id="やったこと">やったこと
 &lt;span>&lt;a href="#%e3%82%84%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
 &lt;/h3>&lt;ul>
 &lt;li>wslでRubymineを使えるようにした。&lt;/li>
