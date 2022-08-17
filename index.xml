@@ -1,4 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Tue, 16 Aug 2022 23:28:21 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>20220816</title><link>https://qwyng.dev/posts/20220816/</link><pubDate>Tue, 16 Aug 2022 23:28:21 +0900</pubDate><guid>https://qwyng.dev/posts/20220816/</guid><description>&lt;h3 id="やったこと">やったこと
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Wed, 17 Aug 2022 20:22:49 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>20220817</title><link>https://qwyng.dev/posts/20220817/</link><pubDate>Wed, 17 Aug 2022 20:22:49 +0900</pubDate><guid>https://qwyng.dev/posts/20220817/</guid><description>&lt;h3 id="やったこと">やったこと
+&lt;span>&lt;a href="#%e3%82%84%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Macを取り返そうな雰囲気を感じ、これを機にメモアプリを見直そうと考えObsidianを使い始めた。
+&lt;ul>
+&lt;li>私生活はWindowsで仕事はMacと使い分けているので同期は必須。あとScrapBoxみたいにリンクが集まっていい感じになってほしかった。&lt;/li>
+&lt;li>じゃあScrapBoxでええじゃんということなのだがブラウザの挙動の中で文章を書くのはなかなか面倒だし、アプリの切り替えでメモアプリに遷移したいのでタブの中に埋もれるScrapBoxは候補から外した。&lt;/li>
+&lt;li>Obsidian公式が提供してるSync機能が月10$で高すぎてひっくり返ってしまったので&lt;a href="https://github.com/vrtmrz/obsidian-livesync">有志が提供してるself-hostでcouchdbを使って同期するPlugin&lt;/a>を導入した。公式のPluginストアに存在したので公式が認めないような拡張ではなさそう。&lt;/li>
+&lt;li>導入に結構時間がかかってしまった。僕のインフラ力が足りない。手順は以下
+&lt;ul>
+&lt;li>couchdbはオフィシャルのDocker imageがあるのでそれを使ってgcpのインスタンスで稼働させた。このとき専用の設定が必要らしいのでPluginのドキュメントをチェックすること。ボリュームの設定も忘れずに（1敗)&lt;/li>
+&lt;li>Aレコードをいい感じに登録する。&lt;/li>
+&lt;li>インスタンスの中でnginxとcertbotを使って証明書を取得。&lt;/li>
+&lt;li>nginxを443待ちで起動。&lt;a href="https://docs.couchdb.org/en/stable/best-practices/reverse-proxies.html#reverse-proxying-with-nginx">proxy_bufferingを切らないとcouchdbの連続レプリケーションが動かないらしい&lt;/a>。(1敗)&lt;/li>
+&lt;li>Pluginの設定でURL指定してドン！&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="学び">学び
+&lt;span>&lt;a href="#%e5%ad%a6%e3%81%b3">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>certbotをDocker内のnginxと組み合わせるのは面倒。&lt;a href="https://paulownia.hatenablog.com/entry/2020/09/12/150658">結局Docker Composeでなんかいい感じに連携させて証明書を取得した&lt;/a>。&lt;/li>
+&lt;li>WindowsやMacとLinuxではDocke Composeのコマンドが違う。前者では&lt;code>docker-compose&lt;/code>だが後者では&lt;code>docker compose&lt;/code>。VMの上にDockerのっけてる関係なのかcomposeがdocker cliの中に搭載されていないっぽい？&lt;/li>
+&lt;/ul></description></item><item><title>20220816</title><link>https://qwyng.dev/posts/20220816/</link><pubDate>Tue, 16 Aug 2022 23:28:21 +0900</pubDate><guid>https://qwyng.dev/posts/20220816/</guid><description>&lt;h3 id="やったこと">やったこと
 &lt;span>&lt;a href="#%e3%82%84%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
 &lt;/h3>&lt;ul>
 &lt;li>大学院の課題をやった。1/3終わった。&lt;/li>

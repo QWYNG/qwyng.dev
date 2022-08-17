@@ -1,13 +1,11 @@
 <!doctype html><html lang=ja data-theme>
 <head>
-<meta name=generator content="Hugo 0.91.2">
 <meta charset=utf-8>
 <meta name=HandheldFriendly content="True">
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
-<title>QWYNG.dev</title>
-<meta name=description content="QWYNG(Hiroaki Osawa)という人間のブログです各種SNSのリンクはヘッダー参照">
-<link rel=alternate type=application/rss+xml href=https://qwyng.dev/index.xml title=QWYNG.dev>
+<title>20220817 - QWYNG.dev</title>
+<meta name=description content="やったこと # Macを取り返そうな雰囲気を感じ、これを機にメモアプリを見直そうと考えObsidianを使い始めた。 私生活はWindowsで仕事">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -16,10 +14,10 @@
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです各種SNSのリンクはヘッダー参照">
+<meta property="og:description" content="やったこと # Macを取り返そうな雰囲気を感じ、これを機にメモアプリを見直そうと考えObsidianを使い始めた。 私生活はWindowsで仕事">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="20220817 - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/20220817/">
 <meta name=og:image content="https://qwyng.dev/android-chrome-384x384.png">
 <meta name=twitter:card content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -60,100 +58,53 @@
 </nav>
 </header>
 <main id=main tabindex=-1>
-<div class=homepage-content>
-</div>
-<div class="articles h-feed">
-<article class="post-list h-feed">
+<article class="post h-entry">
 <div class=post-header>
 <header>
-<h1 class="p-name post-title"><a class=u-url href=/posts/20220805/>20220805</a></h1>
+<h1 class="p-name post-title">20220817</h1>
 </header>
 </div>
+<div class="content e-content">
+<h3 id=やったこと>やったこと
+<span><a href=#%e3%82%84%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8>#</a></span>
+</h3><ul>
+<li>Macを取り返そうな雰囲気を感じ、これを機にメモアプリを見直そうと考えObsidianを使い始めた。
+<ul>
+<li>私生活はWindowsで仕事はMacと使い分けているので同期は必須。あとScrapBoxみたいにリンクが集まっていい感じになってほしかった。</li>
+<li>じゃあScrapBoxでええじゃんということなのだがブラウザの挙動の中で文章を書くのはなかなか面倒だし、アプリの切り替えでメモアプリに遷移したいのでタブの中に埋もれるScrapBoxは候補から外した。</li>
+<li>Obsidian公式が提供してるSync機能が月10$で高すぎてひっくり返ってしまったので<a href=https://github.com/vrtmrz/obsidian-livesync>有志が提供してるself-hostでcouchdbを使って同期するPlugin</a>を導入した。公式のPluginストアに存在したので公式が認めないような拡張ではなさそう。</li>
+<li>導入に結構時間がかかってしまった。僕のインフラ力が足りない。手順は以下
+<ul>
+<li>couchdbはオフィシャルのDocker imageがあるのでそれを使ってgcpのインスタンスで稼働させた。このとき専用の設定が必要らしいのでPluginのドキュメントをチェックすること。ボリュームの設定も忘れずに（1敗)</li>
+<li>Aレコードをいい感じに登録する。</li>
+<li>インスタンスの中でnginxとcertbotを使って証明書を取得。</li>
+<li>nginxを443待ちで起動。<a href=https://docs.couchdb.org/en/stable/best-practices/reverse-proxies.html#reverse-proxying-with-nginx>proxy_bufferingを切らないとcouchdbの連続レプリケーションが動かないらしい</a>。(1敗)</li>
+<li>Pluginの設定でURL指定してドン！</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id=学び>学び
+<span><a href=#%e5%ad%a6%e3%81%b3>#</a></span>
+</h3><ul>
+<li>certbotをDocker内のnginxと組み合わせるのは面倒。<a href=https://paulownia.hatenablog.com/entry/2020/09/12/150658>結局Docker Composeでなんかいい感じに連携させて証明書を取得した</a>。</li>
+<li>WindowsやMacとLinuxではDocke Composeのコマンドが違う。前者では<code>docker-compose</code>だが後者では<code>docker compose</code>。VMの上にDockerのっけてる関係なのかcomposeがdocker cliの中に搭載されていないっぽい？</li>
+</ul>
+</div>
 <div class=post-info>
-<div class="post-date dt-published">2022-08-05</div>
-<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/20220805/>https://qwyng.dev/posts/20220805/</a>
+<div class="post-date dt-published">2022-08-17</div>
+<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/20220817/>https://qwyng.dev/posts/20220817/</a>
 <a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
 <div class=post-taxonomies>
 </div>
 </div>
 </article>
-<article class="post-list h-feed">
-<div class=post-header>
-<header>
-<h1 class="p-name post-title"><a class=u-url href=/posts/20220804/>日記 20220804</a></h1>
-</header>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2022-08-04</div>
-<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/20220804/>https://qwyng.dev/posts/20220804/</a>
-<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
-<div class=post-taxonomies>
-</div>
-</div>
-</article>
-<article class="post-list h-feed">
-<div class=post-header>
-<header>
-<h1 class="p-name post-title"><a class=u-url href=/posts/20220803/>日記 20220803</a></h1>
-</header>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2022-08-03</div>
-<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/20220803/>https://qwyng.dev/posts/20220803/</a>
-<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
-<div class=post-taxonomies>
-</div>
-</div>
-</article>
-<article class="post-list h-feed">
-<div class=post-header>
-<header>
-<h1 class="p-name post-title"><a class=u-url href=/posts/20220802/>日記　20220802</a></h1>
-</header>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2022-08-02</div>
-<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/20220802/>https://qwyng.dev/posts/20220802/</a>
-<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
-<div class=post-taxonomies>
-</div>
-</div>
-</article>
-<article class="post-list h-feed">
-<div class=post-header>
-<header>
-<h1 class="p-name post-title"><a class=u-url href=/posts/20220801/>日記 2022/08/01</a></h1>
-</header>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2022-08-01</div>
-<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/20220801/>https://qwyng.dev/posts/20220801/</a>
-<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
-<div class=post-taxonomies>
-</div>
-</div>
-</article>
-<article class="post-list h-feed">
-<div class=post-header>
-<header>
-<h1 class="p-name post-title"><a class=u-url href=/posts/20220731/>日記 2022/07/31</a></h1>
-</header>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2022-07-31</div>
-<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/20220731/>https://qwyng.dev/posts/20220731/</a>
-<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
-<div class=post-taxonomies>
-</div>
-</div>
-</article>
-<div class=pagination>
-<div class="left pagination-item">
-<a href=/page/2/>to new posts</a>
+<div class="pagination post-pagination">
+<div class="left pagination-item disabled">
 </div>
 <div class="right pagination-item">
-<a href=/page/4/>to old posts</a>
-</div>
+<a href=/posts/20220816/>20220816</a>
 </div>
 </div>
 </main>
