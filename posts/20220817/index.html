@@ -78,7 +78,7 @@
 <li>couchdbはオフィシャルのDocker imageがあるのでそれを使ってgcpのインスタンスで稼働させた。このとき専用の設定が必要らしいのでPluginのドキュメントをチェックすること。ボリュームの設定も忘れずに（1敗)</li>
 <li>Aレコードをいい感じに登録する。</li>
 <li>インスタンスの中でnginxとcertbotを使って証明書を取得。</li>
-<li>nginxを443待ちで起動。<a href=https://docs.couchdb.org/en/stable/best-practices/reverse-proxies.html#reverse-proxying-with-nginx>proxy_bufferingを切らないとcouchdbの連続レプリケーションが動かないらしい</a>。(1敗)</li>
+<li>nginxを443待ちで起動してcouchdb備え付けのwebサーバーへのリバースプロキシにする。<a href=https://docs.couchdb.org/en/stable/best-practices/reverse-proxies.html#reverse-proxying-with-nginx>proxy_bufferingを切らないとcouchdbの連続レプリケーションが動かないらしい</a>。(1敗)</li>
 <li>Pluginの設定でURL指定してドン！</li>
 </ul>
 </li>
