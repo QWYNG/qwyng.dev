@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 21 Aug 2022 23:51:41 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>日記とP⇒Qの真理値の理由</title><link>https://qwyng.dev/posts/20220821/</link><pubDate>Sun, 21 Aug 2022 23:51:41 +0900</pubDate><guid>https://qwyng.dev/posts/20220821/</guid><description>&lt;h3 id="やったこと">やったこと
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Mon, 22 Aug 2022 23:43:37 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>20220822</title><link>https://qwyng.dev/posts/20220822/</link><pubDate>Mon, 22 Aug 2022 23:43:37 +0900</pubDate><guid>https://qwyng.dev/posts/20220822/</guid><description>&lt;h3 id="やったこと">やったこと
+&lt;span>&lt;a href="#%e3%82%84%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>昨日に続いてラプラス株式会社の問題を見ていた。結構面倒。&lt;/li>
+&lt;li>バターをもらった&lt;/li>
+&lt;li>先日外出した際にレガシーのデッキを店に忘れる大ポカをやらかしていたので、回収しに向かった。&lt;/li>
+&lt;/ul>
+&lt;h3 id="学び">学び
+&lt;span>&lt;a href="#%e5%ad%a6%e3%81%b3">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>日本は治安がいい&lt;/li>
+&lt;/ul></description></item><item><title>日記とP⇒Qの真理値の理由</title><link>https://qwyng.dev/posts/20220821/</link><pubDate>Sun, 21 Aug 2022 23:51:41 +0900</pubDate><guid>https://qwyng.dev/posts/20220821/</guid><description>&lt;h3 id="やったこと">やったこと
 &lt;span>&lt;a href="#%e3%82%84%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
 &lt;/h3>&lt;ul>
 &lt;li>友人と&lt;a href="https://github.com/lapras-inc/exam-swe-template">LAPRAS株式会社さんのスキルチェック課題&lt;/a>に挑戦してみようぜと持ちかけられたので挑戦してみた。
