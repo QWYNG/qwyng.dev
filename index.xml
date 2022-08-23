@@ -1,4 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Mon, 22 Aug 2022 23:43:37 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>20220822</title><link>https://qwyng.dev/posts/20220822/</link><pubDate>Mon, 22 Aug 2022 23:43:37 +0900</pubDate><guid>https://qwyng.dev/posts/20220822/</guid><description>&lt;h3 id="やったこと">やったこと
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Tue, 23 Aug 2022 23:10:00 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>20220823</title><link>https://qwyng.dev/posts/20220823/</link><pubDate>Tue, 23 Aug 2022 23:10:00 +0900</pubDate><guid>https://qwyng.dev/posts/20220823/</guid><description>&lt;h3 id="やったこと">やったこと
+&lt;span>&lt;a href="#%e3%82%84%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>関数プログラミングの宿題に手を付けた。自然数ってなんなんだ。&lt;/li>
+&lt;li>友達と昨日話していたラプラス株式会社の問題の答え合わせを行っていた。&lt;/li>
+&lt;li>SmashlogTVのLOL部門がオーブンされていた。全人類見ろ&lt;/li>
+&lt;/ul>
+&lt;blockquote class="twitter-tweet">&lt;p lang="ja" dir="ltr">【🎊新チャンネル開設】&lt;br>&lt;br>本日、SmashlogTVはLoL部門をオープンしました！&lt;br>&lt;br>初心者向け攻略を中心に、徐々にプロの方々をお招きしながら競技シーンの魅力を発信していきます🔥&lt;br>&lt;br>新参者ですが、コミュニティの皆さま是非よろしくお願いします😊✨&lt;br>&lt;br>🔽チャンネルはこちら&lt;a href="https://t.co/KIK7AQTxVu">https://t.co/KIK7AQTxVu&lt;/a>&lt;a href="https://twitter.com/hashtag/LoL?src=hash&amp;amp;ref_src=twsrc%5Etfw">#LoL&lt;/a> &lt;a href="https://t.co/wT9AA6KgIN">pic.twitter.com/wT9AA6KgIN&lt;/a>&lt;/p>&amp;mdash; Smashlog@LoL (@Smashlog_LoL) &lt;a href="https://twitter.com/Smashlog_LoL/status/1561655448276647937?ref_src=twsrc%5Etfw">August 22, 2022&lt;/a>&lt;/blockquote> &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+&lt;h3 id="学び">学び
+&lt;span>&lt;a href="#%e5%ad%a6%e3%81%b3">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>EC、特に在庫管理周りの設計に関する記事が世の中に数多くあり、toCを感じた。&lt;/li>
+&lt;li>DB設計の記事だとこの記事は良かった。
+&lt;ul>
+&lt;li>&lt;a href="https://tech.tabechoku.com/entry/2020/06/15/132518">https://tech.tabechoku.com/entry/2020/06/15/132518&lt;/a>&lt;/li>
+&lt;li>三角関係のリレーションはなるべく作らないというのは確かに便利指針。実質第三正規化みたいなものな気がする。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>0が自然数であり、その他の自然数は0の後継(successor)
+&lt;ul>
+&lt;li>&lt;code>0 s(0) s(s(0))&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>20220822</title><link>https://qwyng.dev/posts/20220822/</link><pubDate>Mon, 22 Aug 2022 23:43:37 +0900</pubDate><guid>https://qwyng.dev/posts/20220822/</guid><description>&lt;h3 id="やったこと">やったこと
 &lt;span>&lt;a href="#%e3%82%84%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
 &lt;/h3>&lt;ul>
 &lt;li>昨日に続いてラプラス株式会社の問題を見ていた。結構面倒。&lt;/li>
