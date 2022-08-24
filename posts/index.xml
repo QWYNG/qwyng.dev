@@ -1,4 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Tue, 23 Aug 2022 23:10:00 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>20220823</title><link>https://qwyng.dev/posts/20220823/</link><pubDate>Tue, 23 Aug 2022 23:10:00 +0900</pubDate><guid>https://qwyng.dev/posts/20220823/</guid><description>&lt;h3 id="やったこと">やったこと
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Wed, 24 Aug 2022 23:29:12 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>20220824</title><link>https://qwyng.dev/posts/20220824/</link><pubDate>Wed, 24 Aug 2022 23:29:12 +0900</pubDate><guid>https://qwyng.dev/posts/20220824/</guid><description>&lt;h3 id="やったこと">やったこと
+&lt;span>&lt;a href="#%e3%82%84%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>GOならわかるシステムプログラミングの読書会最終日を終えた。参加者の皆さんアザした。&lt;/li>
+&lt;li>関数プログラミングの宿題を進めた。人間は自然数を理解していますか？&lt;/li>
+&lt;li>パイオニア17時の部、青赤デルバーで2-1&lt;/li>
+&lt;/ul>
+&lt;h3 id="学び">学び
+&lt;span>&lt;a href="#%e5%ad%a6%e3%81%b3">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>人は30超えるともうやんがキツくなるらしい。&lt;/li>
+&lt;li>やよい軒ハイボール90円はバグ&lt;/li>
+&lt;li>リンカーの存在。&lt;/li>
+&lt;li>Dockerはlinuxカーネルのコントロールグループと名前空間という機能を利用してカーネルを共有しつつ独立した環境を作っている。&lt;/li>
+&lt;li>完全な仮想化という概念と準仮想化という概念がある。
+&lt;ul>
+&lt;li>完全な仮想化はホストOSの上に仮想化ソフトウェアが稼働し、ゲストOSを稼働させる。センシティブなシステムコールはハイパーバイザがわりこんで処理をする。&lt;/li>
+&lt;li>準仮想化はホストOSの更に下のレイヤのハイパーバイザ上でゲストOSを稼働させる。ゲストOSのセンシティブなシステムコールは事前に書き換えられており、命令の代わりにハイパーバイザを呼び出す形になっている。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>準仮想化は処理速度がはやいものの、ゲストOS側がハードウェアについて詳しくないといけなかったりゲストOSの開発元の協力が必要。&lt;/li>
+&lt;li>WSL2はハイパーバイザ上に軽量VMを用いて完全なLinuxカーネルを動作させている。
+&lt;ul>
+&lt;li>このlinuxカーネルはハイパーバイザの上にホストOSなしで直接のっているがセンシティブ命令を書き換えられているわけではない。&lt;/li>
+&lt;li>センシティブなシステムコールはいったいどうやって処理してるんだ&amp;hellip;???&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>20220823</title><link>https://qwyng.dev/posts/20220823/</link><pubDate>Tue, 23 Aug 2022 23:10:00 +0900</pubDate><guid>https://qwyng.dev/posts/20220823/</guid><description>&lt;h3 id="やったこと">やったこと
 &lt;span>&lt;a href="#%e3%82%84%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
 &lt;/h3>&lt;ul>
 &lt;li>関数プログラミングの宿題に手を付けた。自然数ってなんなんだ。&lt;/li>
