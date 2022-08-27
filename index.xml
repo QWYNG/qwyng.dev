@@ -1,4 +1,41 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Fri, 26 Aug 2022 21:44:49 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>20220826</title><link>https://qwyng.dev/posts/20220826/</link><pubDate>Fri, 26 Aug 2022 21:44:49 +0900</pubDate><guid>https://qwyng.dev/posts/20220826/</guid><description>&lt;h3 id="やったこと">やったこと
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sat, 27 Aug 2022 22:55:16 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>20220827</title><link>https://qwyng.dev/posts/20220827/</link><pubDate>Sat, 27 Aug 2022 22:55:16 +0900</pubDate><guid>https://qwyng.dev/posts/20220827/</guid><description>&lt;h3 id="やったこと">やったこと
+&lt;span>&lt;a href="#%e3%82%84%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>LOLとApexをやった&lt;/li>
+&lt;/ul>
+&lt;blockquote class="twitter-tweet">&lt;p lang="ja" dir="ltr">LOL配信&lt;a href="https://t.co/LFeDKi09E4">https://t.co/LFeDKi09E4&lt;/a>&lt;/p>&amp;mdash; とるめん (@qwyngg) &lt;a href="https://twitter.com/qwyngg/status/1563423092575154176?ref_src=twsrc%5Etfw">August 27, 2022&lt;/a>&lt;/blockquote> &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+&lt;ul>
+&lt;li>
+&lt;p>ソウルハッカーズ2を進めた&lt;/p>
+&lt;ul>
+&lt;li>研究者のメガネのデザインがネクストレベルだったので驚いた。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>まったくのゼロからの論理学を読み進めた&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="学び">学び
+&lt;span>&lt;a href="#%e5%ad%a6%e3%81%b3">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;code>∀x(Fx∧Gx)&lt;/code>は「全てのxについてFxでありかつGxである」ということを表している論理式、、「全てのFxであるものがGxである」ということを意味しているわけでないということ。
+&lt;ul>
+&lt;li>全ての会社員は人間であり、かつ怠け者だ(&lt;code>∀x(Fx∧Gx)&lt;/code>)という論理式は全ての人間は怠け者であることを意味していない。&lt;/li>
+&lt;li>全ての人間は哲学者であり、かつ怠け者だという文章は全ての哲学者は怠け者だという解釈にはならない。&lt;/li>
+&lt;li>ここらへんを具体的に言語化してあって良かった。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>その論理式をどう解釈しても真になる式を妥当式という
+&lt;ul>
+&lt;li>&lt;code>∀x(Fx⇒Gx)∧¬Ga)⇒¬Fa&lt;/code>&lt;/li>
+&lt;li>議論対象、Fxの具体的な述語、Gxの具体的な述語、aの値、どう解釈しても真になる。
+&lt;ul>
+&lt;li>前件が真で後件が偽になることがありえない&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>20220826</title><link>https://qwyng.dev/posts/20220826/</link><pubDate>Fri, 26 Aug 2022 21:44:49 +0900</pubDate><guid>https://qwyng.dev/posts/20220826/</guid><description>&lt;h3 id="やったこと">やったこと
 &lt;span>&lt;a href="#%e3%82%84%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
 &lt;/h3>&lt;ul>
 &lt;li>関数プログラミングの宿題をやった。とりあえず9月頭締切のものは終わり。&lt;/li>
