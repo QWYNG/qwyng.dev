@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Mon, 29 Aug 2022 23:02:12 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>20220829</title><link>https://qwyng.dev/posts/20220829/</link><pubDate>Mon, 29 Aug 2022 23:02:12 +0900</pubDate><guid>https://qwyng.dev/posts/20220829/</guid><description>&lt;h3 id="やったこと">やったこと
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Tue, 30 Aug 2022 23:49:30 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>日記を30日完走した感想</title><link>https://qwyng.dev/posts/20220830/</link><pubDate>Tue, 30 Aug 2022 23:49:30 +0900</pubDate><guid>https://qwyng.dev/posts/20220830/</guid><description>&lt;h3 id="完走した感想">完走した感想
+&lt;span>&lt;a href="#%e5%ae%8c%e8%b5%b0%e3%81%97%e3%81%9f%e6%84%9f%e6%83%b3">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>有給期間中日記を30日継続してきた。内容は本当にしょうもないことが多く読んでもらえるような内容ではなかったと思う。&lt;br>
+完走した感想だが、特にすごい効果があるわけではなかった。日記を書かなくても読書や大学院の課題はやっていたと思う。 &lt;br>
+日記をたくさん書いてみて、Gitのコミットの粒度やコメントの大切さがわかったのでその点は日記を書いて良かった。&lt;/p>
+&lt;h3 id="やればよかったこと">やればよかったこと
+&lt;span>&lt;a href="#%e3%82%84%e3%82%8c%e3%81%b0%e3%82%88%e3%81%8b%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>もっと日々の何気ないことを文章で書けばよかった
+&lt;ul>
+&lt;li>飲みに行ったとか筋トレしたとか喫茶店いったとか&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>本と一日で読み切るのは難しく、なんとも細切れな日記となってしまったので、- 本の感想は単体で記事にしたほうが良かった。&lt;/li>
+&lt;li>PRなり競プロ問題の提出なり単発的な学びを習慣化させても良かった。&lt;/li>
+&lt;li>記事のタイトルをもっと考えればよかった
+&lt;ul>
+&lt;li>記事のタイトルがただの日付だと見返すきが起きない&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>全般的に振り返りづらい記事の羅列になってしまった。未来の自分が読みたくなるようなタイトルや粒度にすることが肝要だろう。&lt;/li>
+&lt;/ul></description></item><item><title>20220829</title><link>https://qwyng.dev/posts/20220829/</link><pubDate>Mon, 29 Aug 2022 23:02:12 +0900</pubDate><guid>https://qwyng.dev/posts/20220829/</guid><description>&lt;h3 id="やったこと">やったこと
 &lt;span>&lt;a href="#%e3%82%84%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
 &lt;/h3>&lt;ul>
 &lt;li>美容院の予約&lt;/li>
