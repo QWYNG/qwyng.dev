@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Wed, 31 Aug 2022 20:51:44 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>趣味紹介</title><link>https://qwyng.dev/posts/20220831/</link><pubDate>Wed, 31 Aug 2022 20:51:44 +0900</pubDate><guid>https://qwyng.dev/posts/20220831/</guid><description>&lt;p>趣味紹介とは趣味を紹介することである。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Fri, 16 Sep 2022 19:00:00 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>RubyKaigi 2022 感想</title><link>https://qwyng.dev/posts/20220916/</link><pubDate>Fri, 16 Sep 2022 19:00:00 +0900</pubDate><guid>https://qwyng.dev/posts/20220916/</guid><description>&lt;h2 id="セット個別感想">セット個別感想
+&lt;span>&lt;a href="#%e3%82%bb%e3%83%83%e3%83%88%e5%80%8b%e5%88%a5%e6%84%9f%e6%83%b3">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://rubykaigi.smarthr.co.jp/2022/plans/1dd5b4a1-a2c3-4d30-8213-3ca8a3999ae0">見たセットのリスト&lt;/a>&lt;br>
+僕の浅い理解で感想を書いているので正しい情報は各自スライドみるなり録画みるなりしてほしい。正直全然わかってない。&lt;/p>
+&lt;p>&lt;a href="https://rubykaigi.org/2022/presentations/ko1.html#day1">Making &lt;em>MaNy&lt;/em> threads on Ruby - RubyKaigi 2022&lt;/a>&lt;br>
+RubyでM:Nスレッドやっていくぞという話。
+M:Nスレッドってユーザーレベルで（ユーザーレベルで作成された）スレッドをスケジューリングさせてM個のOSのスレッドにN個のユーザーレベルスレッドをマッピングさせるってことだと思ってるのだけれど、その説明もスライドに盛り込まれていて勉強になった。&lt;br>
+Rubyは今まではConcurrent（並行）ではあったが、Parallel(並列）ではなかったというのはRactorとThreadの違いを端的に表現してくれていて良かった。&lt;br>
+Fiberとの比較で、Fiberはスケジューラーを各必要があるかチューニングできる、NaNyではスケジューラーを意識する必要がないという紹介がされていて、なるほどMaNyのほうがRubyっぽいなという感想を持った。&lt;/p>
+&lt;p>&lt;a href="https://rubykaigi.org/2022/presentations/yukihiro_matz.html#day2">Matz Keynote - RubyKaigi 2022&lt;/a>&lt;br>
+ブログを書くと良いらしい&lt;/p>
+&lt;p>&lt;a href="https://rubykaigi.org/2022/presentations/Kenta%20Murata.html#day2">Method-based JIT compilation by transpiling to Julia - RubyKaigi 2022&lt;/a>&lt;br>
+単純な足し算でもRubyやPythonでは回りくどいアセンブリ命令の呼び出しをする必要があるが、RubyからJuliaに変換してコンパイルするといい感じの命令を吐いてくれるぞ！という話だった気がする。RubyからJuliaのコードになっていて凄い。難しいことはJuliaにやらせようというスライドも面白かった。&lt;/p>
+&lt;p>&lt;a href="https://rubykaigi.org/2022/presentations/m_seki.html#day2">Create my own search engine. - RubyKaigi 2022&lt;/a>&lt;br>
+ポケモンカード検索エンジンを作ったぞというお話。ポケカで県代表になった方らしい。&lt;br>
+終始作った物を楽しそうに発表しているのが印象的だった。（もちろん技術も興味深かった）&lt;br>
+作ってみた系を聞くと自分もなにか作ってみたくなる。&lt;/p>
+&lt;h2 id="yjit">YJIT
+&lt;span>&lt;a href="#yjit">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>本当になにもわかっていない。&lt;br>
+x86とarmの共通点を探して、プラットフォームによらない表現を生成したり、オブジェクトを名前ではなくインスタンス変数やfrozenかどうかだけとかで判断するとか、もう本当によくわからない。&lt;br>
+とんでもなくすごい人達が作った物を無料で使わせてもらってありがとうございます。&lt;/p>
+&lt;h2 id="物理参加">物理参加
+&lt;span>&lt;a href="#%e7%89%a9%e7%90%86%e5%8f%82%e5%8a%a0">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>物理参加の一番のメリットは話を真面目に集中して聞けるところだなと感じた。家からだと多分どのお話も最後まで聞けなかったと思う。雰囲気が与える影響は大きいし、ちゃんと聞いて感想を語り合いたいという目的ができるのが良い。&lt;br>
+その他にもTwitterは知ってるけど実在するとは知らなかった人と会えたり、同僚氏の同僚氏とお話できたり楽しかった。 &lt;br>
+&lt;a href="https://ruby-puzzles-2022.cookpad.tech/">https://ruby-puzzles-2022.cookpad.tech&lt;/a>も面白くて17問目まで解いた。18問目以降は大変そうだったので回答例をみたいところ。&lt;br>
+旅行先としての三重は食事も酒も美味しいし四日市はかっこいいし最高だった。霜降りの松阪牛は少量食べれば十分なことがわかった。&lt;/p>
+&lt;h2 id="ラップアップ">ラップアップ
+&lt;span>&lt;a href="#%e3%83%a9%e3%83%83%e3%83%97%e3%82%a2%e3%83%83%e3%83%97">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>前回はエンジニアなりたてぐらいに福岡で現地参加したのだが、話されていることの1％もわからなかった。今回は10％くらいはわかったかもしれない。&lt;br>
+RubyKaigiにくると自分の矮小さがヒシヒシとわかってモチベーションになるのでまた次回も参加したい。&lt;br>
+他の参加者の方、スポンサー方、登壇者の方、運営の方、本当にありがとうございました。&lt;/p></description></item><item><title>趣味紹介</title><link>https://qwyng.dev/posts/20220831/</link><pubDate>Wed, 31 Aug 2022 20:51:44 +0900</pubDate><guid>https://qwyng.dev/posts/20220831/</guid><description>&lt;p>趣味紹介とは趣味を紹介することである。&lt;/p>
 &lt;h3 id="基本情報">基本情報
 &lt;span>&lt;a href="#%e5%9f%ba%e6%9c%ac%e6%83%85%e5%a0%b1">#&lt;/a>&lt;/span>
 &lt;/h3>&lt;p>名前 大澤広朗&lt;br>
