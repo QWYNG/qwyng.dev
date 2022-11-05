@@ -14,7 +14,6 @@ rubocop-rspecには外部Gemが追加したRspecのDSLをLintの対象にでき�
 )がある。  
 
 PunditのRspec用DSLである`permissions`を対応させた。good first issueという感じですぐ作業が完了したので特にいうことはなし。  
-Pundit自体も昔コミットしたことがあったので特に苦労することはなかった。
 ### bake-test-external
 https://github.com/ioquatix/bake-test-external/pull/2
 
