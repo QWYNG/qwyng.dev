@@ -4,7 +4,7 @@ date: 2022-11-05T14:56:26+09:00
 draft: false
 ---
 
-有給消化の一ヶ月間好き放題してたらRubyの全てを忘れてしまったのでHacktoberfestの機械にいくつかPRをだした。  
+有給消化の一ヶ月間好き放題してたらRubyの全てを忘れてしまったのでHacktoberfestの機会にいくつかPRをだした。  
 なおHacktoberfest対象レポジトリ以外にもPRは建ててます。
 
 ### Pundit
