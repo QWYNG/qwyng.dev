@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Fri, 16 Sep 2022 19:00:00 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>RubyKaigi 2022 感想</title><link>https://qwyng.dev/posts/20220916/</link><pubDate>Fri, 16 Sep 2022 19:00:00 +0900</pubDate><guid>https://qwyng.dev/posts/20220916/</guid><description>&lt;h2 id="セット個別感想">セット個別感想
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sat, 05 Nov 2022 14:36:27 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>スクラムフェス札幌感想</title><link>https://qwyng.dev/posts/20221105/</link><pubDate>Sat, 05 Nov 2022 14:36:27 +0900</pubDate><guid>https://qwyng.dev/posts/20221105/</guid><description>&lt;p>前職の人が発表するということでオンライン参加、ワイワイ。&lt;br>
+以下プレゼンごとの感想。&lt;/p>
+&lt;h3 id="keynote1---これまでのスクラムのこれから">Keynote1 - これまでのスクラムのこれから
+&lt;span>&lt;a href="#keynote1---%e3%81%93%e3%82%8c%e3%81%be%e3%81%a7%e3%81%ae%e3%82%b9%e3%82%af%e3%83%a9%e3%83%a0%e3%81%ae%e3%81%93%e3%82%8c%e3%81%8b%e3%82%89">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://confengine.com/conferences/scrum-fest-sapporo-2022/proposal/17858/keynote1-">https://confengine.com/conferences/scrum-fest-sapporo-2022/proposal/17858/keynote1-&lt;/a>&lt;/p>
+&lt;p>スクラムの歴史についての発表。&lt;/p>
+&lt;ol>
+&lt;li>昔は農地の広さや単純な労働力の大きさが権力の大きさを担保していた。&lt;/li>
+&lt;li>軍隊のような指示体型のほうが大量の労働力を効率よく動かせた。&lt;/li>
+&lt;li>現代になって農地からだせる価値より知識労働から生み出せる価値のほうが大きくなってきた。&lt;/li>
+&lt;li>現代権力は情報や知的労働力の大きさによって担保されるようになった。&lt;/li>
+&lt;li>良い開発チームを持っている権力者が有利！そのためには軍隊のような指示体型ではなくチーム自身に考えさせよう！&lt;/li>
+&lt;li>そしてスクラムへ&amp;hellip;&lt;/li>
+&lt;/ol>
+&lt;p>みたいな運びだった。最初にアジャイルやスクラムが導入されたとしてもプロジェクトの成功率自体は向上してないとはっきり言ったあとに説明されたのでわかりやすかった。スクラムはプロダクトのためではなくチームのためにやるものという前提が大事っぽい。&lt;/p>
+&lt;p>アジャイルとスクラムをちゃんと分けて会話できる下地として素晴らしいキーノートだった。&lt;/p>
+&lt;h3 id="楽しいとチームは強くなる専任スクラムマスターの知られざる奮闘">「楽しい！」とチームは強くなる　～専任スクラムマスターの知られざる奮闘〜
+&lt;span>&lt;a href="#%e6%a5%bd%e3%81%97%e3%81%84%e3%81%a8%e3%83%81%e3%83%bc%e3%83%a0%e3%81%af%e5%bc%b7%e3%81%8f%e3%81%aa%e3%82%8b%e5%b0%82%e4%bb%bb%e3%82%b9%e3%82%af%e3%83%a9%e3%83%a0%e3%83%9e%e3%82%b9%e3%82%bf%e3%83%bc%e3%81%ae%e7%9f%a5%e3%82%89%e3%82%8c%e3%81%96%e3%82%8b%e5%a5%ae%e9%97%98">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://confengine.com/conferences/scrum-fest-sapporo-2022/proposal/17496">https://confengine.com/conferences/scrum-fest-sapporo-2022/proposal/17496&lt;/a>&lt;/p>
+&lt;p>楽しい雰囲気という切り口での発表。
+アイスブレイクのお話も参考になったが、中でも特に良かったのは振り返りの場で「障害はなんですか？」と聞くより「こんなことが問題っぽい？」と一緒に考えているような問いかけをするというもの。一緒に考えている感も出せるし、議論の火種にもなるとのこと。ファシリって自分の意見を言わないのが鉄則だと思ってたんだけど、議論の火種をつくるこの手法は有用なファシリの技術の一つだと思った。人間何かを例示されると意見が出せがち。
+また、社会人として上司とスクラムマスターの期待値をちゃんと揉んでるのも良かった。自分が空回りしないようにするのは大事ですね。&lt;/p>
+&lt;h3 id="keynote3-アジャイルな開発の原点">Keynote3: アジャイルな開発の原点
+&lt;span>&lt;a href="#keynote3-%e3%82%a2%e3%82%b8%e3%83%a3%e3%82%a4%e3%83%ab%e3%81%aa%e9%96%8b%e7%99%ba%e3%81%ae%e5%8e%9f%e7%82%b9">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://confengine.com/conferences/scrum-fest-sapporo-2022/proposal/17525/keynote3">https://confengine.com/conferences/scrum-fest-sapporo-2022/proposal/17525/keynote3&lt;/a>&lt;br>
+アメリカで新しく開発組織を立ち上げたらしい方の発表。&lt;br>
+CIの設定、テスト、スプリントプランニング・レビュー、当たり前のことを当たり前にやったという話が良かった。テスト書いてるときにマネージャー陣に進捗が出てないと言われたが、必要なことなんですといって進めたとのこと。&lt;br>
+日本だとわりと慎重に悪い状況も伝えてくれることが多いが、アメリカではあんまり悪い状況伝えてくれなかったという話が面白かった。&lt;br>
+海外のスクラムの資料では透明性が強調されていることが多いと思っていたけど、こういう背景もありそう。&lt;/p>
+&lt;h3 id="全体通しての感想">全体通しての感想
+&lt;span>&lt;a href="#%e5%85%a8%e4%bd%93%e9%80%9a%e3%81%97%e3%81%a6%e3%81%ae%e6%84%9f%e6%83%b3">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>皆さんアイスブレイクがうまかった印象。チームビルディングが好きな人が発表しているからだと思う。クイズ大会で盛り上がるみたいな発表もあった。&lt;br>
+心理的安全性の土台となる部分を自ら作っていこうという人が多くて素晴らしい会でした。運営の皆さんありがとうございました。&lt;/p></description></item><item><title>RubyKaigi 2022 感想</title><link>https://qwyng.dev/posts/20220916/</link><pubDate>Fri, 16 Sep 2022 19:00:00 +0900</pubDate><guid>https://qwyng.dev/posts/20220916/</guid><description>&lt;h2 id="セット個別感想">セット個別感想
 &lt;span>&lt;a href="#%e3%82%bb%e3%83%83%e3%83%88%e5%80%8b%e5%88%a5%e6%84%9f%e6%83%b3">#&lt;/a>&lt;/span>
 &lt;/h2>&lt;p>&lt;a href="https://rubykaigi.smarthr.co.jp/2022/plans/1dd5b4a1-a2c3-4d30-8213-3ca8a3999ae0">見たセットのリスト&lt;/a>&lt;br>
 僕の浅い理解で感想を書いているので正しい情報は各自スライドみるなり録画みるなりしてほしい。正直全然わかってない。&lt;/p>
