@@ -4,8 +4,7 @@
 &lt;span>&lt;a href="#pundit">#&lt;/a>&lt;/span>
 &lt;/h3>&lt;p>&lt;a href="https://github.com/varvet/pundit/pull/745">https://github.com/varvet/pundit/pull/745&lt;/a>&lt;/p>
 &lt;p>rubocop-rspecには外部Gemが追加したRspecのDSLをLintの対象にできる&lt;a href="https://docs.rubocop.org/rubocop-rspec/third_party_rspec_syntax_extensions.html">機能&lt;/a>がある。&lt;/p>
-&lt;p>PunditのRspec用DSLである&lt;code>permissions&lt;/code>を対応させた。good first issueという感じですぐ作業が完了したので特にいうことはなし。&lt;br>
-Pundit自体も昔コミットしたことがあったので特に苦労することはなかった。&lt;/p>
+&lt;p>PunditのRspec用DSLである&lt;code>permissions&lt;/code>を対応させた。good first issueという感じですぐ作業が完了したので特にいうことはなし。&lt;/p>
 &lt;h3 id="bake-test-external">bake-test-external
 &lt;span>&lt;a href="#bake-test-external">#&lt;/a>&lt;/span>
 &lt;/h3>&lt;p>&lt;a href="https://github.com/ioquatix/bake-test-external/pull/2">https://github.com/ioquatix/bake-test-external/pull/2&lt;/a>&lt;/p>
