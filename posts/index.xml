@@ -1,4 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sat, 05 Nov 2022 14:36:27 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>スクラムフェス札幌感想</title><link>https://qwyng.dev/posts/20221105/</link><pubDate>Sat, 05 Nov 2022 14:36:27 +0900</pubDate><guid>https://qwyng.dev/posts/20221105/</guid><description>&lt;p>前職の人が発表するということでオンライン参加、ワイワイ。&lt;br>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sat, 05 Nov 2022 14:56:26 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Hacktoberfest 2022で建てたOSSへのPR</title><link>https://qwyng.dev/posts/20221105_hacktoberfest/</link><pubDate>Sat, 05 Nov 2022 14:56:26 +0900</pubDate><guid>https://qwyng.dev/posts/20221105_hacktoberfest/</guid><description>&lt;p>有給消化の一ヶ月間好き放題してたらRubyの全てを忘れてしまったのでHacktoberfestの機械にいくつかPRをだした。&lt;br>
+なおHacktoberfest対象レポジトリ以外にもPRは建ててます。&lt;/p>
+&lt;h3 id="pundit">Pundit
+&lt;span>&lt;a href="#pundit">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://github.com/varvet/pundit/pull/745">https://github.com/varvet/pundit/pull/745&lt;/a>&lt;/p>
+&lt;p>rubocop-rspecには外部Gemが追加したRspecのDSLをLintの対象にできる&lt;a href="https://docs.rubocop.org/rubocop-rspec/third_party_rspec_syntax_extensions.html">機能&lt;/a>がある。&lt;/p>
+&lt;p>PunditのRspec用DSLである&lt;code>permissions&lt;/code>を対応させた。good first issueという感じですぐ作業が完了したので特にいうことはなし。&lt;br>
+Pundit自体も昔コミットしたことがあったので特に苦労することはなかった。&lt;/p>
+&lt;h3 id="bake-test-external">bake-test-external
+&lt;span>&lt;a href="#bake-test-external">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://github.com/ioquatix/bake-test-external/pull/2">https://github.com/ioquatix/bake-test-external/pull/2&lt;/a>&lt;/p>
+&lt;p>開発中のGemに依存している別のGemのテストを、開発中のGemを使って実行できるGem。Samuel Williamsさん製。&lt;br>
+後述するPRの作業中に必要になったのでPRを建てた。&lt;/p>
+&lt;p>このGemの仕組みとしてテストしたいGemのレポジトリをcloneしてきてGemfileにローカルのGemを参照させるよう加筆する仕組みになっているのだけれど、gemspecで参照されることのみ想定していたのかGemfileに開発中のGemの名前が書いてあるとGemfileに同じ名前が２つのってしまっていたので修正した。&lt;br>
+PRの内容がいちいち正規表現合成してたり良くないコードだったんだけど&lt;br>
+&lt;code>I'm generally okay with this, but I'm a little concerned it's fragile. However, it's not critical it breaks.&lt;/code>&lt;br>
+というオブラートに包んだコメントもらった後にすぐマージしてくれた。なお上からちゃんと修正してくれていた。押しかけコミット押し付け太郎になってしまい反省しています。&lt;/p>
+&lt;h3 id="omniauth">omniauth
+&lt;span>&lt;a href="#omniauth">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://github.com/omniauth/omniauth/pull/1095">https://github.com/omniauth/omniauth/pull/1095&lt;/a>&lt;/p>
+&lt;p>ここからはまだマージされてないPR。&lt;br>
+bake-test-externalについて知ったのはこのPRが理由。
+bake-test-externalを使ってomniauthのCIにdeviseのテスト実行を追加するPR。issueにgood first issueラベルが貼ってあったので取り組んでみた。確かにomniauthの変更でdeviseがバグってないか確認できたら便利そうではある。&lt;br>
+マージされるかはわからないが、メンテナーの人が最近忙しいみたいなことをレポジトリのどこかで書いていた気がするのでクローズされるにしろマージされるにしろ時間かかりそう&lt;/p>
+&lt;h3 id="puma">Puma
+&lt;span>&lt;a href="#puma">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://github.com/puma/puma/pull/3006">https://github.com/puma/puma/pull/3006&lt;/a>&lt;/p>
+&lt;p>Twitterでメンテナーの方が宣伝してたので便乗してPRを建てた。&lt;/p>
+&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">An opportunity for Puma contribution - write some tests for an already-completed feature &lt;a href="https://t.co/3cQREdtJH7">https://t.co/3cQREdtJH7&lt;/a>&lt;/p>&amp;mdash; Nate Berkopec (@nateberkopec) &lt;a href="https://twitter.com/nateberkopec/status/1585862608640352256?ref_src=twsrc%5Etfw">October 28, 2022&lt;/a>&lt;/blockquote> &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+&lt;p>完全に人の褌で相撲をとっている状態である。&lt;br>
+自分でやったのはSymbolとString変換したりテストちょろっと足したぐらい。&lt;br>
+このPRはメンテナーの方からスタンプとラベル貰えたのですぐにクローズされることはなさそう。
+&lt;code>sd_notify&lt;/code>って概念初めて知ったし勉強になった。&lt;/p>
+&lt;h3 id="あとがき">あとがき
+&lt;span>&lt;a href="#%e3%81%82%e3%81%a8%e3%81%8c%e3%81%8d">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>こいつgood first issueばっかやっとるな。&lt;/p></description></item><item><title>スクラムフェス札幌感想</title><link>https://qwyng.dev/posts/20221105/</link><pubDate>Sat, 05 Nov 2022 14:36:27 +0900</pubDate><guid>https://qwyng.dev/posts/20221105/</guid><description>&lt;p>前職の人が発表するということでオンライン参加、ワイワイ。&lt;br>
 以下プレゼンごとの感想。&lt;/p>
 &lt;h3 id="keynote1---これまでのスクラムのこれから">Keynote1 - これまでのスクラムのこれから
 &lt;span>&lt;a href="#keynote1---%e3%81%93%e3%82%8c%e3%81%be%e3%81%a7%e3%81%ae%e3%82%b9%e3%82%af%e3%83%a9%e3%83%a0%e3%81%ae%e3%81%93%e3%82%8c%e3%81%8b%e3%82%89">#&lt;/a>&lt;/span>

@@ -1,13 +1,11 @@
 <!doctype html><html lang=ja data-theme>
 <head>
-<meta name=generator content="Hugo 0.91.2">
 <meta charset=utf-8>
 <meta name=HandheldFriendly content="True">
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=referrer content="no-referrer-when-downgrade">
-<title>QWYNG.dev</title>
-<meta name=description content="QWYNG(Hiroaki Osawa)という人間のブログです各種SNSのリンクはヘッダー参照">
-<link rel=alternate type=application/rss+xml href=https://qwyng.dev/index.xml title=QWYNG.dev>
+<title>Hacktoberfest 2022で建てたOSSへのPR - QWYNG.dev</title>
+<meta name=description content="有給消化の一ヶ月間好き放題してたらRubyの全てを忘れてしまったのでHacktoberfestの機械にいくつかPRをだした。 なおHackto">
 <link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
@@ -16,10 +14,10 @@
 <meta name=msapplication-TileColor content="#da532c">
 <meta name=theme-color content="#ffffff">
 <link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="QWYNG(Hiroaki Osawa)という人間のブログです各種SNSのリンクはヘッダー参照">
+<meta property="og:description" content="有給消化の一ヶ月間好き放題してたらRubyの全てを忘れてしまったのでHacktoberfestの機械にいくつかPRをだした。 なおHackto">
 <meta property="og:type" content="website">
-<meta property="og:title" content="QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/">
+<meta property="og:title" content="Hacktoberfest 2022で建てたOSSへのPR - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/20221105_hacktoberfest/">
 <meta name=og:image content="https://qwyng.dev/android-chrome-384x384.png">
 <meta name=twitter:card content="summary">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-110687917-3','auto'),ga('send','pageview'))</script>
@@ -60,100 +58,63 @@
 </nav>
 </header>
 <main id=main tabindex=-1>
-<div class=homepage-content>
-</div>
-<div class="articles h-feed">
-<article class="post-list h-feed">
+<article class="post h-entry">
 <div class=post-header>
 <header>
-<h1 class="p-name post-title"><a class=u-url href=/posts/2019/05/14/233736/>プロになるためのWeb技術入門を読みました　O/Rマッピングフレームワークの目的</a></h1>
+<h1 class="p-name post-title">Hacktoberfest 2022で建てたOSSへのPR</h1>
 </header>
 </div>
+<div class="content e-content">
+<p>有給消化の一ヶ月間好き放題してたらRubyの全てを忘れてしまったのでHacktoberfestの機械にいくつかPRをだした。<br>
+なおHacktoberfest対象レポジトリ以外にもPRは建ててます。</p>
+<h3 id=pundit>Pundit
+<span><a href=#pundit>#</a></span>
+</h3><p><a href=https://github.com/varvet/pundit/pull/745>https://github.com/varvet/pundit/pull/745</a></p>
+<p>rubocop-rspecには外部Gemが追加したRspecのDSLをLintの対象にできる<a href=https://docs.rubocop.org/rubocop-rspec/third_party_rspec_syntax_extensions.html>機能</a>がある。</p>
+<p>PunditのRspec用DSLである<code>permissions</code>を対応させた。good first issueという感じですぐ作業が完了したので特にいうことはなし。<br>
+Pundit自体も昔コミットしたことがあったので特に苦労することはなかった。</p>
+<h3 id=bake-test-external>bake-test-external
+<span><a href=#bake-test-external>#</a></span>
+</h3><p><a href=https://github.com/ioquatix/bake-test-external/pull/2>https://github.com/ioquatix/bake-test-external/pull/2</a></p>
+<p>開発中のGemに依存している別のGemのテストを、開発中のGemを使って実行できるGem。Samuel Williamsさん製。<br>
+後述するPRの作業中に必要になったのでPRを建てた。</p>
+<p>このGemの仕組みとしてテストしたいGemのレポジトリをcloneしてきてGemfileにローカルのGemを参照させるよう加筆する仕組みになっているのだけれど、gemspecで参照されることのみ想定していたのかGemfileに開発中のGemの名前が書いてあるとGemfileに同じ名前が２つのってしまっていたので修正した。<br>
+PRの内容がいちいち正規表現合成してたり良くないコードだったんだけど<br>
+<code>I'm generally okay with this, but I'm a little concerned it's fragile. However, it's not critical it breaks.</code><br>
+というオブラートに包んだコメントもらった後にすぐマージしてくれた。なお上からちゃんと修正してくれていた。押しかけコミット押し付け太郎になってしまい反省しています。</p>
+<h3 id=omniauth>omniauth
+<span><a href=#omniauth>#</a></span>
+</h3><p><a href=https://github.com/omniauth/omniauth/pull/1095>https://github.com/omniauth/omniauth/pull/1095</a></p>
+<p>ここからはまだマージされてないPR。<br>
+bake-test-externalについて知ったのはこのPRが理由。
+bake-test-externalを使ってomniauthのCIにdeviseのテスト実行を追加するPR。issueにgood first issueラベルが貼ってあったので取り組んでみた。確かにomniauthの変更でdeviseがバグってないか確認できたら便利そうではある。<br>
+マージされるかはわからないが、メンテナーの人が最近忙しいみたいなことをレポジトリのどこかで書いていた気がするのでクローズされるにしろマージされるにしろ時間かかりそう</p>
+<h3 id=puma>Puma
+<span><a href=#puma>#</a></span>
+</h3><p><a href=https://github.com/puma/puma/pull/3006>https://github.com/puma/puma/pull/3006</a></p>
+<p>Twitterでメンテナーの方が宣伝してたので便乗してPRを建てた。</p>
+<blockquote class=twitter-tweet><p lang=en dir=ltr>An opportunity for Puma contribution - write some tests for an already-completed feature <a href=https://t.co/3cQREdtJH7>https://t.co/3cQREdtJH7</a></p>&mdash; Nate Berkopec (@nateberkopec) <a href="https://twitter.com/nateberkopec/status/1585862608640352256?ref_src=twsrc%5Etfw">October 28, 2022</a></blockquote> <script async src=https://platform.twitter.com/widgets.js></script>
+<p>完全に人の褌で相撲をとっている状態である。<br>
+自分でやったのはSymbolとString変換したりテストちょろっと足したぐらい。<br>
+このPRはメンテナーの方からスタンプとラベル貰えたのですぐにクローズされることはなさそう。
+<code>sd_notify</code>って概念初めて知ったし勉強になった。</p>
+<h3 id=あとがき>あとがき
+<span><a href=#%e3%81%82%e3%81%a8%e3%81%8c%e3%81%8d>#</a></span>
+</h3><p>こいつgood first issueばっかやっとるな。</p>
+</div>
 <div class=post-info>
-<div class="post-date dt-published">2019-05-14</div>
-<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/2019/05/14/233736/>https://qwyng.dev/posts/2019/05/14/233736/</a>
+<div class="post-date dt-published">2022-11-05</div>
+<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/20221105_hacktoberfest/>https://qwyng.dev/posts/20221105_hacktoberfest/</a>
 <a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
 <div class=post-taxonomies>
 </div>
 </div>
 </article>
-<article class="post-list h-feed">
-<div class=post-header>
-<header>
-<h1 class="p-name post-title"><a class=u-url href=/posts/2019/05/03/014637/>大規模サービス技術入門を読みました。ついでにRubyでVB Codeを実装してみた</a></h1>
-</header>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2019-05-03</div>
-<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/2019/05/03/014637/>https://qwyng.dev/posts/2019/05/03/014637/</a>
-<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
-<div class=post-taxonomies>
-</div>
-</div>
-</article>
-<article class="post-list h-feed">
-<div class=post-header>
-<header>
-<h1 class="p-name post-title"><a class=u-url href=/posts/2019/04/23/001755/>Riot Games API + Rails + React + Ant design でLeague of Legendでチャンピオンごとにガイドを共有できるwebアプリをつくりました</a></h1>
-</header>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2019-04-23</div>
-<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/2019/04/23/001755/>https://qwyng.dev/posts/2019/04/23/001755/</a>
-<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
-<div class=post-taxonomies>
-</div>
-</div>
-</article>
-<article class="post-list h-feed">
-<div class=post-header>
-<header>
-<h1 class="p-name post-title"><a class=u-url href=/posts/2019/04/08/003824/>「オブジェクト指向設計実践ガイド　～Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方」を読みました</a></h1>
-</header>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2019-04-08</div>
-<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/2019/04/08/003824/>https://qwyng.dev/posts/2019/04/08/003824/</a>
-<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
-<div class=post-taxonomies>
-</div>
-</div>
-</article>
-<article class="post-list h-feed">
-<div class=post-header>
-<header>
-<h1 class="p-name post-title"><a class=u-url href=/posts/2019/03/18/231417/>「失敗から学ぶRDBの正しい歩き方」を読んで</a></h1>
-</header>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2019-03-18</div>
-<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/2019/03/18/231417/>https://qwyng.dev/posts/2019/03/18/231417/</a>
-<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
-<div class=post-taxonomies>
-</div>
-</div>
-</article>
-<article class="post-list h-feed">
-<div class=post-header>
-<header>
-<h1 class="p-name post-title"><a class=u-url href=/posts/2019/03/11/230932/>オブジェクト指向設計実践ガイド　四章まで読んで気になったこと</a></h1>
-</header>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2019-03-11</div>
-<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/2019/03/11/230932/>https://qwyng.dev/posts/2019/03/11/230932/</a>
-<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
-<div class=post-taxonomies>
-</div>
-</div>
-</article>
-<div class=pagination>
-<div class="left pagination-item">
-<a href=/page/15/>to new posts</a>
+<div class="pagination post-pagination">
+<div class="left pagination-item disabled">
 </div>
 <div class="right pagination-item">
-<a href=/page/17/>to old posts</a>
-</div>
+<a href=/posts/20221105/>スクラムフェス札幌感想</a>
 </div>
 </div>
 </main>
