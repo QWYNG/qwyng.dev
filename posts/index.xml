@@ -1,4 +1,86 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 27 Nov 2022 16:17:49 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>週報2022-W47 四則演算ができない</title><link>https://qwyng.dev/posts/20221127/</link><pubDate>Sun, 27 Nov 2022 16:17:49 +0900</pubDate><guid>https://qwyng.dev/posts/20221127/</guid><description>&lt;h2 id="週報とは">週報とは？
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 04 Dec 2022 17:30:44 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>週報2022-W48 オーバーウォッチ2</title><link>https://qwyng.dev/posts/20221204/</link><pubDate>Sun, 04 Dec 2022 17:30:44 +0900</pubDate><guid>https://qwyng.dev/posts/20221204/</guid><description>&lt;h2 id="やったこと">やったこと
+&lt;span>&lt;a href="#%e3%82%84%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>アドカレを書いた
+&lt;ul>
+&lt;li>担当日は12月7日だが12月3日に書き上げた。
+&lt;ul>
+&lt;li>偉すぎる&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>メンタルが崩壊した。
+&lt;ul>
+&lt;li>水曜日に私生活でなんらかの事件がありメンタルが崩壊した。
+&lt;ul>
+&lt;li>ので今週はほとんどゲームやってた&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>OW2のコミュニティを紹介してもらって遊びはじめた。
+&lt;ul>
+&lt;li>やっぱりOWはフレンドと遊ぶとまじで面白い。&lt;/li>
+&lt;li>シーズン4以降あんまりやってなかったのでおじいちゃんである。
+&lt;ul>
+&lt;li>特にシグマのウルトが本当におじいちゃんで悲しい。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>ポケモン
+&lt;ul>
+&lt;li>パーティができたのでランクマッチに潜っている。&lt;/li>
+&lt;li>ガッサでノオーにマッパしたら雪でBあがってて確2とれなかった。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>仕事
+&lt;ul>
+&lt;li>今週は水曜日の事件により全て崩壊したのでだめです。&lt;/li>
+&lt;li>スプラトゥーン配信者の同僚氏とゲームの話してたことしか思い出せない。&lt;/li>
+&lt;li>database_cleaner-active_recordへ立てたPRに催促いれるなどした。
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/DatabaseCleaner/database_cleaner-active_record/pull/75">https://github.com/DatabaseCleaner/database_cleaner-active_record/pull/75&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>チルアウトとオイコスを大量に購入した&lt;/li>
+&lt;/ul>
+&lt;blockquote class="twitter-tweet">&lt;p lang="ja" dir="ltr">家にチルアウトとオイコスが大量にあるタイプの人間 &lt;a href="https://t.co/8kejw0cjDK">pic.twitter.com/8kejw0cjDK&lt;/a>&lt;/p>&amp;mdash; とるめん (@qwyngg) &lt;a href="https://twitter.com/qwyngg/status/1598244946028306433?ref_src=twsrc%5Etfw">December 1, 2022&lt;/a>&lt;/blockquote> &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+&lt;ul>
+&lt;li>どっちも好きでコンビニでよく買っている。
+&lt;ul>
+&lt;li>まとめ買いしたほうが経済的だろうということでAmazonで購入した。
+&lt;ul>
+&lt;li>家の冷蔵庫がパンパンになった。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="学び">学び
+&lt;span>&lt;a href="#%e5%ad%a6%e3%81%b3">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>草タイプにキノコのほうしは効かない（1敗）&lt;/li>
+&lt;li>ラインハルト以外やらないほうがいい
+&lt;ul>
+&lt;li>下手すぎて申し訳ないのでソロでしか別のキャラやらなそう&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="なんか書いとけ欄">なんか書いとけ欄
+&lt;span>&lt;a href="#%e3%81%aa%e3%82%93%e3%81%8b%e6%9b%b8%e3%81%84%e3%81%a8%e3%81%91%e6%ac%84">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>メンタルケア感謝します。
+&lt;ul>
+&lt;li>Life Goes onということでね。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>堀義人のポートフォリオ全人類見習ったほうがいい&lt;/li>
+&lt;/ul>
+&lt;blockquote class="twitter-tweet">&lt;p lang="ja" dir="ltr">僕は、公開株を含め、信託・ETF・債権等一才の投資をしていない。当然仮想通貨もだ。理由は、株価の変動に一喜一憂したくないからだ。&lt;br>&lt;br>資産は全て自社株と自社のVCファンドへの投資のみ。元々ギャンブルが好きではないので、自分が運命をコントロールできることにしか賭けない。 &lt;a href="https://t.co/bU8voyBGaO">https://t.co/bU8voyBGaO&lt;/a>&lt;/p>&amp;mdash; 堀義人 (@YoshitoHori) &lt;a href="https://twitter.com/YoshitoHori/status/1598118912339562497?ref_src=twsrc%5Etfw">December 1, 2022&lt;/a>&lt;/blockquote> &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script></description></item><item><title>週報2022-W47 四則演算ができない</title><link>https://qwyng.dev/posts/20221127/</link><pubDate>Sun, 27 Nov 2022 16:17:49 +0900</pubDate><guid>https://qwyng.dev/posts/20221127/</guid><description>&lt;h2 id="週報とは">週報とは？
 &lt;span>&lt;a href="#%e9%80%b1%e5%a0%b1%e3%81%a8%e3%81%af">#&lt;/a>&lt;/span>
 &lt;/h2>&lt;ul>
 &lt;li>みんなやってるので私もやります
