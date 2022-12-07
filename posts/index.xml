@@ -1,4 +1,125 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 04 Dec 2022 17:30:44 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>週報2022-W48 オーバーウォッチ2</title><link>https://qwyng.dev/posts/20221204/</link><pubDate>Sun, 04 Dec 2022 17:30:44 +0900</pubDate><guid>https://qwyng.dev/posts/20221204/</guid><description>&lt;h2 id="やったこと">やったこと
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Wed, 07 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Railsでよく使用されるマルチテナントGemのテナントの初期化について</title><link>https://qwyng.dev/posts/shr_advent_calendar2022/</link><pubDate>Wed, 07 Dec 2022 00:00:00 +0000</pubDate><guid>https://qwyng.dev/posts/shr_advent_calendar2022/</guid><description>&lt;p>このエントリは、&lt;a href="https://qiita.com/advent-calendar/2022/smarthr">SmartHR Advent Calendar 2022&lt;/a>の7日目です。&lt;/p>
+&lt;p>SmartHRではマルチテナントの実現のために &lt;a href="https://github.com/citusdata/activerecord-multi-tenant">activerecord-multi-tenant&lt;/a>というGemを使っているのですが、そのGemを調査したときに気づいたことを書きたいと思います。&lt;/p>
+&lt;h3 id="tldr">TL;DR
+&lt;span>&lt;a href="#tldr">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;code>activerecord-multi-tenant&lt;/code>と&lt;code>ActsAsTenant&lt;/code>はリクエストごとにテナントを初期化するタイミングが違うよ。&lt;/li>
+&lt;li>とくにrequest specでは誤ったテストの原因になりかねないので、テナントが初期化されるタイミングを理解して実際のアプリケーションの動作になるだけ近づけよう。&lt;/li>
+&lt;/ul>
+&lt;h3 id="テナントのリセットタイミングの再現コード">テナントのリセットタイミングの再現コード
+&lt;span>&lt;a href="#%e3%83%86%e3%83%8a%e3%83%b3%e3%83%88%e3%81%ae%e3%83%aa%e3%82%bb%e3%83%83%e3%83%88%e3%82%bf%e3%82%a4%e3%83%9f%e3%83%b3%e3%82%b0%e3%81%ae%e5%86%8d%e7%8f%be%e3%82%b3%e3%83%bc%e3%83%89">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>Railsにおいてマルチテナントを行う際に有力な選択肢として&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/ErwinM/acts_as_tenant">ActsAsTenant&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/citusdata/activerecord-multi-tenant">activerecord-multi-tenant&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>あたりが有力な選択肢になるかと思われます。
+（&lt;a href="https://github.com/rails-on-services/apartment">Apartment&lt;/a>も有名ですが先述の２つのGemと異なりマルチスキーマでマルチテナントを構成するGemで検証が間に合わなかったので言及しません :bow: )&lt;br>
+どちらのGemもリクエストごとに設定されているテナントを初期化してくれる機能が提供されていますが、その初期化をするタイミングが微妙に異なっています。&lt;br>
+↓サンプルコードです。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ruby" data-lang="ruby">require &lt;span style="color:#e6db74">&amp;#39;bundler/inline&amp;#39;&lt;/span>
+gemfile(&lt;span style="color:#66d9ef">true&lt;/span>) &lt;span style="color:#66d9ef">do&lt;/span>
+source &lt;span style="color:#e6db74">&amp;#39;https://rubygems.org&amp;#39;&lt;/span>
+gem &lt;span style="color:#e6db74">&amp;#39;rails&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;7.0.4&amp;#39;&lt;/span>
+gem &lt;span style="color:#e6db74">&amp;#39;sqlite3&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;1.5.4&amp;#39;&lt;/span>
+gem &lt;span style="color:#e6db74">&amp;#39;activerecord-multi-tenant&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;2.1.6&amp;#39;&lt;/span>, require: &lt;span style="color:#66d9ef">false&lt;/span>
+gem &lt;span style="color:#e6db74">&amp;#39;acts_as_tenant&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;0.5.3&amp;#39;&lt;/span>
+gem &lt;span style="color:#e6db74">&amp;#39;rspec-rails&amp;#39;&lt;/span>
+&lt;span style="color:#66d9ef">end&lt;/span>
+require &lt;span style="color:#e6db74">&amp;#39;action_controller/railtie&amp;#39;&lt;/span>
+require &lt;span style="color:#e6db74">&amp;#39;active_record&amp;#39;&lt;/span>
+&lt;span style="color:#66d9ef">ActiveRecord&lt;/span>&lt;span style="color:#f92672">::&lt;/span>&lt;span style="color:#66d9ef">Base&lt;/span>&lt;span style="color:#f92672">.&lt;/span>establish_connection(&lt;span style="color:#e6db74">adapter&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;sqlite3&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">database&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;:memory:&amp;#39;&lt;/span>)
+require &lt;span style="color:#e6db74">&amp;#39;activerecord-multi-tenant&amp;#39;&lt;/span>
+&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">App&lt;/span> &lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#66d9ef">Rails&lt;/span>&lt;span style="color:#f92672">::&lt;/span>&lt;span style="color:#66d9ef">Application&lt;/span>
+routes&lt;span style="color:#f92672">.&lt;/span>append &lt;span style="color:#66d9ef">do&lt;/span>
+get &lt;span style="color:#e6db74">&amp;#39;/tenant_test&amp;#39;&lt;/span> &lt;span style="color:#f92672">=&amp;gt;&lt;/span> &lt;span style="color:#e6db74">&amp;#39;tenant#test&amp;#39;&lt;/span>
+&lt;span style="color:#66d9ef">end&lt;/span>
+&lt;span style="color:#66d9ef">end&lt;/span>
+&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">TenantController&lt;/span> &lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#66d9ef">ActionController&lt;/span>&lt;span style="color:#f92672">::&lt;/span>&lt;span style="color:#66d9ef">API&lt;/span>
+&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">test&lt;/span>
+puts &lt;span style="color:#e6db74">&amp;#34;ActsAsTenant.current_tenant: &lt;/span>&lt;span style="color:#e6db74">#{&lt;/span>&lt;span style="color:#66d9ef">ActsAsTenant&lt;/span>&lt;span style="color:#f92672">.&lt;/span>current_tenant&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+puts &lt;span style="color:#e6db74">&amp;#34;ActsAsTenant.test_tenant: &lt;/span>&lt;span style="color:#e6db74">#{&lt;/span>&lt;span style="color:#66d9ef">ActsAsTenant&lt;/span>&lt;span style="color:#f92672">.&lt;/span>test_tenant&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+puts &lt;span style="color:#e6db74">&amp;#34;MultiTenant.current_tenant: &lt;/span>&lt;span style="color:#e6db74">#{&lt;/span>&lt;span style="color:#66d9ef">MultiTenant&lt;/span>&lt;span style="color:#f92672">.&lt;/span>current_tenant&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+render &lt;span style="color:#e6db74">json&lt;/span>: { &lt;span style="color:#e6db74">hello&lt;/span>: &lt;span style="color:#e6db74">:world&lt;/span> }
+&lt;span style="color:#66d9ef">end&lt;/span>
+&lt;span style="color:#66d9ef">end&lt;/span>
+&lt;span style="color:#66d9ef">App&lt;/span>&lt;span style="color:#f92672">.&lt;/span>configure &lt;span style="color:#66d9ef">do&lt;/span>
+config&lt;span style="color:#f92672">.&lt;/span>hosts&lt;span style="color:#f92672">.&lt;/span>clear
+&lt;span style="color:#66d9ef">end&lt;/span>
+require &lt;span style="color:#e6db74">&amp;#39;acts_as_tenant/test_tenant_middleware&amp;#39;&lt;/span>
+&lt;span style="color:#66d9ef">Rails&lt;/span>&lt;span style="color:#f92672">.&lt;/span>application&lt;span style="color:#f92672">.&lt;/span>configure &lt;span style="color:#66d9ef">do&lt;/span>
+config&lt;span style="color:#f92672">.&lt;/span>middleware&lt;span style="color:#f92672">.&lt;/span>use &lt;span style="color:#66d9ef">ActsAsTenant&lt;/span>&lt;span style="color:#f92672">::&lt;/span>&lt;span style="color:#66d9ef">TestTenantMiddleware&lt;/span>
+&lt;span style="color:#66d9ef">end&lt;/span>
+&lt;span style="color:#66d9ef">App&lt;/span>&lt;span style="color:#f92672">.&lt;/span>initialize!
+require &lt;span style="color:#e6db74">&amp;#39;rspec/rails&amp;#39;&lt;/span>
+&lt;span style="color:#66d9ef">RSpec&lt;/span>&lt;span style="color:#f92672">.&lt;/span>describe &lt;span style="color:#e6db74">&amp;#39;Test&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">type&lt;/span>: &lt;span style="color:#e6db74">:request&lt;/span> &lt;span style="color:#66d9ef">do&lt;/span>
+it &lt;span style="color:#e6db74">&amp;#39;first request&amp;#39;&lt;/span> &lt;span style="color:#66d9ef">do&lt;/span>
+&lt;span style="color:#66d9ef">ActsAsTenant&lt;/span>&lt;span style="color:#f92672">.&lt;/span>current_tenant &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;Tenant set in spec&amp;#39;&lt;/span>
+&lt;span style="color:#66d9ef">ActsAsTenant&lt;/span>&lt;span style="color:#f92672">.&lt;/span>test_tenant &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;Tenant set in spec&amp;#39;&lt;/span>
+&lt;span style="color:#66d9ef">MultiTenant&lt;/span>&lt;span style="color:#f92672">.&lt;/span>current_tenant &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;Tenant set in spec&amp;#39;&lt;/span>
+get &lt;span style="color:#e6db74">&amp;#39;/tenant_test&amp;#39;&lt;/span>
+expect(response&lt;span style="color:#f92672">.&lt;/span>status)&lt;span style="color:#f92672">.&lt;/span>to eq(&lt;span style="color:#ae81ff">200&lt;/span>)
+&lt;span style="color:#66d9ef">end&lt;/span>
+it &lt;span style="color:#e6db74">&amp;#39;second request&amp;#39;&lt;/span> &lt;span style="color:#66d9ef">do&lt;/span>
+get &lt;span style="color:#e6db74">&amp;#39;/tenant_test&amp;#39;&lt;/span>
+expect(response&lt;span style="color:#f92672">.&lt;/span>status)&lt;span style="color:#f92672">.&lt;/span>to eq(&lt;span style="color:#ae81ff">200&lt;/span>)
+&lt;span style="color:#66d9ef">end&lt;/span>
+&lt;span style="color:#66d9ef">end&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>実行結果&lt;/p>
+&lt;pre tabindex="0">&lt;code>⋊&amp;gt; ~/acts_as_tenant_sandbox rspec -f d script.rb
+Fetching gem metadata from https://rubygems.org/...........
+###(中略)###
+Test
+ActsAsTenant.current_tenant: Tenant set in spec
+ActsAsTenant.test_tenant:
+MultiTenant.current_tenant:
+first request
+ActsAsTenant.current_tenant:
+ActsAsTenant.test_tenant:
+MultiTenant.current_tenant:
+second request
+Finished in 0.00789 seconds (files took 1.34 seconds to load)
+2 examples, 0 failures
+&lt;/code>&lt;/pre>&lt;p>実行結果からわかる通り&lt;code>ActsAsTenant.current_tenant&lt;/code>はテストコード内で設定したテナントがrequest specの機能で呼び出されたアプリケーションの中でも初期化されずに引き継がれていることがわかります。
+この問題(？)については&lt;code>ActsAsTenant&lt;/code>のREADMEにて記載があります。&lt;/p>
+&lt;blockquote>
+&lt;p>If you set the &lt;code>current_tenant&lt;/code> in your tests, make sure to clean up the tenant after each test by calling &lt;code>ActsAsTenant.current_tenant = nil&lt;/code>. Integration tests are more difficult: manually setting the &lt;code>current_tenant&lt;/code> value will not survive across multiple requests, even if they take place within the same test. This can result in undesired boilerplate to set the desired tenant. Moreover, the efficacy of the test can be compromised because the set &lt;code>current_tenant&lt;/code> value will carry over into the request-response cycle.&lt;/p>
+&lt;/blockquote>
+&lt;p>また対処の方法としてサンプルコードでも使用していた&lt;code>ActsAsTenant.test_tenant&lt;/code>の使用を推奨する記載もREADMEにあります。&lt;/p>
+&lt;h3 id="なぜ初期化するタイミングが違うのか">なぜ初期化するタイミングが違うのか
+&lt;span>&lt;a href="#%e3%81%aa%e3%81%9c%e5%88%9d%e6%9c%9f%e5%8c%96%e3%81%99%e3%82%8b%e3%82%bf%e3%82%a4%e3%83%9f%e3%83%b3%e3%82%b0%e3%81%8c%e9%81%95%e3%81%86%e3%81%ae%e3%81%8b">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>なぜ初期化するタイミングが違うのかというと&lt;code>ActsAsTenant&lt;/code>と&lt;code>MultiTenant&lt;/code>ではテナントの保存に使用しているクラスが異なっているからです。&lt;/p>
+&lt;p>&lt;code>ActsAsTenant&lt;/code>は&lt;code>RequestStore&lt;/code>を&lt;a href="https://github.com/ErwinM/acts_as_tenant/blob/v0.5.3/lib/acts_as_tenant.rb#L59">使っています。&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/steveklabnik/request_store">https://github.com/steveklabnik/request_store&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>対して&lt;code>MultiTenant&lt;/code>は&lt;code>ActiveSupport::CurrentAttributes&lt;/code>を&lt;a href="https://github.com/citusdata/activerecord-multi-tenant/blob/a6c8c2d75230ac6ebb22a609d6f7fc57e5f250ee/lib/activerecord-multi-tenant/multi_tenant.rb#L60">使っています。&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/rails/rails/blob/v7.0.4/activesupport/lib/active_support/current_attributes.rb">https://github.com/rails/rails/blob/v7.0.4/activesupport/lib/active_support/current_attributes.rb&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>どちらもThreadクラスを利用しつつリクエストごとに値を初期化してくれる場所を提供してくれるクラスですが、初期化を設定する方法が異なっています。&lt;/p>
+&lt;p>&lt;code>RequestStore&lt;/code>はRackに&lt;a href="https://github.com/steveklabnik/request_store/blob/v1.5.1/lib/request_store/middleware.rb">値を初期化するミドルウェア&lt;/a>を追加しているのと、RailsのExecuterの&lt;code>to_complite&lt;/code>コールバックに&lt;a href="https://github.com/steveklabnik/request_store/blob/f79bd375e88f434428b876dbb5c8a51b569712aa/lib/request_store/railtie.rb#L10">値を初期化する動作が追加&lt;/a> されています。&lt;br>
+Executerのコールバックについての細かい解説は&lt;a href="https://railsguides.jp/threading_and_code_execution.html#executor">Railsガイド&lt;/a>にあります（いつもありがとうございます！）。&lt;/p>
+&lt;p>ミドルウェアの中身は↓のようになっており、&lt;code>RequestStore&lt;/code>はリクエストを処理した後にのみ値を初期化していることがわかります。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ruby" data-lang="ruby">&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">call&lt;/span>(env)
+&lt;span style="color:#66d9ef">RequestStore&lt;/span>&lt;span style="color:#f92672">.&lt;/span>begin!
+status, headers, body &lt;span style="color:#f92672">=&lt;/span> @app&lt;span style="color:#f92672">.&lt;/span>call(env)
+body &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">Rack&lt;/span>&lt;span style="color:#f92672">::&lt;/span>&lt;span style="color:#66d9ef">BodyProxy&lt;/span>&lt;span style="color:#f92672">.&lt;/span>new(body) &lt;span style="color:#66d9ef">do&lt;/span>
+&lt;span style="color:#66d9ef">RequestStore&lt;/span>&lt;span style="color:#f92672">.&lt;/span>end!
+&lt;span style="color:#66d9ef">RequestStore&lt;/span>&lt;span style="color:#f92672">.&lt;/span>clear!
+&lt;span style="color:#66d9ef">end&lt;/span>
+&lt;span style="color:#f92672">...&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>対して&lt;code>ActiveSupport::CurrentAttributes&lt;/code>ではRails のExecutorのコールバックである&lt;code>to_run&lt;/code>と&lt;code>to_complete&lt;/code>に&lt;a href="https://github.com/rails/rails/blob/v7.0.4/activesupport/lib/active_support/railtie.rb#L41">値を初期化する動作を追加しています。&lt;/a>&lt;br>
+先述のガイドにものっていますが、&lt;code>to_run&lt;/code>コールバックはアプリケーションの実行前に呼び出されるコールバックです。&lt;/p>
+&lt;p>↓は超ざっくりイメージです。
+&lt;img src="https://qwyng.dev/reset.png" alt="">&lt;/p>
+&lt;h3 id="初期化されるタイミングの違いで起こりうること">初期化されるタイミングの違いで起こりうること
+&lt;span>&lt;a href="#%e5%88%9d%e6%9c%9f%e5%8c%96%e3%81%95%e3%82%8c%e3%82%8b%e3%82%bf%e3%82%a4%e3%83%9f%e3%83%b3%e3%82%b0%e3%81%ae%e9%81%95%e3%81%84%e3%81%a7%e8%b5%b7%e3%81%93%e3%82%8a%e3%81%86%e3%82%8b%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>request specで使えるようになる&lt;code>get&lt;/code>等のメソッドはテストと同じスレッドで擬似的にRackアプリ全体を呼び出すため、&lt;code>RequestStore&lt;/code>を使用している&lt;code>ActsAsTenant.current_tenant&lt;/code>はテスト内で設定した&lt;code>current_tenant&lt;/code>の値が初期化されずに引き継がれます。&lt;br>
+request specを統合テストと考えると事前にテナントが固定されたままテストするのはあまりよくないので&lt;a href="https://github.com/ErwinM/acts_as_tenant/tree/v0.5.3#testing">リクエストを処理する前に値を初期化してくれるミドルウェアに対応している&lt;/a>&lt;code>ActsAsTenant.test_tenant&lt;/code>を使用したほうが良いでしょう。&lt;br>
+実は &lt;code>activerecord-multi-tenant&lt;/code>も古いバージョンでは&lt;code>RequestStore&lt;/code>を使用しており、&lt;code>ActsAsTenant.current_tenant&lt;/code>と同様にrequest spec内で固定したテナントが&lt;code>get&lt;/code>等で呼び出すアプリケーション内で初期化されず引き継がれるようになっていました。&lt;br>
+request specを書く際にはテストのためにデータを準備するコードでテナントを固定する箇所は発生すると思いますので、
+テナントがスレッド内でどのように固定と初期化されているのか理解しておくことで間違ったテストを書く可能性が減らせると思います。&lt;/p></description></item><item><title>週報2022-W48 オーバーウォッチ2</title><link>https://qwyng.dev/posts/20221204/</link><pubDate>Sun, 04 Dec 2022 17:30:44 +0900</pubDate><guid>https://qwyng.dev/posts/20221204/</guid><description>&lt;h2 id="やったこと">やったこと
 &lt;span>&lt;a href="#%e3%82%84%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
 &lt;/h2>&lt;ul>
 &lt;li>アドカレを書いた
