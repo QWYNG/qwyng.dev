@@ -1,4 +1,52 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Wed, 07 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Railsでよく使用されるマルチテナントGemのテナントの初期化について</title><link>https://qwyng.dev/posts/shr_advent_calendar2022/</link><pubDate>Wed, 07 Dec 2022 00:00:00 +0000</pubDate><guid>https://qwyng.dev/posts/shr_advent_calendar2022/</guid><description>&lt;p>このエントリは、&lt;a href="https://qiita.com/advent-calendar/2022/smarthr">SmartHR Advent Calendar 2022&lt;/a>の7日目です。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Mon, 12 Dec 2022 23:16:11 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>週報2022-W49 チームシールド</title><link>https://qwyng.dev/posts/20221212/</link><pubDate>Mon, 12 Dec 2022 23:16:11 +0900</pubDate><guid>https://qwyng.dev/posts/20221212/</guid><description>&lt;h3 id="やったこと">やったこと
+&lt;span>&lt;a href="#%e3%82%84%e3%81%a3%e3%81%9f%e3%81%93%e3%81%a8">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>仕事
+&lt;ul>
+&lt;li>最近QAとかフロントとか話を聞くことが多く面白い。&lt;/li>
+&lt;li>Reduxの状態管理ってCPU回路と似ている。&lt;/li>
+&lt;li>テストの場合分けの考え方は良い自動テスト書くのに役に立ちそう&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>MTG
+&lt;ul>
+&lt;li>日曜日にnote placeでチームシールドに参加した。&lt;/li>
+&lt;li>最終戦績は3-2だった。構築のやり方が無限にあって奥が深すぎる。&lt;/li>
+&lt;li>note placeきれいで良かった。仕事する場所というよりはイベント会場という感じ。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;blockquote class="twitter-tweet">&lt;p lang="ja" dir="ltr">お待たせしました‼️&lt;br>チームシールドやるよーーーー！&lt;br>&lt;br>開催日は12月11日（日）💫&lt;br>🤖兄弟戦争🤖12パックを使っての3人1組のチーム戦🔥&lt;br>&lt;br>詳細と参加希望は以下のフォームからお願いします✨&lt;a href="https://t.co/kv5XYlnSVu">https://t.co/kv5XYlnSVu&lt;/a> &lt;a href="https://t.co/xG98DwA4Qf">pic.twitter.com/xG98DwA4Qf&lt;/a>&lt;/p>&amp;mdash; はまさん＠はま屋 (@ziguyan) &lt;a href="https://twitter.com/ziguyan/status/1597501370734899202?ref_src=twsrc%5Etfw">November 29, 2022&lt;/a>&lt;/blockquote> &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+&lt;ul>
+&lt;li>シズラー会
+&lt;ul>
+&lt;li>シズラー会とはG社関係者がシズラーを食べる会である。&lt;/li>
+&lt;li>最近ビーフカレーが美味しさに気づいた。&lt;/li>
+&lt;li>トマホークステーキはボリュームがすごいので注文した方がいい。&lt;/li>
+&lt;li>食後ははちみつティーが板。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="なんか書いとけ欄">なんか書いとけ欄
+&lt;span>&lt;a href="#%e3%81%aa%e3%82%93%e3%81%8b%e6%9b%b8%e3%81%84%e3%81%a8%e3%81%91%e6%ac%84">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>バスケットボールを買った。
+&lt;ul>
+&lt;li>社のバスケ部で使った。&lt;/li>
+&lt;li>当然NIKEのT1カラー。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>最強の哲学入門を読み終えた。
+&lt;ul>
+&lt;li>面白かったので東洋版も買おうと思う。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>CI環境の整備がよくわからんので&lt;a href="https://book.impress.co.jp/books/1120101031">Dockerコンテナ開発・環境構築の基本&lt;/a>を買った
+&lt;ul>
+&lt;li>CI時のイメージビルドとキャッシュがよくわからんのでやっていきたい&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>Railsでよく使用されるマルチテナントGemのテナントの初期化について</title><link>https://qwyng.dev/posts/shr_advent_calendar2022/</link><pubDate>Wed, 07 Dec 2022 00:00:00 +0000</pubDate><guid>https://qwyng.dev/posts/shr_advent_calendar2022/</guid><description>&lt;p>このエントリは、&lt;a href="https://qiita.com/advent-calendar/2022/smarthr">SmartHR Advent Calendar 2022&lt;/a>の7日目です。&lt;/p>
 &lt;p>SmartHRではマルチテナントの実現のために &lt;a href="https://github.com/citusdata/activerecord-multi-tenant">activerecord-multi-tenant&lt;/a>というGemを使っているのですが、そのGemを調査したときに気づいたことを書きたいと思います。&lt;/p>
 &lt;h3 id="tldr">TL;DR
 &lt;span>&lt;a href="#tldr">#&lt;/a>&lt;/span>
