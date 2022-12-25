@@ -1,4 +1,72 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 25 Dec 2022 09:56:08 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>再読！アジャイルサムライ</title><link>https://qwyng.dev/posts/20221223/</link><pubDate>Sun, 25 Dec 2022 09:56:08 +0900</pubDate><guid>https://qwyng.dev/posts/20221223/</guid><description>&lt;p>転職前に読んだアジャイルサムライを改めて読み直した。自分用に整理しておく。&lt;br>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 25 Dec 2022 15:53:22 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>週報 2022-W50 git-now</title><link>https://qwyng.dev/posts/20221225/</link><pubDate>Sun, 25 Dec 2022 15:53:22 +0900</pubDate><guid>https://qwyng.dev/posts/20221225/</guid><description>&lt;ul>
+&lt;li>
+&lt;p>git-nowを導入した&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/iwata/git-now">https://github.com/iwata/git-now&lt;/a>&lt;/li>
+&lt;li>&lt;code>git now&lt;/code> でわかりやすいコミットメッセージでコミットしてくれて、&lt;code>git now rebase&lt;/code>で&lt;code>git now&lt;/code>でコミットしたものをまとめて&lt;code>git rebase -i&lt;/code>できる&lt;/li>
+&lt;li>いつもstashがごちゃついていて検索するスクリプトを書いたりしていたくらいなのでめっちゃ便利になった
+&lt;ul>
+&lt;li>&lt;a href="https://qwyng.dev/posts/2021/10/24/161057/">stashを検索するGitHub CLI Extensionを書いた - QWYNG.dev&lt;/a>&lt;/li>
+&lt;li>逐一&lt;code>git now&lt;/code>することでブランチ間の移動が気軽に行えるようになった&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>高田馬場の力という店で前職の人たちとご飯にいった&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://tabelog.com/tokyo/A1305/A130503/13012817/">https://tabelog.com/tokyo/A1305/A130503/13012817/&lt;/a>
+&lt;ul>
+&lt;li>オムレツがデカすぎる&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>みんないろんな人生ですごい&lt;/li>
+&lt;li>悪びれず遅刻する主催者もいた
+&lt;ul>
+&lt;li>&lt;a href="https://imaharu-blog.hatenadiary.jp/entry/2022/12/25/163504">週報 12/20-12/26 - ストロングゼロは睡眠薬&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>アジャイルサムライを読み直して記事を書いた&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://qwyng.dev/posts/20221223/">再読！アジャイルサムライ&lt;/a>&lt;/li>
+&lt;li>開発これもうわかんねぇよ&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>縄跳びを買った&lt;/p>
+&lt;ul>
+&lt;li>友達にシュートフォームを見せたら体がバラバラすぎると言われたので連動性を高めたい&lt;/li>
+&lt;li>というか運動したい
+&lt;ul>
+&lt;li>運動しないといい睡眠ができない&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>仕事&lt;/p>
+&lt;ul>
+&lt;li>結構テスト書いていた気がする&lt;/li>
+&lt;li>あと業務時間にFallGuysして社会人した&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>pundit&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;blockquote class="twitter-tweet">&lt;p lang="ja" dir="ltr">これリリースされたからpundit使ってるレポジトリみんなymlに追記してくれよな&lt;a href="https://t.co/mWD2qFWqPO">https://t.co/mWD2qFWqPO&lt;/a>&lt;/p>&amp;mdash; とるめん (@qwyngg) &lt;a href="https://twitter.com/qwyngg/status/1605072405604364288?ref_src=twsrc%5Etfw">December 20, 2022&lt;/a>&lt;/blockquote> &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+&lt;/li>
+&lt;li>punditとrspec使ってるレポジトリ全部&lt;code>rubocop.yml&lt;/code>に追記してほしい
+&lt;ul>
+&lt;li>僕はした&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>再読！アジャイルサムライ</title><link>https://qwyng.dev/posts/20221223/</link><pubDate>Sun, 25 Dec 2022 09:56:08 +0900</pubDate><guid>https://qwyng.dev/posts/20221223/</guid><description>&lt;p>転職前に読んだアジャイルサムライを改めて読み直した。自分用に整理しておく。&lt;br>
 個人の感想で組織を代表する意見ではありません！&lt;/p>
 &lt;h2 id="第1章ざっくりわかるアジャイル開発">第1章ざっくりわかるアジャイル開発
 &lt;span>&lt;a href="#%e7%ac%ac1%e7%ab%a0%e3%81%96%e3%81%a3%e3%81%8f%e3%82%8a%e3%82%8f%e3%81%8b%e3%82%8b%e3%82%a2%e3%82%b8%e3%83%a3%e3%82%a4%e3%83%ab%e9%96%8b%e7%99%ba">#&lt;/a>&lt;/span>
