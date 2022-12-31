@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 25 Dec 2022 15:53:22 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>週報 2022-W50 git-now</title><link>https://qwyng.dev/posts/20221225/</link><pubDate>Sun, 25 Dec 2022 15:53:22 +0900</pubDate><guid>https://qwyng.dev/posts/20221225/</guid><description>&lt;ul>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sat, 31 Dec 2022 22:42:05 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>2022年の振り返り</title><link>https://qwyng.dev/posts/20221231/</link><pubDate>Sat, 31 Dec 2022 22:42:05 +0900</pubDate><guid>https://qwyng.dev/posts/20221231/</guid><description>&lt;h3 id="転職した">転職した
+&lt;span>&lt;a href="#%e8%bb%a2%e8%81%b7%e3%81%97%e3%81%9f">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>公私の変化で一番大きいのはこれ。転職時はかなり悩んだのだが、最終的に厚生年金をなんかするのが面白そうということで、それができる会社に決めた。在職中も転職中も転職後もいろんな方々にお世話になりました。ありがとうございました。&lt;/p>
+&lt;h3 id="大学院">大学院
+&lt;span>&lt;a href="#%e5%a4%a7%e5%ad%a6%e9%99%a2">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>あと単位5つ。今年の授業の中だと関数型プログラミングが面白かった。関数型の勉強というよりはプログラムの形式手法の授業という感じで数学的帰納法を用いてプログラムの正当性を証明するという授業でかなり面白かった。テストが全部手書きだったのだけ残念。&lt;/p>
+&lt;h3 id="人生">人生
+&lt;span>&lt;a href="#%e4%ba%ba%e7%94%9f">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>バスケをやるようになった。運動もできるしかっこいい靴を買えて気分もいい。最高。&lt;br>
+ダークネス大澤の頻度を減らしていきたい。&lt;/p>
+&lt;h3 id="ゲーム">ゲーム
+&lt;span>&lt;a href="#%e3%82%b2%e3%83%bc%e3%83%a0">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>LOL: ゴールドで終わってしまった。正直あんまりやる時間なかった。特にスレッシュがOPの時期にあまり触れなかったのがデカすぎる。来年は頑張りたい。&lt;br>
+OW: ４年くらいやってなかったが2がでたので今年から久しぶりに復帰した。弾が当たらない。&lt;br>
+他: ポケモンとポケモンユナイトは結構面白かった。&lt;/p></description></item><item><title>週報 2022-W50 git-now</title><link>https://qwyng.dev/posts/20221225/</link><pubDate>Sun, 25 Dec 2022 15:53:22 +0900</pubDate><guid>https://qwyng.dev/posts/20221225/</guid><description>&lt;ul>
 &lt;li>
 &lt;p>git-nowを導入した&lt;/p>
 &lt;ul>
