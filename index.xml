@@ -1,4 +1,124 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sat, 31 Dec 2022 22:42:05 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>2022年の振り返り</title><link>https://qwyng.dev/posts/20221231/</link><pubDate>Sat, 31 Dec 2022 22:42:05 +0900</pubDate><guid>https://qwyng.dev/posts/20221231/</guid><description>&lt;h3 id="転職した">転職した
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 08 Jan 2023 20:25:13 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>週報20230108 年末年始で購入したものと自作Webサービス</title><link>https://qwyng.dev/posts/20230108/</link><pubDate>Sun, 08 Jan 2023 20:25:13 +0900</pubDate><guid>https://qwyng.dev/posts/20230108/</guid><description>&lt;ul>
+&lt;li>
+&lt;p>年末年始なのでたくさん物を買った&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://amzn.to/3vK1tjg">最軽量エルゴノミック e スポーツマウス - Razer DeathAdder V3 Pro&lt;/a>
+&lt;ul>
+&lt;li>Fakerが&lt;code>Great new shape and performas perfectly&lt;/code>って言ってるから最強です。&lt;/li>
+&lt;li>V2Proに比べてまじで軽い。大きめのマウスかつ軽いのが最高。ちゃんとType-Cで充電できるのも良い&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="https://amzn.to/3Qss12e">プログラマのためのSQL 第4版 すべてを知り尽くしたいあなたに | Joe Celko, ミック, ミック | 工学 | Kindleストア | Amazon&lt;/a>
+&lt;ul>
+&lt;li>DBMSってなんもわかんないよね&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="https://amzn.to/3QnUmqc">なわとび&lt;/a>
+&lt;ul>
+&lt;li>バスケにおける全身の連動性を上げていきたい&lt;/li>
+&lt;li>ちょっと飛ぶだけでお腹が筋肉痛になった
+&lt;ul>
+&lt;li>全身をつかっている感じがあって良い&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="https://amzn.to/3VTVL9c">西川 (Nishikawa) [エアー] 専用 長身対応パーツ&lt;/a>
+&lt;ul>
+&lt;li>身長が190cmあって普通のマットレスでは足りないので購入した
+&lt;ul>
+&lt;li>もっと早く購入していればよかった。寝心地が全く違う&lt;/li>
+&lt;li>マットレス自体も西川のエアーを使っているが本当に寝やすいのでおすすめ&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="https://amzn.to/3vNVpq2">GIGABYTE M32U Gaming Monitor&lt;/a>
+&lt;ul>
+&lt;li>求めてるものがすべて揃っていた
+&lt;ul>
+&lt;li>4k&lt;/li>
+&lt;li>Type-C給電&lt;/li>
+&lt;li>144hz&lt;/li>
+&lt;li>32インチ
+&lt;ul>
+&lt;li>27インチWQHDからの変更
+&lt;ul>
+&lt;li>作業領域が1.5倍くらいになった&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>自前でUSBスイッチャーがついており、MacとWindowsでキーボード共有できるのも良い感じ&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="https://amzn.to/3igRDCB">わたしの知らないわたしへ: 自分を生きるためのノート&lt;/a>
+&lt;ul>
+&lt;li>Fakerがいい本っていってるから買った
+&lt;ul>
+&lt;li>&lt;a href="https://lolninja.net/2019/07/10/13800/">https://lolninja.net/2019/07/10/13800/&lt;/a>&lt;/li>
+&lt;li>
+&lt;blockquote>
+&lt;p>「나를 모르는 나에게（私を知らない私へ）」です。「常に自分を見る癖をつけることが重要だ」という文章には感動しました。今は「ゲーム理論」という本を読んでいます。私もゲームは常に変わり続けるべきだという考えには共感します。&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>だが実際にハングルで検索してみると全く違う本だったっぽい。なんでやねん！！！！！！！！！！！！！
+&lt;ul>
+&lt;li>&lt;a href="http://www.yes24.com/Product/Goods/44135491">http://www.yes24.com/Product/Goods/44135491&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>年末年始&lt;/p>
+&lt;ul>
+&lt;li>実家に帰ったりOWしたりしていた
+&lt;ul>
+&lt;li>シグマがうまくなってきた。俺は重力の支配者&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>4,5,6と有給をとっていたので来週からの労働に耐えられるか不明&lt;/li>
+&lt;li>3日はMTGのチーム戦に出ていた。レガシー担当で久しぶりにSEまで残れて楽しかった
+&lt;ul>
+&lt;li>今のURデルバーのリスト
+&lt;ul>
+&lt;li>&lt;a href="https://www.hareruyamtg.com/ja/deck/459942/show/">https://www.hareruyamtg.com/ja/deck/459942/show/&lt;/a>&lt;/li>
+&lt;li>デイズ減らしたり減らさなかったりしろ&lt;/li>
+&lt;li>ランタンはウーロにもリアニにもいい感じに使えるので良かった
+&lt;ul>
+&lt;li>サージカルと違ってコントロール相手でもアド損しないのが良い&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>兄弟仲は2だと自分のクリーチャーがいるときにもハンドに来てダブついたので1で良いかもしれない&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Webサービスを作っていた&lt;/p>
+&lt;ul>
+&lt;li>Next.jsとTypeScriptの練習がてらWebサービスを書いていた
+&lt;ul>
+&lt;li>&lt;a href="https://overselect.netlify.app/">https://overselect.netlify.app/&lt;/a>&lt;/li>
+&lt;li>OWのキャラを選んで日韓英それぞれの言語でYoutubeの検索クエリ組み立てられる君&lt;/li>
+&lt;li>韓国語の動画がみたかったのと、最新パッチ日以降の動画しか見たくなかったので作った&lt;/li>
+&lt;li>日頃型を書かないので、いざ書いてみるとエディタがいい感じに予測してくれるようになって気持ちよくて楽しい&lt;/li>
+&lt;li>次はLOLで作りたい&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>2022年の振り返り</title><link>https://qwyng.dev/posts/20221231/</link><pubDate>Sat, 31 Dec 2022 22:42:05 +0900</pubDate><guid>https://qwyng.dev/posts/20221231/</guid><description>&lt;h3 id="転職した">転職した
 &lt;span>&lt;a href="#%e8%bb%a2%e8%81%b7%e3%81%97%e3%81%9f">#&lt;/a>&lt;/span>
 &lt;/h3>&lt;p>公私の変化で一番大きいのはこれ。転職時はかなり悩んだのだが、最終的に厚生年金をなんかするのが面白そうということで、それができる会社に決めた。在職中も転職中も転職後もいろんな方々にお世話になりました。ありがとうございました。&lt;/p>
 &lt;h3 id="大学院">大学院
