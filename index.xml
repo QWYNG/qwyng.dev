@@ -1,4 +1,52 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Mon, 23 Jan 2023 20:19:06 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>LOLのチャンピオンの「よく使用されているポジション」を取得する技術</title><link>https://qwyng.dev/posts/get-lol-champion-position/</link><pubDate>Mon, 23 Jan 2023 20:19:06 +0900</pubDate><guid>https://qwyng.dev/posts/get-lol-champion-position/</guid><description>&lt;p>League of Legends（以下LoL）というゲームをご存知だろうか。世界で一番アクティブユーザーが多いらしいゲームでまじで面白いのでやったほうが良い。&lt;br>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Mon, 30 Jan 2023 20:22:44 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>週報 20230130 実際宗谷岬スタンプ</title><link>https://qwyng.dev/posts/20230130/</link><pubDate>Mon, 30 Jan 2023 20:22:44 +0900</pubDate><guid>https://qwyng.dev/posts/20230130/</guid><description>&lt;p>二週間ほど忙しくて週報をサボってしまった。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>書いた記事&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://qwyng.dev/posts/get-lol-champion-position/">LOLのチャンピオンの「よく使用されているポジション」を取得する技術 - QWYNG.dev&lt;/a>&lt;/li>
+&lt;li>LOLでチャンピオンのポジションとってくるの結構めんどいよって記事を書いた。&lt;/li>
+&lt;li>昔プログラミングの勉強を始めたてのときに書いた&lt;a href="https://qiita.com/QWYNG/items/7f3be2460d3587dedf72">PythonでRiotAPIをつかってサモナーネームから試合の詳細データを見てみた　(riotwatcher) - Qiita&lt;/a>が実際に他人に読まれて活用されている話を聞いたのでRiotGamesのAPIに関する情報を残しておくのは価値がありそうだなと思っていた。&lt;/li>
+&lt;li>TSでアプリかくとVScodeで必要十分なのでWSLでも開発しやすい&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>仕事&lt;/p>
+&lt;ul>
+&lt;li>実は大きめのリリースがあった&lt;/li>
+&lt;li>みんな使ってくれよな！&lt;/li>
+&lt;li>最近年金に関してゴニョゴニョしていて楽しい&lt;/li>
+&lt;li>実際宗谷岬スタンプが生成されて嬉しかった&lt;/li>
+&lt;li>
+&lt;blockquote class="twitter-tweet">&lt;p lang="zxx" dir="ltr">&lt;a href="https://t.co/lPvTm71EaO">pic.twitter.com/lPvTm71EaO&lt;/a>&lt;/p>&amp;mdash; とるめん (@qwyngg) &lt;a href="https://twitter.com/qwyngg/status/1616338096219656192?ref_src=twsrc%5Etfw">January 20, 2023&lt;/a>&lt;/blockquote> &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>英語&lt;/p>
+&lt;ul>
+&lt;li>結局のところDuolingoが一番GUIイケててアプリを開きたくなるとおもったのでDuolingoに課金した。&lt;/li>
+&lt;li>しかし、学習のレベルはあまり高くないと思うので誰か良い感じのGUIがある英語アプリ教えてほしい&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>MTG（カードゲーム）&lt;/p>
+&lt;ul>
+&lt;li>コンベンション横浜いくぞ！&lt;/li>
+&lt;li>スタンもモダンも参加予定&lt;/li>
+&lt;li>どっちも速槍使いたい&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>HD600を買った&lt;/p>
+&lt;ul>
+&lt;li>HD 599を愛用していたが断線してしまったため購入&lt;/li>
+&lt;li>599と比べても付け心地がかなり良いし、プラグが着脱式で断線しても問題なし！神！&lt;/li>
+&lt;li>
+&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">My new gear... &lt;a href="https://t.co/anxl1BoEbX">pic.twitter.com/anxl1BoEbX&lt;/a>&lt;/p>&amp;mdash; とるめん (@qwyngg) &lt;a href="https://twitter.com/qwyngg/status/1619262548662165507?ref_src=twsrc%5Etfw">January 28, 2023&lt;/a>&lt;/blockquote> &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>LOLのチャンピオンの「よく使用されているポジション」を取得する技術</title><link>https://qwyng.dev/posts/get-lol-champion-position/</link><pubDate>Mon, 23 Jan 2023 20:19:06 +0900</pubDate><guid>https://qwyng.dev/posts/get-lol-champion-position/</guid><description>&lt;p>League of Legends（以下LoL）というゲームをご存知だろうか。世界で一番アクティブユーザーが多いらしいゲームでまじで面白いのでやったほうが良い。&lt;br>
 今回の記事はLOLを知っている人向けの記事です。&lt;/p>
 &lt;h3 id="チャンピオンの使用頻度の高いポジションが取得できない">「チャンピオンの使用頻度の高いポジション」が取得できない
 &lt;span>&lt;a href="#%e3%83%81%e3%83%a3%e3%83%b3%e3%83%94%e3%82%aa%e3%83%b3%e3%81%ae%e4%bd%bf%e7%94%a8%e9%a0%bb%e5%ba%a6%e3%81%ae%e9%ab%98%e3%81%84%e3%83%9d%e3%82%b8%e3%82%b7%e3%83%a7%e3%83%b3%e3%81%8c%e5%8f%96%e5%be%97%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84">#&lt;/a>&lt;/span>
