@@ -1,4 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 12 Mar 2023 20:12:26 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Re: コスパの究極到達点(アルティメットゴール)</title><link>https://qwyng.dev/posts/20230312/</link><pubDate>Sun, 12 Mar 2023 20:12:26 +0900</pubDate><guid>https://qwyng.dev/posts/20230312/</guid><description>&lt;p>これはあの名作ブログポスト
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 28 May 2023 17:55:59 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>OpenSSL3のProviderを設定するAPIを提供するGemをリリースした</title><link>https://qwyng.dev/posts/20230528/</link><pubDate>Sun, 28 May 2023 17:55:59 +0900</pubDate><guid>https://qwyng.dev/posts/20230528/</guid><description>&lt;p>タイトルの通りGemをリリースしたので紹介します。&lt;/p>
+&lt;p>リンクは↓&lt;br>
+&lt;a href="https://github.com/QWYNG/openssl_Provider">https://github.com/QWYNG/openssl_Provider&lt;/a>&lt;/p>
+&lt;h1 id="モチベーション">モチベーション
+&lt;span>&lt;a href="#%e3%83%a2%e3%83%81%e3%83%99%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3">#&lt;/a>&lt;/span>
+&lt;/h1>&lt;p>OpenSSL3になってEngineという概念がなくなって、新たにProviderという概念が導入されました。&lt;br>
+デフォルトのProviderだと、RC2やRC5等推奨されていない暗号アルゴリズムを使うことができません。&lt;/p>
+&lt;p>Providerは設定ファイルで変更することができます。RubyのOpenSSLライブラリでも&lt;a href="https://docs.ruby-lang.org/en/3.2/OpenSSL/Config.html#method-c-load">configファイルを使ってProviderを設定する&lt;/a>ことが可能です。&lt;/p>
+&lt;p>設定ファイル以外にも、OpenSSLは&lt;a href="https://www.openssl.org/docs/man3.0/man3/OSSL_PROVIDER.html">Providerを設定するAPI&lt;/a>を提供しています。&lt;br>
+ですが、RubyのOpenSSLライブラリのVersion 3.1.0はこのAPIをラップしていません。なので、RubyでこのAPIを使うためのGemを作りました。&lt;/p>
+&lt;h1 id="使い方">使い方
+&lt;span>&lt;a href="#%e4%bd%bf%e3%81%84%e6%96%b9">#&lt;/a>&lt;/span>
+&lt;/h1>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ruby" data-lang="ruby">require &lt;span style="color:#e6db74">&amp;#39;openssl_provider&amp;#39;&lt;/span>
+legacy &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">OpenSSL&lt;/span>&lt;span style="color:#f92672">::&lt;/span>&lt;span style="color:#66d9ef">Provider&lt;/span>&lt;span style="color:#f92672">.&lt;/span>load(&lt;span style="color:#e6db74">&amp;#34;legacy&amp;#34;&lt;/span>)
+&lt;span style="color:#75715e"># デフォルトのProviderのままだと、RC4を使うことができない&lt;/span>
+&lt;span style="color:#75715e"># OpenSSL::Cipher.new(&amp;#34;RC4&amp;#34;)&lt;/span>
+&lt;span style="color:#75715e"># =&amp;gt; OpenSSL::Cipher::CipherError: unsupported&lt;/span>
+&lt;span style="color:#66d9ef">OpenSSL&lt;/span>&lt;span style="color:#f92672">::&lt;/span>&lt;span style="color:#66d9ef">Cipher&lt;/span>&lt;span style="color:#f92672">.&lt;/span>new(&lt;span style="color:#e6db74">&amp;#34;RC4&amp;#34;&lt;/span>)
+&lt;span style="color:#66d9ef">OpenSSL&lt;/span>&lt;span style="color:#f92672">::&lt;/span>&lt;span style="color:#66d9ef">PKCS12&lt;/span>&lt;span style="color:#f92672">.&lt;/span>new(&lt;span style="color:#66d9ef">File&lt;/span>&lt;span style="color:#f92672">.&lt;/span>read(&lt;span style="color:#e6db74">&amp;#34;古い形式で暗号化されたファイル&amp;#34;&lt;/span>), &lt;span style="color:#e6db74">&amp;#34;password&amp;#34;&lt;/span>)
+&lt;span style="color:#75715e"># unloadもできる&lt;/span>
+&lt;span style="color:#66d9ef">OpenSSL&lt;/span>&lt;span style="color:#f92672">::&lt;/span>&lt;span style="color:#66d9ef">Provider&lt;/span>&lt;span style="color:#f92672">.&lt;/span>unload(legacy)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="注意点">注意点
+&lt;span>&lt;a href="#%e6%b3%a8%e6%84%8f%e7%82%b9">#&lt;/a>&lt;/span>
+&lt;/h1>&lt;p>メモリ周りの処理が&lt;strong>かなり&lt;/strong>怪しいです。最初は本家にPRを送ろうと思っていたのですが、かなり低クオリティなものを作りそうだったのでPRを送るのはやめました。&lt;br>
+Providerのインスタンスのメモリ解放の部分が特に怪しいです。過去に存在したEngineは構造体を解放するAPIが公開されていたんですが、ProviderにはそれにあたるAPIが自分が調べた限り公開されていませんでした。&lt;br>
+Rubyはオブジェクトにあたる構造体がGCされるときにフックさせる関数を設定できるのですが、なにも設定していません&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>。
+ただ構造体がRubyオブジェクトへの参照もってたりするわけではないので、なんとかなる&amp;hellip;ハズ。&lt;br>
+ライブラリコンテキストを注入できる機能も使えていません&lt;/p>
+&lt;h1 id="おわりに">おわりに
+&lt;span>&lt;a href="#%e3%81%8a%e3%82%8f%e3%82%8a%e3%81%ab">#&lt;/a>&lt;/span>
+&lt;/h1>&lt;p>とんでもない注意点を書いてしまったので使ってくれる人がいるかかなり怪しいですが、使ってくれると嬉しいです。バグ報告されたら嬉しくて泣くと思います。&lt;/p>
+&lt;section class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1" role="doc-endnote">
+&lt;p>&lt;a href="https://docs.ruby-lang.org/en/master/extension_ja_rdoc.html#label-E6-A7-8B-E9-80-A0-E4-BD-93-E3-81-8B-E3-82-89-E3-82-AA-E3-83-96-E3-82-B8-E3-82-A7-E3-82-AF-E3-83-88-E3-81-B8">構造体まわりのドキュメント&lt;/a>。Cの構造体と関数周りなんもわからん&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/section></description></item><item><title>Re: コスパの究極到達点(アルティメットゴール)</title><link>https://qwyng.dev/posts/20230312/</link><pubDate>Sun, 12 Mar 2023 20:12:26 +0900</pubDate><guid>https://qwyng.dev/posts/20230312/</guid><description>&lt;p>これはあの名作ブログポスト
 &lt;a href="https://shifumin.hatenadiary.com/entry/2023/03/12/200000">コスパの究極到達点(アルティメットゴール) - しふみんの日記&lt;/a>
 を読んだ感想である。&lt;br>
 しふみんの日記は最高コンテンツが多すぎて花粉より泣けるから毎週チームで読書会を開催していけ。&lt;/p>
