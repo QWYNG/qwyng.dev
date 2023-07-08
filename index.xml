@@ -1,4 +1,54 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 28 May 2023 17:55:59 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>OpenSSL3のProviderを設定するAPIを提供するGemをリリースした</title><link>https://qwyng.dev/posts/20230528/</link><pubDate>Sun, 28 May 2023 17:55:59 +0900</pubDate><guid>https://qwyng.dev/posts/20230528/</guid><description>&lt;p>タイトルの通りGemをリリースしたので紹介します。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sat, 08 Jul 2023 20:29:40 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>QWYNG's生活リズム</title><link>https://qwyng.dev/posts/20230708/</link><pubDate>Sat, 08 Jul 2023 20:29:40 +0900</pubDate><guid>https://qwyng.dev/posts/20230708/</guid><description>&lt;p>最近の生活リズムを書く。&lt;/p>
+&lt;h2 id="午前中">午前中
+&lt;span>&lt;a href="#%e5%8d%88%e5%89%8d%e4%b8%ad">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;h4 id="730-起床">7:30 起床
+&lt;span>&lt;a href="#730-%e8%b5%b7%e5%ba%8a">#&lt;/a>&lt;/span>
+&lt;/h4>&lt;p>大体7時間くらい睡眠を取っている。7時間を切るとほんまに辛い。&lt;br>
+起床したらスマホをいじりたい欲と戦いながらベランダに出て朝日を浴びている（119敗）&lt;/p>
+&lt;h4 id="745-運動">7:45 運動
+&lt;span>&lt;a href="#745-%e9%81%8b%e5%8b%95">#&lt;/a>&lt;/span>
+&lt;/h4>&lt;p>ラジオ体操 or 筋トレをしている。筋トレといってもちょっとスクワットしたりするくらい。&lt;br>
+醜く生き延びたいので健康は大事にしたい。&lt;/p>
+&lt;h3 id="800-朝食">8:00 朝食
+&lt;span>&lt;a href="#800-%e6%9c%9d%e9%a3%9f">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>ツナパウチ、キムチ、卵、パックご飯でキムチチャーハンを作っている。全ての食材が捨てやすく食べきりやすいので便利。&lt;br>
+粉を溶かして飲む系の完全食を試していたのだが、温かいものを食べたほうが満足感があって良い感じ。&lt;/p>
+&lt;h3 id="830-勉強">8:30 勉強
+&lt;span>&lt;a href="#830-%e5%8b%89%e5%bc%b7">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>カッコいいこと言っているが、実際はほぼネットサーフィンである。&lt;br>
+教授からの優しい圧を感じるので泣きながら勉強している（してない）。教授&amp;hellip;.すんません&amp;hellip;&lt;br>
+6月はこの時間から仕事を始めていたが、いかんせん働きすぎてしまうので止めた。ただ朝早くから仕事したほうが捗るのでなんとも言えない。&lt;/p>
+&lt;h3 id="930-仕事">9:30 仕事
+&lt;span>&lt;a href="#930-%e4%bb%95%e4%ba%8b">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>仕事したりしなかったりしろ&lt;/p>
+&lt;h3 id="1200-昼">12:00 昼
+&lt;span>&lt;a href="#1200-%e6%98%bc">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>キムチチャーハンを食う&lt;/p>
+&lt;h2 id="午後">午後
+&lt;span>&lt;a href="#%e5%8d%88%e5%be%8c">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;h3 id="1300-仕事">13:00 仕事
+&lt;span>&lt;a href="#1300-%e4%bb%95%e4%ba%8b">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>しご&lt;/p>
+&lt;h3 id="1500">15:00
+&lt;span>&lt;a href="#1500">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>キムチチャーハンを食う&lt;/p>
+&lt;h3 id="1800">18:00
+&lt;span>&lt;a href="#1800">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>しごおわ。労働時間は朝で調整している。&lt;/p>
+&lt;h3 id="2300">~23:00
+&lt;span>&lt;a href="#2300">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>授業受けたりゲームしたり縄跳びしたり買い物したりしている。&lt;br>
+合間にキムチチャーハンを食う。&lt;/p>
+&lt;h3 id="2400">~24:00
+&lt;span>&lt;a href="#2400">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>だいたい明TGでバトグラしている。&lt;/p>
+&lt;h3 id="2430">~24:30
+&lt;span>&lt;a href="#2430">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>ここまでに寝れるとグッド。二週間に一回失敗する。&lt;br>
+この記事を書いている理由は睡眠失敗して眠いので眠くてもできることをしようと思ったから。&lt;/p>
+&lt;h2 id="総論">総論
+&lt;span>&lt;a href="#%e7%b7%8f%e8%ab%96">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>もっと寝たほうが良い。&lt;/p></description></item><item><title>OpenSSL3のProviderを設定するAPIを提供するGemをリリースした</title><link>https://qwyng.dev/posts/20230528/</link><pubDate>Sun, 28 May 2023 17:55:59 +0900</pubDate><guid>https://qwyng.dev/posts/20230528/</guid><description>&lt;p>タイトルの通りGemをリリースしたので紹介します。&lt;/p>
 &lt;p>リンクは↓&lt;br>
 &lt;a href="https://github.com/QWYNG/openssl_Provider">https://github.com/QWYNG/openssl_Provider&lt;/a>&lt;/p>
 &lt;h1 id="モチベーション">モチベーション
