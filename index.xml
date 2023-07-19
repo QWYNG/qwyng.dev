@@ -1,4 +1,74 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sat, 15 Jul 2023 17:54:08 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>武蔵小杉お気に入りスポットシリーズその1 新丸子三種の神器</title><link>https://qwyng.dev/posts/20230715/</link><pubDate>Sat, 15 Jul 2023 17:54:08 +0900</pubDate><guid>https://qwyng.dev/posts/20230715/</guid><description>&lt;h1 id="武蔵小杉お気に入りスポットシリーズとは">武蔵小杉お気に入りスポットシリーズとは
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Tue, 18 Jul 2023 22:26:56 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>OpenSSL::Providerの使い方（雰囲気）</title><link>https://qwyng.dev/posts/20230718/</link><pubDate>Tue, 18 Jul 2023 22:26:56 +0900</pubDate><guid>https://qwyng.dev/posts/20230718/</guid><description>&lt;p>先日社のブログのお手伝いして、その中で&lt;code>ruby/openssl&lt;/code>へのPRをじま..紹介した。
+&lt;a href="https://tech.smarthr.jp/entry/2023/07/12/115326">https://tech.smarthr.jp/entry/2023/07/12/115326&lt;/a>&lt;br>
+&lt;a href="https://github.com/ruby/openssl/pull/635">https://github.com/ruby/openssl/pull/635&lt;/a>&lt;/p>
+&lt;p>実際のアップデート作業は周りの人が優秀過ぎてあんまり書くことない。Providerがどうとか気づいたのも僕ではないので詳しくは記事を読んでください。&lt;/p>
+&lt;p>&lt;code>OpenSSL::Provider&lt;/code>というクラスそのものについては書けることがありそうなのと、Ruby Orgに貢献できたのが嬉しいので調子にのってブログにも残して置く。&lt;br>
+偉そうなこと言ってるが全部雰囲気で書いた雰囲気野郎です。&lt;/p>
+&lt;p>&lt;strong>このブログは公式情報でもなんでもなく、この機能がリリースされている時にはまったく違う状態になっている可能性があるので注意！&lt;/strong>&lt;/p>
+&lt;h2 id="opensslproviderとは">OpenSSL::Providerとは
+&lt;span>&lt;a href="#opensslprovider%e3%81%a8%e3%81%af">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>OpenSSL3系からProviderという新しい概念が導入された。&lt;br>
+&lt;a href="https://www.openssl.org/docs/man3.0/man7/migration_guide.html">https://www.openssl.org/docs/man3.0/man7/migration_guide.html&lt;/a>&lt;/p>
+&lt;p>アルゴリズムの実装を集めてプラガブルにしているものっぽい。このProviderによってOpenSSLが対応するアルゴリズムが変わる。&lt;br>
+&lt;code>ruby/openssl&lt;/code>にはProviderに関する機能が無かった。そこでProviderを設定するために生まれたクラスが&lt;code>OpenSSL::Provider&lt;/code>である。&lt;/p>
+&lt;h2 id="opensslproviderの使い方">OpenSSL::Providerの使い方
+&lt;span>&lt;a href="#opensslprovider%e3%81%ae%e4%bd%bf%e3%81%84%e6%96%b9">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>以下の様に&lt;code>OpenSSL::Provider.load&lt;/code>を使って名前指定でProviderを読み込むことができる。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ruby" data-lang="ruby">&lt;span style="color:#66d9ef">OpenSSL&lt;/span>&lt;span style="color:#f92672">::&lt;/span>&lt;span style="color:#66d9ef">Cipher&lt;/span>&lt;span style="color:#f92672">.&lt;/span>new(&lt;span style="color:#e6db74">&amp;#34;RC4&amp;#34;&lt;/span>)
+&lt;span style="color:#f92672">=&amp;gt;&lt;/span> &lt;span style="color:#e6db74">`initialize&amp;#39;: unsupported (OpenSSL::Cipher::CipherError)
+&lt;/span>&lt;span style="color:#e6db74"> from (irb):5:in `&lt;/span>&lt;span style="color:#66d9ef">new&lt;/span>&lt;span style="color:#e6db74">&amp;#39;
+&lt;/span>&lt;span style="color:#e6db74"> from (irb):5:in `&amp;lt;main&amp;gt;&amp;#39;&lt;/span>
+&lt;span style="color:#f92672">~~~~~&lt;/span> snip &lt;span style="color:#f92672">~~~~~&lt;/span>
+&lt;span style="color:#66d9ef">OpenSSL&lt;/span>&lt;span style="color:#f92672">::&lt;/span>&lt;span style="color:#66d9ef">Provider&lt;/span>&lt;span style="color:#f92672">.&lt;/span>load(&lt;span style="color:#e6db74">&amp;#34;legacy&amp;#34;&lt;/span>)
+&lt;span style="color:#f92672">=&amp;gt;&lt;/span> &lt;span style="color:#75715e">#&amp;lt;OpenSSL::Provider name=&amp;#34;legacy&amp;#34;&amp;gt;&lt;/span>
+cipher &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">OpenSSL&lt;/span>&lt;span style="color:#f92672">::&lt;/span>&lt;span style="color:#66d9ef">Cipher&lt;/span>&lt;span style="color:#f92672">.&lt;/span>new(&lt;span style="color:#e6db74">&amp;#34;RC4&amp;#34;&lt;/span>)
+&lt;span style="color:#f92672">=&amp;gt;&lt;/span> &lt;span style="color:#75715e">#&amp;lt;OpenSSL::Cipher:0x0000000108eb3648&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>それぞれのメソッドについて書いていく。&lt;/p>
+&lt;h3 id="opensslproviderloadprovider_name">&lt;code>OpenSSL::Provider.load(provider_name)&lt;/code>
+&lt;span>&lt;a href="#opensslproviderloadprovider_name">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>指定した名前のProviderを読み込むメソッド。中身は
+&lt;a href="https://www.openssl.org/docs/man3.1/man3/OSSL_PROVIDER_load.html">OSSL_PROVIDER_load&lt;/a>である。
+返り値はOSSL_PROVIDERという構造体を参照する&lt;code>OpenSSL::Provider&lt;/code>のインスタンス。後述するが、このインスタンスがGCされても参照しているProvider自体にはなにもしない。&lt;/p>
+&lt;h3 id="opensslproviderprovider_names">&lt;code>OpenSSL::Provider.provider_names&lt;/code>
+&lt;span>&lt;a href="#opensslproviderprovider_names">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>現在ロードされているプロバイダーの名前の一覧を持つArrayを返す。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ruby" data-lang="ruby">&lt;span style="color:#66d9ef">OpenSSL&lt;/span>&lt;span style="color:#f92672">::&lt;/span>&lt;span style="color:#66d9ef">Provider&lt;/span>&lt;span style="color:#f92672">.&lt;/span>provider_names
+&lt;span style="color:#f92672">=&amp;gt;&lt;/span> &lt;span style="color:#f92672">[&lt;/span>&lt;span style="color:#e6db74">&amp;#34;default&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;legacy&amp;#34;&lt;/span>&lt;span style="color:#f92672">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>なぜインスタンスの一覧ではなく名前の一覧かというと、OSSL_PROVIDER構造体への参照カウントを増やしつつインスタンスの一覧を返す方法が無かったから。このメソッドの中身は&lt;a href="https://www.openssl.org/docs/man3.1/man3/OSSL_PROVIDER_do_all.html">OSSL_PROVIDER_do_all&lt;/a>という関数で、この関数は参照カウントを増やしてくれるわけではない。&lt;br>
+&lt;code>OSSL_PROVIDER_Load&lt;/code>で参照カウントを増やせるのだが、既に読み込まれているOSSL_PROVIDER構造体をまた読み込むのはおかしいし、構造体への参照カウントを増やさないと後述する&lt;code>OpenSSL::Provider#unload&lt;/code>がメモリ的に危険な操作になってしまう。&lt;br>
+なのでインスタンス一覧ではなく、名前だけ返すようにした。&lt;br>
+詳しくはこの会話を見てくれ！&lt;br>
+&lt;a href="https://github.com/ruby/openssl/pull/635#discussion_r1214355587">https://github.com/ruby/openssl/pull/635#discussion_r1214355587&lt;/a>&lt;/p>
+&lt;h3 id="opensslproviderunload">&lt;code>OpenSSL::Provider#unload&lt;/code>
+&lt;span>&lt;a href="#opensslproviderunload">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>中身は&lt;a href="https://www.openssl.org/docs/man3.1/man3/OSSL_PROVIDER_unload.html">OSSL_PROVIDER_unload&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ruby" data-lang="ruby">legacy_provider &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">OpenSSL&lt;/span>&lt;span style="color:#f92672">::&lt;/span>&lt;span style="color:#66d9ef">Provider&lt;/span>&lt;span style="color:#f92672">.&lt;/span>load(&lt;span style="color:#e6db74">&amp;#34;legacy&amp;#34;&lt;/span>)
+legacy_provider&lt;span style="color:#f92672">.&lt;/span>unload
+&lt;span style="color:#f92672">=&amp;gt;&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>返り値は&lt;code>true&lt;/code>。&lt;br>
+このメソッドは&lt;code>OpenSSL::Provider::ProviderError&lt;/code>が発生する可能性がある。&lt;br>
+1つ目はなんらかの理由で&lt;code>OSSL_PROVIDER_unload&lt;/code>が失敗した場合。&lt;br>
+2つ目は同じ&lt;code>OpenSSL::Provider&lt;/code>インスタンスを2回unloadした場合。&lt;br>
+2つ目についてはメモリ安全の為である。&lt;code>OSSL_PROVIDER_unload&lt;/code>はOSSL_PROVIDER構造体を開放するため、インスタンスが持っている構造体への参照を元にunloadを再度呼び出すと危険な操作になる。なので、2回unloadされた際には&lt;code>OSSL_PROVIDER_unload&lt;/code>は行わずに例外を出している。&lt;br>
+&lt;code>OpenSSL::Provider&lt;/code>インスタンスがGCされた場合は内部で参照している構造体にはなにもしない。また、構造体をunloadすることなく開放するAPIは公開されていないっぽい。&lt;/p>
+&lt;h3 id="opensslprovidername">&lt;code>OpenSSL::Provider#name&lt;/code>
+&lt;span>&lt;a href="#opensslprovidername">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>参照しているOSSL_PROVIDER構造体のnameをStringで返す。
+unloadされたインスタンスに対してこのメソッドを呼び出すと&lt;code>OpenSSL::Provider::ProviderError&lt;/code>が発生する。&lt;/p>
+&lt;h3 id="opensslproviderinspect">&lt;code>OpenSSL::Provider#inspect&lt;/code>
+&lt;span>&lt;a href="#opensslproviderinspect">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>こんな感じのStringを返す。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ruby" data-lang="ruby">&lt;span style="color:#75715e">#&amp;lt;OpenSSL::Provider name=&amp;#34;legacy&amp;#34;&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>unloadされたインスタンスはこんな感じ。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ruby" data-lang="ruby">&lt;span style="color:#75715e">#&amp;lt;OpenSSL::Provider unloaded provider&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="謝辞">謝辞
+&lt;span>&lt;a href="#%e8%ac%9d%e8%be%9e">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>C言語なんもわからん人間が周りのコードを見て雰囲気で書いた酷いコードをここまで丁寧にレビューしてもらえて感謝しかありません。
+メンテナの方々のおかげで快適にRubyでコーディングできております！
+あとこの&lt;a href="https://ruby-doc.org/3.2.2/extension_ja_rdoc.html">Rubyの拡張ライブラリの作り方&lt;/a>というドキュメントはマジで神なのでみんな読もう！&lt;/p>
+&lt;h2 id="関連記事">関連記事
+&lt;span>&lt;a href="#%e9%96%a2%e9%80%a3%e8%a8%98%e4%ba%8b">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://qwyng.dev/posts/20230528/">OpenSSL3のProviderを設定するAPIを提供するGemをリリースした - QWYNG.dev&lt;/a>&lt;/p></description></item><item><title>武蔵小杉お気に入りスポットシリーズその1 新丸子三種の神器</title><link>https://qwyng.dev/posts/20230715/</link><pubDate>Sat, 15 Jul 2023 17:54:08 +0900</pubDate><guid>https://qwyng.dev/posts/20230715/</guid><description>&lt;h1 id="武蔵小杉お気に入りスポットシリーズとは">武蔵小杉お気に入りスポットシリーズとは
 &lt;span>&lt;a href="#%e6%ad%a6%e8%94%b5%e5%b0%8f%e6%9d%89%e3%81%8a%e6%b0%97%e3%81%ab%e5%85%a5%e3%82%8a%e3%82%b9%e3%83%9d%e3%83%83%e3%83%88%e3%82%b7%e3%83%aa%e3%83%bc%e3%82%ba%e3%81%a8%e3%81%af">#&lt;/a>&lt;/span>
 &lt;/h1>&lt;p>武蔵小杉に住んで二年半、お気に入りのスポットも増えてきた。&lt;br>
 それぞれのスポットを紹介したすぎるので紹介する。&lt;/p>
