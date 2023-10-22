@@ -1,4 +1,46 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Tue, 18 Jul 2023 22:26:56 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>OpenSSL::Providerの使い方（雰囲気）</title><link>https://qwyng.dev/posts/20230718/</link><pubDate>Tue, 18 Jul 2023 22:26:56 +0900</pubDate><guid>https://qwyng.dev/posts/20230718/</guid><description>&lt;p>先日社のブログのお手伝いして、その中で&lt;code>ruby/openssl&lt;/code>へのPRをじま..紹介した。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 22 Oct 2023 22:03:58 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>下手くそなこと</title><link>https://qwyng.dev/posts/20231023/</link><pubDate>Sun, 22 Oct 2023 22:03:58 +0900</pubDate><guid>https://qwyng.dev/posts/20231023/</guid><description>&lt;p>最近なにもかも下手くそなので、下手くそなことを書いていく。
+内省していくことで精神の安寧を保っていくぞ。&lt;/p>
+&lt;h2 id="1-mtgカードゲーム">1. MTG（カードゲーム）
+&lt;span>&lt;a href="#1-mtg%e3%82%ab%e3%83%bc%e3%83%89%e3%82%b2%e3%83%bc%e3%83%a0">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>下手。頭がいっぱいになりがち。いつもミスしてから落ち込んでる。
+ミスを減らすためには、もっと練習するしかないのかもしれないけど、練習する気がしない。&lt;/p>
+&lt;h2 id="2-lol">2. LOL
+&lt;span>&lt;a href="#2-lol">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>下手。すぐフラッシュを渋って死ぬ。
+LOLだけなにが不味かったか具体的なイメージがあるので、それを直すのは簡単そうだけど、直す気がない。&lt;/p>
+&lt;h2 id="3-ow">3. OW
+&lt;span>&lt;a href="#3-ow">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>下手。トールビョーンがナーフされてDPSでやりたいキャラが消えた。
+他のキャラ出しているとき下手くそ過ぎて無力感やばい。&lt;/p>
+&lt;h2 id="4-スト6">4. スト6
+&lt;span>&lt;a href="#4-%e3%82%b9%e3%83%886">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>下手。アシストコンボ以外できないし、立ち回りを覚える気もない。&lt;/p>
+&lt;h2 id="5-バトグラ">5. バトグラ
+&lt;span>&lt;a href="#5-%e3%83%90%e3%83%88%e3%82%b0%e3%83%a9">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>下手。座学する気も起きへん。&lt;/p>
+&lt;h2 id="6-仕事">6. 仕事
+&lt;span>&lt;a href="#6-%e4%bb%95%e4%ba%8b">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>下手。しっかりとした根拠を持って物事をなすのが下手。説明するのも下手。
+「これくらいで良いだろう」と思考停止してしまう癖があると思う。曖昧なことを見ないふりしがち。&lt;/p>
+&lt;h2 id="7-mtgカードゲームじゃないほう">7. MTG（カードゲームじゃないほう）
+&lt;span>&lt;a href="#7-mtg%e3%82%ab%e3%83%bc%e3%83%89%e3%82%b2%e3%83%bc%e3%83%a0%e3%81%98%e3%82%83%e3%81%aa%e3%81%84%e3%81%bb%e3%81%86">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>MTGで発言するのも下手だし、ファシリテーションするのもめっちゃ下手。
+議論の着地点とか考えるのも下手だし、そもそも人の意見を把握するのが下手。
+具体的な上手いイメージもないので向上も見込めないのが辛い。
+本を読んでは見るものの、実践できる気がしない。LOLと一緒で同じ状況が二度とないのが辛い&lt;/p>
+&lt;h2 id="8-勉学">8. 勉学
+&lt;span>&lt;a href="#8-%e5%8b%89%e5%ad%a6">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>下手。他の人が1年半くらいで揃える単位を2年半くらいかけて揃えている。
+JAIST史上一番の問題社会人学生といっても過言ではない。教授ほんますんません。&lt;/p>
+&lt;h2 id="9-食事">9. 食事
+&lt;span>&lt;a href="#9-%e9%a3%9f%e4%ba%8b">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>下手。食べ物があると無限に食べてしまう。&lt;/p>
+&lt;h2 id="10-人生">10. 人生
+&lt;span>&lt;a href="#10-%e4%ba%ba%e7%94%9f">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>何とは言わんが下手。&lt;/p>
+&lt;h2 id="まとめ">まとめ
+&lt;span>&lt;a href="#%e3%81%be%e3%81%a8%e3%82%81">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>スッキリした。一つくらいは下手じゃなくなりたいですな。&lt;/p></description></item><item><title>OpenSSL::Providerの使い方（雰囲気）</title><link>https://qwyng.dev/posts/20230718/</link><pubDate>Tue, 18 Jul 2023 22:26:56 +0900</pubDate><guid>https://qwyng.dev/posts/20230718/</guid><description>&lt;p>先日社のブログのお手伝いして、その中で&lt;code>ruby/openssl&lt;/code>へのPRをじま..紹介した。
 &lt;a href="https://tech.smarthr.jp/entry/2023/07/12/115326">https://tech.smarthr.jp/entry/2023/07/12/115326&lt;/a>&lt;br>
 &lt;a href="https://github.com/ruby/openssl/pull/635">https://github.com/ruby/openssl/pull/635&lt;/a>&lt;/p>
 &lt;p>実際のアップデート作業は周りの人が優秀過ぎてあんまり書くことない。Providerがどうとか気づいたのも僕ではないので詳しくは記事を読んでください。&lt;/p>
