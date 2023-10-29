@@ -61,7 +61,7 @@ has_one &lt;span style="color:#e6db74">:smartphone&lt;/span>, &lt;span style="co
 &lt;p>この資料のすごいところは実際に運用中のサービスの構造を変化する過程まで書いてくれていること。&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>あと&lt;code>deploy_history_bases&lt;/code>のPKにをそのまま&lt;code>ecs_deploy_histories&lt;/code>や&lt;code>lambda_deploy_histories&lt;/code>のPKに使っているの良さそう。&lt;/p>
+&lt;p>あと&lt;code>deploy_history_bases&lt;/code>のPKをそのまま&lt;code>ecs_deploy_histories&lt;/code>や&lt;code>lambda_deploy_histories&lt;/code>のPKに使っているの良さそう。&lt;/p>
 &lt;ul>
 &lt;li>僕だったら&lt;code>deploy_history_bases.deploy_historyable_id&lt;/code>みたいなカラム作っちゃうと思う。余計なカラム一つ減らせて良さそう。&lt;/li>
 &lt;li>&lt;a href="https://api.rubyonrails.org/classes/ActiveRecord/DelegatedType.html">RailsのAPIドキュメント&lt;/a>だと現状&lt;code>deploy_history_bases.deploy_historyable_id&lt;/code>的なカラムを作ることを想定してそう。

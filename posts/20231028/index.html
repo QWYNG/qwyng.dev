@@ -131,7 +131,7 @@
 <p>この資料のすごいところは実際に運用中のサービスの構造を変化する過程まで書いてくれていること。</p>
 </li>
 <li>
-<p>あと<code>deploy_history_bases</code>のPKにをそのまま<code>ecs_deploy_histories</code>や<code>lambda_deploy_histories</code>のPKに使っているの良さそう。</p>
+<p>あと<code>deploy_history_bases</code>のPKをそのまま<code>ecs_deploy_histories</code>や<code>lambda_deploy_histories</code>のPKに使っているの良さそう。</p>
 <ul>
 <li>僕だったら<code>deploy_history_bases.deploy_historyable_id</code>みたいなカラム作っちゃうと思う。余計なカラム一つ減らせて良さそう。</li>
 <li><a href=https://api.rubyonrails.org/classes/ActiveRecord/DelegatedType.html>RailsのAPIドキュメント</a>だと現状<code>deploy_history_bases.deploy_historyable_id</code>的なカラムを作ることを想定してそう。
