@@ -1,4 +1,178 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Mon, 30 Oct 2023 19:41:59 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Kaigi on Rails 不参加記 Part2</title><link>https://qwyng.dev/posts/20231030/</link><pubDate>Mon, 30 Oct 2023 19:41:59 +0900</pubDate><guid>https://qwyng.dev/posts/20231030/</guid><description>&lt;h2 id="kaigi-on-rails-不参加記とは">Kaigi on Rails 不参加記とは
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 05 Nov 2023 16:54:19 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Kaigi on Rails 不参加記 Part3</title><link>https://qwyng.dev/posts/20231103/</link><pubDate>Sun, 05 Nov 2023 16:54:19 +0900</pubDate><guid>https://qwyng.dev/posts/20231103/</guid><description>&lt;h2 id="kaigi-on-rails-不参加記とは">Kaigi on Rails 不参加記とは
+&lt;span>&lt;a href="#kaigi-on-rails-%e4%b8%8d%e5%8f%82%e5%8a%a0%e8%a8%98%e3%81%a8%e3%81%af">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>Kaigi on Railsには参加してないけど最近Rails周りなんもキャッチアップしてないと焦っている人間による、公開されている資料を見ての適当な感想を書く記事です。
+運営の方々、発表者の方々、&lt;a href="https://qiita.com/Hassan/items/9cc836dd5bfb1aaaabac">資料まとめてくださっている&lt;/a>@hassanさん、その他皆々様ありがとうございます！！！！！！！&lt;br>
+&lt;a href="https://qwyng.dev/posts/20231028/">part1&lt;/a>&lt;br>
+&lt;a href="https://qwyng.dev/posts/20231030/">part2&lt;/a>&lt;/p>
+&lt;h2 id="資料ごとの感想">資料ごとの感想
+&lt;span>&lt;a href="#%e8%b3%87%e6%96%99%e3%81%94%e3%81%a8%e3%81%ae%e6%84%9f%e6%83%b3">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://speakerdeck.com/yutadayo/kaigi-on-rails-2023-sponsor-lt">Fintechプロダクトの開発事情とアーキテクチャ解説&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>スマートバンクさん最近よく聞く
+&lt;ul>
+&lt;li>プロダクトは全く僕がターゲットじゃないので使ったことがありません&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>認証とその他を分けてる構成を既にやっててすごい
+&lt;ul>
+&lt;li>認証って最初はIdentity as a Service使うのが一番楽そうな気がするけど、どうなんだろう&lt;/li>
+&lt;li>企業向けに大量にIdを発行するとかじゃなければIDaaS使わなくても良さそうではある&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>金融サービスって触ったことないけど各社のAPIへの対応とかどうコードで表現してるんですかね？&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://speakerdeck.com/ksss/railsnoxing-huairuzi-dong-sheng-cheng-niokeruke-ti-tojie-jue?slide=9">Railsの型ファイル自動生成における課題と解決&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>みてねは使いたいですが使えません&amp;hellip;&lt;/li>
+&lt;li>orthosesってorthosesって読むのか&lt;/li>
+&lt;li>Rubyの型全然触ってないよのな、形式手法が便利なのはわかっているのですが..&lt;/li>
+&lt;li>Rubyの型の自動生成ってどういうロジックなんですかね？
+&lt;ul>
+&lt;li>Hindley-Milner型の型推論？&lt;/li>
+&lt;li>構造型？
+&lt;ul>
+&lt;li>ワードだけ知っているだけでなんもわかってないです&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>型検証のエラーをわかりやすくしたいってどこの言語でも聞くなあ&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://speakerdeck.com/zuckey_17/shi-ye-noshi-xing-cuo-wu-wozhi-eru-kodowoshe-teyasukusite-sisutemuwosinpurunibao-tushe-ji-togong-fu">事業の試行錯誤を支える コードを捨てやすくして システムをシンプルに保つ設計と工夫&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>いらなくなった時に捨てやすくするために用途ごとにテーブルをつくる
+&lt;ul>
+&lt;li>新しめのプロダクト、使いまわしを意識しすぎると良くないがち&lt;/li>
+&lt;li>判明してきたドメインの構造を反映させられなかったりとか&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>スライド全般的に、最初にビジネスの特徴を捉えてるのがすごい
+&lt;ul>
+&lt;li>なぜ機能がほしいのか？を人間の感情ではなくロジックで捉えているのがすごい&lt;/li>
+&lt;li>スプリントレビューってデプロイした少量の改善を対象にすることが多くて、わりと近眼的な視点になりがち&lt;/li>
+&lt;li>そもそもこの機能ビジネスに約に立つか？っていう観点でステークホルダーに見てもらうにはどうしたら良いんすかね？&lt;/li>
+&lt;li>1スプリントで機能全体を作りだせっていう話かもしれん&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>利用されているか？まで調べるまでがリリース
+&lt;ul>
+&lt;li>帰るまでが遠足と言われている&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://speakerdeck.com/krpk1900/fat-modelwojie-xiao-surutamenocqrsakitekutiya">Fat_Modelを解消するためのCQRSアーキテクチャ&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>YOUTRUSTって成功報酬ないんだ
+&lt;ul>
+&lt;li>利用料だけで稼いでいるのかな&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>ここらへんformオブジェクトにしたりサービスクラスつくったりで色々流派がある
+&lt;ul>
+&lt;li>トランザクションや認可の責務をどこに持たせるのかがはっきりしているのが良い&lt;/li>
+&lt;li>単体テストも書きやすそう&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>メリットは書いてあったので、デメリットを考えてみる
+&lt;ul>
+&lt;li>モデルに閉じすに色々なオブジェクトがビジネスの知識をもつので変更する際は大変そう
+&lt;ul>
+&lt;li>ファットなCommandが生み出されそうな気がするけどどうなんだろ&lt;/li>
+&lt;li>ファットなオブジェクトはそもそも現実世界がファットなんだよな&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://speakerdeck.com/hirotea/numa-battle-of-card-transactions">返金処理を通して学ぶ、 カード決済電文の沼バトル &lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>カードバトル！？（空目）&lt;/li>
+&lt;li>辛そうなワードたっぷりあってウケる
+&lt;ul>
+&lt;li>クレカ側のAPIを変えられない以上自分たちで対応するしかなさそうですね&amp;hellip;&lt;/li>
+&lt;li>こういう外部APIのレスポンスのパターンを自動でリストしてくれるなにかほしいですよね
+&lt;ul>
+&lt;li>まじでほしい&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://speakerdeck.com/yusukeiwaki/kaigionrails2023pub">E2E testing on Rails 2023&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>system test周りわからなくなったら参照したい神資料だぁ&amp;hellip;
+&lt;ul>
+&lt;li>特にcapybaraがwebサーバー立ててるところめっちゃ参考になる&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="https://github.com/YusukeIwaki/playwright-ruby-client">https://github.com/YusukeIwaki/playwright-ruby-client&lt;/a>
+&lt;ul>
+&lt;li>一度システムテスト短縮化の為に仕事のレポジトリに突っ込んでみたことがある
+&lt;ul>
+&lt;li>そこまで早くならなかった&lt;/li>
+&lt;li>僕の使い方が悪い可能性が大いにある&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://speakerdeck.com/shoheimitani/32ge-noprderirisusitayi-cun-du-nogao-ikoanamoderunoan-quan-nanong-rifang">32個のPRでリリースした依存度の高いコアなモデルの安全な弄り方&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>MySQLは色んなことがオンランDDLでできてすごいなぁ
+&lt;ul>
+&lt;li>今社ではPostgresを使っていて、デフォルト値があるカラムを追加する時は、まずカラムをつくってからデフォルト値をつけるという手順を踏んでいる。&lt;/li>
+&lt;li>Postgresも11からnot null制約をACCESS EXCLUSIVEロック取らずに実行できるようになっているらしい
+&lt;ul>
+&lt;li>&lt;a href="https://www.postgresql.org/docs/11/release-11.html">https://www.postgresql.org/docs/11/release-11.html&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>以前社でPostgresはカラム名の並び替えできないから、timestamp系は最初に一番上に定義しちゃうのが好みみたいなレビューを見てなるほどと思った記憶があります。&lt;/li>
+&lt;li>PostgresもMySQLもなんもわかってないなぁ&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>カラム名の変更とかカラムの削除は色々問題がある〜といううっすらした記憶しかないのでいつもググっている
+&lt;ul>
+&lt;li>この資料の移行方法もめっちゃ参考になる&lt;/li>
+&lt;li>これ最初に無期限ポイントをnot nullでつくらない理由なんでなんだろう&lt;/li>
+&lt;li>MySQLでデフォルト値つきのカラム追加はオンラインDDLにならないから？メタデータロックとか考えたくないから？&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>決断を先延ばしにできる技術
+&lt;ul>
+&lt;li>これすごい大事だと思う&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>スライドしかみてないけどPR8個じゃない？&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://speakerdeck.com/naotocoding/teburufen-ge-deshi-xian-surudevisenoze-wu-nofen-li-torou-ruan-naxue-chu-ji-gou">テーブル分割で実現するdeviseの責務の分離と柔軟な削除機構&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>認証情報とアプリケーションの情報は分割したいところ
+&lt;ul>
+&lt;li>まったく違う関心事になる&lt;/li>
+&lt;li>どこかでUserのJSON全部renderしてやばいことになったやつありましたよね&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://speakerdeck.com/imadoki/multiple-databaseswoyong-ite2tunorailspuroziekutowotong-he-suru">Multiple Databasesを用いて2つのRailsプロジェクトを統合する&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>うおお統合作業だ&lt;/li>
+&lt;li>transaction周りって&lt;code>connects_to&lt;/code>設定したらいい感じにならないのですか？
+&lt;ul>
+&lt;li>よくわからなかったので&lt;a href="https://www.youtube.com/watch?v=-tnFsqssKpg">発表の動画&lt;/a>をみました。もう無料で公開されててすごい。&lt;/li>
+&lt;li>理由は君の目で確かめてみてくれ&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>ノベルとコミックの共通点と差異面白そう&lt;/li>
+&lt;li>Railsの機能リプレイスにいま興味があるパーソンです
+&lt;ul>
+&lt;li>誰か知見ある人助けて&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="まとめ">まとめ
+&lt;span>&lt;a href="#%e3%81%be%e3%81%a8%e3%82%81">#&lt;/a>&lt;/span>
+&lt;/h3>&lt;p>今回も勉強になりました！各社の課題が覗き見できて楽しいイベントですな。
+最後になるであろうPart4もやるぞo(^-^)o&lt;/p></description></item><item><title>Kaigi on Rails 不参加記 Part2</title><link>https://qwyng.dev/posts/20231030/</link><pubDate>Mon, 30 Oct 2023 19:41:59 +0900</pubDate><guid>https://qwyng.dev/posts/20231030/</guid><description>&lt;h2 id="kaigi-on-rails-不参加記とは">Kaigi on Rails 不参加記とは
 &lt;span>&lt;a href="#kaigi-on-rails-%e4%b8%8d%e5%8f%82%e5%8a%a0%e8%a8%98%e3%81%a8%e3%81%af">#&lt;/a>&lt;/span>
 &lt;/h2>&lt;p>Kaigi on Railsには参加してないけど最近Rails周りなんもキャッチアップしてないと焦っている人間による、公開されている資料を見ての適当な感想を書く記事です。&lt;br>
 運営の方々、発表者の方々、&lt;a href="https://qiita.com/Hassan/items/9cc836dd5bfb1aaaabac">資料まとめてくださっている&lt;/a>@hassanさん、その他皆々様ありがとうございます！！！！！！！&lt;br>
