@@ -1,0 +1,279 @@
+<!doctype html><html lang=ja data-theme>
+<head>
+<meta charset=utf-8>
+<meta name=HandheldFriendly content="True">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=referrer content="no-referrer-when-downgrade">
+<title>Kaigi on Rails 不参加記 Part4 - QWYNG.dev</title>
+<meta name=description content="Kaigi on Rails 不参加記とは # Kaigi on Railsには参加してないけど最近Rails周りなんもキャッチアップしてないと焦っている人間による、公開されている資">
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=manifest href=/site.webmanifest>
+<link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5>
+<meta name=msapplication-TileColor content="#da532c">
+<meta name=theme-color content="#ffffff">
+<link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
+<meta property="og:description" content="Kaigi on Rails 不参加記とは # Kaigi on Railsには参加してないけど最近Rails周りなんもキャッチアップしてないと焦っている人間による、公開されている資">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kaigi on Rails 不参加記 Part4 - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/20231106/">
+<meta name=og:image content="https://qwyng.dev/android-chrome-384x384.png">
+<meta name=twitter:card content="summary">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9JVVYL7X5D"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-9JVVYL7X5D',{anonymize_ip:!1})}</script>
+</head>
+<body>
+<a class=skip-main href=#main>Skip to main content</a>
+<div class=container>
+<header class=common-header>
+<div class=header-top>
+<h1 class=site-title>
+<a href=/>QWYNG.dev</a>
+</h1>
+<ul class=social-icons>
+<li>
+<a href=https://github.com/QWYNG title=Github rel=me>
+<span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentcolor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6.0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6.0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3.0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1.0-6.2-.3-40.4-.3-61.4.0.0-70 15-84.7-29.8.0.0-11.4-29.1-27.8-36.6.0.0-22.9-15.7 1.6-15.4.0.0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5.0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9.0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4.0 33.7-.3 75.4-.3 83.6.0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6.0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9.0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span>
+</a>
+</li>
+<li>
+<a href=https://twitter.com/qwyngg title=Twitter rel=me>
+<span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645.0 138.72-105.583 298.558-298.558 298.558-59.452.0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055.0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421.0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391.0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04.0-57.828 46.782-104.934 104.934-104.934 30.213.0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+</span>
+</a>
+</li>
+<li>
+<a href=mailto:ikusawasi@gmail.com title=Email rel=me>
+<span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M464 64H48C21.49 64 0 85.49.0 112v288c0 26.51 21.49 48 48 48h416c26.51.0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 4e2V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V4e2H48z"/></svg>
+</span>
+</a>
+</li>
+</ul>
+</div>
+<nav>
+<a href=https://qwyng.dev/about/ title>About</a>
+<a href=https://qwyng.dev/posts/ title>記事一覧</a>
+<a href=https://qwyng.dev/index.xml title>RSS</a>
+</nav>
+</header>
+<main id=main tabindex=-1>
+<article class="post h-entry">
+<div class=post-header>
+<header>
+<h1 class="p-name post-title">Kaigi on Rails 不参加記 Part4</h1>
+</header>
+</div>
+<div class="content e-content">
+<h2 id=kaigi-on-rails-不参加記とは>Kaigi on Rails 不参加記とは
+<span><a href=#kaigi-on-rails-%e4%b8%8d%e5%8f%82%e5%8a%a0%e8%a8%98%e3%81%a8%e3%81%af>#</a></span>
+</h2><p>Kaigi on Railsには参加してないけど最近Rails周りなんもキャッチアップしてないと焦っている人間による、公開されている資料を見ての適当な感想を書く記事です。
+運営の方々、発表者の方々、<a href=https://qiita.com/Hassan/items/9cc836dd5bfb1aaaabac>資料まとめてくださっている</a>@hassanさん、その他皆々様ありがとうございます！！！！！！！<br>
+<a href=https://qwyng.dev/posts/20231028/>part1</a><br>
+<a href=https://qwyng.dev/posts/20231030/>part2</a><br>
+<a href=https://qwyng.dev/posts/20231103/>part3</a></p>
+<h2 id=資料ごとの感想>資料ごとの感想
+<span><a href=#%e8%b3%87%e6%96%99%e3%81%94%e3%81%a8%e3%81%ae%e6%84%9f%e6%83%b3>#</a></span>
+</h2><p><a href=https://speakerdeck.com/nay3/hotwirede-nashe-ji-wozhui-qiu-site-webzhi-zhi-ju-nixing-kizhao-itahua>Hotwire的な設計を追求して「Web紙芝居」に行き着いた話</a></p>
+<ul>
+<li>Hotwireにはそんなに興味があるわけではないけど、複数のアプローチを比較して検討しているのがすごい
+<ul>
+<li>アプローチを言語化して他人伝えるって大変だと思う</li>
+</ul>
+</li>
+<li>当初考えていた境界に別軸の境界がある話、ある</li>
+<li>スライドを見ていておもったけど、Hotwire単体だけでもこれだけ考えることがあって、プログラムを書くってめっちゃ大変だよなぁと思う
+<ul>
+<li>この資料を見せたうえでWeb紙芝居でいきましょう！という提案ができればいいけど、現実は部品的アプローチをしてから、Web紙芝居に移行したくなりそう</li>
+<li>その時にWeb紙芝居にアプローチを変更するのは果たしてできるのだろうか？
+<ul>
+<li>Web紙芝居もさらなる問題が出てくるかもしれないのに？</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>設定より規約という世界において、その規約をどう伝えていくのかが本当に難しいと思う
+<ul>
+<li>特に継承使うと、Aさんの脳内規約とBさんの脳内規約がぶつかってすごいことになってるのをよく見る</li>
+<li>ソフトウェアを多人数で作るってまじでむずかしいな</li>
+<li>僕は一人では何も作れませんが&mldr;</li>
+</ul>
+</li>
+</ul>
+<p><a href=https://speakerdeck.com/ohbarye/learn-architecture-through-admin>管理機能アーキテクチャパターンの考察と実践 / Learn Architecture through Admin</a></p>
+<ul>
+<li>チャーンと新規契約のどっちが大事かってどこのフェーズで切り替わったりするのかな
+<ul>
+<li>最初からどっちも大事か</li>
+</ul>
+</li>
+<li>自分の中になかった視点としては、エンドユーザーと管理者の間で解決したい問題領域が同一か？という視点
+<ul>
+<li>大体の場合同一だと思うけど、ここをバックエンドを分離させない理由として持ってくるのは良さそう</li>
+</ul>
+</li>
+<li>admin系SPAのライブラリってたくさんあるよね&mldr;
+<ul>
+<li>高速に動作するUIでストレス軽減というのはそんなにわかってない</li>
+<li>ただ速いだけなら既存のRailsのview + 適当なCSSフレームワークでも十分な気はする</li>
+</ul>
+</li>
+<li>既存の機能の運用に影響がでないか？も考慮にいれたい</li>
+</ul>
+<p><a href=https://slides.com/kokuyouwind/kaigi_on_rails_2023>APMをちゃんと使おうとしたら、いつのまにか独自gemを作っていた話</a></p>
+<ul>
+<li>あるある全てわかる〜〜〜〜〜〜〜〜〜〜
+<ul>
+<li>わかりすぎてわかり徹也になっちゃう</li>
+</ul>
+</li>
+<li>SQLの発行場所がわからない
+<ul>
+<li>ソレソレソレソレ</li>
+</ul>
+</li>
+<li>Ruby での処理が重いケース
+<ul>
+<li>ソレソレソレソレ</li>
+</ul>
+</li>
+<li>どこを手動トレースするかって結構難しそう
+<ul>
+<li>手動で怪しいところをトレースするのは良さそう</li>
+</ul>
+</li>
+<li>jsonのrenderとかでめっちゃ時間かかってる処理とかよくわからないがち
+<ul>
+<li>StackProfでシュッと見つけられるようになりたい</li>
+</ul>
+</li>
+</ul>
+<p><a href=https://speakerdeck.com/mktakuya/kaigi-on-rails-2023>自分の道具を自作してつくる喜びを体感しよう、Railsで。 〜4年続いたPodcastを実例に〜 / Kaigi on Rails 2023</a></p>
+<ul>
+<li>Railsでものを作るっていい話</li>
+<li>ロギング用URLに飛ばしてからキャッシュの聞いたURLにリダイレクトするの賢い</li>
+<li>自分の趣味の面倒みてくれるのは自分だけ！</li>
+<li>Railsのエコシステムはすごい！本当にすごいんだ！</li>
+<li>なにか作ってみようという気持ちになる資料でした</li>
+</ul>
+<p><a href=https://speakerdeck.com/masuyama13/pair-mob-programming-kaigi-on-rails-2023>ペアプロしようぜ 〜3人で登壇!? 楽しくて速いペアプロ/モブプロ開発〜/pair-mob-programming-kaigi-on-rails-2023</a></p>
+<ul>
+<li>発表者が三人！？</li>
+<li>ペアプロやモブプロ、疲れるけど本当に有効なんだよな
+<ul>
+<li>まず考慮漏れや不具合が圧倒的に減る</li>
+<li>このスライドの通り、まちがいの発見は早ければ速いほど良い</li>
+<li>終わらないレビューも最初だとあるよね</li>
+<li>あと他人に監視されてるからダラダラしないというのも正直大きい気がする</li>
+</ul>
+</li>
+<li>メリットがしっかり言語化されてて勉強になりました</li>
+<li>生成されてるっぽいイラストがキャッチーで良い</li>
+</ul>
+<p><a href=https://speakerdeck.com/knr/shu-shi-yi-norekodowochi-tu-5nian-mu-sabisuno-she-ji-tozhang-hai-jie-jue>数十億のレコードを持つ 5年目サービスの 設計と障害解決</a></p>
+<ul>
+<li>履歴を本当に永続化のためだけに使うなるほど</li>
+<li>開発環境ではなかなか想定できないデータ量だと、クエリ書くのも気を使いますね
+<ul>
+<li>こういうのもあってincludesじゃなくてpreloadとeager_load使い分けたいというのが出てくるんだろうな</li>
+</ul>
+</li>
+<li>BIGINTの対応漏れの対処法、知見すぎる
+<ul>
+<li>こういう、苦しいけどサービスは動かし続けなければならない状況でどうしたか？っていうのは本当に参考になる</li>
+</ul>
+</li>
+</ul>
+<p><a href=https://speakerdeck.com/toranoana/railsapurinipasuwadoresuren-zheng-wodao-ru-sitazhi-jian>Railsアプリにパスワードレス認証を導入した知見</a></p>
+<ul>
+<li>パスキーって単純に多要素認証なのか</li>
+<li>公開鍵みたいな感じなんですね</li>
+<li>認証まわりの実装って「本当にこのロジックでRFCに沿えているのか&mldr;」ってめちゃ不安になるよね</li>
+<li>そもそもwebauthnって単語とパスワードレス結びついてなかったので勉強になった。</li>
+</ul>
+<p><a href=https://speakerdeck.com/sampokuokkanen/kaigi-on-rails-2023-activesupport-currentattributes-sutugokubian-li-nanonixian-warezhe>Kaigi on Rails 2023 - ActiveSupport::CurrentAttributes: すっごく便利なのに嫌われ者？！</a></p>
+<ul>
+<li>evilmartiansのOSS一覧の資料社内にテンプレありそう</li>
+<li>ActiveSupport::CurrentAttributesは<a href=https://qwyng.dev/posts/shr_advent_calendar2022/>マルチテナントのGem掘った時</a>にみましたね</li>
+<li>スライドにもあったけど、<a href=https://techracho.bpsinc.jp/hachi8833/2023_04_26/43810>反対意見の記事</a>も読んだ
+<ul>
+<li>値がどのタイミングでリセットされるのかとか内部実装を知らないとテストがしにくいというはわかる
+<ul>
+<li>テスト内でセットしたはずの値は実際にはリセットされてnilになってるとかね</li>
+</ul>
+</li>
+<li>適切なテストが難しそうで、アプリケーション内の自分たちでメンテするコードにはあんまり使わないほうが良いかもなぁとは思います</li>
+</ul>
+</li>
+<li>道具箱の一つという感じで捉えるのが良さそう</li>
+</ul>
+<p><a href=https://speakerdeck.com/duckfalcon/kodokabaretuziji-ce-turuwodao-ru-sitaratesutowoshu-kunogale-sikunatutahua>コードカバレッジ計測ツールを導入したらテストを書くのが楽しくなった話</a></p>
+<ul>
+<li>カバレッジ100％に意味はないが、カバレッジ99％には意味があるって言葉どこかで読んだ
+<ul>
+<li>研鑽Rubyだった気がする</li>
+</ul>
+</li>
+<li>branch coverageってC1カバレッジともいうのか</li>
+<li>31％とかみると自分が今まで働かせてもらっていたプロダクトのカバレッジってめちゃ高かったんだなと思う
+<ul>
+<li>モデルは100％に近いし、コントローラーも90％くらいあった</li>
+<li>最初に必要なのは統合テストだけど、詳細に書くべきはモデルだよなぁと思う
+<ul>
+<li>モデルに全部入れとけ脳なので&mldr;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href=https://speakerdeck.com/yamataka22/hotwire-woshi-tuteguan-li-hua-mian-wojian-dan-niputispahua-suru-kaigi-on-rails-2023>Hotwire を使って管理画面を簡単にプチSPA化する - Kaigi on Rails 2023</a></p>
+<ul>
+<li>Hotwireって結構みんな注目しているイメージ
+<ul>
+<li>使わない現場だと本当に使わない</li>
+</ul>
+</li>
+<li>もともとSPAの知識があって、「SPAのあれHotwireでどうすりゃいいの？」が出てくるともっと興味を持って読めると思った</li>
+</ul>
+<h2 id=まとめ>まとめ
+<span><a href=#%e3%81%be%e3%81%a8%e3%82%81>#</a></span>
+</h2><p>どの資料も勉強になりました！ 改めて運営の方々、発表者の方々お疲れ様です。
+スライド読んで関連記事読んでってしてると知識が広がっていく感じがしていいですね。結構勉強になったので来年もやろうかな。<br>
+RubyKaigiは感想が「なんかすごい！」で終わることが多いので、Kaigi on Railsの資料はその点ちょうど良いなぁと思いました。<br>
+あと箇条書きの散文形式だと書きやすい。読みやすくはないけど。</p>
+</div>
+<div class=post-info>
+<div class="post-date dt-published">2023-11-10</div>
+<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/20231106/>https://qwyng.dev/posts/20231106/</a>
+<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
+<div class=post-taxonomies>
+</div>
+</div>
+</article>
+<div class=inline-svg>
+<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fqwyng.dev%2fposts%2f20231106%2f&text=Kaigi%20on%20Rails%20%e4%b8%8d%e5%8f%82%e5%8a%a0%e8%a8%98%20Part4%20%7c%20QWYNG.dev" target=_blank title=Tweet><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645.0 138.72-105.583 298.558-298.558 298.558-59.452.0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055.0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421.0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391.0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04.0-57.828 46.782-104.934 104.934-104.934 30.213.0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg></a>
+</div>
+<div class="pagination post-pagination">
+<div class="left pagination-item disabled">
+</div>
+<div class="right pagination-item">
+<a href=/posts/20231103/>Kaigi on Rails 不参加記 Part3</a>
+</div>
+</div>
+</main>
+<footer class=common-footer>
+<div class=common-footer-bottom>
+<div class=copyright>
+<p>© QWYNG, 2023<br>
+Powered by <a target=_blank rel="noopener noreferrer" href=https://gohugo.io/>Hugo</a>, theme <a target=_blank rel="noopener noreferrer" href=https://github.com/mitrichius/hugo-theme-anubis>Anubis</a>.<br>
+</p>
+</div>
+</div>
+<p class="h-card vcard">
+<a href=https://qwyng.dev class="p-name u-url url fn" rel=me>QWYNG</a>
+</p>
+</footer>
+</div>
+</body>
+</html>

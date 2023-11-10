@@ -1,4 +1,179 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 05 Nov 2023 16:54:19 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Kaigi on Rails 不参加記 Part3</title><link>https://qwyng.dev/posts/20231103/</link><pubDate>Sun, 05 Nov 2023 16:54:19 +0900</pubDate><guid>https://qwyng.dev/posts/20231103/</guid><description>&lt;h2 id="kaigi-on-rails-不参加記とは">Kaigi on Rails 不参加記とは
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>QWYNG.dev</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Fri, 10 Nov 2023 09:06:47 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Kaigi on Rails 不参加記 Part4</title><link>https://qwyng.dev/posts/20231106/</link><pubDate>Fri, 10 Nov 2023 09:06:47 +0900</pubDate><guid>https://qwyng.dev/posts/20231106/</guid><description>&lt;h2 id="kaigi-on-rails-不参加記とは">Kaigi on Rails 不参加記とは
+&lt;span>&lt;a href="#kaigi-on-rails-%e4%b8%8d%e5%8f%82%e5%8a%a0%e8%a8%98%e3%81%a8%e3%81%af">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>Kaigi on Railsには参加してないけど最近Rails周りなんもキャッチアップしてないと焦っている人間による、公開されている資料を見ての適当な感想を書く記事です。
+運営の方々、発表者の方々、&lt;a href="https://qiita.com/Hassan/items/9cc836dd5bfb1aaaabac">資料まとめてくださっている&lt;/a>@hassanさん、その他皆々様ありがとうございます！！！！！！！&lt;br>
+&lt;a href="https://qwyng.dev/posts/20231028/">part1&lt;/a>&lt;br>
+&lt;a href="https://qwyng.dev/posts/20231030/">part2&lt;/a>&lt;br>
+&lt;a href="https://qwyng.dev/posts/20231103/">part3&lt;/a>&lt;/p>
+&lt;h2 id="資料ごとの感想">資料ごとの感想
+&lt;span>&lt;a href="#%e8%b3%87%e6%96%99%e3%81%94%e3%81%a8%e3%81%ae%e6%84%9f%e6%83%b3">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://speakerdeck.com/nay3/hotwirede-nashe-ji-wozhui-qiu-site-webzhi-zhi-ju-nixing-kizhao-itahua">Hotwire的な設計を追求して「Web紙芝居」に行き着いた話&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Hotwireにはそんなに興味があるわけではないけど、複数のアプローチを比較して検討しているのがすごい
+&lt;ul>
+&lt;li>アプローチを言語化して他人伝えるって大変だと思う&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>当初考えていた境界に別軸の境界がある話、ある&lt;/li>
+&lt;li>スライドを見ていておもったけど、Hotwire単体だけでもこれだけ考えることがあって、プログラムを書くってめっちゃ大変だよなぁと思う
+&lt;ul>
+&lt;li>この資料を見せたうえでWeb紙芝居でいきましょう！という提案ができればいいけど、現実は部品的アプローチをしてから、Web紙芝居に移行したくなりそう&lt;/li>
+&lt;li>その時にWeb紙芝居にアプローチを変更するのは果たしてできるのだろうか？
+&lt;ul>
+&lt;li>Web紙芝居もさらなる問題が出てくるかもしれないのに？&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>設定より規約という世界において、その規約をどう伝えていくのかが本当に難しいと思う
+&lt;ul>
+&lt;li>特に継承使うと、Aさんの脳内規約とBさんの脳内規約がぶつかってすごいことになってるのをよく見る&lt;/li>
+&lt;li>ソフトウェアを多人数で作るってまじでむずかしいな&lt;/li>
+&lt;li>僕は一人では何も作れませんが&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://speakerdeck.com/ohbarye/learn-architecture-through-admin">管理機能アーキテクチャパターンの考察と実践 / Learn Architecture through Admin&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>チャーンと新規契約のどっちが大事かってどこのフェーズで切り替わったりするのかな
+&lt;ul>
+&lt;li>最初からどっちも大事か&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>自分の中になかった視点としては、エンドユーザーと管理者の間で解決したい問題領域が同一か？という視点
+&lt;ul>
+&lt;li>大体の場合同一だと思うけど、ここをバックエンドを分離させない理由として持ってくるのは良さそう&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>admin系SPAのライブラリってたくさんあるよね&amp;hellip;
+&lt;ul>
+&lt;li>高速に動作するUIでストレス軽減というのはそんなにわかってない&lt;/li>
+&lt;li>ただ速いだけなら既存のRailsのview + 適当なCSSフレームワークでも十分な気はする&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>既存の機能の運用に影響がでないか？も考慮にいれたい&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://slides.com/kokuyouwind/kaigi_on_rails_2023">APMをちゃんと使おうとしたら、いつのまにか独自gemを作っていた話&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>あるある全てわかる〜〜〜〜〜〜〜〜〜〜
+&lt;ul>
+&lt;li>わかりすぎてわかり徹也になっちゃう&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>SQLの発行場所がわからない
+&lt;ul>
+&lt;li>ソレソレソレソレ&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Ruby での処理が重いケース
+&lt;ul>
+&lt;li>ソレソレソレソレ&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>どこを手動トレースするかって結構難しそう
+&lt;ul>
+&lt;li>手動で怪しいところをトレースするのは良さそう&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>jsonのrenderとかでめっちゃ時間かかってる処理とかよくわからないがち
+&lt;ul>
+&lt;li>StackProfでシュッと見つけられるようになりたい&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://speakerdeck.com/mktakuya/kaigi-on-rails-2023">自分の道具を自作してつくる喜びを体感しよう、Railsで。 〜4年続いたPodcastを実例に〜 / Kaigi on Rails 2023&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Railsでものを作るっていい話&lt;/li>
+&lt;li>ロギング用URLに飛ばしてからキャッシュの聞いたURLにリダイレクトするの賢い&lt;/li>
+&lt;li>自分の趣味の面倒みてくれるのは自分だけ！&lt;/li>
+&lt;li>Railsのエコシステムはすごい！本当にすごいんだ！&lt;/li>
+&lt;li>なにか作ってみようという気持ちになる資料でした&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://speakerdeck.com/masuyama13/pair-mob-programming-kaigi-on-rails-2023">ペアプロしようぜ 〜3人で登壇!? 楽しくて速いペアプロ/モブプロ開発〜/pair-mob-programming-kaigi-on-rails-2023&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>発表者が三人！？&lt;/li>
+&lt;li>ペアプロやモブプロ、疲れるけど本当に有効なんだよな
+&lt;ul>
+&lt;li>まず考慮漏れや不具合が圧倒的に減る&lt;/li>
+&lt;li>このスライドの通り、まちがいの発見は早ければ速いほど良い&lt;/li>
+&lt;li>終わらないレビューも最初だとあるよね&lt;/li>
+&lt;li>あと他人に監視されてるからダラダラしないというのも正直大きい気がする&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>メリットがしっかり言語化されてて勉強になりました&lt;/li>
+&lt;li>生成されてるっぽいイラストがキャッチーで良い&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://speakerdeck.com/knr/shu-shi-yi-norekodowochi-tu-5nian-mu-sabisuno-she-ji-tozhang-hai-jie-jue">数十億のレコードを持つ 5年目サービスの 設計と障害解決&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>履歴を本当に永続化のためだけに使うなるほど&lt;/li>
+&lt;li>開発環境ではなかなか想定できないデータ量だと、クエリ書くのも気を使いますね
+&lt;ul>
+&lt;li>こういうのもあってincludesじゃなくてpreloadとeager_load使い分けたいというのが出てくるんだろうな&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>BIGINTの対応漏れの対処法、知見すぎる
+&lt;ul>
+&lt;li>こういう、苦しいけどサービスは動かし続けなければならない状況でどうしたか？っていうのは本当に参考になる&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://speakerdeck.com/toranoana/railsapurinipasuwadoresuren-zheng-wodao-ru-sitazhi-jian">Railsアプリにパスワードレス認証を導入した知見&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>パスキーって単純に多要素認証なのか&lt;/li>
+&lt;li>公開鍵みたいな感じなんですね&lt;/li>
+&lt;li>認証まわりの実装って「本当にこのロジックでRFCに沿えているのか&amp;hellip;」ってめちゃ不安になるよね&lt;/li>
+&lt;li>そもそもwebauthnって単語とパスワードレス結びついてなかったので勉強になった。&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://speakerdeck.com/sampokuokkanen/kaigi-on-rails-2023-activesupport-currentattributes-sutugokubian-li-nanonixian-warezhe">Kaigi on Rails 2023 - ActiveSupport::CurrentAttributes: すっごく便利なのに嫌われ者？！&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>evilmartiansのOSS一覧の資料社内にテンプレありそう&lt;/li>
+&lt;li>ActiveSupport::CurrentAttributesは&lt;a href="https://qwyng.dev/posts/shr_advent_calendar2022/">マルチテナントのGem掘った時&lt;/a>にみましたね&lt;/li>
+&lt;li>スライドにもあったけど、&lt;a href="https://techracho.bpsinc.jp/hachi8833/2023_04_26/43810">反対意見の記事&lt;/a>も読んだ
+&lt;ul>
+&lt;li>値がどのタイミングでリセットされるのかとか内部実装を知らないとテストがしにくいというはわかる
+&lt;ul>
+&lt;li>テスト内でセットしたはずの値は実際にはリセットされてnilになってるとかね&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>適切なテストが難しそうで、アプリケーション内の自分たちでメンテするコードにはあんまり使わないほうが良いかもなぁとは思います&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>道具箱の一つという感じで捉えるのが良さそう&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://speakerdeck.com/duckfalcon/kodokabaretuziji-ce-turuwodao-ru-sitaratesutowoshu-kunogale-sikunatutahua">コードカバレッジ計測ツールを導入したらテストを書くのが楽しくなった話&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>カバレッジ100％に意味はないが、カバレッジ99％には意味があるって言葉どこかで読んだ
+&lt;ul>
+&lt;li>研鑽Rubyだった気がする&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>branch coverageってC1カバレッジともいうのか&lt;/li>
+&lt;li>31％とかみると自分が今まで働かせてもらっていたプロダクトのカバレッジってめちゃ高かったんだなと思う
+&lt;ul>
+&lt;li>モデルは100％に近いし、コントローラーも90％くらいあった&lt;/li>
+&lt;li>最初に必要なのは統合テストだけど、詳細に書くべきはモデルだよなぁと思う
+&lt;ul>
+&lt;li>モデルに全部入れとけ脳なので&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://speakerdeck.com/yamataka22/hotwire-woshi-tuteguan-li-hua-mian-wojian-dan-niputispahua-suru-kaigi-on-rails-2023">Hotwire を使って管理画面を簡単にプチSPA化する - Kaigi on Rails 2023&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Hotwireって結構みんな注目しているイメージ
+&lt;ul>
+&lt;li>使わない現場だと本当に使わない&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>もともとSPAの知識があって、「SPAのあれHotwireでどうすりゃいいの？」が出てくるともっと興味を持って読めると思った&lt;/li>
+&lt;/ul>
+&lt;h2 id="まとめ">まとめ
+&lt;span>&lt;a href="#%e3%81%be%e3%81%a8%e3%82%81">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>どの資料も勉強になりました！ 改めて運営の方々、発表者の方々お疲れ様です。
+スライド読んで関連記事読んでってしてると知識が広がっていく感じがしていいですね。結構勉強になったので来年もやろうかな。&lt;br>
+RubyKaigiは感想が「なんかすごい！」で終わることが多いので、Kaigi on Railsの資料はその点ちょうど良いなぁと思いました。&lt;br>
+あと箇条書きの散文形式だと書きやすい。読みやすくはないけど。&lt;/p></description></item><item><title>Kaigi on Rails 不参加記 Part3</title><link>https://qwyng.dev/posts/20231103/</link><pubDate>Sun, 05 Nov 2023 16:54:19 +0900</pubDate><guid>https://qwyng.dev/posts/20231103/</guid><description>&lt;h2 id="kaigi-on-rails-不参加記とは">Kaigi on Rails 不参加記とは
 &lt;span>&lt;a href="#kaigi-on-rails-%e4%b8%8d%e5%8f%82%e5%8a%a0%e8%a8%98%e3%81%a8%e3%81%af">#&lt;/a>&lt;/span>
 &lt;/h2>&lt;p>Kaigi on Railsには参加してないけど最近Rails周りなんもキャッチアップしてないと焦っている人間による、公開されている資料を見ての適当な感想を書く記事です。
 運営の方々、発表者の方々、&lt;a href="https://qiita.com/Hassan/items/9cc836dd5bfb1aaaabac">資料まとめてくださっている&lt;/a>@hassanさん、その他皆々様ありがとうございます！！！！！！！&lt;br>
