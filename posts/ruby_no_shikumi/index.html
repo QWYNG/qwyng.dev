@@ -1,0 +1,239 @@
+<!doctype html><html lang=ja data-theme>
+<head>
+<meta charset=utf-8>
+<meta name=HandheldFriendly content="True">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=referrer content="no-referrer-when-downgrade">
+<title>「Rubyのしくみ　Ruby Under a Microscope」を読んだ - QWYNG.dev</title>
+<meta name=description content="RubyKaigi間近！ということで積読していたRubyのしくみ Ruby Under a Microscope を読んだので感想を書きます。 全部で12章ある本なんですが、自分の中で">
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=manifest href=/site.webmanifest>
+<link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5>
+<meta name=msapplication-TileColor content="#da532c">
+<meta name=theme-color content="#ffffff">
+<link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
+<meta property="og:description" content="RubyKaigi間近！ということで積読していたRubyのしくみ Ruby Under a Microscope を読んだので感想を書きます。 全部で12章ある本なんですが、自分の中で">
+<meta property="og:type" content="website">
+<meta property="og:title" content="「Rubyのしくみ　Ruby Under a Microscope」を読んだ - QWYNG.dev">
+<meta property="og:url" content="https://qwyng.dev/posts/ruby_no_shikumi/">
+<meta name=og:image content="https://qwyng.dev/android-chrome-384x384.png">
+<meta name=twitter:card content="summary">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9JVVYL7X5D"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-9JVVYL7X5D',{anonymize_ip:!1})}</script>
+</head>
+<body>
+<a class=skip-main href=#main>Skip to main content</a>
+<div class=container>
+<header class=common-header>
+<div class=header-top>
+<h1 class=site-title>
+<a href=/>QWYNG.dev</a>
+</h1>
+<ul class=social-icons>
+<li>
+<a href=https://github.com/QWYNG title=Github rel=me>
+<span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentcolor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6.0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6.0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3.0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1.0-6.2-.3-40.4-.3-61.4.0.0-70 15-84.7-29.8.0.0-11.4-29.1-27.8-36.6.0.0-22.9-15.7 1.6-15.4.0.0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5.0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9.0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4.0 33.7-.3 75.4-.3 83.6.0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6.0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9.0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span>
+</a>
+</li>
+<li>
+<a href=https://twitter.com/qwyngg title=Twitter rel=me>
+<span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645.0 138.72-105.583 298.558-298.558 298.558-59.452.0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055.0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421.0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391.0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04.0-57.828 46.782-104.934 104.934-104.934 30.213.0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+</span>
+</a>
+</li>
+<li>
+<a href=mailto:ikusawasi@gmail.com title=Email rel=me>
+<span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M464 64H48C21.49 64 0 85.49.0 112v288c0 26.51 21.49 48 48 48h416c26.51.0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 4e2V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V4e2H48z"/></svg>
+</span>
+</a>
+</li>
+</ul>
+</div>
+<nav>
+<a href=https://qwyng.dev/about/ title>About</a>
+<a href=https://qwyng.dev/posts/ title>記事一覧</a>
+<a href=https://qwyng.dev/index.xml title>RSS</a>
+</nav>
+</header>
+<main id=main tabindex=-1>
+<article class="post h-entry">
+<div class=post-header>
+<header>
+<h1 class="p-name post-title">「Rubyのしくみ　Ruby Under a Microscope」を読んだ</h1>
+</header>
+</div>
+<div class="content e-content">
+<p>RubyKaigi間近！ということで積読していた<a href=https://tatsu-zine.com/books/ruby-under-a-microscope-ja>Rubyのしくみ　Ruby Under a Microscope
+</a>を読んだので感想を書きます。</p>
+<p>全部で12章ある本なんですが、自分の中での勝手な区切りで分けて感想を書きます。</p>
+<h2 id=1章-2章-パースとコンパイル>1章, 2章 パースとコンパイル
+<span><a href=#1%e7%ab%a0-2%e7%ab%a0-%e3%83%91%e3%83%bc%e3%82%b9%e3%81%a8%e3%82%b3%e3%83%b3%e3%83%91%e3%82%a4%e3%83%ab>#</a></span>
+</h2><ul>
+<li>最近のRubyKaigiで熱いパーサーの話</li>
+<li>字句解析と構文解析という概念がある
+<ul>
+<li>字句解析のステートマシンとか構文木の話を詳しく知りたい人は<a href=https://www.oreilly.co.jp/books/9784873116976/>アンダースタンディング コンピュテーション</a>を読もう！Rubyからコンピューターサイエンスが学べちまうんだ！(僕は積んでいます)</li>
+<li>こういう日本語の解説が色々あるのがRubyの強みだよなぁ</li>
+<li>僕はDeterministic Finite Automatonって響きかっこいいなぁという気持ちしかありません
+<ul>
+<li>すごろくのマス目を進むイメージで理解している</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>コンパイル
+<ul>
+<li>ASTを更に命令列に変換する処理を説明してくれているのだが、あんまり理解できていない</li>
+</ul>
+</li>
+</ul>
+<h2 id=3章-4章vmの動作>3章, 4章　VMの動作
+<span><a href=#3%e7%ab%a0-4%e7%ab%a0vm%e3%81%ae%e5%8b%95%e4%bd%9c>#</a></span>
+</h2><ul>
+<li>内部スタックとコールスタック
+<ul>
+<li>院で研究しているプログラムの操作的意味論の<a href=https://kframework.org/k-distribution/pl-tutorial/2_languages/2_kool/1_untyped/kool-untyped/>サンプル</a>も環境スタックとコールスタックを２つ持つ実装だった。</li>
+<li>二重スタックが入り交じる解説を消化するのは難易度高い</li>
+</ul>
+</li>
+<li>キーワード引数の内部はハッシュとかforの中身がeachとか知るだけでも面白い話も載っている</li>
+<li>ブロック内で変数をスタック遡って探す話、なぜclassとかdef通すとできないんだ？と思ったけど、第9章に答えが載っていた。</li>
+</ul>
+<h2 id=5章-6章オブジェクトクラスメソッド探索>5章, 6章　オブジェクト、クラス、メソッド探索
+<span><a href=#5%e7%ab%a0-6%e7%ab%a0%e3%82%aa%e3%83%96%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e3%82%af%e3%83%a9%e3%82%b9%e3%83%a1%e3%82%bd%e3%83%83%e3%83%89%e6%8e%a2%e7%b4%a2>#</a></span>
+</h2><ul>
+<li>Rubyのソースコードのあちこちで見かけるVALUEポインタについて書かれている</li>
+<li>6章のメソッド探索と定数探索の話は特に面白かった
+<ul>
+<li>クラスとモジュールの継承はわりと想像通りだったけど、prependの実装がおもしろかった</li>
+<li>レシーバのクラスのコピーを作ってメソッド全部コピーしたクラスに棚上げするの頭良すぎる</li>
+<li>Ruby利用者からするとprependって組み込みのクラスにパッチ当てたりしやすくなる神機能だけど、実装は結構トリッキーなんだなと思った。</li>
+</ul>
+</li>
+<li>レキシカルスコープ
+<ul>
+<li>Ruby3.2.2でもレキシカルスコープと継承チェーン内の探索の順序は変わっていなさそう</li>
+</ul>
+</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ruby data-lang=ruby><span style=color:#960050;background-color:#1e0010>⋊</span><span style=color:#f92672>&gt;</span> <span style=color:#f92672>~</span><span style=color:#e6db74>/qwyng.dev on master ◦ irb
+</span><span style=color:#e6db74>irb(main):001* class SuperClass
+</span><span style=color:#e6db74>irb(main):002*   FIND_ME = 1
+</span><span style=color:#e6db74>irb(main):003&gt; end
+</span><span style=color:#e6db74>=&gt; 1
+</span><span style=color:#e6db74>irb(main):004* module ModuleA
+</span><span style=color:#e6db74>irb(main):005*   FIND_ME = 2
+</span><span style=color:#e6db74>irb(main):006*   class SubClass &lt; SuperClass
+</span><span style=color:#e6db74>irb(main):007*     p FIND_ME
+</span><span style=color:#e6db74>irb(main):008*   end
+</span><span style=color:#e6db74>irb(main):009&gt; end
+</span><span style=color:#e6db74>2
+</span><span style=color:#e6db74>=&gt; 2
+</span><span style=color:#e6db74>
+</span><span style=color:#e6db74>⋊&gt; ~/</span>qwyng<span style=color:#f92672>.</span>dev on master <span style=color:#960050;background-color:#1e0010>⨯</span> ruby <span style=color:#f92672>-</span>v
+ruby <span style=color:#ae81ff>3</span><span style=color:#f92672>.</span><span style=color:#ae81ff>2</span><span style=color:#f92672>.</span><span style=color:#ae81ff>2</span> (<span style=color:#ae81ff>2023</span><span style=color:#f92672>-</span><span style=color:#ae81ff>03</span><span style=color:#f92672>-</span><span style=color:#ae81ff>30</span> revision e51014f9c0) <span style=color:#f92672>[</span>arm64<span style=color:#f92672>-</span>darwin22<span style=color:#f92672>]</span>
+</code></pre></div><ul>
+<li>この章は実際の開発でも役に立つ知識が多そうだと感じた</li>
+<li>fursich氏の<a href=https://qiita.com/fursich/items/a1b742795cf10eebc73f#ruby25%E3%81%AE%E9%80%B2%E5%8C%96>Rubyの定数が怖いなんて言わせない</a>という神ドキュメントがあるのですが、Rubyのしくみの5,6章読んでからこのドキュメントを読むとめっちゃ面白いですよ！！</li>
+</ul>
+<h2 id=7章-ハッシュテーブル>7章 ハッシュテーブル
+<span><a href=#7%e7%ab%a0-%e3%83%8f%e3%83%83%e3%82%b7%e3%83%a5%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab>#</a></span>
+</h2><ul>
+<li>Object#hashってそんな大事なことに使われてたんだ&mldr;</li>
+<li>eql?を独自で実装するときにObject#hashも同じロジックでオーバライドしてねみたいな<a href="https://docs.ruby-lang.org/ja/latest/method/Object/i/eql=3f.html">ドキュメント</a>があるけど、hashをなぜオーバライドするのかがよくわかった
+<ul>
+<li>例えば、<code>a = SomeObj.new; b = SomeObj.new; a.eql?(b) => true</code>と実装したけど、<code>a.hash == b.hash => false</code>だと、ハッシュテーブル内で<code>a</code>と<code>b</code>は別のバケットに入ってしまう可能性がある。</li>
+<li>hashメソッドは十分に散らばった値になるようにしないとすぐ同じバケットに値が集まってしまう
+<ul>
+<li>hashメソッドの定義は慎重に行う必要がありそう</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id=8章-lispから借用したアイデア>8章 Lispから借用したアイデア
+<span><a href=#8%e7%ab%a0-lisp%e3%81%8b%e3%82%89%e5%80%9f%e7%94%a8%e3%81%97%e3%81%9f%e3%82%a2%e3%82%a4%e3%83%87%e3%82%a2>#</a></span>
+</h2><ul>
+<li>院で先生に「クロージャってなんですか」と聞かれて答えられなかったのを思い出す
+<ul>
+<li>環境と関数のペアです&mldr;安西先生</li>
+<li>lambdaを呼び出すと環境をまるごとヒープに保存するたまげたな</li>
+<li>procとlambdaの違いって引数の厳密性だと思っていたけど、内部でちゃんとフラグを持ってるんですね</li>
+</ul>
+</li>
+</ul>
+<h2 id=9章-メタプログラミング>9章 メタプログラミング
+<span><a href=#9%e7%ab%a0-%e3%83%a1%e3%82%bf%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0>#</a></span>
+</h2><ul>
+<li>特異クラスとメタクラスの違いが書いてあって、メタプログラミングRubyより一歩踏み込んだ解説がなされていた</li>
+<li>Rubyの<code>class &lt;&lt;</code> は引数のオブジェクトの特異クラスを作成するという構文っぽい
+<ul>
+<li><code>class &lt;&lt; self</code> はselfの特異クラスを作成しているという解釈ができる</li>
+</ul>
+</li>
+<li>class_evalとかinstance_evalはブロック構造体のselfの変更していたんですね</li>
+<li>メタプログラミングRubyでスコープゲートと呼ばれていたものはレキシカルスコープのことだったのか？
+<ul>
+<li>ブロック内ではレキシカルスコープのポインタ先が違うのが原因っぽい</li>
+<li>defやclassはレキシカルスコープをそのままcref構造体みているが、ブロックだとスタック上のスコープを直接参照している。
+<ul>
+<li>ここでやっと3章で出てきたスタックを遡って変数にアクセスする話が理解できた</li>
+<li>つまりRubyのブロックはダイナミックスコープなんだよ！！！！Lispと一緒でレキシカルスコープもダイナミックスコープもある！！！！</li>
+<li>この本、コラムっぽいページに大事な内容が書かれているので、読み飛ばさないように注意が必要</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id=10章11章>10章、11章
+<span><a href=#10%e7%ab%a011%e7%ab%a0>#</a></span>
+</h2><ul>
+<li>飛ばしました&mldr;.</li>
+</ul>
+<h2 id=12章-gc>12章 GC
+<span><a href=#12%e7%ab%a0-gc>#</a></span>
+</h2><ul>
+<li>GCのアルゴリズムが色々あることがわかったぜ！！！</li>
+</ul>
+<h2 id=全体通しての感想>全体通しての感想
+<span><a href=#%e5%85%a8%e4%bd%93%e9%80%9a%e3%81%97%e3%81%a6%e3%81%ae%e6%84%9f%e6%83%b3>#</a></span>
+</h2><p>最初の命令列とかスタックの動作はかなり理解が難しかった（今もそんなにわかってない）が、中盤のクラスとかメソッド探索の話は普段の業務でも役にたつことが多そうだと思った。 <br>
+正直、このしょうもない感想記事に書いてあることの10000倍くらい濃い情報が本には書かれているので、興味がある人はぜひ読んでみてください。（もうRubyも3.3なので、この本の内容が古くなっている可能性もあるけど）</p>
+</div>
+<div class=post-info>
+<div class="post-date dt-published">2024-04-22</div>
+<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/ruby_no_shikumi/>https://qwyng.dev/posts/ruby_no_shikumi/</a>
+<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
+<div class=post-taxonomies>
+</div>
+</div>
+</article>
+<div class=inline-svg>
+<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fqwyng.dev%2fposts%2fruby_no_shikumi%2f&text=%e3%80%8cRuby%e3%81%ae%e3%81%97%e3%81%8f%e3%81%bf%e3%80%80Ruby%20Under%20a%20Microscope%e3%80%8d%e3%82%92%e8%aa%ad%e3%82%93%e3%81%a0" target=_blank title=Tweet><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645.0 138.72-105.583 298.558-298.558 298.558-59.452.0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055.0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421.0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391.0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04.0-57.828 46.782-104.934 104.934-104.934 30.213.0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg></a>
+</div>
+<div class="pagination post-pagination">
+<div class="left pagination-item disabled">
+</div>
+<div class="right pagination-item">
+<a href=/posts/20231231/>2023年の振り返り</a>
+</div>
+</div>
+</main>
+<footer class=common-footer>
+<div class=common-footer-bottom>
+<div class=copyright>
+<p>© QWYNG, 2024<br>
+Powered by <a target=_blank rel="noopener noreferrer" href=https://gohugo.io/>Hugo</a>, theme <a target=_blank rel="noopener noreferrer" href=https://github.com/mitrichius/hugo-theme-anubis>Anubis</a>.<br>
+</p>
+</div>
+</div>
+<p class="h-card vcard">
+<a href=https://qwyng.dev class="p-name u-url url fn" rel=me>QWYNG</a>
+</p>
+</footer>
+</div>
+</body>
+</html>
