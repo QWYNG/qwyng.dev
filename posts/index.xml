@@ -1,4 +1,69 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Mon, 22 Apr 2024 21:44:50 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>「Rubyのしくみ　Ruby Under a Microscope」を読んだ</title><link>https://qwyng.dev/posts/ruby_no_shikumi/</link><pubDate>Mon, 22 Apr 2024 21:44:50 +0900</pubDate><guid>https://qwyng.dev/posts/ruby_no_shikumi/</guid><description>&lt;p>RubyKaigi間近！ということで積読していた&lt;a href="https://tatsu-zine.com/books/ruby-under-a-microscope-ja">Rubyのしくみ　Ruby Under a Microscope
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Tue, 21 May 2024 00:00:00 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>RubyKaigi 2024 感想</title><link>https://qwyng.dev/posts/rubykaigi_2024/</link><pubDate>Tue, 21 May 2024 00:00:00 +0900</pubDate><guid>https://qwyng.dev/posts/rubykaigi_2024/</guid><description>&lt;p>RubyKaigi 2024に参加したので気になったセッションの感想を書いたりします。&lt;/p>
+&lt;h2 id="unlocking-potential-of-property-based-testing-with-ractor-ohbarye">Unlocking Potential of Property Based Testing with Ractor @ohbarye
+&lt;span>&lt;a href="#unlocking-potential-of-property-based-testing-with-ractor-ohbarye">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Ractorを使ったプロパティベーステストの話&lt;/li>
+&lt;li>SPINとかLTLとかJAISTでも学んだので面白かった&lt;/li>
+&lt;li>よくあるアプリの「IOが一番のボトルネックであんまりRactorとかThreadかどうか関係ない」っていう要素をクリアしていて良い仮説だな〜と思った&lt;/li>
+&lt;li>net/httpがRactorに対応してなくて辛いのは本当にそう
+&lt;ul>
+&lt;li>並列処理においてスクレイピングって結構思いつくところだけど、net/httpがRactorに対応してなくて辛かった思ひ出がある&lt;/li>
+&lt;li>GreenDayをRactorで書き直そうと思ったけど、net/httpが対応してないので断念した&lt;/li>
+&lt;li>その時に発見したレポジトリなんだけどRactorで共有不可能なオブジェクトをメインRactorでプロキシするみたいなGemはすごい発想だなと思った
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/dazuma/ractor-wrapper">https://github.com/dazuma/ractor-wrapper&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="exploring-reline-enhancing-command-line-usability-ima1zumi">Exploring Reline: Enhancing Command Line Usability @ima1zumi
+&lt;span>&lt;a href="#exploring-reline-enhancing-command-line-usability-ima1zumi">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Relineの話&lt;/li>
+&lt;li>Relineってまじで便利すぎますよな〜変換候補がでたりYARDのドキュメントを見れたり&lt;/li>
+&lt;li>GNU Readlineを目指しているってすごいことですよ
+&lt;ul>
+&lt;li>Rubyでコマンドラインエディターの実装が読めるって神すぎる&lt;/li>
+&lt;li>IRBのRelineInputMethodの実装だとpromptとかterminationのcheckとかindentとか全部procで実装してあって面白かった&lt;/li>
+&lt;li>&lt;a href="https://github.com/QWYNG/irb-remote">irb-remote&lt;/a>っていうまさにRelineを使いたいがためのGemを作っているのでいい感じになったらどこかで公開したい&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="ractor-enhancements-2024-ko1">Ractor Enhancements, 2024 @ko1
+&lt;span>&lt;a href="#ractor-enhancements-2024-ko1">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Ractorの話
+&lt;ul>
+&lt;li>Ractorのyield/takeとsend/receiveどっちも書けるのがRubyを体現しててすごいと思っているのでRactorの話は好き&lt;/li>
+&lt;li>requireがRactorに対応してないのは辛い本当にそれ&lt;/li>
+&lt;li>子Ractorのkernel#requireをMainRactorでプロキシする方法はissue内でも紹介されていたけど、言語の機能として実装するには色々魔改造されがちなKernel#requireをどうするかの問題があるのだなと思った&lt;/li>
+&lt;li>タイムアウトも言われてみるとErlangとかはどうしているんだろうと思った。&lt;/li>
+&lt;li>グリーンスレッドとM:Nスレッドの違いがまだはっきりとわかっていなくて、N個のOSスレッドに対してM個のRubyスレッドを作るのがM:Nスレッドで、グリーンスレッドはユーザレベルスレッドだと思っている
+&lt;ul>
+&lt;li>でもRactorは結局GVLを外せるユーザレベルスレッドということなのかな？&lt;/li>
+&lt;li>&lt;a href="https://techlife.cookpad.com/entry/2023/08/31/152511">Rubyの並列並行処理のこれまでとこれから&lt;/a>これを読んでもそんなにわからなかったが、またどこかで勉強しようという気持ちになった&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="アフターパーティー">アフターパーティー
+&lt;span>&lt;a href="#%e3%82%a2%e3%83%95%e3%82%bf%e3%83%bc%e3%83%91%e3%83%bc%e3%83%86%e3%82%a3%e3%83%bc">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>飲み会がド級の苦手、ド苦手なのだが、今回は勇気を振り絞ってオフィシャルのアフターパーティーに参加した&lt;/li>
+&lt;li>IVRyさんとたまたま同じ席になり、プロダクトのコードについて話した
+&lt;ul>
+&lt;li>僕は今5~6年前に書かれたコードに感謝しながらプロダクトコードを書いているのだが、いずれIVRyのみなさんが書いたコードもそうなるんだろうと思うと感慨深かった&lt;/li>
+&lt;li>丁寧なコミットメッセージやPR文やドキュメントがいかに助かるかという話をした気がする&lt;/li>
+&lt;li>ちなみに私のコミットメッセージとPRは&amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="まとめ">まとめ
+&lt;span>&lt;a href="#%e3%81%be%e3%81%a8%e3%82%81">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>RubyKaigiはやっぱり楽しいですね。運営の皆様、スポンサーの皆様、発表者の皆様、参加者の皆様、ありがとうございました。また来年も参加したいです。&lt;br>
+どの発表も自分が日々使っている道具がどんな方によってどう作られているのかを知ることができて、とても楽しかったです。&lt;/p></description></item><item><title>「Rubyのしくみ　Ruby Under a Microscope」を読んだ</title><link>https://qwyng.dev/posts/ruby_no_shikumi/</link><pubDate>Mon, 22 Apr 2024 21:44:50 +0900</pubDate><guid>https://qwyng.dev/posts/ruby_no_shikumi/</guid><description>&lt;p>RubyKaigi間近！ということで積読していた&lt;a href="https://tatsu-zine.com/books/ruby-under-a-microscope-ja">Rubyのしくみ　Ruby Under a Microscope
 &lt;/a>を読んだので感想を書きます。&lt;/p>
 &lt;p>全部で12章ある本なんですが、自分の中での勝手な区切りで分けて感想を書きます。&lt;/p>
 &lt;h2 id="1章-2章-パースとコンパイル">1章, 2章 パースとコンパイル
