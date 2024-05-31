@@ -18,7 +18,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="リモートプロセスのIrbセッションをローカルプロセスのRelineを使って操作できるirb-remoteというGemを作った - QWYNG.dev">
 <meta property="og:url" content="https://qwyng.dev/posts/irb-remote/">
-<meta name=og:image content="irb-remote-demo.png">
+<meta name=og:image content="/irb-remote-demo.png">
 <meta name=twitter:card content="summary">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JVVYL7X5D"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-9JVVYL7X5D',{anonymize_ip:!1})}</script>
@@ -72,7 +72,7 @@
 <span><a href=#irb-remote%e3%81%a8%e3%81%af>#</a></span>
 </h1><p>irb-remoteは、リモートプロセスのIrbセッションをローカルプロセスのRelineを使って操作できるようにするGemです。
 プロセス間通信にはdRubyを使用しています。</p>
-<p><img src=irb-remote-demo.png alt></p>
+<p><img src=/irb-remote-demo.png alt></p>
 <h2 id=irb-remoteを作成した背景>irb-remoteを作成した背景
 <span><a href=#irb-remote%e3%82%92%e4%bd%9c%e6%88%90%e3%81%97%e3%81%9f%e8%83%8c%e6%99%af>#</a></span>
 </h2><p><a href=https://github.com/QWYNG/green_day>green_day</a>というAtcoderのページをスクレイピングしてテストを書いてくれるGemを作ったのですが、IOをキャプチャするテストをする関係上、Binding#irbを使ってデバッグすることが厳しかったので、リモートプロセスのIrbを操作できる何かがあればいいなと思い作りました。</p>
@@ -111,7 +111,7 @@
 
      <span style=color:#75715e># ./abc150/spec/A_spec.rb:6:in `block (2 levels) in &lt;top (required)&gt;&#39;</span>
 </code></pre></div><p>irb-remoteを使うと、リモートプロセスのIrbを操作できるので、上記のような問題を解決できます。</p>
-<p><img src=demo-with-greenday.png alt></p>
+<p><img src=/demo-with-greenday.png alt></p>
 <h1 id=drubyを使うという発想>dRubyを使うという発想
 <span><a href=#druby%e3%82%92%e4%bd%bf%e3%81%86%e3%81%a8%e3%81%84%e3%81%86%e7%99%ba%e6%83%b3>#</a></span>
 </h1><p>dRubyを使ってリモートプロセスのIrbを操作するという発想は、<a href=https://github.com/Mon-Ouie/pry-remote>pry-remote</a>や<a href=https://github.com/iguchi1124/irb_remote>irb_remote</a>でもうすでに試されていることでした。

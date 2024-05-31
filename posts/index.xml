@@ -4,7 +4,7 @@
 &lt;span>&lt;a href="#irb-remote%e3%81%a8%e3%81%af">#&lt;/a>&lt;/span>
 &lt;/h1>&lt;p>irb-remoteは、リモートプロセスのIrbセッションをローカルプロセスのRelineを使って操作できるようにするGemです。
 プロセス間通信にはdRubyを使用しています。&lt;/p>
-&lt;p>&lt;img src="irb-remote-demo.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://qwyng.dev/irb-remote-demo.png" alt="">&lt;/p>
 &lt;h2 id="irb-remoteを作成した背景">irb-remoteを作成した背景
 &lt;span>&lt;a href="#irb-remote%e3%82%92%e4%bd%9c%e6%88%90%e3%81%97%e3%81%9f%e8%83%8c%e6%99%af">#&lt;/a>&lt;/span>
 &lt;/h2>&lt;p>&lt;a href="https://github.com/QWYNG/green_day">green_day&lt;/a>というAtcoderのページをスクレイピングしてテストを書いてくれるGemを作ったのですが、IOをキャプチャするテストをする関係上、Binding#irbを使ってデバッグすることが厳しかったので、リモートプロセスのIrbを操作できる何かがあればいいなと思い作りました。&lt;/p>
@@ -39,7 +39,7 @@ expect(io&lt;span style="color:#f92672">.&lt;/span>readlines&lt;span style="colo
 &lt;/span>&lt;span style="color:#e6db74"> + from abc150/A.rb:1:in `&amp;lt;main&amp;gt;&amp;#39;&lt;/span>
 &lt;span style="color:#75715e"># ./abc150/spec/A_spec.rb:6:in `block (2 levels) in &amp;lt;top (required)&amp;gt;&amp;#39;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>irb-remoteを使うと、リモートプロセスのIrbを操作できるので、上記のような問題を解決できます。&lt;/p>
-&lt;p>&lt;img src="demo-with-greenday.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://qwyng.dev/demo-with-greenday.png" alt="">&lt;/p>
 &lt;h1 id="drubyを使うという発想">dRubyを使うという発想
 &lt;span>&lt;a href="#druby%e3%82%92%e4%bd%bf%e3%81%86%e3%81%a8%e3%81%84%e3%81%86%e7%99%ba%e6%83%b3">#&lt;/a>&lt;/span>
 &lt;/h1>&lt;p>dRubyを使ってリモートプロセスのIrbを操作するという発想は、&lt;a href="https://github.com/Mon-Ouie/pry-remote">pry-remote&lt;/a>や&lt;a href="https://github.com/iguchi1124/irb_remote">irb_remote&lt;/a>でもうすでに試されていることでした。
