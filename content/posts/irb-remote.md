@@ -12,7 +12,7 @@ https://github.com/QWYNG/irb-remote
 irb-remoteは、リモートプロセスのIrbセッションをローカルプロセスのRelineを使って操作できるようにするGemです。
 プロセス間通信にはdRubyを使用しています。
 
-![](irb-remote-demo.png)
+![](/irb-remote-demo.png)
 
 ## irb-remoteを作成した背景
 [green_day](https://github.com/QWYNG/green_day)というAtcoderのページをスクレイピングしてテストを書いてくれるGemを作ったのですが、IOをキャプチャするテストをする関係上、Binding#irbを使ってデバッグすることが厳しかったので、リモートプロセスのIrbを操作できる何かがあればいいなと思い作りました。
@@ -59,7 +59,7 @@ irb-remoteは、リモートプロセスのIrbセッションをローカルプ�
 
 irb-remoteを使うと、リモートプロセスのIrbを操作できるので、上記のような問題を解決できます。
 
-![](demo-with-greenday.png)
+![](/demo-with-greenday.png)
 
 # dRubyを使うという発想
 dRubyを使ってリモートプロセスのIrbを操作するという発想は、[pry-remote](https://github.com/Mon-Ouie/pry-remote)や[irb_remote](https://github.com/iguchi1124/irb_remote)でもうすでに試されていることでした。
