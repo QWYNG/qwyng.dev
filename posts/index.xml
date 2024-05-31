@@ -1,4 +1,54 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Tue, 21 May 2024 00:00:00 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>RubyKaigi 2024 感想</title><link>https://qwyng.dev/posts/rubykaigi_2024/</link><pubDate>Tue, 21 May 2024 00:00:00 +0900</pubDate><guid>https://qwyng.dev/posts/rubykaigi_2024/</guid><description>&lt;p>RubyKaigi 2024に参加したので気になったセッションの感想を書いたりします。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>QWYNG.dev (Posts)</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Fri, 31 May 2024 23:33:10 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>リモートプロセスのIrbセッションをローカルプロセスのRelineを使って操作できるirb-remoteというGemを作った</title><link>https://qwyng.dev/posts/irb-remote/</link><pubDate>Fri, 31 May 2024 23:33:10 +0900</pubDate><guid>https://qwyng.dev/posts/irb-remote/</guid><description>&lt;p>irb-remoteというGemを作ったので紹介します。&lt;/p>
+&lt;p>&lt;a href="https://github.com/QWYNG/irb-remote">https://github.com/QWYNG/irb-remote&lt;/a>&lt;/p>
+&lt;h1 id="irb-remoteとは">irb-remoteとは
+&lt;span>&lt;a href="#irb-remote%e3%81%a8%e3%81%af">#&lt;/a>&lt;/span>
+&lt;/h1>&lt;p>irb-remoteは、リモートプロセスのIrbセッションをローカルプロセスのRelineを使って操作できるようにするGemです。
+プロセス間通信にはdRubyを使用しています。&lt;/p>
+&lt;p>&lt;img src="irb-remote-demo.png" alt="">&lt;/p>
+&lt;h2 id="irb-remoteを作成した背景">irb-remoteを作成した背景
+&lt;span>&lt;a href="#irb-remote%e3%82%92%e4%bd%9c%e6%88%90%e3%81%97%e3%81%9f%e8%83%8c%e6%99%af">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://github.com/QWYNG/green_day">green_day&lt;/a>というAtcoderのページをスクレイピングしてテストを書いてくれるGemを作ったのですが、IOをキャプチャするテストをする関係上、Binding#irbを使ってデバッグすることが厳しかったので、リモートプロセスのIrbを操作できる何かがあればいいなと思い作りました。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ruby" data-lang="ruby"> it &lt;span style="color:#e6db74">&amp;#39;test with &amp;#34;2 900\n&amp;#34;&amp;#39;&lt;/span> &lt;span style="color:#66d9ef">do&lt;/span>
+&lt;span style="color:#75715e"># abc150/A.rb内でirbを起動してもIO&lt;/span>
+io &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">IO&lt;/span>&lt;span style="color:#f92672">.&lt;/span>popen(&lt;span style="color:#e6db74">&amp;#39;ruby abc150/A.rb&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;w+&amp;#39;&lt;/span>)
+io&lt;span style="color:#f92672">.&lt;/span>puts(&lt;span style="color:#e6db74">&amp;#34;2 900&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>)
+io&lt;span style="color:#f92672">.&lt;/span>close_write
+expect(io&lt;span style="color:#f92672">.&lt;/span>readlines&lt;span style="color:#f92672">.&lt;/span>join)&lt;span style="color:#f92672">.&lt;/span>to eq(&lt;span style="color:#e6db74">&amp;#34;Yes&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>)
+&lt;span style="color:#66d9ef">end&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-ruby" data-lang="ruby"> &lt;span style="color:#ae81ff">1&lt;/span>) abc150&lt;span style="color:#f92672">/&lt;/span>A&lt;span style="color:#f92672">.&lt;/span>rb test with &lt;span style="color:#e6db74">&amp;#34;2 900&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;span style="color:#66d9ef">Failure&lt;/span>&lt;span style="color:#f92672">/&lt;/span>&lt;span style="color:#e6db74">Error&lt;/span>: expect(io&lt;span style="color:#f92672">.&lt;/span>readlines&lt;span style="color:#f92672">.&lt;/span>join)&lt;span style="color:#f92672">.&lt;/span>to eq(&lt;span style="color:#e6db74">&amp;#34;Yes&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>)
+&lt;span style="color:#e6db74">expected&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Yes&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;span style="color:#e6db74">got&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">From: abc150/A.rb @ line 1 :&lt;/span>&lt;span style="color:#ae81ff">\n\n&lt;/span>&lt;span style="color:#e6db74"> =&amp;gt; 1: binding.irb&lt;/span>&lt;span style="color:#ae81ff">\n\n&lt;/span>&lt;span style="color:#e6db74">Switch to inspect mode.&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">2 900&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">/home/qwyng/...0&lt;/span>&lt;span style="color:#ae81ff">\e&lt;/span>&lt;span style="color:#e6db74">[m&lt;/span>&lt;span style="color:#ae81ff">\n\e&lt;/span>&lt;span style="color:#e6db74">[1m ^~~&lt;/span>&lt;span style="color:#ae81ff">\e&lt;/span>&lt;span style="color:#e6db74">[m&lt;/span>&lt;span style="color:#ae81ff">\n\n\t&lt;/span>&lt;span style="color:#e6db74">from &amp;lt;internal:prelude&amp;gt;:5:in `irb&amp;#39;&lt;/span>&lt;span style="color:#ae81ff">\n\t&lt;/span>&lt;span style="color:#e6db74">from abc150/A.rb:1:in `&amp;lt;main&amp;gt;&amp;#39;&lt;/span>&lt;span style="color:#ae81ff">\n\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+(compared using &lt;span style="color:#f92672">==&lt;/span>)
+&lt;span style="color:#75715e"># abc150/A.rb内でirbを起動すると、ただテストが失敗するだけでIrbを操作できない&lt;/span>
+&lt;span style="color:#e6db74">Diff&lt;/span>:
+&lt;span style="color:#960050;background-color:#1e0010">@@&lt;/span> &lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#ae81ff">13&lt;/span> &lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#ae81ff">25&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">@@&lt;/span>
+&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#66d9ef">Yes&lt;/span>
+&lt;span style="color:#f92672">+&lt;/span>
+&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#e6db74">From&lt;/span>: abc150&lt;span style="color:#f92672">/&lt;/span>A&lt;span style="color:#f92672">.&lt;/span>rb &lt;span style="color:#960050;background-color:#1e0010">@&lt;/span> line &lt;span style="color:#ae81ff">1&lt;/span> :
+&lt;span style="color:#f92672">+&lt;/span>
+&lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#f92672">=&amp;gt;&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>: binding&lt;span style="color:#f92672">.&lt;/span>irb
+&lt;span style="color:#f92672">+&lt;/span>
+&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#66d9ef">Switch&lt;/span> to inspect mode&lt;span style="color:#f92672">.&lt;/span>
+&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span> &lt;span style="color:#ae81ff">900&lt;/span>
+&lt;span style="color:#f92672">+/&lt;/span>home&lt;span style="color:#f92672">/&lt;/span>qwyng&lt;span style="color:#f92672">/.&lt;/span>rbenv&lt;span style="color:#f92672">/&lt;/span>versions&lt;span style="color:#f92672">/&lt;/span>&lt;span style="color:#ae81ff">3&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span>&lt;span style="color:#f92672">/&lt;/span>lib&lt;span style="color:#f92672">/&lt;/span>ruby&lt;span style="color:#f92672">/&lt;/span>&lt;span style="color:#ae81ff">3&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>&lt;span style="color:#f92672">/&lt;/span>irb&lt;span style="color:#f92672">/&lt;/span>workspace&lt;span style="color:#f92672">.&lt;/span>rb:&lt;span style="color:#ae81ff">119&lt;/span>&lt;span style="color:#e6db74">:in&lt;/span> &lt;span style="color:#e6db74">`eval&amp;#39;: /home/qwyng/green_day/abc150/A.rb:1: syntax error, unexpected integer literal, expecting end-of-input (SyntaxError)
+&lt;/span>&lt;span style="color:#e6db74"> +2 900
+&lt;/span>&lt;span style="color:#e6db74"> + ^~~
+&lt;/span>&lt;span style="color:#e6db74"> +
+&lt;/span>&lt;span style="color:#e6db74"> + from &amp;lt;internal:prelude&amp;gt;:5:in `&lt;/span>irb&lt;span style="color:#e6db74">&amp;#39;
+&lt;/span>&lt;span style="color:#e6db74"> + from abc150/A.rb:1:in `&amp;lt;main&amp;gt;&amp;#39;&lt;/span>
+&lt;span style="color:#75715e"># ./abc150/spec/A_spec.rb:6:in `block (2 levels) in &amp;lt;top (required)&amp;gt;&amp;#39;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>irb-remoteを使うと、リモートプロセスのIrbを操作できるので、上記のような問題を解決できます。&lt;/p>
+&lt;p>&lt;img src="demo-with-greenday.png" alt="">&lt;/p>
+&lt;h1 id="drubyを使うという発想">dRubyを使うという発想
+&lt;span>&lt;a href="#druby%e3%82%92%e4%bd%bf%e3%81%86%e3%81%a8%e3%81%84%e3%81%86%e7%99%ba%e6%83%b3">#&lt;/a>&lt;/span>
+&lt;/h1>&lt;p>dRubyを使ってリモートプロセスのIrbを操作するという発想は、&lt;a href="https://github.com/Mon-Ouie/pry-remote">pry-remote&lt;/a>や&lt;a href="https://github.com/iguchi1124/irb_remote">irb_remote&lt;/a>でもうすでに試されていることでした。
+どちらもRelineには対応しておらず、今回はRelineを使いたかったので別のGemを作りました。&lt;/p>
+&lt;h2 id="この記事を書いた理由">この記事を書いた理由
+&lt;span>&lt;a href="#%e3%81%93%e3%81%ae%e8%a8%98%e4%ba%8b%e3%82%92%e6%9b%b8%e3%81%84%e3%81%9f%e7%90%86%e7%94%b1">#&lt;/a>&lt;/span>
+&lt;/h2>&lt;p>勉強会でirb-remote的な話がなされいたっぽいので&amp;hellip;
+正直僕の実装はめちゃくちゃ実装なので、ちゃんとした人がちゃんと作ったらもっといいものができると思います。
+&lt;code>irb-remote&lt;/code>という贅沢な名前を使ってしまったので、もしアレだったらすぐ名前変えます!!!すんません!!!&lt;/p></description></item><item><title>RubyKaigi 2024 感想</title><link>https://qwyng.dev/posts/rubykaigi_2024/</link><pubDate>Tue, 21 May 2024 00:00:00 +0900</pubDate><guid>https://qwyng.dev/posts/rubykaigi_2024/</guid><description>&lt;p>RubyKaigi 2024に参加したので気になったセッションの感想を書いたりします。&lt;/p>
 &lt;h2 id="unlocking-potential-of-property-based-testing-with-ractor-ohbarye">Unlocking Potential of Property Based Testing with Ractor @ohbarye
 &lt;span>&lt;a href="#unlocking-potential-of-property-based-testing-with-ractor-ohbarye">#&lt;/a>&lt;/span>
 &lt;/h2>&lt;ul>
