@@ -1,15 +1,13 @@
 baseURL = "https://qwyng.dev"
 languageCode = "ja"
 title = "QWYNG.dev"
-theme = "anubis"
-paginate = 6
+theme = "hugo-blog-awesome"
 googleAnalytics = "G-9JVVYL7X5D"
 hasCJKLanguage = true
-[author]
-name = "QWYNG"
 
 [params]
-author = "QWYNG"
+[[parms.author]]
+name = "QWYNG"
 description = "QWYNG(Hiroaki Osawa)という人間のブログです各種SNSのリンクはヘッダー参照"
 dateFormat = "2006-01-02"
 paginationSinglePost = true
