@@ -1,97 +1,11 @@
-<!doctype html><html lang=ja data-theme>
-<head>
-<meta charset=utf-8>
-<meta name=HandheldFriendly content="True">
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=referrer content="no-referrer-when-downgrade">
-<title>「オブジェクト指向設計実践ガイド　～Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方」を読みました - QWYNG.dev</title>
-<meta name=description content="オブジェクト指向設計実践ガイド ~Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方 作者: Sandi Metz,?山泰基 出版社/メーカー: 技術">
-<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
-<link rel=manifest href=/site.webmanifest>
-<link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5>
-<meta name=msapplication-TileColor content="#da532c">
-<meta name=theme-color content="#ffffff">
-<link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="オブジェクト指向設計実践ガイド ~Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方 作者: Sandi Metz,?山泰基 出版社/メーカー: 技術">
-<meta property="og:type" content="website">
-<meta property="og:title" content="「オブジェクト指向設計実践ガイド　～Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方」を読みました - QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/posts/2019/04/08/003824/">
-<meta name=og:image content="https://images-fe.ssl-images-amazon.com/images/I/51-TCt0H4UL._SL160_.jpg">
-<meta name=twitter:card content="summary">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9JVVYL7X5D"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-9JVVYL7X5D',{anonymize_ip:!1})}</script>
-</head>
-<body>
-<a class=skip-main href=#main>Skip to main content</a>
-<div class=container>
-<header class=common-header>
-<div class=header-top>
-<h1 class=site-title>
-<a href=/>QWYNG.dev</a>
-</h1>
-<ul class=social-icons>
-<li>
-<a href=https://github.com/QWYNG title=Github rel=me>
-<span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentcolor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6.0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6.0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3.0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1.0-6.2-.3-40.4-.3-61.4.0.0-70 15-84.7-29.8.0.0-11.4-29.1-27.8-36.6.0.0-22.9-15.7 1.6-15.4.0.0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5.0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9.0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4.0 33.7-.3 75.4-.3 83.6.0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6.0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9.0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-</span>
-</a>
-</li>
-<li>
-<a href=https://twitter.com/qwyngg title=Twitter rel=me>
-<span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645.0 138.72-105.583 298.558-298.558 298.558-59.452.0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055.0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421.0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391.0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04.0-57.828 46.782-104.934 104.934-104.934 30.213.0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
-</span>
-</a>
-</li>
-<li>
-<a href=mailto:ikusawasi@gmail.com title=Email rel=me>
-<span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M464 64H48C21.49 64 0 85.49.0 112v288c0 26.51 21.49 48 48 48h416c26.51.0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 4e2V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V4e2H48z"/></svg>
-</span>
-</a>
-</li>
-</ul>
-</div>
-<nav>
-<a href=https://qwyng.dev/about/ title>About</a>
-<a href=https://qwyng.dev/posts/ title>記事一覧</a>
-<a href=https://qwyng.dev/index.xml title>RSS</a>
-</nav>
-</header>
-<main id=main tabindex=-1>
-<article class="post h-entry">
-<div class=post-header>
-<header>
-<h1 class="p-name post-title">「オブジェクト指向設計実践ガイド　～Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方」を読みました</h1>
-</header>
-</div>
-<div class="content e-content">
-<body>
-<p></p>
-<div class=hatena-asin-detail>
-<a href=http://www.amazon.co.jp/exec/obidos/ASIN/477418361X/hatena-blog-22/><img src=https://images-fe.ssl-images-amazon.com/images/I/51-TCt0H4UL._SL160_.jpg class=hatena-asin-detail-image alt="オブジェクト指向設計実践ガイド ~Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方" title="オブジェクト指向設計実践ガイド ~Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方"></a><div class=hatena-asin-detail-info>
-<p class=hatena-asin-detail-title><a href=http://www.amazon.co.jp/exec/obidos/ASIN/477418361X/hatena-blog-22/>オブジェクト指向設計実践ガイド ~Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方</a></p>
-<ul>
-<li>
-<span class=hatena-asin-detail-label>作者:</span> Sandi Metz,?山泰基</li>
-<li>
-<span class=hatena-asin-detail-label>出版社/メーカー:</span> <a class=keyword href=http://d.hatena.ne.jp/keyword/%B5%BB%BD%D1%C9%BE%CF%C0%BC%D2>技術評論社</a>
-</li>
-<li>
-<span class=hatena-asin-detail-label>発売日:</span> 2016/09/02</li>
-<li>
-<span class=hatena-asin-detail-label>メディア:</span> 大型本</li>
-<li><a href=http://d.hatena.ne.jp/asin/477418361X/hatena-blog-22 target=_blank>この商品を含むブログ (6件) を見る</a></li>
-</ul>
-</div>
-<div class=hatena-asin-detail-foot></div>
-</div>
-<p>を読んだ備忘録です。</p>
-<h3>5章　ダックタイピングでコストを削減する</h3>
-<p>ダックタイピングは、たとえオブジェクトのクラスや型が違っても、同じふるまいをするのであれば共<a class=keyword href=http://d.hatena.ne.jp/keyword/%C4%CC%B2%BD>通化</a>できるということです。<br>
-特に特定のクラスであれば〇〇を行って、別のクラスだったら✗✗をするのような感じのcase文を見かけたときには、それぞれに共通のインターフェースをもたせて依存を減らすことができます。<br>
-例えばこんな感じのコード</p>
-<pre class="code lang-ruby" data-lang=ruby data-unlink> class Test
+<!doctype html><html lang=ja><head><meta charset=utf-8><meta http-equiv=content-type content="text/html"><meta name=viewport content="width=device-width,initial-scale=1"><title itemprop=name>「オブジェクト指向設計実践ガイド　～Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方」を読みました | QWYNG.dev</title>
+<meta property="og:title" content="「オブジェクト指向設計実践ガイド　～Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方」を読みました | QWYNG.dev"><meta name=twitter:title content="「オブジェクト指向設計実践ガイド　～Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方」を読みました | QWYNG.dev"><meta itemprop=name content="「オブジェクト指向設計実践ガイド　～Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方」を読みました | QWYNG.dev"><meta name=application-name content="「オブジェクト指向設計実践ガイド　～Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方」を読みました | QWYNG.dev"><meta property="og:site_name" content><meta name=description content><meta itemprop=description content><meta property="og:description" content><meta name=twitter:description content><meta property="og:locale" content="ja"><meta name=language content="ja"><link rel=alternate hreflang=en href=https://qwyng.dev/posts/2019/04/08/003824/ title><meta property="og:type" content="article"><meta property="og:article:published_time" content=2019-04-08T00:38:00+0900><meta property="article:published_time" content=2019-04-08T00:38:00+0900><meta property="og:url" content="https://qwyng.dev/posts/2019/04/08/003824/"><script defer type=application/ld+json>{"@context":"http://schema.org","@type":"Article","headline":"「オブジェクト指向設計実践ガイド　～Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方」を読みました","author":{"@type":"Person","name":""},"datePublished":"2019-04-08","description":"","wordCount":2341,"mainEntityOfPage":"True","dateModified":"2019-04-08","image":{"@type":"imageObject","url":""},"publisher":{"@type":"Organization","name":"QWYNG.dev"}}</script><meta name=generator content="Hugo 0.134.0"><meta property="og:description" content="
+
+
+
+オブジェクト指向設計実践ガイド ~Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方"><meta property="og:type" content="website"><meta property="og:title" content="「オブジェクト指向設計実践ガイド　～Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方」を読みました - QWYNG.dev"><meta property="og:url" content="https://qwyng.dev/posts/2019/04/08/003824/"><meta name=og:image content="https://images-fe.ssl-images-amazon.com/images/I/51-TCt0H4UL._SL160_.jpg"><meta name=twitter:card content="summary"><link rel=canonical href=https://qwyng.dev/posts/2019/04/08/003824/><link href=/style.min.e390ba7da26222f4dc42a349955d76dbbe44e5ce2535a43de5a70633a0a9ec3c.css rel=stylesheet><link href=/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css rel=stylesheet><link rel=apple-touch-icon sizes=180x180 href=/icons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/icons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/icons/favicon-16x16.png><link rel=mask-icon href=/icons/safari-pinned-tab.svg><link rel="shortcut icon" href=/favicon.ico><link rel=manifest href=https://qwyng.dev/site.webmanifest><meta name=msapplication-config content="/browserconfig.xml"><meta name=msapplication-TileColor content="#2d89ef"><meta name=theme-color content="#434648"><link rel=icon type=image/svg+xml href=/icons/favicon.svg><script async src="https://www.googletagmanager.com/gtag/js?id=G-9JVVYL7X5D"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-9JVVYL7X5D")}</script></head><body data-theme class=notransition><script src=/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script><div class=navbar role=navigation><nav class=menu aria-label="Main Navigation"><a href=https://qwyng.dev/ class=logo><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><title/><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+</a><input type=checkbox id=menu-trigger class=menu-trigger>
+<label for=menu-trigger><span class=menu-icon><svg width="25" height="25" stroke="currentcolor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7H3.40726"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M.5 12.5V1.5c0-.552285.447715-1 1-1h11C13.0523.5 13.5.947715 13.5 1.5v11C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C.947715 13.5.5 13.0523.5 12.5z"/></svg></span></label><div class=trigger><ul class=trigger-container><li><a class=menu-link href=/about/>About</a></li><li><a class=menu-link href=/posts/>記事一覧</a></li><li><a class=menu-link href=/index.xml>RSS</a></li><li class=menu-separator><span>|</span></li></ul><a id=mode href=#><svg class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg><svg class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg></a></div></nav></div><div class="wrapper post"><main class=page-content aria-label=Content><article><header class=header><h1 class=header-title>「オブジェクト指向設計実践ガイド　～Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方」を読みました</h1><div class=post-meta><time datetime=2019-04-08T00:38:00+09:00 itemprop=datePublished>Apr 8, 2019</time></div></header><div class=page-content><body><p></p><div class=hatena-asin-detail><a href=http://www.amazon.co.jp/exec/obidos/ASIN/477418361X/hatena-blog-22/><img src=https://images-fe.ssl-images-amazon.com/images/I/51-TCt0H4UL._SL160_.jpg class=hatena-asin-detail-image alt="オブジェクト指向設計実践ガイド ~Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方" title="オブジェクト指向設計実践ガイド ~Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方"></a><div class=hatena-asin-detail-info><p class=hatena-asin-detail-title><a href=http://www.amazon.co.jp/exec/obidos/ASIN/477418361X/hatena-blog-22/>オブジェクト指向設計実践ガイド ~Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方</a></p><ul><li><span class=hatena-asin-detail-label>作者:</span> Sandi Metz,?山泰基</li><li><span class=hatena-asin-detail-label>出版社/メーカー:</span> <a class=keyword href=http://d.hatena.ne.jp/keyword/%B5%BB%BD%D1%C9%BE%CF%C0%BC%D2>技術評論社</a></li><li><span class=hatena-asin-detail-label>発売日:</span> 2016/09/02</li><li><span class=hatena-asin-detail-label>メディア:</span> 大型本</li><li><a href=http://d.hatena.ne.jp/asin/477418361X/hatena-blog-22 target=_blank>この商品を含むブログ (6件) を見る</a></li></ul></div><div class=hatena-asin-detail-foot></div></div><p>を読んだ備忘録です。</p><h3>5章　ダックタイピングでコストを削減する</h3><p>ダックタイピングは、たとえオブジェクトのクラスや型が違っても、同じふるまいをするのであれば共<a class=keyword href=http://d.hatena.ne.jp/keyword/%C4%CC%B2%BD>通化</a>できるということです。<br>特に特定のクラスであれば〇〇を行って、別のクラスだったら✗✗をするのような感じのcase文を見かけたときには、それぞれに共通のインターフェースをもたせて依存を減らすことができます。<br>例えばこんな感じのコード</p><pre class="code lang-ruby" data-lang=ruby data-unlink> class Test
   def make(questions)
     questions.each { |question|
       case question
@@ -103,34 +17,15 @@
     end
   end
 end
- </pre>
-<p>Student#answerは渡された問題のクラスによって処理を分岐しています。<br>
-これは他のクラスへ依存を増やすことになり、更に問題の種類を増やしたらcase文をまた一段追加しなくてはなりません。<br>
-ここで登場するのがダックタイピング
-questionsにはmake_questionという振る舞いを期待して、make_questionすればダックじゃなくてもダックなのです。</p>
-<pre class="code lang-ruby" data-lang=ruby data-unlink> class Test
+ </pre><p>Student#answerは渡された問題のクラスによって処理を分岐しています。<br>これは他のクラスへ依存を増やすことになり、更に問題の種類を増やしたらcase文をまた一段追加しなくてはなりません。<br>ここで登場するのがダックタイピング
+questionsにはmake_questionという振る舞いを期待して、make_questionすればダックじゃなくてもダックなのです。</p><pre class="code lang-ruby" data-lang=ruby data-unlink> class Test
   def make(questions)
     questions.each do |question|
       question.make_question
     end
   end
 end
- </pre>
-<p>これで各Questionクラスにmake_questionを実装すれば、いちいちクラスを増やすたびにケース文を追加することもなくなります。振る舞いを抽象化して他のクラスを信頼することが大事。</p>
-<h2>6章　継承によって振る舞いを獲得する</h2>
-<p>本書では継承と<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B3%A5%F3%A5%DD%A5%B8%A5%B7%A5%E7%A5%F3>コンポジション</a>という2つのコード構成のテクニックが紹介されています。<br>
-1つ目がこの章の主題の継承で、クラスの継承は依存を強くしてしまうリスクはあるけど、親クラスの小さな変更で全てを変えたり、サブクラスの追加が簡単に行えたりとメリットも大きいです。</p>
-<p>この章で一番大事なことは、「親クラスは小クラスにとっても当てはまることのみ持っているべき」という継承の契約でしょう。 <br>
-この契約を守る方法として、一度それぞれ具体的にクラスを作って、全てに共通する抽象的な部分だけ集めて親クラスにしようというものが書かれていました。<br>
-親クラスは抽象的であるべき、の典型的な例はStandardErrorとかでしょうか。エラーという概念のみ表していますよね。<br>
-また、この章ではもう一つ継承による構造での依存を下げる具体的な案として、superを減らすということも書かれています。<br>
-フックを親クラスに持たせるテクニックはまさにそれで、制御を抽象的な親クラスにうつしてクラス同士の結合を減らす作業が紹介されていました。</p>
-<h2>第七章 モジュールでロールの振る舞いを継承する</h2>
-<p>引き続き継承を扱っている章です。6章の内容がより具体的に書かれているのと、モジュールのミックスインにたいしても、メソッド探索の中に追加されるものだから継承と基本的に同じ考え方で行おうねと書いてあります。</p>
-<h2>第八章　<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B3%A5%F3%A5%DD%A5%B8%A5%B7%A5%E7%A5%F3>コンポジション</a>でオブジェクトを組み合わせる。</h2>
-<p>継承とは別のコードの構成として<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B3%A5%F3%A5%DD%A5%B8%A5%B7%A5%E7%A5%F3>コンポジション</a>について書かれています。<br>
-継承はいわゆる階層構造(is_a?)でしたが、<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B3%A5%F3%A5%DD%A5%B8%A5%B7%A5%E7%A5%F3>コンポジション</a>ではhas-aの関係、例えば本書では自転車はPartsをもち、PartsはPartをもっている...という考え方でコードを構成します。</p>
-<pre class="code lang-ruby" data-lang=ruby data-unlink> #オブジェクト指向設計実践ガイド　～Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方 225pより
+ </pre><p>これで各Questionクラスにmake_questionを実装すれば、いちいちクラスを増やすたびにケース文を追加することもなくなります。振る舞いを抽象化して他のクラスを信頼することが大事。</p><h2>6章　継承によって振る舞いを獲得する</h2><p>本書では継承と<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B3%A5%F3%A5%DD%A5%B8%A5%B7%A5%E7%A5%F3>コンポジション</a>という2つのコード構成のテクニックが紹介されています。<br>1つ目がこの章の主題の継承で、クラスの継承は依存を強くしてしまうリスクはあるけど、親クラスの小さな変更で全てを変えたり、サブクラスの追加が簡単に行えたりとメリットも大きいです。</p><p>この章で一番大事なことは、「親クラスは小クラスにとっても当てはまることのみ持っているべき」という継承の契約でしょう。<br>この契約を守る方法として、一度それぞれ具体的にクラスを作って、全てに共通する抽象的な部分だけ集めて親クラスにしようというものが書かれていました。<br>親クラスは抽象的であるべき、の典型的な例はStandardErrorとかでしょうか。エラーという概念のみ表していますよね。<br>また、この章ではもう一つ継承による構造での依存を下げる具体的な案として、superを減らすということも書かれています。<br>フックを親クラスに持たせるテクニックはまさにそれで、制御を抽象的な親クラスにうつしてクラス同士の結合を減らす作業が紹介されていました。</p><h2>第七章 モジュールでロールの振る舞いを継承する</h2><p>引き続き継承を扱っている章です。6章の内容がより具体的に書かれているのと、モジュールのミックスインにたいしても、メソッド探索の中に追加されるものだから継承と基本的に同じ考え方で行おうねと書いてあります。</p><h2>第八章　<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B3%A5%F3%A5%DD%A5%B8%A5%B7%A5%E7%A5%F3>コンポジション</a>でオブジェクトを組み合わせる。</h2><p>継承とは別のコードの構成として<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B3%A5%F3%A5%DD%A5%B8%A5%B7%A5%E7%A5%F3>コンポジション</a>について書かれています。<br>継承はいわゆる階層構造(is_a?)でしたが、<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B3%A5%F3%A5%DD%A5%B8%A5%B7%A5%E7%A5%F3>コンポジション</a>ではhas-aの関係、例えば本書では自転車はPartsをもち、PartsはPartをもっている...という考え方でコードを構成します。</p><pre class="code lang-ruby" data-lang=ruby data-unlink> #オブジェクト指向設計実践ガイド　～Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方 225pより
 class Bicycle
   attr_reader :size, :parts
 
@@ -192,51 +87,4 @@ module PartsFactory
     )
   end
 end
- </pre>
-<p>なかなかコードがないと伝えづらいのでコードを引用させていただきました。(<s>ForwardableとかOpenstruact初めて知りました…</s>）<br>
-個々のわかりやすい動作をするオブジェクトを集めて最終的に複雑なオブジェクトを作り出すという構造です。<br>
-<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B3%A5%F3%A5%DD%A5%B8%A5%B7%A5%E7%A5%F3>コンポジション</a>は継承に比べてそれぞれのオブジェクトの関係を明示しないと関係をもってくれませんが、よりオブジェクト同士の依存を少なくする事ができます。<br>
-しかし、それがデメリットでもあり、自転車、Parts、Partそれぞれの構造はわかりやすいですが、全体像はわかりにくく、委譲を明示しなくてはならないので、継承のように少ない記述でコードの共有をサポートしてくれたりはしません。<br>
-継承と<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B3%A5%F3%A5%DD%A5%B8%A5%B7%A5%E7%A5%F3>コンポジション</a>、どちらを選択すべきか？という問いに対しては、<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B3%A5%F3%A5%DD%A5%B8%A5%B7%A5%E7%A5%F3>コンポジション</a>でできそうだったら<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B3%A5%F3%A5%DD%A5%B8%A5%B7%A5%E7%A5%F3>コンポジション</a>のほうが依存を少なくできるので有効な場合が多い、と書かれていて、パーツがおおければ<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B3%A5%F3%A5%DD%A5%B8%A5%B7%A5%E7%A5%F3>コンポジション</a>のほうが、パーツそれぞれを深く掘り下げて、抽象的な共通部分を見つける継承が適していると判断できれば継承を利用すると良い可能性が高いとのことです。</p>
-<h2>第9章　費用対効果の高いテストを設計する</h2>
-<p>テストの大切さや入力と出力の部分だけ考えるべき、といった部分はよくある意見と特に変わらないのですが、よりコードの構造に沿ったテストを無駄なく書こうとする具体的な方法が書かれていました。<br>
-継承されたコードをテストする時は、抽象的な親クラスのテストはインクルードして全てパスするようにする、というびはこの本で初めて認識した考えかでした。</p>
-<h2>まとめ</h2>
-<p>全章を通して、オブジェクトの責任を明確にすること、オブジェクト同士の依存は少なくすること、依存してもより変更がないものにすること。関係をつくるインターフェースを注意して設計することの大切さが説かれていました。<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%C7%A5%B6%A5%A4%A5%F3%A5%D1%A5%BF%A1%BC%A5%F3>デザインパターン</a>の話がすこし出てきて、しっかり理解できてないこともあるので今度は<a class=keyword href=http://d.hatena.ne.jp/keyword/ruby>ruby</a>による<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%C7%A5%B6%A5%A4%A5%F3%A5%D1%A5%BF%A1%BC%A5%F3>デザインパターン</a>とかいいかな？と考えております。</p>
-</body>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2019-04-08</div>
-<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/2019/04/08/003824/>https://qwyng.dev/posts/2019/04/08/003824/</a>
-<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
-<div class=post-taxonomies>
-</div>
-</div>
-</article>
-<div class=inline-svg>
-<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fqwyng.dev%2fposts%2f2019%2f04%2f08%2f003824%2f&text=%e3%80%8c%e3%82%aa%e3%83%96%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88%e6%8c%87%e5%90%91%e8%a8%ad%e8%a8%88%e5%ae%9f%e8%b7%b5%e3%82%ac%e3%82%a4%e3%83%89%e3%80%80%ef%bd%9eRuby%e3%81%a7%e3%82%8f%e3%81%8b%e3%82%8b%20%e9%80%b2%e5%8c%96%e3%81%97%e3%81%a4%e3%81%a5%e3%81%91%e3%82%8b%e6%9f%94%e8%bb%9f%e3%81%aa%e3%82%a2%e3%83%97%e3%83%aa%e3%82%b1%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%81%ae%e8%82%b2%e3%81%a6%e6%96%b9%e3%80%8d%e3%82%92%e8%aa%ad%e3%81%bf%e3%81%be%e3%81%97%e3%81%9f" target=_blank title=Tweet><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645.0 138.72-105.583 298.558-298.558 298.558-59.452.0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055.0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421.0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391.0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04.0-57.828 46.782-104.934 104.934-104.934 30.213.0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg></a>
-</div>
-<div class="pagination post-pagination">
-<div class="left pagination-item">
-<a href=/posts/2019/04/23/001755/>Riot Games API + Rails + React + Ant design でLeague of Legendでチャンピオンごとにガイドを共有できるwebアプリをつくりました</a>
-</div>
-<div class="right pagination-item">
-<a href=/posts/2019/03/18/231417/>「失敗から学ぶRDBの正しい歩き方」を読んで</a>
-</div>
-</div>
-</main>
-<footer class=common-footer>
-<div class=common-footer-bottom>
-<div class=copyright>
-<p>© QWYNG, 2024<br>
-Powered by <a target=_blank rel="noopener noreferrer" href=https://gohugo.io/>Hugo</a>, theme <a target=_blank rel="noopener noreferrer" href=https://github.com/mitrichius/hugo-theme-anubis>Anubis</a>.<br>
-</p>
-</div>
-</div>
-<p class="h-card vcard">
-<a href=https://qwyng.dev class="p-name u-url url fn" rel=me>QWYNG</a>
-</p>
-</footer>
-</div>
-</body>
-</html>
+ </pre><p>なかなかコードがないと伝えづらいのでコードを引用させていただきました。(<s>ForwardableとかOpenstruact初めて知りました…</s>）<br>個々のわかりやすい動作をするオブジェクトを集めて最終的に複雑なオブジェクトを作り出すという構造です。<br><a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B3%A5%F3%A5%DD%A5%B8%A5%B7%A5%E7%A5%F3>コンポジション</a>は継承に比べてそれぞれのオブジェクトの関係を明示しないと関係をもってくれませんが、よりオブジェクト同士の依存を少なくする事ができます。<br>しかし、それがデメリットでもあり、自転車、Parts、Partそれぞれの構造はわかりやすいですが、全体像はわかりにくく、委譲を明示しなくてはならないので、継承のように少ない記述でコードの共有をサポートしてくれたりはしません。<br>継承と<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B3%A5%F3%A5%DD%A5%B8%A5%B7%A5%E7%A5%F3>コンポジション</a>、どちらを選択すべきか？という問いに対しては、<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B3%A5%F3%A5%DD%A5%B8%A5%B7%A5%E7%A5%F3>コンポジション</a>でできそうだったら<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B3%A5%F3%A5%DD%A5%B8%A5%B7%A5%E7%A5%F3>コンポジション</a>のほうが依存を少なくできるので有効な場合が多い、と書かれていて、パーツがおおければ<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%B3%A5%F3%A5%DD%A5%B8%A5%B7%A5%E7%A5%F3>コンポジション</a>のほうが、パーツそれぞれを深く掘り下げて、抽象的な共通部分を見つける継承が適していると判断できれば継承を利用すると良い可能性が高いとのことです。</p><h2>第9章　費用対効果の高いテストを設計する</h2><p>テストの大切さや入力と出力の部分だけ考えるべき、といった部分はよくある意見と特に変わらないのですが、よりコードの構造に沿ったテストを無駄なく書こうとする具体的な方法が書かれていました。<br>継承されたコードをテストする時は、抽象的な親クラスのテストはインクルードして全てパスするようにする、というびはこの本で初めて認識した考えかでした。</p><h2>まとめ</h2><p>全章を通して、オブジェクトの責任を明確にすること、オブジェクト同士の依存は少なくすること、依存してもより変更がないものにすること。関係をつくるインターフェースを注意して設計することの大切さが説かれていました。<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%C7%A5%B6%A5%A4%A5%F3%A5%D1%A5%BF%A1%BC%A5%F3>デザインパターン</a>の話がすこし出てきて、しっかり理解できてないこともあるので今度は<a class=keyword href=http://d.hatena.ne.jp/keyword/ruby>ruby</a>による<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%C7%A5%B6%A5%A4%A5%F3%A5%D1%A5%BF%A1%BC%A5%F3>デザインパターン</a>とかいいかな？と考えております。</p></body></div></article></main></div><footer class=footer><span class=footer_item></span>&nbsp;<div class=footer_social-icons></div><small class=footer_copyright>© 2024 .</small></footer><script src=https://qwyng.dev/js/main.min.4ee188e1744c19816e95a540b2650ed9f033ea0371e74eac8e717355cfca8741.js integrity="sha256-TuGI4XRMGYFulaVAsmUO2fAz6gNx506sjnFzVc/Kh0E="></script></body></html>

@@ -1,78 +1,9 @@
-<!doctype html><html lang=ja data-theme>
-<head>
-<meta charset=utf-8>
-<meta name=HandheldFriendly content="True">
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=referrer content="no-referrer-when-downgrade">
-<title>mimemagicに依存しなくなったmarcelのmime type判定の変化には気をつけようって話 - QWYNG.dev</title>
-<meta name=description content="mimemagic gemのライセンス問題で色々ありましたね。ライセンスは法的な問題なので確認も難しい問題でした。 さて、marcelからmimemagicへの">
-<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
-<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
-<link rel=manifest href=/site.webmanifest>
-<link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5>
-<meta name=msapplication-TileColor content="#da532c">
-<meta name=theme-color content="#ffffff">
-<link rel=stylesheet href=https://qwyng.dev/css/style.min.a11b8916e7fc33d397d735329bc39b452eba5901a3c1a497fadc20be86f83e54.css integrity="sha256-oRuJFuf8M9OX1zUym8ObRS66WQGjwaSX+twgvob4PlQ=">
-<meta property="og:description" content="mimemagic gemのライセンス問題で色々ありましたね。ライセンスは法的な問題なので確認も難しい問題でした。 さて、marcelからmimemagicへの">
-<meta property="og:type" content="website">
-<meta property="og:title" content="mimemagicに依存しなくなったmarcelのmime type判定の変化には気をつけようって話 - QWYNG.dev">
-<meta property="og:url" content="https://qwyng.dev/posts/2021/03/29/223635/">
-<meta name=og:image content="https://qwyng.dev/android-chrome-384x384.png">
-<meta name=twitter:card content="summary">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9JVVYL7X5D"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-9JVVYL7X5D',{anonymize_ip:!1})}</script>
-</head>
-<body>
-<a class=skip-main href=#main>Skip to main content</a>
-<div class=container>
-<header class=common-header>
-<div class=header-top>
-<h1 class=site-title>
-<a href=/>QWYNG.dev</a>
-</h1>
-<ul class=social-icons>
-<li>
-<a href=https://github.com/QWYNG title=Github rel=me>
-<span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentcolor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6.0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6.0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3.0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1.0-6.2-.3-40.4-.3-61.4.0.0-70 15-84.7-29.8.0.0-11.4-29.1-27.8-36.6.0.0-22.9-15.7 1.6-15.4.0.0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5.0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9.0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4.0 33.7-.3 75.4-.3 83.6.0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6.0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9.0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-</span>
-</a>
-</li>
-<li>
-<a href=https://twitter.com/qwyngg title=Twitter rel=me>
-<span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645.0 138.72-105.583 298.558-298.558 298.558-59.452.0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055.0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421.0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391.0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04.0-57.828 46.782-104.934 104.934-104.934 30.213.0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
-</span>
-</a>
-</li>
-<li>
-<a href=mailto:ikusawasi@gmail.com title=Email rel=me>
-<span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M464 64H48C21.49 64 0 85.49.0 112v288c0 26.51 21.49 48 48 48h416c26.51.0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 4e2V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V4e2H48z"/></svg>
-</span>
-</a>
-</li>
-</ul>
-</div>
-<nav>
-<a href=https://qwyng.dev/about/ title>About</a>
-<a href=https://qwyng.dev/posts/ title>記事一覧</a>
-<a href=https://qwyng.dev/index.xml title>RSS</a>
-</nav>
-</header>
-<main id=main tabindex=-1>
-<article class="post h-entry">
-<div class=post-header>
-<header>
-<h1 class="p-name post-title">mimemagicに依存しなくなったmarcelのmime type判定の変化には気をつけようって話</h1>
-</header>
-</div>
-<div class="content e-content">
-<body>
-<p>mimemagic gemのライセンス問題で色々ありましたね。ライセンスは法的な問題なので確認も難しい問題でした。</p>
-<p>さて、marcelからmimemagicへの依存が無くなって<a class=keyword href=http://d.hatena.ne.jp/keyword/mime>mime</a> typeの判定が<a href=https://tika.apache.org/>Apache Tika</a>を元にしたものになりました。</p>
-<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fhackmd.io%2F%40mametter%2Fmimemagic-info-ja" title="mimemagicの最新動向 - HackMD" class="embed-card embed-webcard" scrolling=no frameborder=0 style="display:block;width:100%;height:155px;max-width:500px;margin:10px 0"></iframe><cite class=hatena-citation><a href=https://hackmd.io/@mametter/mimemagic-info-ja>hackmd.io</a></cite></p>
-<p>しかし、この変更にはmarcelの<a class=keyword href=http://d.hatena.ne.jp/keyword/mime>mime</a> type判定結果が変化するものが含まれていました。<br>
-例えば、以下のsample.xlsxというファイルの<a class=keyword href=http://d.hatena.ne.jp/keyword/mime>mime</a> typeの判定をMarcel: 1.0.0、0,3,3それぞれに行わせると...</p>
-<pre class=code data-lang data-unlink> ❯ xxd sample.xlsx                                                                                          
+<!doctype html><html lang=ja><head><meta charset=utf-8><meta http-equiv=content-type content="text/html"><meta name=viewport content="width=device-width,initial-scale=1"><title itemprop=name>mimemagicに依存しなくなったmarcelのmime type判定の変化には気をつけようって話 | QWYNG.dev</title>
+<meta property="og:title" content="mimemagicに依存しなくなったmarcelのmime type判定の変化には気をつけようって話 | QWYNG.dev"><meta name=twitter:title content="mimemagicに依存しなくなったmarcelのmime type判定の変化には気をつけようって話 | QWYNG.dev"><meta itemprop=name content="mimemagicに依存しなくなったmarcelのmime type判定の変化には気をつけようって話 | QWYNG.dev"><meta name=application-name content="mimemagicに依存しなくなったmarcelのmime type判定の変化には気をつけようって話 | QWYNG.dev"><meta property="og:site_name" content><meta name=description content><meta itemprop=description content><meta property="og:description" content><meta name=twitter:description content><meta property="og:locale" content="ja"><meta name=language content="ja"><link rel=alternate hreflang=en href=https://qwyng.dev/posts/2021/03/29/223635/ title><meta property="og:type" content="article"><meta property="og:article:published_time" content=2021-03-29T22:36:00+0900><meta property="article:published_time" content=2021-03-29T22:36:00+0900><meta property="og:url" content="https://qwyng.dev/posts/2021/03/29/223635/"><script defer type=application/ld+json>{"@context":"http://schema.org","@type":"Article","headline":"mimemagicに依存しなくなったmarcelのmime type判定の変化には気をつけようって話","author":{"@type":"Person","name":""},"datePublished":"2021-03-29","description":"","wordCount":1118,"mainEntityOfPage":"True","dateModified":"2021-03-29","image":{"@type":"imageObject","url":""},"publisher":{"@type":"Organization","name":"QWYNG.dev"}}</script><meta name=generator content="Hugo 0.134.0"><meta property="og:description" content="
+mimemagic gemのライセンス問題で色々ありましたね。ライセンスは法的な問題なので確認も難しい問題でした。
+さて、marcelからmimemagicへの依存が無くなってmime typeの判定がApache Tikaを元にしたものになりました。"><meta property="og:type" content="website"><meta property="og:title" content="mimemagicに依存しなくなったmarcelのmime type判定の変化には気をつけようって話 - QWYNG.dev"><meta property="og:url" content="https://qwyng.dev/posts/2021/03/29/223635/"><meta name=og:image content="https://qwyng.dev/"><meta name=twitter:card content="summary"><link rel=canonical href=https://qwyng.dev/posts/2021/03/29/223635/><link href=/style.min.e390ba7da26222f4dc42a349955d76dbbe44e5ce2535a43de5a70633a0a9ec3c.css rel=stylesheet><link href=/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css rel=stylesheet><link rel=apple-touch-icon sizes=180x180 href=/icons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/icons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/icons/favicon-16x16.png><link rel=mask-icon href=/icons/safari-pinned-tab.svg><link rel="shortcut icon" href=/favicon.ico><link rel=manifest href=https://qwyng.dev/site.webmanifest><meta name=msapplication-config content="/browserconfig.xml"><meta name=msapplication-TileColor content="#2d89ef"><meta name=theme-color content="#434648"><link rel=icon type=image/svg+xml href=/icons/favicon.svg><script async src="https://www.googletagmanager.com/gtag/js?id=G-9JVVYL7X5D"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-9JVVYL7X5D")}</script></head><body data-theme class=notransition><script src=/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script><div class=navbar role=navigation><nav class=menu aria-label="Main Navigation"><a href=https://qwyng.dev/ class=logo><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><title/><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+</a><input type=checkbox id=menu-trigger class=menu-trigger>
+<label for=menu-trigger><span class=menu-icon><svg width="25" height="25" stroke="currentcolor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7H3.40726"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M.5 12.5V1.5c0-.552285.447715-1 1-1h11C13.0523.5 13.5.947715 13.5 1.5v11C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C.947715 13.5.5 13.0523.5 12.5z"/></svg></span></label><div class=trigger><ul class=trigger-container><li><a class=menu-link href=/about/>About</a></li><li><a class=menu-link href=/posts/>記事一覧</a></li><li><a class=menu-link href=/index.xml>RSS</a></li><li class=menu-separator><span>|</span></li></ul><a id=mode href=#><svg class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg><svg class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg></a></div></nav></div><div class="wrapper post"><main class=page-content aria-label=Content><article><header class=header><h1 class=header-title>mimemagicに依存しなくなったmarcelのmime type判定の変化には気をつけようって話</h1><div class=post-meta><time datetime=2021-03-29T22:36:00+09:00 itemprop=datePublished>Mar 29, 2021</time></div></header><div class=page-content><body><p>mimemagic gemのライセンス問題で色々ありましたね。ライセンスは法的な問題なので確認も難しい問題でした。</p><p>さて、marcelからmimemagicへの依存が無くなって<a class=keyword href=http://d.hatena.ne.jp/keyword/mime>mime</a> typeの判定が<a href=https://tika.apache.org/>Apache Tika</a>を元にしたものになりました。</p><p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fhackmd.io%2F%40mametter%2Fmimemagic-info-ja" title="mimemagicの最新動向 - HackMD" class="embed-card embed-webcard" scrolling=no frameborder=0 style="display:block;width:100%;height:155px;max-width:500px;margin:10px 0"></iframe><cite class=hatena-citation><a href=https://hackmd.io/@mametter/mimemagic-info-ja>hackmd.io</a></cite></p><p>しかし、この変更にはmarcelの<a class=keyword href=http://d.hatena.ne.jp/keyword/mime>mime</a> type判定結果が変化するものが含まれていました。<br>例えば、以下のsample.xlsxというファイルの<a class=keyword href=http://d.hatena.ne.jp/keyword/mime>mime</a> typeの判定をMarcel: 1.0.0、0,3,3それぞれに行わせると...</p><pre class=code data-lang data-unlink> ❯ xxd sample.xlsx                                                                                          
 00000000: 504b 0304 1400 0808 0800 3123 7d52 0000  PK........1#}R..
 00000010: 0000 0000 0000 0000 0000 1800 0000 786c  ..............xl
 00000020: 2f64 7261 7769 6e67 732f 6472 6177 696e  /drawings/drawin
@@ -82,8 +13,7 @@
 00000060: 1e6d cb3f f9ef cd6e 74b6 f844 6213 7c23  .m.?...nt..Db.|#
 
 ❯ file -i sample.xlsx                                                                                
-sample.xlsx: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; charset=binary </pre>
-<pre class="code lang-ruby" data-lang=ruby data-unlink> irb(main):001:0&gt; require 'marcel'
+sample.xlsx: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; charset=binary </pre><pre class="code lang-ruby" data-lang=ruby data-unlink> irb(main):001:0&gt; require 'marcel'
 =&gt; true
 irb(main):002:0&gt; Marcel::VERSION
 =&gt; "1.0.0"
@@ -91,8 +21,7 @@ irb(main):003:0&gt; require 'pathname'
 =&gt; true
 irb(main):004:0&gt; Marcel::MimeType.for Pathname.new('sample.xlsx')
 =&gt; "application/zip"
- </pre>
-<pre class="code lang-ruby" data-lang=ruby data-unlink> irb(main):001:0&gt; require 'marcel'
+ </pre><pre class="code lang-ruby" data-lang=ruby data-unlink> irb(main):001:0&gt; require 'marcel'
 =&gt; true
 irb(main):002:0&gt; Marcel::VERSION
 =&gt; "0.3.3"
@@ -100,21 +29,8 @@ irb(main):003:0&gt; require 'pathname'
 =&gt; true
 irb(main):004:0&gt; Marcel::MimeType.for Pathname.new('sample.xlsx')
 =&gt; "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
- </pre>
-<p>このように同じファイルに対して判定結果が異なっています。</p>
-<p>この理由はmarcelのmimemagicをreplaceした差分でわかります。</p>
-<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.com%2Frails%2Fmarcel%2Fcommit%2F2e58d1986715420f0abbba060b6e158d6f4d3a05%23diff-9b02d25e1e56ac702cc60a32120253b3de0635f6ee9893631eea95ef5744b77aL2" title="Replace mimemagic with Apache Tika's mime types data · rails/marcel@2e58d19" class="embed-card embed-webcard" scrolling=no frameborder=0 style="display:block;width:100%;height:155px;max-width:500px;margin:10px 0"></iframe><cite class=hatena-citation><a href=https://github.com/rails/marcel/commit/2e58d1986715420f0abbba060b6e158d6f4d3a05#diff-9b02d25e1e56ac702cc60a32120253b3de0635f6ee9893631eea95ef5744b77aL2>github.com</a></cite></p>
-<p>marcelは<code>lib/marcel/mime_type/definitions.rb</code>内にて <code>'require 'mimemagic/overlay'</code>していました。
-<code>mimemagic/overlay</code>はxlsxやらpptやらをapplication/zipと区別してくれる<code>MimeMagic.add</code>をしていたファイルです。<br>
-最初に貼ったmimemagic最新動向の記事でも触れられていましたね。</p>
-<p>この<code>'require 'mimemagic/overlay'</code>が無くなったことによってmarcelはxlsxやらpptをapplication/zipと判定するようになりました。<a href=#f-96753e88 name=fn-96753e88 title="一部のxlsxとかpptはmarcel 1.0.0でもそのままapplication/zipと区別してくれるかもしれません。マジックナンバーにあまり詳しくないのでわかりませんが、特定のマジックナンバーを持つxlsxとかpptも存在するかも">*1</a></p>
-<p>marcelのREADMEにはもともと</p>
-<blockquote>
-<p>By preference, the magic number data in any passed in file is used to determine the type. If this doesn't work, it uses the type gleaned from the filename, extension, and finally the declared type. If no valid type is found in any of these, "application/octet-stream" is returned.</p>
-<p>Some types aren't easily recognised solely by magic number data. For example <a class=keyword href=http://d.hatena.ne.jp/keyword/Adobe%20Illustrator>Adobe Illustrator</a> files have the same magic number as PDFs (and can usually even be viewed in PDF viewers!). For these types, Marcel uses both the magic number data and the file name to work out the type:</p>
-</blockquote>
-<p>とあるので、書いてある通りファイル名を渡すのがとりあえずの対処策になるかと思います。</p>
-<pre class="code lang-ruby" data-lang=ruby data-unlink> irb(main):001:0&gt; require 'marcel'
+ </pre><p>このように同じファイルに対して判定結果が異なっています。</p><p>この理由はmarcelのmimemagicをreplaceした差分でわかります。</p><p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.com%2Frails%2Fmarcel%2Fcommit%2F2e58d1986715420f0abbba060b6e158d6f4d3a05%23diff-9b02d25e1e56ac702cc60a32120253b3de0635f6ee9893631eea95ef5744b77aL2" title="Replace mimemagic with Apache Tika's mime types data · rails/marcel@2e58d19" class="embed-card embed-webcard" scrolling=no frameborder=0 style="display:block;width:100%;height:155px;max-width:500px;margin:10px 0"></iframe><cite class=hatena-citation><a href=https://github.com/rails/marcel/commit/2e58d1986715420f0abbba060b6e158d6f4d3a05#diff-9b02d25e1e56ac702cc60a32120253b3de0635f6ee9893631eea95ef5744b77aL2>github.com</a></cite></p><p>marcelは<code>lib/marcel/mime_type/definitions.rb</code>内にて <code>'require 'mimemagic/overlay'</code>していました。
+<code>mimemagic/overlay</code>はxlsxやらpptやらをapplication/zipと区別してくれる<code>MimeMagic.add</code>をしていたファイルです。<br>最初に貼ったmimemagic最新動向の記事でも触れられていましたね。</p><p>この<code>'require 'mimemagic/overlay'</code>が無くなったことによってmarcelはxlsxやらpptをapplication/zipと判定するようになりました。<a href=#f-96753e88 name=fn-96753e88 title="一部のxlsxとかpptはmarcel 1.0.0でもそのままapplication/zipと区別してくれるかもしれません。マジックナンバーにあまり詳しくないのでわかりませんが、特定のマジックナンバーを持つxlsxとかpptも存在するかも">*1</a></p><p>marcelのREADMEにはもともと</p><blockquote><p>By preference, the magic number data in any passed in file is used to determine the type. If this doesn't work, it uses the type gleaned from the filename, extension, and finally the declared type. If no valid type is found in any of these, "application/octet-stream" is returned.</p><p>Some types aren't easily recognised solely by magic number data. For example <a class=keyword href=http://d.hatena.ne.jp/keyword/Adobe%20Illustrator>Adobe Illustrator</a> files have the same magic number as PDFs (and can usually even be viewed in PDF viewers!). For these types, Marcel uses both the magic number data and the file name to work out the type:</p></blockquote><p>とあるので、書いてある通りファイル名を渡すのがとりあえずの対処策になるかと思います。</p><pre class="code lang-ruby" data-lang=ruby data-unlink> irb(main):001:0&gt; require 'marcel'
 =&gt; true
 irb(main):002:0&gt; Marcel::VERSION
 =&gt; "1.0.0"
@@ -124,49 +40,5 @@ irb(main):004:0&gt; Marcel::MimeType.for Pathname.new('sample.xlsx')
 =&gt; "application/zip"
 irb(main):005:0&gt; Marcel::MimeType.for Pathname.new('sample.xlsx'), name: 'sample.xlsx'
 =&gt; "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
- </pre>
-<p><code>shrine</code>には<a href=https://github.com/shrinerb/shrine/blob/master/doc/plugins/determine_mime_type.md>そういったオプション</a>もありますね。</p>
-<p>xlsxとかpptを扱う<a class=keyword href=http://d.hatena.ne.jp/keyword/Rails>Rails</a>アプリはそれなりに存在するでしょうから各位気をつけていきましょう。</p>
-<p>追記</p>
-<p>@furish さんがPR投げてくれてますね　ある場でこの人と話した内容がこの記事の発端でもあります。
-<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.com%2Frails%2Fmarcel%2Fissues%2F35" title="compatibility is broken with certain types of office documents · Issue #35 · rails/marcel" class="embed-card embed-webcard" scrolling=no frameborder=0 style="display:block;width:100%;height:155px;max-width:500px;margin:10px 0"></iframe><cite class=hatena-citation><a href=https://github.com/rails/marcel/issues/35>github.com</a></cite></p>
-<div class=footnote>
-<p class=footnote><a href=#fn-96753e88 name=f-96753e88 class=footnote-number>*1</a><span class=footnote-delimiter>:</span><span class=footnote-text>一部のxlsxとかpptはmarcel 1.0.0でもそのままapplication/zipと区別してくれるかもしれません。<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%DE%A5%B8%A5%C3%A5%AF%A5%CA%A5%F3%A5%D0%A1%BC>マジックナンバー</a>にあまり詳しくないのでわかりませんが、特定の<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%DE%A5%B8%A5%C3%A5%AF%A5%CA%A5%F3%A5%D0%A1%BC>マジックナンバー</a>を持つxlsxとかpptも存在するかも</span></p>
-</div>
-</body>
-</div>
-<div class=post-info>
-<div class="post-date dt-published">2021-03-29</div>
-<a class="post-hidden-url u-url" href=https://qwyng.dev/posts/2021/03/29/223635/>https://qwyng.dev/posts/2021/03/29/223635/</a>
-<a href=https://qwyng.dev class="p-name p-author post-hidden-author h-card" rel=me>QWYNG</a>
-<div class=post-taxonomies>
-</div>
-</div>
-</article>
-<div class=inline-svg>
-<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fqwyng.dev%2fposts%2f2021%2f03%2f29%2f223635%2f&text=mimemagic%e3%81%ab%e4%be%9d%e5%ad%98%e3%81%97%e3%81%aa%e3%81%8f%e3%81%aa%e3%81%a3%e3%81%9fmarcel%e3%81%aemime%20type%e5%88%a4%e5%ae%9a%e3%81%ae%e5%a4%89%e5%8c%96%e3%81%ab%e3%81%af%e6%b0%97%e3%82%92%e3%81%a4%e3%81%91%e3%82%88%e3%81%86%e3%81%a3%e3%81%a6%e8%a9%b1" target=_blank title=Tweet><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645.0 138.72-105.583 298.558-298.558 298.558-59.452.0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055.0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421.0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391.0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04.0-57.828 46.782-104.934 104.934-104.934 30.213.0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg></a>
-</div>
-<div class="pagination post-pagination">
-<div class="left pagination-item">
-<a href=/posts/2021/05/23/173710/>SECCON Beginners CTF 2021 writeup</a>
-</div>
-<div class="right pagination-item">
-<a href=/posts/2021/03/07/164200/>JAISTに入学します</a>
-</div>
-</div>
-</main>
-<footer class=common-footer>
-<div class=common-footer-bottom>
-<div class=copyright>
-<p>© QWYNG, 2024<br>
-Powered by <a target=_blank rel="noopener noreferrer" href=https://gohugo.io/>Hugo</a>, theme <a target=_blank rel="noopener noreferrer" href=https://github.com/mitrichius/hugo-theme-anubis>Anubis</a>.<br>
-</p>
-</div>
-</div>
-<p class="h-card vcard">
-<a href=https://qwyng.dev class="p-name u-url url fn" rel=me>QWYNG</a>
-</p>
-</footer>
-</div>
-</body>
-</html>
+ </pre><p><code>shrine</code>には<a href=https://github.com/shrinerb/shrine/blob/master/doc/plugins/determine_mime_type.md>そういったオプション</a>もありますね。</p><p>xlsxとかpptを扱う<a class=keyword href=http://d.hatena.ne.jp/keyword/Rails>Rails</a>アプリはそれなりに存在するでしょうから各位気をつけていきましょう。</p><p>追記</p><p>@furish さんがPR投げてくれてますね　ある場でこの人と話した内容がこの記事の発端でもあります。
+<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.com%2Frails%2Fmarcel%2Fissues%2F35" title="compatibility is broken with certain types of office documents · Issue #35 · rails/marcel" class="embed-card embed-webcard" scrolling=no frameborder=0 style="display:block;width:100%;height:155px;max-width:500px;margin:10px 0"></iframe><cite class=hatena-citation><a href=https://github.com/rails/marcel/issues/35>github.com</a></cite></p><div class=footnote><p class=footnote><a href=#fn-96753e88 name=f-96753e88 class=footnote-number>*1</a><span class=footnote-delimiter>:</span><span class=footnote-text>一部のxlsxとかpptはmarcel 1.0.0でもそのままapplication/zipと区別してくれるかもしれません。<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%DE%A5%B8%A5%C3%A5%AF%A5%CA%A5%F3%A5%D0%A1%BC>マジックナンバー</a>にあまり詳しくないのでわかりませんが、特定の<a class=keyword href=http://d.hatena.ne.jp/keyword/%A5%DE%A5%B8%A5%C3%A5%AF%A5%CA%A5%F3%A5%D0%A1%BC>マジックナンバー</a>を持つxlsxとかpptも存在するかも</span></p></div></body></div></article></main></div><footer class=footer><span class=footer_item></span>&nbsp;<div class=footer_social-icons></div><small class=footer_copyright>© 2024 .</small></footer><script src=https://qwyng.dev/js/main.min.4ee188e1744c19816e95a540b2650ed9f033ea0371e74eac8e717355cfca8741.js integrity="sha256-TuGI4XRMGYFulaVAsmUO2fAz6gNx506sjnFzVc/Kh0E="></script></body></html>
