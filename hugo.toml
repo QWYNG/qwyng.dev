@@ -2,7 +2,6 @@ baseURL = "https://qwyng.dev"
 languageCode = "ja"
 title = "QWYNG.dev"
 theme = "hugo-blog-awesome"
-googleAnalytics = "G-9JVVYL7X5D"
 hasCJKLanguage = true
 
 [params]
@@ -11,20 +10,21 @@ name = "QWYNG"
 description = "QWYNG(Hiroaki Osawa)という人間のブログです各種SNSのリンクはヘッダー参照"
 dateFormat = "2006-01-02"
 paginationSinglePost = true
-style = "light-without-switcher"
 readMore = false
 disableSummary = true
 image = "android-chrome-384x384.png"
 
-[[params.social]]
-id = "github"
-name = "QWYNG"
-[[params.social]]
-id = "twitter"
-name = "qwyngg"
-[[params.social]]
-id = "email"
-name = "ikusawasi@gmail.com"
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/QWYNG"
+
+[[params.socialIcons]]
+name = "twitter"
+url = "https://twitter.com/qwyngg"
+
+[[params.socialIcons]]
+name = "Rss"
+url = "/index.xml"
 
 [menu]
 [[menu.main]]
@@ -42,6 +42,11 @@ name = "RSS"
 identifier = "rss"
 url = "/index.xml"
 weight = 3
+
+[services]
+[services.googleAnalytics]
+    id = 'G-9JVVYL7X5D'
+
 
 [markup.goldmark.renderer]
 unsafe = true
