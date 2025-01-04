@@ -5,6 +5,8 @@ theme = "hugo_theme_pickles"
 
 [params]
   paginate = 5
+  hideWordCount = 1
+  hideReadingTime = 1
 
   # Social accounts. Links to these accounts are displayed in the header and footer.
   twitter = "qwyngg"
