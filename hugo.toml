@@ -26,12 +26,6 @@ theme = "hugo_theme_pickles"
   # youtube = ""
   # linkedin = ""
 
-  # Disqus shortname (if used for comments)
-  disqus = ""
-
-  # Google Analytics tracking ID
-  ga_api_key = "G-9JVVYL7X5D"
-
   # Author information
   author = "QWYNG (Hiroaki Osawa)"
   authorwebsite = "https://qwyng.dev"
