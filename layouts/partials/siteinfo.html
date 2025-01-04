@@ -1,0 +1,19 @@
+{{ if or ( $.Param "avatar" ) ( $.Param "author" ) ( $.Param "bio" ) ( $.Param "contact" ) }}
+<aside class="p-author">
+  {{ with ($.Param "avatar") }}
+  <div class="c-avatar p-author__avatar">
+    <img alt="Author Avatar" src="/android-chrome-384x384.png" />
+  </div>
+  {{ end }}
+  {{ if or ( $.Param "author" ) ( $.Param "bio" ) ( $.Param "contact" ) }}
+  <div class="p-author__body">
+    {{ with ($.Param "author") }}
+    <p class="c-title p-author__name ">{{ . }}</p>
+    {{ end }}
+    {{ with ($.Param "bio") }}
+    <p>{{ . }}</p>
+    {{ end }}
+  </div>
+  {{ end }}
+</aside>
+{{ end }}
