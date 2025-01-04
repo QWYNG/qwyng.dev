@@ -1,52 +1,64 @@
-baseURL = "https://qwyng.dev"
+baseurl = "https://qwyng.dev"
 languageCode = "ja"
 title = "QWYNG.dev"
-theme = "hugo-blog-awesome"
-hasCJKLanguage = true
+theme = "hugo_theme_pickles"
 
 [params]
-[[parms.author]]
-name = "QWYNG"
-description = "QWYNG(Hiroaki Osawa)という人間のブログです各種SNSのリンクはヘッダー参照"
-dateFormat = "2006-01-02"
-paginationSinglePost = true
-readMore = false
-disableSummary = true
-image = "android-chrome-384x384.png"
+  paginate = 5
 
-[[params.socialIcons]]
-name = "github"
-url = "https://github.com/QWYNG"
+  # Social accounts. Links to these accounts are displayed in the header and footer.
+  twitter = "qwyngg"
+  github = "QWYNG"
+  # Uncomment and add accounts if needed.
+  # facebook = ""
+  # instagram = ""
+  # googleplus = ""
+  # npm = ""
+  # codepen = ""
+  # dribbble = ""
+  # fivehundredpx = ""
+  # flickr = ""
+  # pinterest = ""
+  # tumblr = ""
+  # vimeo = ""
+  # youtube = ""
+  # linkedin = ""
 
-[[params.socialIcons]]
-name = "twitter"
-url = "https://twitter.com/qwyngg"
+  # Disqus shortname (if used for comments)
+  disqus = ""
 
-[[params.socialIcons]]
-name = "Rss"
-url = "/index.xml"
+  # Google Analytics tracking ID
+  ga_api_key = "G-9JVVYL7X5D"
+
+  # Author information
+  author = "QWYNG (Hiroaki Osawa)"
+  authorwebsite = "https://qwyng.dev"
+  avatar = "android-chrome-384x384.png"
+  contact = "mailto:hiroaki@qwyng.dev"
+  bio = "QWYNG(Hiroaki Osawa)という人間のブログです ワイワイ"
+  
+  # Short subtitle/tagline
+  subtitle = "クワイング"
+  
+  # Logo and favicon
+  logo = "android-chrome-384x384.png"
+  favicon = "favicon.ico"
 
 [menu]
-[[menu.main]]
-identifier = "about"
-name = "About"
-url = "/about/"
-weight = 1
-[[menu.main]]
-name = "記事一覧"
-identifier = "記事一覧"
-url = "/posts/"
-weight = 2
-[[menu.main]]
-name = "RSS"
-identifier = "rss"
-url = "/index.xml"
-weight = 3
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 1
 
-[services]
-[services.googleAnalytics]
-    id = 'G-9JVVYL7X5D'
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 2
 
-
-[markup.goldmark.renderer]
-unsafe = true
+  [[menu.main]]
+    identifier = "rss"
+    name = "RSS"
+    url = "/index.xml"
+    weight = 3
