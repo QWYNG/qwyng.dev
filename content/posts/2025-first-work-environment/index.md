@@ -2,7 +2,7 @@
 title: "[2025年初頭] ありのままのゲーム&作業環境"
 date: 2025-01-11T09:47:23+09:00
 draft: false
-image: posts/2025-first-work-env/image.png
+image: posts/2025-first-work-environment/image.png
 ---
 
 2025年の目標は作業環境の向上！ということで2025年初頭の僕のゲーム&作業環境を紹介します。
