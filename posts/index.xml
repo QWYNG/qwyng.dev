@@ -1,4 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>Recent content in Posts on QWYNG.dev</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Sat, 11 Jan 2025 09:47:23 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>[2025年初頭] ありのままのゲーム&amp;作業環境</title><link>https://qwyng.dev/posts/2025-first-work-environment/</link><pubDate>Sat, 11 Jan 2025 09:47:23 +0900</pubDate><guid>https://qwyng.dev/posts/2025-first-work-environment/</guid><description>&lt;p>2025年の目標は作業環境の向上！ということで2025年初頭の僕のゲーム&amp;amp;作業環境を紹介します。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>Recent content in Posts on QWYNG.dev</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Sun, 16 Feb 2025 22:34:27 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>お気に入りのフィードの話</title><link>https://qwyng.dev/posts/2025/info/</link><pubDate>Sun, 16 Feb 2025 22:34:27 +0900</pubDate><guid>https://qwyng.dev/posts/2025/info/</guid><description>&lt;p>&lt;a href="https://qwyng.dev/posts/stop_sns/">TwitterとYoutubeをやめる記事&lt;/a>に書いた通り、RSSリーダを使い始めました。&lt;br>
+RSSリーダを有効活用するために良いフィードをもっと知りたいので、まず自分のお気に入りを紹介します。お硬い系はつまらないので、趣味寄りのものを中心に紹介します。&lt;/p>
+&lt;h2 id="お気に入りのフィードとブログ">お気に入りのフィードとブログ&lt;/h2>
+&lt;h3 id="positive-hacker-newshttpsgarritfragithubiopositive_hackernewsfeedxml">&lt;a href="https://garritfra.github.io/positive_hackernews/feed.xml">Positive Hacker News&lt;/a>&lt;/h3>
+&lt;p>Hacker Newsは面白い記事率が高いのでお気に入りです。
+最近読んだ記事だと、&lt;a href="https://www.newyorker.com/magazine/2007/12/10/the-checklist">A Life-Saving Checklist | The New Yorker&lt;/a>とか&lt;a href="https://www.16elt.com/2024/09/25/first-book-of-byte-sized-tech/">Ideas from &amp;ldquo;A Philosophy of Software Design&amp;rdquo;&lt;/a>あたりは面白かった。自分が賢くなった気分になれる記事が多い。&lt;br>
+実学的な記事(例えばRubyの新機能とかRustでの開発Tipsとか)はあまりないので、そういうのが読みたいときは他のRSSフィードを見ます。&lt;/p>
+&lt;p>ところで、最近「&lt;a href="https://immersivetranslate.com/ja/">没入型翻訳&lt;/a>」というChroniumで使えるWebページを翻訳してくれる拡張機能を使ってます。
+普通の翻訳機能だと英文がそのまま日本語になってしまうけど、この拡張機能だと英文はそのまま表示しつつ日本語を添えるような形で表示してくれます。よくわからない訳があっても原文を見てニュアンスが確認できて便利。これのお陰で英語の記事を読むハードルがかなり下がりました。モバイルアプリもあるのでスマホでも使えます。おすすめ。&lt;/p>
+&lt;h3 id="zenのトピックhttpszenndevzennarticleszenn-feed-rss">&lt;a href="https://zenn.dev/zenn/articles/zenn-feed-rss">Zenのトピック&lt;/a>&lt;/h3>
+&lt;p>日本語でツールや技術の使い方が書かれているの記事は便利なので、Zenのトピックを購読してます。
+Raycastの細かい使い方とか、AI活用のいい感じのアイデアが日本のコンテキストで語られていて楽。いい感じの拡張機能とか紹介されていると助かる。&lt;/p>
+&lt;h3 id="making-magic--マジック開発秘話-httpsmtg-jpcomreadingmm">&lt;a href="https://mtg-jp.com/reading/mm/">Making Magic -マジック開発秘話-&lt;/a>&lt;/h3>
+&lt;p>マジック：ザ・ギャザリングという世界最初のカードゲームの開発者ブログ。カードゲームの用語は翻訳ソフトがうまく効かないことが多いので、日本語でしっかり訳してくれるのはありがたい。
+MTGの開発記事は本当に面白い。ゲーム好きな人全般におすすめできる。人間は何がおもしろいと感じるのか、なぜ人はゲームをするのか、というところからしっかり考えられている。
+フィードではないけどRSSリーダの機能で購読できるので、紹介しておきます。&lt;/p>
+&lt;h2 id="逆に絶対みないもの">逆に絶対みないもの&lt;/h2>
+&lt;h3 id="普通のニュース系フィード">普通のニュース系フィード&lt;/h3>
+&lt;p>「ワケ」、「絶対にしてはいけないこと」じゃあないんだよ。&lt;/p>
+&lt;h3 id="はてなブックマークの人気エントリ">はてなブックマークの人気エントリ&lt;/h3>
+&lt;p>気が狂う。&lt;/p>
+&lt;h2 id="最後に">最後に&lt;/h2>
+&lt;p>皆さんもおすすめのフィードがあったら教えてください。&lt;/p></description></item><item><title>[2025年初頭] ありのままのゲーム&amp;作業環境</title><link>https://qwyng.dev/posts/2025-first-work-environment/</link><pubDate>Sat, 11 Jan 2025 09:47:23 +0900</pubDate><guid>https://qwyng.dev/posts/2025-first-work-environment/</guid><description>&lt;p>2025年の目標は作業環境の向上！ということで2025年初頭の僕のゲーム&amp;amp;作業環境を紹介します。&lt;/p>
 &lt;h2 id="全体像">全体像&lt;/h2>
 &lt;p>&lt;img src="image.png" alt="alt text">&lt;/p>
 &lt;p>もっとおしゃれな感じにしたいんですが、無理っす！&lt;/p>
