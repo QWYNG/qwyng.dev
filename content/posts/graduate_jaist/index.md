@@ -1,7 +1,7 @@
 ---
 title: "働きながら4年かけて大学院を修了した"
 date: 2025-03-22T12:57:48+09:00
-image: posts/graduate_jaist/diploma.png
+thumbnail: posts/graduate_jaist/diploma.png
 draft: false
 ---
 
