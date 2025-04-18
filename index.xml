@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>Recent content on QWYNG.dev</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Sat, 22 Mar 2025 12:57:48 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>働きながら4年かけて大学院を修了した</title><link>https://qwyng.dev/posts/graduate_jaist/</link><pubDate>Sat, 22 Mar 2025 12:57:48 +0900</pubDate><guid>https://qwyng.dev/posts/graduate_jaist/</guid><description>&lt;p>2025年3月末で北陸先端科学技術大学院大学の博士前期課程を修了し、修士（情報科学）が授与されました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>Recent content on QWYNG.dev</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Fri, 18 Apr 2025 21:18:58 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>RubyKaigi 2025 感想</title><link>https://qwyng.dev/posts/rubykaigi2025/</link><pubDate>Fri, 18 Apr 2025 21:18:58 +0900</pubDate><guid>https://qwyng.dev/posts/rubykaigi2025/</guid><description>&lt;p>RubyKaigi 2025に参加してきたので感想を書きます！&lt;/p>
+&lt;h2 id="目的">目的&lt;/h2>
+&lt;p>今回の目的は、最近OSSへのPRで@ioquatix(Samuel Williams)氏と@tompng氏に丁寧なレビューもらったことへのお礼でした！無事達成！これからもちょこちょこPRだしていくぞ！&lt;br>
+(写真もとったけど許可とってないので載せない）&lt;/p>
+&lt;h2 id="本屋さん">本屋さん&lt;/h2>
+&lt;p>今回のRubyKaigiは本屋さんが出店していました。発表を聞いて盛り上がった気持ちのまま本が買える最高の体験でした。&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.lambdanote.com/products/type-systems">型システムのしくみ&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://amzn.to/3GdQ83o"> 計算機科学指向のプログラミング入門 — 離陸ファース トで Ruby と C を学ぶ — | 久野 靖 |本 | 通販 | Amazon&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>上記二冊を買いました。特に後者はRubyKaigiをみて「うおお！俺もCをちゃんと読めるようにするぞ！」という気持ちがないと買わなかったかもしれません。RubyKaigi最高。&lt;br>
+また、(おそらく)Ruby wasmで公開されている&lt;a href="https://rubykaigi-warrior.fly.dev">RubyKaigi Warrior&lt;/a>というゲームをクリアして&lt;a href="https://amzn.to/441GD1m">Layered Design for Ruby on Rails Applications&lt;/a>の著者サイン入り本をもらいました。風来のシレンをプログラミングで解くような面白いゲームでした。&lt;code>Array#sample&lt;/code>でクリアしてしまいやや罪悪感が残っています。(&lt;a href="https://x.com/qwyngg/status/1913074014186279295">ネタバレ注意の回答gist&lt;/a>)&lt;br>
+&lt;a href="https://x.com/_ko1/status/1913071404846833674">sasadaさんに写真取ってもらえて&lt;/a>嬉しかったです。&lt;/p>
+&lt;p>型システムのしくみもサインをもらいました。
+&lt;img src="image.png" alt="型システムのしくみのサイン">
+QWYNGが書いてあるQuineを書いてもらえてハッピー。嬉しくて絶対に実行したかったので、「これってなんの文字ですか？」とmameさんに聞きにいってしまいました。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ruby" data-lang="ruby">&lt;span style="display:flex;">&lt;span>eval s&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">%q!puts&amp;#34;eval s=%q&amp;#34;&amp;lt;&amp;lt;33&amp;lt;&amp;lt;s&amp;lt;&amp;lt;33
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"># QWYNGさんへ
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"># Yusuke Endoh!&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>働きながら4年かけて大学院を修了した</title><link>https://qwyng.dev/posts/graduate_jaist/</link><pubDate>Sat, 22 Mar 2025 12:57:48 +0900</pubDate><guid>https://qwyng.dev/posts/graduate_jaist/</guid><description>&lt;p>2025年3月末で北陸先端科学技術大学院大学の博士前期課程を修了し、修士（情報科学）が授与されました。
 2021年に入学してから4年かけての修了です。&lt;/p>
 &lt;p>&lt;img src="diploma.png" alt="alt text">&lt;/p>
 &lt;p>僕はJAISTの社会人学生史上一番ダメな学生だったと思います。入学時は「修了したブログを書いてドヤるぞ！」と意気込んでいましたが、今は「教授になんとかしてもらった」という感謝しかなく、自分自身が誇れることは全くないです。
