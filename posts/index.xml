@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>Recent content in Posts on QWYNG.dev</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Fri, 18 Apr 2025 21:18:58 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>RubyKaigi 2025 感想</title><link>https://qwyng.dev/posts/rubykaigi2025/</link><pubDate>Fri, 18 Apr 2025 21:18:58 +0900</pubDate><guid>https://qwyng.dev/posts/rubykaigi2025/</guid><description>&lt;p>RubyKaigi 2025に参加してきたので感想を書きます！&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>Recent content in Posts on QWYNG.dev</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Sun, 01 Jun 2025 15:19:04 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>OSSへの貢献と、PRを送ることへの後ろめたさ</title><link>https://qwyng.dev/posts/oss_pr/</link><pubDate>Sun, 01 Jun 2025 15:19:04 +0900</pubDate><guid>https://qwyng.dev/posts/oss_pr/</guid><description>&lt;h2 id="ossへの貢献">OSSへの貢献&lt;/h2>
+&lt;p>2月で大学院関連の作業が一段落して、暇だったのでOSSにいくつかPRを送った。ありがたいことにいくつかPRをマージしてもらった。どっちもそんなに大きな変更ではないが、久しぶりにちゃんとPRを送ってマージされたので嬉しかった。&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/ruby/ruby/pull/12796">Binding#irbがデフォルトで引数渡せなかったことを修正したやつ&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/lostisland/faraday/pull/1617">faradayのプロキシオプションがスレッドセーフではない問題の修正したやつ&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>一方で、自分のPRが迷惑なのではないかと不安になる感情を久しぶりに思い出した。この記事では、僕のOSSへのPRに対する後ろめたさをつらつらと書いていく。&lt;/p>
+&lt;h2 id="disclaimer">disclaimer&lt;/h2>
+&lt;p>僕は著名なOSSのメンテナをやったことはない。僕が想像しているメンテナの苦労とかは全く的外れの可能性がある。そもそも人よりOSSへの貢献が多いわけでもない。なのでOSSへのPRに対する考えがそもそも浅い可能性がある。&lt;br>
+また、OSSへのPRを咎めたいわけではない。あくまで自分に対する批判意識が重要だと思うだけで、他人のPRを見てこの記事を書いているわけではない。&lt;/p>
+&lt;h2 id="prを送ることによって生まれるコスト">PRを送ることによって生まれるコスト&lt;/h2>
+&lt;p>rails/railsへのPRに対する含蓄深いコメントがある。いくつか引用する。
+&lt;a href="https://github.com/rails/rails/pull/13771#issuecomment-32746700">https://github.com/rails/rails/pull/13771#issuecomment-32746700&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>Someone need to spend the time to review the patch. However trivial the changes might seem, there might be some subtle reasons the original code are written this way and any tiny changes have the possibility of altering behaviour and introducing bugs. (For example, in this case, do you know if self.name= and assign_names doesn&amp;rsquo;t depend on controller_name being set? I don&amp;rsquo;t – so I&amp;rsquo;d have to look it up and make sure. Also, there is a travis failure associated with this PR, it&amp;rsquo;s probably a random failure, but I&amp;rsquo;d have to investigate to be sure). All of these work takes away time and energy that could be spent on actual features and bug fixes.&lt;/p></description></item><item><title>RubyKaigi 2025 感想</title><link>https://qwyng.dev/posts/rubykaigi2025/</link><pubDate>Fri, 18 Apr 2025 21:18:58 +0900</pubDate><guid>https://qwyng.dev/posts/rubykaigi2025/</guid><description>&lt;p>RubyKaigi 2025に参加してきたので感想を書きます！&lt;/p>
 &lt;h2 id="目的">目的&lt;/h2>
 &lt;p>今回の目的は、最近OSSへのPRで@ioquatix(Samuel Williams)氏と@tompng氏に丁寧なレビューもらったことへのお礼でした！無事達成！これからもちょこちょこPRだしていくぞ！&lt;br>
 (写真もとったけど許可とってないので載せない）&lt;/p>
