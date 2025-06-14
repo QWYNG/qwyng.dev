@@ -2,3 +2,11 @@
 .p-article__body {
     line-height: 1.884; /* 1.57 × 1.2 = 1.884 */
 }
+
+.c-title {
+    margin-bottom: 0;
+}
+
+.c-article__meta {
+    margin-top: 8px;
+}
