@@ -1,4 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>Recent content in Posts on QWYNG.dev</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Sat, 21 Jun 2025 16:03:29 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>武蔵小杉お気に入りスポットシリーズその2 法政通り商店街</title><link>https://qwyng.dev/posts/musashikosugi_osusume_spot2/</link><pubDate>Sat, 21 Jun 2025 16:03:29 +0900</pubDate><guid>https://qwyng.dev/posts/musashikosugi_osusume_spot2/</guid><description>&lt;h1 id="武蔵小杉お気に入りスポットシリーズとは">武蔵小杉お気に入りスポットシリーズとは&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>Recent content in Posts on QWYNG.dev</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Sat, 05 Jul 2025 00:00:00 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>フェンスを立てた理由を残す</title><link>https://qwyng.dev/posts/fence_wo_dokasu/</link><pubDate>Sat, 05 Jul 2025 00:00:00 +0900</pubDate><guid>https://qwyng.dev/posts/fence_wo_dokasu/</guid><description>&lt;p>チェスタトンのフェンスという考え方がある。&lt;br>
+&lt;a href="https://fs.blog/chestertons-fence/">Chesterton’s Fence: A Lesson in Thinking&lt;/a>&lt;br>
+&lt;strong>「なぜフェンスが建てられたのかわかるまで、決してフェンスを撤去してはならない」&lt;/strong> という考え方だ。&lt;/p>
+&lt;h2 id="フェンスを立てた理由">フェンスを立てた理由&lt;/h2>
+&lt;p>ソフトウェアエンジニアリングにおいて、フェンスはコードを指すと思う。&lt;br>
+フェンスを建築するのが比較的容易なソフトウェアエンジニアリングにおいては、フェンスを取り外したくなることも多い。&lt;/p>
+&lt;p>コードを変更したり、削除したりするときに必要なのは、そのフェンスがいかに取り外しやすく建築されているかだけではない。&lt;strong>なぜこのコードを書いたのか&lt;/strong> という理由が必要だ。&lt;/p>
+&lt;p>例えばRailsアプリ内にこういうコードがあるとする。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ruby" data-lang="ruby">&lt;span style="display:flex;">&lt;span>users&lt;span style="color:#f92672">.&lt;/span>each &lt;span style="color:#66d9ef">do&lt;/span> &lt;span style="color:#f92672">|&lt;/span>user&lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> user&lt;span style="color:#f92672">.&lt;/span>try(&lt;span style="color:#e6db74">:cool_something&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">end&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>このコードは、&lt;code>users&lt;/code>内の各ユーザーに対して&lt;code>cool_something&lt;/code>メソッドを呼び出そうとしている。 &lt;code>user.try(:cool_something)&lt;/code>は、&lt;code>user&lt;/code>が&lt;code>nil&lt;/code>であったり、&lt;code>cool_something&lt;/code>メソッドが存在しない場合にエラーを発生させないためのものだ。&lt;br>
+ここで論じたいのは&lt;code>Object#try&lt;/code>の使用の是非ではない。
+コードを見たときに、&lt;code>try&lt;/code>がなぜ使われているかの理由がわからないと、&lt;code>try&lt;/code>を取り除くのは難しいということだ。&lt;br>
+一見すると、これは&lt;code>users&lt;/code>内に&lt;code>nil&lt;/code>がありえるコードに見える。もしくは&lt;code>users&lt;/code>内に&lt;code>cool_something&lt;/code>メソッドがないオブジェクトが混ざる可能性があるようにも見える。 このままでは、このコードをどう修正するべきかの判断が難しい。&lt;/p>
+&lt;p>ここに例えば以下のようなコメントがあればどうだろう。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ruby" data-lang="ruby">&lt;span style="display:flex;">&lt;span>users&lt;span style="color:#f92672">.&lt;/span>each &lt;span style="color:#66d9ef">do&lt;/span> &lt;span style="color:#f92672">|&lt;/span>user&lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># AdminUserとRegularUserが混在しており、cool_somethingメソッドがない場合があるのでtryを使う&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> user&lt;span style="color:#f92672">.&lt;/span>try(&lt;span style="color:#e6db74">:cool_something&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">end&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>武蔵小杉お気に入りスポットシリーズその2 法政通り商店街</title><link>https://qwyng.dev/posts/musashikosugi_osusume_spot2/</link><pubDate>Sat, 21 Jun 2025 16:03:29 +0900</pubDate><guid>https://qwyng.dev/posts/musashikosugi_osusume_spot2/</guid><description>&lt;h1 id="武蔵小杉お気に入りスポットシリーズとは">武蔵小杉お気に入りスポットシリーズとは&lt;/h1>
 &lt;p>川崎市武蔵小杉駅周辺のお気に入りスポットを紹介するシリーズである。&lt;/p>
 &lt;p>&lt;a href="https://qwyng.dev/20230715.md">武蔵小杉お気に入りスポットシリーズその1&lt;/a>&lt;/p>
 &lt;h1 id="法政通り商店街">法政通り商店街&lt;/h1>
