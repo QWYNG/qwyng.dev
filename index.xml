@@ -1,4 +1,54 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>Recent content on QWYNG.dev</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Sat, 19 Jul 2025 09:54:04 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Rubyのパターンマッチをこうやって使いたい</title><link>https://qwyng.dev/posts/ruby_list_comprehension/</link><pubDate>Sat, 19 Jul 2025 09:54:04 +0900</pubDate><guid>https://qwyng.dev/posts/ruby_list_comprehension/</guid><description>&lt;p>Rubyのパターンマッチ、最高です。&lt;br>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>Recent content on QWYNG.dev</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Sat, 16 Aug 2025 12:28:37 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>ついマウスを使ってしまうエディタ操作</title><link>https://qwyng.dev/posts/help_me_shortcut/</link><pubDate>Sat, 16 Aug 2025 12:28:37 +0900</pubDate><guid>https://qwyng.dev/posts/help_me_shortcut/</guid><description>&lt;p>普段エディタでプログラミングする際、まだまだマウスを使ってしまう。やめたい。&lt;br>
+今回の記事では筆者がマウスを使ってしまうシーンを言語化し、そのショートカットを書く。&lt;br>
+こうすることで、そのショートカットを習慣化するきっかけにしたい。&lt;/p>
+&lt;p>今回の記事はRubyMine + 組み込みのEmacsバインドを前提に書いている。&lt;br>
+筆者はRubyやMarkdownを書く際にはRubyMine(IntelliJ IDEA)、その他のプログラミング言語を書く際にはZedを使っている。&lt;/p>
+&lt;p>自体を使おうと思ったことが何度もあるが、RubyやRailsのコード読むときにRubyMineのコードジャンプが手放せないし、その他の言語はプラグインが多いZedを使ったほうが色々楽で、未だにEmacsを乗りこなすモチベがでない。 &lt;br>
+正直、ほとんどの時間はRubyとMarkdownを書くので、だいたいRubyMineを使っている。&lt;/p>
+&lt;p>昨今はリモーワークの影響で他人のエディタ操作をみることがない。&lt;br>
+こういうのは「できる」とわかった途端使えるようになると思うので、ブログを書くことで学ぶきっかけにするぞ。&lt;/p>
+&lt;h2 id="サイドパネル">サイドパネル&lt;/h2>
+&lt;p>&lt;img src="https://qwyng.dev/img_1.png" alt="img_1.png">
+ファイルツリーの巡回だったりLLMとのchatだったりDBの接続だったりで使う。&lt;br>
+閉じたりフォーカスしたりしたいんだけど、いつも甘えてマウスを使ってしまう。&lt;/p>
+&lt;h3 id="ショートカット">ショートカット&lt;/h3>
+&lt;ul>
+&lt;li>閉じる
+&lt;ul>
+&lt;li>&lt;code>Shift + Esc&lt;/code> これでだいたいいける。押しやすいのでこのままで良さそう&lt;/li>
+&lt;li>&lt;code>hide active tool window&lt;/code> でもOK&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>フォーカス移動
+&lt;ul>
+&lt;li>&lt;code>tool windows&lt;/code>から一覧を確認して遷移できる&lt;/li>
+&lt;li>ショートカットも一覧で確認できる&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="左右で分割してタブグループ">左右で分割してタブグループ&lt;/h2>
+&lt;p>&lt;img src="https://qwyng.dev/img_2.png" alt="img_2.png">
+筆者がよくやる操作。左にテストコード、右に実装コードみたいな形でファイルを整理したい癖がある。 &lt;br>
+この状態にタブをグループするのにマウスを使ってしまう。&lt;br>
+更に、&lt;code>^X-B&lt;/code>は左右の分割を考慮してタブを切り替えてくれないので、マウスでタブを切り替えることも多い。&lt;/p>
+&lt;h3 id="ショートカット-1">ショートカット&lt;/h3>
+&lt;ul>
+&lt;li>タブグループ内で切り替え
+&lt;ul>
+&lt;li>&lt;code>C-x n&lt;/code> or &lt;code>C-x p&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>分割されているタブグループ内へ移動 or ファイルを開く
+&lt;ul>
+&lt;li>&lt;code>move to opposite group&lt;/code>&lt;/li>
+&lt;li>&lt;code>open in opposite group&lt;/code>&lt;/li>
+&lt;li>emacsなら&lt;code>C-x 4 b&lt;/code>と&lt;code>C-x 4 f&lt;/code>とかかな？&lt;/li>
+&lt;li>RubyMineはthird strokeが使えないので &lt;code>C-x m&lt;/code>と&lt;code>C-x C-o&lt;/code>が良さそう&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="幅のリサイズ">幅のリサイズ&lt;/h2>
+&lt;p>ツールウィンドウもタブも幅をリサイズしたい。だけど&lt;code>[&lt;/code>と&lt;code>]&lt;/code>はキーボードの関係で押しづらいのであまり使いたくない。&lt;/p></description></item><item><title>Rubyのパターンマッチをこうやって使いたい</title><link>https://qwyng.dev/posts/ruby_list_comprehension/</link><pubDate>Sat, 19 Jul 2025 09:54:04 +0900</pubDate><guid>https://qwyng.dev/posts/ruby_list_comprehension/</guid><description>&lt;p>Rubyのパターンマッチ、最高です。&lt;br>
 ですが、最近、以下のような使い方をしたいんですができなくて困っています。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ruby" data-lang="ruby">&lt;span style="display:flex;">&lt;span>ages &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">[&lt;/span>&lt;span style="color:#ae81ff">40&lt;/span>, &lt;span style="color:#ae81ff">60&lt;/span>, &lt;span style="color:#ae81ff">75&lt;/span>&lt;span style="color:#f92672">]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>users &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">[&lt;/span>{name: &lt;span style="color:#e6db74">&amp;#34;佐藤&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">age&lt;/span>: &lt;span style="color:#ae81ff">74&lt;/span>}, {name: &lt;span style="color:#e6db74">&amp;#34;鈴木&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">age&lt;/span>: &lt;span style="color:#ae81ff">75&lt;/span>}&lt;span style="color:#f92672">]&lt;/span>
