@@ -1,4 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>Recent content on QWYNG.dev</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Sat, 16 Aug 2025 12:28:37 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>ついマウスを使ってしまうエディタ操作</title><link>https://qwyng.dev/posts/help_me_shortcut/</link><pubDate>Sat, 16 Aug 2025 12:28:37 +0900</pubDate><guid>https://qwyng.dev/posts/help_me_shortcut/</guid><description>&lt;p>普段エディタでプログラミングする際、まだまだマウスを使ってしまう。やめたい。&lt;br>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QWYNG.dev</title><link>https://qwyng.dev/</link><description>Recent content on QWYNG.dev</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Sun, 02 Nov 2025 21:23:18 +0900</lastBuildDate><atom:link href="https://qwyng.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>デバッガを活用してブレイクポイント貼り直し作業をやめよう</title><link>https://qwyng.dev/posts/debugging_with_break_point/</link><pubDate>Sun, 02 Nov 2025 21:23:18 +0900</pubDate><guid>https://qwyng.dev/posts/debugging_with_break_point/</guid><description>&lt;p>筆者は仕事でRuby on Railsを用いてウェブアプリケーションを開発している。&lt;br>
+愚かにもTDDはせず、まず動きそうなコードを書いてからテストを書き、その後デバック作業を行っている。&lt;br>
+その際、「ブレイクポイントを何度も貼り直して再実行するの面倒だな..」と感じていた。&lt;br>
+今回、その解決策に気付いたのでブログを書いていく。&lt;/p>
+&lt;h2 id="ブレイクポイント貼り直し作業">ブレイクポイント貼り直し作業&lt;/h2>
+&lt;p>ここでは、パラメーターから作成するレコードを判定するロジック&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>を持つアクションをもとに説明する。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ruby" data-lang="ruby">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">SampleController&lt;/span> &lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#66d9ef">ApplicationController&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">create&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @post &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span> something_ok?(post_params)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">Post&lt;/span>&lt;span style="color:#f92672">.&lt;/span>new(post_params)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">AnotherPost&lt;/span>&lt;span style="color:#f92672">.&lt;/span>new(post_params)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">end&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @post&lt;span style="color:#f92672">.&lt;/span>save!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> redirect_to @post
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">end&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">something_ok?&lt;/span>(params)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 意図的にロジックを挟んでいる&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> something &lt;span style="color:#f92672">=&lt;/span> params&lt;span style="color:#f92672">[&lt;/span>&lt;span style="color:#e6db74">:something&lt;/span>&lt;span style="color:#f92672">].&lt;/span>split(&lt;span style="color:#e6db74">&amp;#39; &amp;#39;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>reverse
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> something&lt;span style="color:#f92672">.&lt;/span>include?(&lt;span style="color:#e6db74">&amp;#39;ok&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">end&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">end&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pr</description></item><item><title>ついマウスを使ってしまうエディタ操作</title><link>https://qwyng.dev/posts/help_me_shortcut/</link><pubDate>Sat, 16 Aug 2025 12:28:37 +0900</pubDate><guid>https://qwyng.dev/posts/help_me_shortcut/</guid><description>&lt;p>普段エディタでプログラミングする際、まだまだマウスを使ってしまう。やめたい。&lt;br>
 今回の記事では筆者がマウスを使ってしまうシーンを言語化し、そのショートカットを書く。&lt;br>
 こうすることで、そのショートカットを習慣化するきっかけにしたい。&lt;/p>
 &lt;p>今回の記事はRubyMine + 組み込みのEmacsバインドを前提に書いている。&lt;br>
