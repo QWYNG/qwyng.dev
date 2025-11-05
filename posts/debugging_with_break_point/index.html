@@ -50,7 +50,7 @@
 </span></span><span style=display:flex><span>end
 </span></span></code></pre></div><p>ここで、Postのオブジェクトに対してsave!が実行されてほしい所で、AnotherPostからエラーが起きてしまったとする。<br>そうなるとsomething_ok?の挙動を確認したくなる。ただし、something_ok?の返り値だけでは十分ではない。something_ok?にはロジックが含まれているので、このメソッドの内部でもデバッガを用いて詳細な挙動を確認したくなる。<br>ここがこの記事の問題の核心である。二分探索でデバックする場合、最初からいい感じの位置にブレイクポイントは設置できない事が多い。つまり、<strong>間違っている箇所の位置が特定できていない状態からデバックをする場合、最終的に確認したい位置にデバッガーを最初からおけるケースは稀である。</strong> ということを言いたい。</p><p>こういう場合、筆者はブレイクポイントを手動で貼り直し、テストを再実行していた。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-diff data-lang=diff><span style=display:flex><span>class SampleController &lt; ApplicationController
 </span></span><span style=display:flex><span>  def create
-</span></span><span style=display:flex><span>    @post = if　something_ok?(post_params)
+</span></span><span style=display:flex><span>    @post = if something_ok?(post_params)
 </span></span><span style=display:flex><span>      Post.new(post_params)
 </span></span><span style=display:flex><span>    else
 </span></span><span style=display:flex><span>      AnotherPost.new(post_params)
