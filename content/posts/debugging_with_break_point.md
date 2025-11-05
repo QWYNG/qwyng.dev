@@ -83,7 +83,7 @@ end
 ```diff
 class SampleController < ApplicationController
   def create
-    @post = if　something_ok?(post_params)
+    @post = if something_ok?(post_params)
       Post.new(post_params)
     else
       AnotherPost.new(post_params)
