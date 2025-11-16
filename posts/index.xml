@@ -1,4 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>Recent content in Posts on QWYNG.dev</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Sun, 02 Nov 2025 21:23:18 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>デバッガを活用してブレイクポイント貼り直し作業をやめよう</title><link>https://qwyng.dev/posts/debugging_with_break_point/</link><pubDate>Sun, 02 Nov 2025 21:23:18 +0900</pubDate><guid>https://qwyng.dev/posts/debugging_with_break_point/</guid><description>&lt;p>筆者は仕事でRuby on Railsを用いてウェブアプリケーションを開発している。&lt;br>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on QWYNG.dev</title><link>https://qwyng.dev/posts/</link><description>Recent content in Posts on QWYNG.dev</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Sun, 16 Nov 2025 17:08:05 +0900</lastBuildDate><atom:link href="https://qwyng.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>RubyのRactor::Monitorを用いてCICDパイプラインランナーをスクラッチで実装する</title><link>https://qwyng.dev/posts/building-cicd-pipeline-runner-ruby/</link><pubDate>Sun, 16 Nov 2025 17:08:05 +0900</pubDate><guid>https://qwyng.dev/posts/building-cicd-pipeline-runner-ruby/</guid><description>&lt;p>先日、HackerNewsで面白い記事を見つけた。&lt;br>
+&lt;a href="https://muhammadraza.me/2025/building-cicd-pipeline-runner-python/">Building a CI/CD Pipeline Runner from Scratch in Python | Muhammad&lt;/a>&lt;br>
+ちょうど、依存関係にある処理のオーケストレーションに興味があったので&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>、Rubyで同様のCICDパイプラインランナーをスクラッチで実装してみることにした。&lt;/p>
+&lt;h2 id="パイプラインランナー">パイプラインランナー&lt;/h2>
+&lt;p>前述の記事に記載があるが、今回構築するパイプラインランナーは以下の機能を持つ。&lt;/p>
+&lt;ul>
+&lt;li>ymlをパースする&lt;/li>
+&lt;li>ジョブの依存関係を解決する&lt;/li>
+&lt;li>ジョブを実行する（依存に問題がなければ並列実行も可能）&lt;/li>
+&lt;li>ログをストリームする&lt;/li>
+&lt;li>ジョブ間でアーティファクトを共有する&lt;/li>
+&lt;li>結果を報告する&lt;/li>
+&lt;/ul>
+&lt;p>今回は並列実行にRubyのRactorを使用している。サンプルコードはGitHubに乗せている。&lt;br>
+&lt;code>ruby ci_cd.rb pipeline.yml&lt;/code>でどのバージョンも実行できる。サンプルコードはRuby 4.0-devで登場した機能を利用しており、それ以前のバージョンだと動作しないので注意。&lt;/p>
+&lt;h2 id="version-1-単一のジョブを実行する">Version 1: 単一のジョブを実行する&lt;/h2>
+&lt;p>まずは、単一のジョブを実行するだけのシンプルなバージョンを作成した。
+ymlを読んで、ジョブを実行し、ログを表示するだけのものだ。&lt;/p>
+&lt;p>&lt;a href="https://github.com/QWYNG/Building-CICD-Pipeline-Runner-Ruby-from-Scratch/commit/c6ebd0db1b2c3757765131f2dd57be17c6665d74">version 1 Single Job Executor&lt;/a>&lt;/p>
+&lt;p>Rubyの&lt;code>Open3.popen2e&lt;/code>は標準出力と標準エラー出力を同時に扱えて便利。僕が知らないだけでPythonにも同様の機能があるのかもしれないが。&lt;/p>
+&lt;h2 id="version-2-複数のステージを逐次実行する">Version 2: 複数のステージを逐次実行する&lt;/h2>
+&lt;p>次に、複数のステージをそれぞれ逐次実行するバージョンを作成した。&lt;/p>
+&lt;p>&lt;a href="https://github.com/QWYNG/Building-CICD-Pipeline-Runner-Ruby-from-Scratch/commit/da0b8bf37616faba313f5a009f1a7c29715da205">Version 2: Multi-Stage Pipeline with Sequential Execution&lt;/a>&lt;/p>
+&lt;h2 id="version-3-ジョブを並列実行する">Version 3: ジョブを並列実行する&lt;/h2>
+&lt;p>ここが今回のハイライト。参考ブログではPythonの&lt;code>multiprocessing&lt;/code>を使用していた。この記事ではRubyのRactorを使用する。&lt;br>
+&lt;a href="https://github.com/QWYNG/Building-CICD-Pipeline-Runner-Ruby-from-Scratch/commit/e805638da91444dd98a2bda73a94548be4a6cabe">Version 3: Parallel Job Execution&lt;/a>&lt;/p></description></item><item><title>デバッガを活用してブレイクポイント貼り直し作業をやめよう</title><link>https://qwyng.dev/posts/debugging_with_break_point/</link><pubDate>Sun, 02 Nov 2025 21:23:18 +0900</pubDate><guid>https://qwyng.dev/posts/debugging_with_break_point/</guid><description>&lt;p>筆者は仕事でRuby on Railsを用いてウェブアプリケーションを開発している。&lt;br>
 愚かにもTDDはせず、まず動きそうなコードを書いてからテストを書き、その後デバック作業を行っている。&lt;br>
 その際、「ブレイクポイントを何度も貼り直して再実行するの面倒だな..」と感じていた。&lt;br>
 今回、その解決策に気付いたのでブログを書いていく。&lt;/p>
