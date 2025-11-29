@@ -1,5 +1,5 @@
 ---
-title: "RubyのRactor::Monitorを用いてCICDパイプラインランナーをスクラッチで実装する"
+title: "RubyのRactor::Portを用いてCICDパイプラインランナーをスクラッチで実装する"
 date: 2025-11-16T17:08:05+09:00
 draft: false
 ---
@@ -64,8 +64,8 @@ results = stage_jobs.size.times.map do
 end
 ```
 
-儀礼的にchannel書くの面倒くさいな〜と思っていた時にRactor::Monitorという概念がRubyに導入されたことを知った[^2]。  
-Ractor::MonitorはRubyでこれから導入される予定[^3]の機能で、軽量かつ生成したRactorでしか受け取れない受信箱をつくる機能である。  
+儀礼的にchannel書くの面倒くさいな〜と思っていた時にRactor::Port[^2]。  
+Ractor::PortはRubyでこれから導入される予定[^3]の機能で、軽量かつ生成したRactorでしか受け取れない受信箱をつくる機能である。  
 今回は各ジョブの結果を受け取る箱として使用した。スッキリして( ・∀・)ｲｲ!!
 
 
@@ -150,11 +150,11 @@ relative_path = artifact.delete_prefix("#{job_artifact_dir}/")
 
 ## まとめ
 スクリプト書くのたのし〜。  
-Ractor::Monitor、使いやすくていいですね。リリースが楽しみです。
+Ractor::Port、使いやすくていいですね。リリースが楽しみです。
 
 [^1]: overmindというtmuxのセッション起動いい感じにしてくれる君のプロセスの依存に関するissueを解決したかった。(https://github.com/DarthSim/overmind/issues/70)
 [^2]: [Ractor::Port ― Ractor の API を一新した話 - STORES Product Blog](https://product.st.inc/entry/2025/06/24/110606)
-[^3]: Ruby 3.5.0-preview1ではRactor::Monitorは使えなかった。筆者は3.4.0-devを利用した。
+[^3]: Ruby 3.5.0-preview1ではRactor::Portは使えなかった。筆者は3.4.0-devを利用した。
 
 
 
