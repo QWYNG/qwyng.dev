@@ -8,6 +8,10 @@ theme = "hugo_theme_pickles"
   hideWordCount = 1
   hideReadingTime = 1
 
+  # OGP default image (used when page doesn't specify og_image/images)
+  # Can be absolute URL (https://...) or a path under /static (e.g. "/android-chrome-384x384.png").
+  default_og_image = "/android-chrome-384x384.png"
+
   # Social accounts. Links to these accounts are displayed in the header and footer.
   twitter = "qwyngg"
   github = "QWYNG"

@@ -1,5 +1,37 @@
-<!-- https://developer.x.com/ja/docs/tweets/optimize-with-cards/guides/getting-started　-->
-<meta property="og:image" content="https://qwyng.dev/android-chrome-384x384.png" />
+<!-- https://developer.x.com/ja/docs/tweets/optimize-with-cards/guides/getting-started -->
+
+{{- if not .Params.thumbnail -}}
+  {{- $img := "" -}}
+
+  {{- if .Params.og_image -}}
+    {{- $img = .Params.og_image -}}
+  {{- else if .Params.images -}}
+    {{- $imgs := .Params.images -}}
+    {{- $imgsType := printf "%T" $imgs -}}
+    {{- if (and (ne $imgsType "string") (ge (len $imgs) 1)) -}}
+      {{- $img = (index $imgs 0) -}}
+    {{- else -}}
+      {{- $img = $imgs -}}
+    {{- end -}}
+  {{- else if .Site.Params.default_og_image -}}
+    {{- $img = .Site.Params.default_og_image -}}
+  {{- else if .Site.Params.logo -}}
+    {{- $img = .Site.Params.logo -}}
+  {{- else if .Site.Params.avatar -}}
+    {{- $img = .Site.Params.avatar -}}
+  {{- end -}}
+
+  {{- with $img -}}
+    {{- $imgUrl := . -}}
+    {{- if not (or (hasPrefix $imgUrl "http://") (hasPrefix $imgUrl "https://")) -}}
+      {{- $imgUrl = ($imgUrl | absURL) -}}
+    {{- end -}}
+
+    <meta property="og:image" content="{{ $imgUrl }}" />
+    <meta name="twitter:image" content="{{ $imgUrl }}" />
+  {{- end -}}
+{{- end -}}
+
 <meta name="twitter:card" content="summary" />
 
 <link rel="stylesheet" href="/css/custom.css" />
