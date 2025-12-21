@@ -23,8 +23,20 @@
 
   {{- with $img -}}
     {{- $imgUrl := . -}}
+
     {{- if not (or (hasPrefix $imgUrl "http://") (hasPrefix $imgUrl "https://")) -}}
-      {{- $imgUrl = ($imgUrl | absURL) -}}
+      {{- /* Prefer page resources (page bundle) so paths like "img_3.png" or "images/foo.png" resolve under the article URL. */ -}}
+      {{- $res := $.Page.Resources.GetMatch $imgUrl -}}
+      {{- if not $res -}}
+        {{- $res = $.Page.Resources.GetMatch (printf "**/%s" $imgUrl) -}}
+      {{- end -}}
+
+      {{- if $res -}}
+        {{- $imgUrl = $res.Permalink -}}
+      {{- else -}}
+        {{- /* Fallback: treat as site-relative (static) path. */ -}}
+        {{- $imgUrl = ($imgUrl | absURL) -}}
+      {{- end -}}
     {{- end -}}
 
     <meta property="og:image" content="{{ $imgUrl }}" />

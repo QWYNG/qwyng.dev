@@ -1,7 +1,7 @@
 ---
 title: "3Dプリンタを買って一ヶ月で作ったものまとめ"
 date: 2025-12-21T15:00:00+09:00
-og_image: posts/3d_printer/img_3.png
+og_image: img_3.png
 draft: false
 ---
 
