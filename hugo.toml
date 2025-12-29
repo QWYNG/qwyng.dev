@@ -3,6 +3,8 @@ languageCode = "ja"
 title = "QWYNG.dev"
 theme = "hugo_theme_pickles"
 
+googleAnalytics = "G-9JVVYL7X5D"
+
 [params]
   paginate = 5
   hideWordCount = 1
