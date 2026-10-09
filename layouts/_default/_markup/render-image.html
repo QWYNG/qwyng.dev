@@ -1,0 +1,39 @@
+{{- $widths := slice 720 1440 -}}
+{{- $u := urls.Parse .Destination -}}
+{{- $img := false -}}
+{{- if not $u.IsAbs -}}
+  {{- $path := strings.TrimPrefix "./" $u.Path -}}
+  {{- with .PageInner.Resources.Get $path -}}
+    {{- $img = . -}}
+  {{- else -}}
+    {{- with resources.Get $path -}}
+      {{- $img = . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $processable := false -}}
+{{- if $img -}}
+  {{- $processable = in (slice "jpeg" "png" "webp") $img.MediaType.SubType -}}
+{{- end -}}
+{{- if $processable -}}
+  {{- if eq $img.MediaType.SubType "jpeg" -}}
+    {{- $img = $img.Filter images.AutoOrient -}}
+  {{- end -}}
+  {{- $srcset := slice -}}
+  {{- $fallback := false -}}
+  {{- range $widths -}}
+    {{- if lt . $img.Width -}}
+      {{- $resized := $img.Resize (printf "%dx webp" .) -}}
+      {{- $srcset = $srcset | append (printf "%s %dw" $resized.RelPermalink $resized.Width) -}}
+      {{- if not $fallback -}}{{- $fallback = $resized -}}{{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if lt (len $srcset) (len $widths) -}}
+    {{- $full := $img.Resize (printf "%dx webp" $img.Width) -}}
+    {{- $srcset = $srcset | append (printf "%s %dw" $full.RelPermalink $full.Width) -}}
+    {{- if not $fallback -}}{{- $fallback = $full -}}{{- end -}}
+  {{- end -}}
+  <img src="{{ $fallback.RelPermalink }}" srcset="{{ delimit $srcset ", " }}" sizes="(max-width: 750px) 96vw, 720px" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ .PlainText }}"{{ with .Title }} title="{{ . }}"{{ end }} loading="lazy" decoding="async">
+{{- else -}}
+  <img src="{{ .Destination | safeURL }}" alt="{{ .PlainText }}"{{ with .Title }} title="{{ . }}"{{ end }} loading="lazy" decoding="async">
+{{- end -}}

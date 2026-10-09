@@ -23,6 +23,14 @@ jobs:
           hugo-version: '0.152.2'
           extended: true
 
+      - name: Cache processed images
+        uses: actions/cache@v4
+        with:
+          path: resources/_gen/images
+          key: hugo-images-${{ hashFiles('content/**/*.png', 'content/**/*.jpg', 'content/**/*.jpeg', 'content/**/*.webp', 'static/**/*.png', 'static/**/*.jpg', 'static/**/*.jpeg', 'static/**/*.webp', 'layouts/_default/_markup/render-image.html') }}
+          restore-keys: |
+            hugo-images-
+
       - name: Build
         run: hugo --minify
 

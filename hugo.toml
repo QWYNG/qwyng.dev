@@ -65,3 +65,11 @@ googleAnalytics = "G-9JVVYL7X5D"
     name = "RSS"
     url = "/index.xml"
     weight = 3
+
+[module]
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "static"
+    target = "assets"
